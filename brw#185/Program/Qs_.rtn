@@ -1,0 +1,124 @@
+10000 REM ******************* qs routine 14/09/98 **********************
+10001 REM               MKII/MKIII/MKIV: Lamp Quick Scan
+10002 REM
+10003 REM Variable ZERO used - 28/02/94
+10004 REM Bug Fix: Variable ZERO added at line 14670 - 21/03/94
+10005 REM **************************************************************
+11000 IF MDD$="o3" THEN 11100
+11010   PRINT#4,"QS is not an NO2 routine":PRINT"QS is not an NO2 routine"
+11020   X=1:GOSUB 7220:RETURN
+11100 DATA qs
+11110 IF Q8%=0 THEN RETURN: REM if no uvb port
+11120 IF DN%<>8 THEN RETURN: REM if no disk recording
+12000 REM
+12001 REM Initialization
+12002 REM
+12010 PRINT CL$: DIM FU0(11), FU1(11)
+12020 FILE$ = "LAMP" + RIGHT$("____" + LM$, 4) + "." + NO$
+12030 ON ERROR GOTO 32000: OPEN "i", 3, DD$ + FILE$
+12040 INPUT #3,AAA1,AAA2,A,D: FOR I = 1 TO 11: INPUT #3,FU0(I): NEXT: INPUT #3,DUV0
+12050 CLOSE 3: AAA1$ = RIGHT$("   " + STR$(AAA1), 6)
+12060 ON ERROR GOTO 32200
+12070 PRINT "Turn on the lamp " + LM$: PRINT
+12080 LOCATE 7, 26: PRINT "Waiting for 5.00 min to warm up"
+12090 LOCATE 8, 27: PRINT "Press  Del  to skip the delay": AA$=""
+12100 IF QSF% = 0 THEN QSF% = 1 ELSE GOTO 12150
+12110   CTIMER = TIMER + 300
+12120   WHILE AA$ <> Q1$ AND TIMER < CTIMER: AA$ = INKEY$
+12130     LOCATE 7, 38: PRINT USING "#.##"; (CTIMER - TIMER) / 60
+12140   WEND
+12150 S3 = 0: S4 = 0
+13000 REM
+13001 REM Take UVB observation
+13002 REM
+13010 MN = 2900: MX = 3250: DD = 35: REM max, min and increment
+13020 LE% = INT((MX-MN)/DD + 1.5): REM number of lambdas
+13030 CX$ = "4": TR$ = "s" + "a": REM cycle count and track mode
+13040 GOSUB 2450
+13050 GOSUB 6610: GOSUB 6635: M5$ = UF$: GOSUB 6650
+13060 TD=1500:GOSUB 7000:GOSUB 7750:GOSUB 6700:M1$=STR$(ZU%):GOSUB 9870
+13070 LOCATE ,SP: PRINT "4 - Brewer azimuth to sun"
+13080 LOCATE ,SP: PRINT "5 - Director prism to UVB sensor": GOSUB 9650
+13090 M8$ = "-" + MC$: GOSUB 9805: M8$ = STR$(-ZERO): GOSUB 9805
+13100 PRINT CL$: LOCATE 4,21
+13110 PRINT "UVB scan on lamp #"+LEFT$(LM$+"    ",4)+"  (distance: "+RIGHT$("  "+STR$(DI),2)+" cm)"
+13120 LOCATE 5,21: PRINT "-----------------------------------------": LOCATE 6,11
+13130 PRINT "Wavelength    Lamp intensity (c/s)   Change from day";LEFT$(AAA1$,4)+"/"+RIGHT$(AAA1$, 2)
+13140 IF FP% = 0 THEN 13190
+13150   PRINT #4,
+13160   PRINT #4,SPC(21);"UVB scan on lamp #"+LEFT$(LM$+"    ",4)+"  (distance: "+RIGHT$("  "+STR$(DI),2)+" cm)"
+13170   PRINT #4,SPC(21); "-----------------------------------------"
+13180   PRINT #4,SPC(11);"Wavelength    Lamp intensity (c/s)   Change from day";LEFT$(AAA1$,4)+"/" +RIGHT$(AAA1$,2):PRINT #4,
+13190 TE = INT((VAL(TE$) * 16 - 30) * 100 + .5) / 100: STIM$ = TIME$
+13200 W1 = MN: W2 = MX: DW = DD: SQ = 1: GOSUB 30000: IF HF% = 1 THEN 14000
+13210 M8$ = STR$(ZERO+1): GOSUB 9805: M8$="-1": GOSUB 9805: M8$=MC$: GOSUB 9805: GOSUB 9500
+13220 IF HF% = 0 THEN GOSUB 31000
+13230 IF HF% = 1 THEN 14000
+13500 REM *** Clean up
+13510 PRINT #4, "UVL quick scan started at  "; STIM$ + "      volts=______"
+13520 PRINT #4, "UVL quick scan finished at "; TIME$ + " Avg. volts=______"
+13530 ON ERROR GOTO 3100: ERASE FU0,FU1: RETURN
+14000 REM
+14001 REM Home flag abort handling
+14002 REM
+14010 PRINT #4, "UVL quick scan aborted at "; TIME$
+14020 ON ERROR GOTO 3100: ERASE FU0,FU1: RETURN
+30000 '
+30001 ' *** Scan W1 to W2 step DW on slit SQ ***
+30002 '
+30010 O1$="R,1,1,"+CX$+";O": GOSUB 9450: GOSUB 9190
+30020 DK=INT(VA*10+.5)/10
+30030 B=DC(SQ, 2): C=DC(SQ, 3): DQ$=STR$(SQ+1): N%=0
+30040 FOR WV = W1 TO W2 STEP DW: N% = N% + 1
+30050   GOSUB 2090: IF HF%<>0 THEN PRINT "aborted": WV=W2: RETURN
+30060   SN$ = STR$(INT((-B+SQR(B*B - 4*(DC(SQ,1) - WV)*C))/2/C))
+30065   O1$ = "M,10," + SN$: IF TYP$ <> "mkiii" THEN 30075
+30070     SN$ = STR$(INT(VAL(SN$)*GS+GI+.5)): O1$ = O1$ + SE$ + "M," + N9$ + "," + SN$
+30075   O1$ = O1$ + ";R," + DQ$ + "," + DQ$ + "," + CX$ + ";O"
+30080   TI = TIMER*60: TM=TI: GOSUB 9450: TM=INT((TM+TI)/72)/100: VA=VA-DK: IF VA<0 THEN VA=1
+30090   VA = VA * 2 / VAL(CX$) / IT: REM convert to c/s
+30100   IF VA < 2 THEN VA = 2: REM prevent negative values
+30110   F1 = VA: FOR JM = 0 TO 8: VA = F1 * EXP(VA * T1): NEXT: REM corect dead time
+30120   FU1(N%) = INT(VA * 10 + .5) / 10
+30130   LOCATE 7+N%,11: PRINT USING "   ####            ########.#              ";WV;FU1(N%);
+30140   IF FU0(N%)<>-999 THEN PRINT USING "###.## %";-(FU0(N%) - FU1(N%))*100/FU0(N%) ELSE PRINT
+30150   IF FP% = 0 GOTO 30180
+30160     PRINT #4,SPC(11);: PRINT #4, USING "   ####            ########.#              ";WV;FU1(N%);
+30170     IF FU0(N%)<>-999 THEN PRINT #4, USING "###.## %";-(FU0(N%)-FU1(N%))*100/FU0(N%) ELSE PRINT #4,
+30180   IF WV < 3000 THEN DV = 1 - .36 * ((WV - 2700) / 200) ^ 1.64: REM ACGIH-NIOSH curve
+30190   IF WV >= 3000 THEN DV = .3 * .7356 ^ ((WV - 3000) / 10)
+30200   S0 = DV: S3 = S3 + S0 * VA: S4 = S4 + S0
+30210 NEXT: RETURN
+31000 '
+31001 ' *** Print Results ***
+31002 '
+31010 DV = .00001 * S3 / 2
+31020 LOCATE 7 + 13, 11: PRINT USING "   DUV ->         #.#####^^^^              ";DV;
+31030 IF DUV0 <> -999 THEN PRINT USING "###.## %"; -(DUV0 - DV) * 100 / DUV0 ELSE PRINT
+31040 IF FP% = 0 GOTO 31080
+31050   PRINT #4,SPC(11);: PRINT #4, USING "   DUV ->         #.#####^^^^              ";DV;
+31060   IF DUV0<>-999 THEN PRINT #4, USING "###.## %"; -(DUV0 - DV)*100 / DUV0 ELSE PRINT #4,
+31070   PRINT #4,
+31080 OPEN "a", 3, DD$ + FILE$
+31090 PRINT #3,JD$;YF$;DI;TE;DK;: FOR I = 1 TO 11: PRINT #3,FU1(I);: NEXT: PRINT #3,DV: CLOSE 3
+31100 LOCATE 23, 28: PRINT "Press any key to continue"
+31110 IF QSF% = 1 THEN QSF% = 2 ELSE GOTO 31200
+31120   CTIMER = TIMER+30: AA$ = "": WHILE AA$ = "" AND TIMER < CTIMER: AA$ = INKEY$: WEND
+31200 RETURN
+32000 '
+32001 ' *** Error handling ***
+32002 '
+32010 BEEP: IF ERR <> 53 THEN PRINT "Lamp file " + FILE$ + " is incorrect ": GOTO 32030
+32020   PRINT "Cannot find the lamp file " + FILE$ + " on  drive " + DD$
+32030 PRINT : PRINT "Insert a disk with this lamp file and press ENTER"
+32040 PRINT : PRINT "or press ESC to create a new lamp file " + FILE$
+32050 AA$ = INKEY$: IF AA$ = "" GOTO 32050
+32060 IF AA$ = CHR$(13) THEN CLOSE 3: PRINT CL$: RESUME 12030
+32070 IF AA$ <> CHR$(27) THEN BEEP: GOTO 32050
+32080 PRINT CL$
+32090 IF FP% <> 0 THEN PRINT #4,"Lamp file "+FILE$+" created on drive "+DD$+" at "+TIME$+"  "+DATE$
+32100 CLOSE 3: OPEN "o",3,DD$+FILE$: CLOSE 3
+32110 FOR I = 1 TO 11: FU0(I)=-999: NEXT: DUV0=-999: AAA1$ = " -----": RESUME 12060
+32200 IF ERR<24 OR ERR>27 THEN ERASE FU0,FU1
+32210 GOTO 3100
+65529 REM proper last line

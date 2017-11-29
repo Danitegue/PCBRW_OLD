@@ -1,0 +1,9 @@
+; BrewerCMD Output Log File
+;
+; Copyright(C) September 2005, Kipp & Zonen B.V.        All rights reserved.
+
+HOST> Communication settings read from BREWCMD.INI
+HOST> Attempting to establish communications on COM1... please wait
+HOST> Trying Cosmac mode at 1200 baud
+
+; Log file closed

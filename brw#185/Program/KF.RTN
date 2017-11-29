@@ -1,0 +1,8 @@
+10000 REM ********************* kf routine 12/13/06 *******************
+10001 REM  Used in schedule proceeding modfied UM.rtn to cause UM to execute repeatedly 8 times,
+10002 REM  or until the next zenith angle is schedule is reached.
+10003 REM *************************************************************
+10005 DATA kf
+10020 L9%=8
+10300  RETURN
+65529 REM *** dummy line ***

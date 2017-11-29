@@ -1,0 +1,14 @@
+tm,test menu 
+ci,lamp port scan
+dsp,dispersion test
+dt,dead time
+gs,grating slope syncronization
+hg,mercury lamp calibration
+hp,HG lamp cal (2nd mic)
+hv,high voltage adjust
+rs,slit mask run and stop
+sh,slit mask timing
+sl,standard lamp calibration
+sr,azimuth steps-per-rev
+tt,setup teletype control
+tu,test UVB alignment

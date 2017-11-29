@@ -1,0 +1,908 @@
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 500 Internal Server Error>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 102, in request
+    errcode, errmsg, headers = h.getreply()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 1137, in getreply
+    response = self._conn.getresponse()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 866, in getresponse
+    response.begin()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 336, in begin
+    version, status, reason = self._read_status()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 294, in _read_status
+    line = self.fp.readline()
+  File "C:\Archivos de programa\Python24\lib\socket.py", line 325, in readline
+    data = recv(1)
+socket.error: (10053, 'Software caused connection abort')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 102, in request
+    errcode, errmsg, headers = h.getreply()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 1137, in getreply
+    response = self._conn.getresponse()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 866, in getresponse
+    response.begin()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 336, in begin
+    version, status, reason = self._read_status()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 294, in _read_status
+    line = self.fp.readline()
+  File "C:\Archivos de programa\Python24\lib\socket.py", line 325, in readline
+    data = recv(1)
+socket.error: (10053, 'Software caused connection abort')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 502 Bad Gateway>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 503 Service Unavailable>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 502 Bad Gateway>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 102, in request
+    errcode, errmsg, headers = h.getreply()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 1137, in getreply
+    response = self._conn.getresponse()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 866, in getresponse
+    response.begin()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 336, in begin
+    version, status, reason = self._read_status()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 294, in _read_status
+    line = self.fp.readline()
+  File "C:\Archivos de programa\Python24\lib\socket.py", line 325, in readline
+    data = recv(1)
+socket.error: (10053, 'Software caused connection abort')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 102, in request
+    errcode, errmsg, headers = h.getreply()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 1137, in getreply
+    response = self._conn.getresponse()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 866, in getresponse
+    response.begin()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 336, in begin
+    version, status, reason = self._read_status()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 294, in _read_status
+    line = self.fp.readline()
+  File "C:\Archivos de programa\Python24\lib\socket.py", line 325, in readline
+    data = recv(1)
+socket.error: (10053, 'Software caused connection abort')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 102, in request
+    errcode, errmsg, headers = h.getreply()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 1137, in getreply
+    response = self._conn.getresponse()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 866, in getresponse
+    response.begin()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 336, in begin
+    version, status, reason = self._read_status()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 294, in _read_status
+    line = self.fp.readline()
+  File "C:\Archivos de programa\Python24\lib\socket.py", line 325, in readline
+    data = recv(1)
+socket.error: (10053, 'Software caused connection abort')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 102, in request
+    errcode, errmsg, headers = h.getreply()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 1137, in getreply
+    response = self._conn.getresponse()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 866, in getresponse
+    response.begin()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 336, in begin
+    version, status, reason = self._read_status()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 294, in _read_status
+    line = self.fp.readline()
+  File "C:\Archivos de programa\Python24\lib\socket.py", line 325, in readline
+    data = recv(1)
+socket.error: (10053, 'Software caused connection abort')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 102, in request
+    errcode, errmsg, headers = h.getreply()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 1137, in getreply
+    response = self._conn.getresponse()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 866, in getresponse
+    response.begin()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 336, in begin
+    version, status, reason = self._read_status()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 294, in _read_status
+    line = self.fp.readline()
+  File "C:\Archivos de programa\Python24\lib\socket.py", line 325, in readline
+    data = recv(1)
+socket.error: (10053, 'Software caused connection abort')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 102, in request
+    errcode, errmsg, headers = h.getreply()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 1137, in getreply
+    response = self._conn.getresponse()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 866, in getresponse
+    response.begin()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 336, in begin
+    version, status, reason = self._read_status()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 294, in _read_status
+    line = self.fp.readline()
+  File "C:\Archivos de programa\Python24\lib\socket.py", line 325, in readline
+    data = recv(1)
+socket.error: (10053, 'Software caused connection abort')
+^CTraceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 102, in request
+    errcode, errmsg, headers = h.getreply()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 1137, in getreply
+    response = self._conn.getresponse()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 866, in getresponse
+    response.begin()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 336, in begin
+    version, status, reason = self._read_status()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 294, in _read_status
+    line = self.fp.readline()
+  File "C:\Archivos de programa\Python24\lib\socket.py", line 325, in readline
+    data = recv(1)
+socket.error: (10053, 'Software caused connection abort')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 102, in request
+    errcode, errmsg, headers = h.getreply()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 1137, in getreply
+    response = self._conn.getresponse()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 866, in getresponse
+    response.begin()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 336, in begin
+    version, status, reason = self._read_status()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 294, in _read_status
+    line = self.fp.readline()
+  File "C:\Archivos de programa\Python24\lib\socket.py", line 325, in readline
+    data = recv(1)
+socket.error: (10053, 'Software caused connection abort')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 102, in request
+    errcode, errmsg, headers = h.getreply()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 1137, in getreply
+    response = self._conn.getresponse()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 866, in getresponse
+    response.begin()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 336, in begin
+    version, status, reason = self._read_status()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 294, in _read_status
+    line = self.fp.readline()
+  File "C:\Archivos de programa\Python24\lib\socket.py", line 325, in readline
+    data = recv(1)
+socket.error: (10053, 'Software caused connection abort')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 100, in request
+    self.send_content(h, request_body)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1243, in send_content
+    connection.endheaders()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 798, in endheaders
+    self._send_output()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 679, in _send_output
+    self.send(msg)
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 646, in send
+    self.connect()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 614, in connect
+    socket.SOCK_STREAM):
+socket.gaierror: (11001, 'getaddrinfo failed')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 503 Service Unavailable>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 500 Internal Server Error>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 503 Service Unavailable>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 102, in request
+    errcode, errmsg, headers = h.getreply()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 1137, in getreply
+    response = self._conn.getresponse()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 866, in getresponse
+    response.begin()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 336, in begin
+    version, status, reason = self._read_status()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 294, in _read_status
+    line = self.fp.readline()
+  File "C:\Archivos de programa\Python24\lib\socket.py", line 325, in readline
+    data = recv(1)
+socket.error: (10053, 'Software caused connection abort')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 100, in request
+    self.send_content(h, request_body)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1243, in send_content
+    connection.endheaders()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 798, in endheaders
+    self._send_output()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 679, in _send_output
+    self.send(msg)
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 646, in send
+    self.connect()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 614, in connect
+    socket.SOCK_STREAM):
+socket.gaierror: (11001, 'getaddrinfo failed')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 100, in request
+    self.send_content(h, request_body)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1243, in send_content
+    connection.endheaders()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 798, in endheaders
+    self._send_output()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 679, in _send_output
+    self.send(msg)
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 646, in send
+    self.connect()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 614, in connect
+    socket.SOCK_STREAM):
+socket.gaierror: (11001, 'getaddrinfo failed')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 100, in request
+    self.send_content(h, request_body)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1243, in send_content
+    connection.endheaders()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 798, in endheaders
+    self._send_output()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 679, in _send_output
+    self.send(msg)
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 646, in send
+    self.connect()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 614, in connect
+    socket.SOCK_STREAM):
+socket.gaierror: (11001, 'getaddrinfo failed')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 100, in request
+    self.send_content(h, request_body)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1243, in send_content
+    connection.endheaders()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 798, in endheaders
+    self._send_output()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 679, in _send_output
+    self.send(msg)
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 646, in send
+    self.connect()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 614, in connect
+    socket.SOCK_STREAM):
+socket.gaierror: (11001, 'getaddrinfo failed')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 100, in request
+    self.send_content(h, request_body)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1243, in send_content
+    connection.endheaders()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 798, in endheaders
+    self._send_output()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 679, in _send_output
+    self.send(msg)
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 646, in send
+    self.connect()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 614, in connect
+    socket.SOCK_STREAM):
+socket.gaierror: (11001, 'getaddrinfo failed')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 500 Internal Server Error>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 500 Internal Server Error>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 500 Internal Server Error>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 500 Internal Server Error>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 500 Internal Server Error>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 100, in request
+    self.send_content(h, request_body)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1243, in send_content
+    connection.endheaders()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 798, in endheaders
+    self._send_output()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 679, in _send_output
+    self.send(msg)
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 646, in send
+    self.connect()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 630, in connect
+    raise socket.error, msg
+socket.error: (10060, 'Operation timed out')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 100, in request
+    self.send_content(h, request_body)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1243, in send_content
+    connection.endheaders()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 798, in endheaders
+    self._send_output()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 679, in _send_output
+    self.send(msg)
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 646, in send
+    self.connect()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 630, in connect
+    raise socket.error, msg
+socket.error: (10060, 'Operation timed out')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 502 Bad Gateway>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 502 Bad Gateway>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 502 Bad Gateway>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 502 Bad Gateway>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 105, in request
+    raise ProtocolError(host + handler, errcode, errmsg, headers)
+xmlrpclib.ProtocolError: <ProtocolError for www.iberonesia.net/brewer/xmlrpc/: 502 Bad Gateway>
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 145, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 277, in sendFilesAndUpdate
+    md5sums = self.sendFiles(files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 308, in sendFiles
+    result = self.server.receive_files(self.brewerid, data)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1383, in __request
+    verbose=self.__verbose
+  File "c:\Brw#185\Program\xmlrpcproxy.py", line 100, in request
+    self.send_content(h, request_body)
+  File "C:\Archivos de programa\Python24\lib\xmlrpclib.py", line 1243, in send_content
+    connection.endheaders()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 798, in endheaders
+    self._send_output()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 679, in _send_output
+    self.send(msg)
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 646, in send
+    self.connect()
+  File "C:\Archivos de programa\Python24\lib\httplib.py", line 630, in connect
+    raise socket.error, msg
+socket.error: (10060, 'Operation timed out')
+Traceback (most recent call last):
+  File "c:\Brw#185\Program\refresh.py", line 489, in ?
+    main(sys.argv[1:])
+  File "c:\Brw#185\Program\refresh.py", line 476, in main
+    refresh.refreshFiles()
+  File "c:\Brw#185\Program\refresh.py", line 139, in refreshFiles
+    self.sendFilesAndUpdate(db, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 278, in sendFilesAndUpdate
+    self.checkAndUpdateRefreshDb(db, md5sums, files_to_send)
+  File "c:\Brw#185\Program\refresh.py", line 338, in checkAndUpdateRefreshDb
+    db.flush()
+  File "c:\Brw#185\Program\refreshdb.py", line 160, in flush
+    writer = csv.writer(open(self.csvfile, "wt"), dialect="excel", delimiter = ';')		
+IOError: [Errno 13] Permission denied: '.\\www.iberonesia.net.db'

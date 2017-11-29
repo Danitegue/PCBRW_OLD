@@ -1,0 +1,19 @@
+10000 REM ************ ab_sk.rtn 02/12/2010 09:50:00 ************ 
+55555 REM Please keep line 10000 updated when changes are made. Volodya Savastiouk
+55555 REM             MKII/MKIII/MKIV Abort Schedule Routine
+10002 REM		added "home pressed message" - Volodya
+10003 REM
+10004 REM **************************************************************
+10010 DATA ab_sk
+32000 ED%=1:PRINT CL$
+32010 LOCATE 10,SP:PRINT "Observations were last interrupted from"
+32020 LOCATE 11,SP:PRINT SK$;" schedule in ";DI$;" routine."
+32030 LOCATE 13,SP:PRINT "Schedule will resume in     seconds"
+32040 LOCATE 14,SP:PRINT "unless you press HOME for main menu"
+32050 TA=900:GOSUB 7050
+32060 TI=TIMER*60:LOCATE 13,SP+24:PRINT RIGHT$("   "+STR$(INT((TA-TI)/60+1)),2)
+32070 IF TI>TA THEN PRINT CL$:G$(0)=DI$:RETURN
+32080 A$=INKEY$:IF A$<>Q2$ THEN 32060
+32090 PRINT CL$:SK$="":DI$="menu": B$ = "HOME key pressed": GOSUB 3050:GOSUB 5200:RETURN
+65529 REM proper last line
+

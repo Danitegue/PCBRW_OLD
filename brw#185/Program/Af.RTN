@@ -1,0 +1,6 @@
+10000 REM ************ af.rtn 02/12/2010 09:50:34 ************ 
+55555 REM Please keep line 10000 updated when changes are made. Volodya Savastiouk
+10010 DATA af
+20000 AUTOHG =0
+30000 return
+65529 rem dummy

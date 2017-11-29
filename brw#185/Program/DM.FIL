@@ -1,0 +1,13 @@
+dm,data management menu
+dd,print data directory
+dds,display data directory
+ld,long data format
+sd,short data format
+nd,initialize new data disk
+nr,no data recording
+di,turn on data recording
+pn,turn printer on
+pf,turn printer off
+pd,print to disk
+pb,play back data (Bxxxx)
+

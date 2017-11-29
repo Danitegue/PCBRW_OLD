@@ -1,0 +1,16 @@
+10000 REM ******************** nd routine 01/04/94 *********************
+10001 REM                    Format Disk for Drive A:
+10002 REM
+10003 REM
+10004 REM **************************************************************
+10005 DATA nd
+10010 CLS:LOCATE 5,5
+10015 INPUT "YOU WISH TO FORMAT A DATA DISK IN Drive A: (Y/N)";ZZ$
+10020 IF ZZ$<>"y" THEN 10160
+10035 CLS:LOCATE 5,5
+10075 CLS
+10080 SHELL "format a:"
+10140 CLS:LOCATE 20,5
+10150 PRINT "FORMAT complete"
+10160 RETURN
+65529 REM proper last line
