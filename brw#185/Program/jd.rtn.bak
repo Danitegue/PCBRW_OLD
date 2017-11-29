@@ -1,0 +1,49 @@
+10000 REM ****************** jg routine 04/02/14 **********************
+11000 ' 4 feb 2014 Julian, based on original js . jump scan for aod retrieval, to be used after ds
+11000 ' 4 oct 2014 Alberto, based on original js . Add slit 7 for DT calculation 
+11001 ' *** Setup ***
+11002 '
+11010 DATA jd
+11020 TR$="d"+"s":UC%=0
+11030 IF VAL(SQ$)<128 AND M2<2 THEN SQ$="128"
+11050 GOSUB 6610:IF MDD$="o3" THEN GOSUB 6630 ELSE GOSUB 6636   'Filter#1 to 1 or 4
+11060 M5$=SQ$:GOSUB 6650                    'Filter#2 to SQ$
+11070 GOSUB 6690:GOSUB 7750                 'Iris closed, AZ/ZE to sun
+11080 LOCATE ,SP:PRINT "4 - Point Brewer at sun"
+11090 GOSUB 9650          'Wait until ready, test intensity
+12000 '
+12001 ' *** Take Set of Observations ***
+12002 '
+12010 GOSUB 2450:CZ$="5":GOSUB 9700
+12020 GOSUB 8000:MS(0)=11:DS%=0
+12025 GOSUB 21000   ' move to 1st pos
+12030 GOSUB 7500:SQ$=M5$:CZ$="5":WU$="7":GOSUB 9700
+12040 DS%=DS%+1:GOSUB 20000
+12042 IF DS%=5 THEN GOSUB 21100:GOTO 12030
+12043 IF DS%=10 THEN GOSUB 21200:GOTO 12030
+12044 IF DS%=15 THEN GOSUB 21300:GOTO 12030
+12050 IF HF%=1 OR DS%=20 THEN 13000
+12060 GOTO 12040
+13000 '
+13001 ' *** Clean Up and Exit ***
+13002 '
+13010 GOSUB 3220
+13015 GOSUB 21400    ' back to ozonepos
+13020 RETURN
+20000 '
+20001 ' *** Direct Sun Observation ***
+20002 '
+20010 GOSUB 9670:GOSUB 9900                 'Get data when ready
+20020 IF F(6)>4000000 OR HF%=1 THEN DS%=20:RETURN    'Terminate measurement
+20030 IF XN=1 OR DS%<20 THEN GOSUB 9700              'Take a reading
+20040 IF XN=1 THEN 20010:REM restart obs
+20050 GOSUB 4400:GOSUB 8200                 'Store and display data
+20060 GOSUB 3200                        'Output buffer if needed
+20070 ND=ND+1:RETURN 
+21000 SQ=1:WV=3140:GOSUB 8500:GOSUB 30000:RETURN
+21100 SQ=1:WV=3285:GOSUB 8500:GOSUB 30000:RETURN
+21200 SQ=1:WV=3420:GOSUB 8500:GOSUB 30000:RETURN
+21300 SQ=1:WV=3515:GOSUB 8500:GOSUB 30000:RETURN
+21400 M1=ZERO+VAL(MC$):GOSUB 8530:GOSUB 30000:RETURN
+30000 M1=M1-ZERO:M2=M2-ZERO:O1$="M,10,"+STR$(M1):IF TYP$="mkiii" THEN O1$=O1$+SE$+"M,"+N9$+","+STR$(M2):GOSUB 9450:RETURN
+65529 REM *** dummy line ***

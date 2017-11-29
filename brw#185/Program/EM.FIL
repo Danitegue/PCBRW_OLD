@@ -1,0 +1,13 @@
+em,extended menu
+b0,lamps off
+b1,mercury lamp on
+b2,standard lamp on
+ddp,print program directory
+ff,printer form feed
+tr,turn tracker on
+tf,turn tracker off
+sleep,end operations
+end_day,print summaries (mo. day/yr)
+as,point tracker to the sun
+pz,point to zenith
+

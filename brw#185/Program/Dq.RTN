@@ -1,0 +1,65 @@
+10000 REM ****************** dq routine 21/01/12 **********************
+10010 REM        		MKII/MKIII/MKIV 
+10020 REM
+10030 REM                      (Martin Stanek)
+10040 REM
+10050 REM  NOTE: This is a test routine, for research purposes ONLY.
+10060 REM *************************************************************
+10070 REM
+10200 REM  Side Effects:
+10210 REM
+10220 REM  Global Variables Referenced:
+10230 REM
+10260 REM  Exits: 13160
+10270 REM
+10280 REM  Uses:
+10310 REM
+10500 REM **************************************************************
+10510 REM  History: dd/mm/yy
+10550 REM **************************************************************
+11000 '
+11001 ' *** Setup ***
+11002 '
+11010 DATA dq
+11020 REM: IF Q8%=0 OR DN%<>8 THEN RETURN
+11025 OPEN DD$+"dum.dta" FOR OUTPUT AS 8
+11030 TR$="d"+"s":UC%=0:PRINT#8,"dq"
+11040 IF VAL(SQ$)<128 AND M2<2 THEN SQ$="128"
+11050 GOSUB 6610:GOSUB 6630                'Filter#1 to 1
+11060 M5$=SQ$:GOSUB 6650                   'Filter#2 to SQ$
+11070 TR$="d"+"s":GOSUB 6690:GOSUB 7750    'Iris close, AZ/ZE to sun
+11075 GOSUB 9650:GOSUB 7500                'Wait until ready, test intensity
+11080 CX$="10":CZ$=CX$
+11085 FLT$=STR$(INT(VAL(M5$)/64+.5))
+11095 PRINT#8,"dt ";T1;CR$;"cy ";CX$;CR$;"te ";TE$;CR$;FLT$
+12000 PRINT CL$
+12010 PRINT "DQ measurement "
+12020 FOR I=1 TO 5
+12030 TI=TIMER*60:TM=TI:GOSUB 9450:TM=INT((TM+TI)/72)/100
+12050 O1$ = "R,1,1,10;O": GOSUB 9450: GOSUB 9190:FR(1)=VA 
+12060 O1$ = "R,2,2,10;O": GOSUB 9450: GOSUB 9190:FR(2)=VA 
+12070 O1$ = "R,3,3,10;O": GOSUB 9450: GOSUB 9190:FR(3)=VA 
+12080 O1$ = "R,4,4,10;O": GOSUB 9450: GOSUB 9190:FR(4)=VA 
+12090 O1$ = "R,5,5,10;O": GOSUB 9450: GOSUB 9190:FR(5)=VA 
+13000 O1$ = "R,6,6,10;O": GOSUB 9450: GOSUB 9190:FR(6)=VA
+13010 PRINT#8,USING "####.# ####.##";TM;ZA;
+13020 PRINT#8,USING " ########";FR(1),FR(2),FR(3),FR(4),FR(5),FR(6)
+13030 O1$ = "R,6,6,10;O": GOSUB 9450: GOSUB 9190:FR(6)=VA 
+13040 O1$ = "R,5,5,10;O": GOSUB 9450: GOSUB 9190:FR(5)=VA 
+13050 O1$ = "R,4,4,10;O": GOSUB 9450: GOSUB 9190:FR(4)=VA 
+13060 O1$ = "R,3,3,10;O": GOSUB 9450: GOSUB 9190:FR(3)=VA 
+13070 O1$ = "R,2,2,10;O": GOSUB 9450: GOSUB 9190:FR(2)=VA 
+13080 O1$ = "R,1,1,10;O": GOSUB 9450: GOSUB 9190:FR(1)=VA  
+13085 PRINT#8,USING "####.# ####.##";TM;ZA;
+13090 PRINT#8,USING " ########";FR(1),FR(2),FR(3),FR(4),FR(5),FR(6)
+13100 NEXT
+13110 GOSUB 16000
+13160 RETURN
+16000 '
+16001 ' *** Clean Up and Exit ***
+16002 '
+16010 PRINT#8,"end"
+16020 PRINT#8,:CLOSE 8
+16030 SHELL "COPY "+DD$+"DQ"+JD$+YF$+"."+NO$+"+"+DD$+"dum.dta "+DD$+"DQ"+JD$+YF$+"."+NO$
+16040 RETURN
+65529 REM *** dummy line ***

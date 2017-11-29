@@ -1,0 +1,30 @@
+10000 REM U3.RTN TO RESTART THE CONTROL SOFTWARE TO RELEASE MEMORY SPACE
+10001 REM Tapani Koskela Finnish Meteorological Institute December 1999
+10002 REM Modifications
+10003 REM 10.2.00 - TK - CCW turn of tracker if diode eventually blocked
+10004 REM 15.6.01 - TK - Flush printer buffer on line 10034
+10005 REM 24.8.05 - TK - remove writing FRE-file
+10010 DATA u3
+10020 B$="--U3 run  :": GOSUB 19000: REM --- GOSUB 20100   --- Tapani, no writing in FRE file
+10025 '
+10030 '---Ensure that the tracker opto-sensors are not blocked by a cw turn 
+10032 IF AZ%>(SR%*.8) THEN O1$="M,2,-"+STR$(INT(SR%*.2)):GOSUB 9450:PRINT#4,"Azimuth turned CCW in ";C$
+10034  PRINT#4,C$;"=> AZ% SR% MS% >O1$<:";AZ%,SR%,MS%,">";O1$;"<":  CLOSE 4: REM Print and flush the printer buffer
+10040 '
+10060 RUN : REM -- No RETURN needed for this routine
+10070 '---
+19000 B$ = B$+"***" + DATE$ + " " + TIME$ + " FRE(0) = " + STR$(FRE(0))
+20000 PRINT B$
+20010 PRINT#4,B$
+20015 RETURN
+20099 REM ---
+20100 REM *** ON ERROR GOTO 27000
+20110 OPEN DD$ + "FRE" + JD$ + YF$ + "." + NO$ FOR APPEND AS 8
+20120 PRINT #8, B$
+20130 CLOSE 8
+20200 RETURN
+27000 REM --- FILE ERROR HANDLER ---
+27010 REM *** PRINT #4, "***Failure in writing "; DD$ + "FRE" + B$
+27020 REM *** ON ERROR GOTO 0: RESUME 20100
+65529 REM dummy
+

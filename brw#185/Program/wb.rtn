@@ -1,0 +1,31 @@
+10000 REM ************ wb.rtn 09/03/2015 15:00:00 ************ 
+55555 REM Please keep line 10000 updated when changes are made. Volodya Savastiouk
+55555 REM        MKII/MKIII/MKIV Wait for button press
+55555 REM
+55555 REM					Volodya Savastiouk 2015
+55555 REM
+55555 REM *************************************************************
+55555 REM
+55555 REM  This routine waits for UP sighting button to be pressed or ENTER at keyboard
+55555 REM
+55555 REM *************************************************************
+55555 REM  History: dd/mm/yy
+55555 REM  09/02/15 - original release
+55555 REM *************************************************************
+11000 '
+11001 ' *** Setup ***
+11002 '
+11010 DATA wb
+11020 PRINT CL$: LOCATE 8,SP: PRINT "Press UP sighting button or DEL key to continue; HOME for menu"
+11050 O1$="M,3,"+STR$(INT(IRIS/2)):GOSUB 9450
+20043 TA%=0: GOSUB 20500: GOSUB 2090
+20045    IF (Q14%=0 AND (VA AND 64)=64) OR (Q14%=1 AND (VA AND 4)=4) OR TA%=1 OR HF%<>0 THEN 21000 ELSE GOTO 20043
+21000 O1$="M,3,0":GOSUB 9450: RETURN
+20500 '
+20501 ' *** Read Push Buttons ***
+20502 '
+20505 IF IS%=42 THEN GOSUB 9550:GOTO 20505
+20515 O1$=":G,800":IF Q14%=1 THEN O1$="?TRACKER.SWITCHES"
+20540 GOSUB 9400:IF HF%=1 AND A$="" THEN A$=INKEY$
+20550 RETURN
+65529 REM proper last line

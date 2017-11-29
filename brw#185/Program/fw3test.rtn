@@ -1,0 +1,39 @@
+10000 REM ************ cal.rtn 22/04/2012 09:50:00 ************ 
+55555 REM Please keep line 10000 updated when changes are made. Volodya Savastiouk
+55555 REM         MKII/MKIII/MKIV Set Up and Repeat Auto Sequence mostly for DS calibrations
+55555 REM     !! NOTE: this routine will do (hp)hg only if the temperature changes between attempts !! 
+10020 REM
+10030 REM *************************************************************
+10500 DATA cl
+10510 IF Q1%+Q3%+Q4%+Q5%<>4 THEN RETURN:REM return if not automatic
+10520 IF ED%=2 THEN ED%=3
+11000 '
+11001 ' *** Set up command sequence ***
+11002 '
+11010 UC%=0:JJ=0:QC=0:REM reset command counter to zero
+11030 FW3 = 0
+11100 QC=QC+1:G$(QC)="p"+"d"
+11101 QC=QC+1:G$(QC)="t"+"d"
+11102 QC=QC+1:G$(QC)="o"+"3" 
+11103 QC=QC+1:G$(QC)="f"+"w" 
+11104 IF TYP$="mkiii" AND QT%=1 THEN QC=QC+1:G$(QC)="h"+"p"
+11110 QC=QC+1:G$(QC)="h"+"g" 
+11121 QC=QC+1:G$(QC)="f"+"c"
+11122 QC=QC+1:G$(QC)="f"+"c"
+11123 QC=QC+1:G$(QC)="f"+"c"
+11124 QC=QC+1:G$(QC)="f"+"c"
+11125 QC=QC+1:G$(QC)="f"+"c"
+11126 QC=QC+1:G$(QC)="f"+"c"
+11127 QC=QC+1:G$(QC)="f"+"c"
+11128 QC=QC+1:G$(QC)="f"+"c"
+11129 QC=QC+1:G$(QC)="f"+"c"
+11130 QC=QC+1:G$(QC)="f"+"c"
+11131 QC=QC+1:G$(QC)="f"+"c"
+11132 QC=QC+1:G$(QC)="f"+"c"
+11140 QC=QC+1:G$(QC)="f"+"w"
+11240 QR=1:IF G$(0)="" THEN G$(0)=C$:SK$=C$
+11400 IF G$(0)="cl" THEN ZF=85:REM set to stop at zenith angle=85
+11410 IF ZA>85 AND G$(0)="cl" THEN G$(1)="e"+"d":SK$="":REM end day to follow
+11420 IF RM%=1 THEN RETURN:REM if called from command sequence
+11430 GOTO 3400
+65529 REM proper last line

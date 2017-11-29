@@ -1,0 +1,16 @@
+sm,summary printout menu
+sum,make daily summary file
+ed,initiate end of day sequence
+ed-pd,end of day (print to disk)
+ub,DUV summary
+dssum,direct sun summary
+fmsum,focused moon summary
+fzsum,fz ozone summary
+hgsum,mercury lamp summary
+ozsum,ozone data summary
+nosum,NO2 data summary
+slsum,standard lamp summary
+tcsum,update summary w/new TC
+uvsum,O3 UVB summary
+zssum,zenith sky summary
+
