@@ -1,0 +1,3 @@
+[submodule "pcbasic_brewer"]
+	path = pcbasic_brewer
+	url = https://github.com/Danitegue/pcbasic_brewer
