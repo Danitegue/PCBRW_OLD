@@ -6,7 +6,7 @@ Based in the Rob Hagemans PCBasic project: https://github.com/robhagemans/pcbasi
 
 ## Contents
 * **brw#185:** 
-Folder of the Brewer program, with all the necessary files to make it run. This includes the main BASIC program "main.asc", routines, schedules, calibration files, etc. The program can be used in both, online and offline mode, having or not a real brewer connected to the serial port. The program needs two enviroment variables set to be able to run NOBREW, and BREWDIR, both are set in the launchers.
+Folder of the Brewer program, with all the necessary files to make it run. This includes the main BASIC program "main.asc", routines, schedules, calibration files, etc. The program can be used in both, online and offline mode, having or not a real brewer connected to the serial port. The program needs two enviroment variables set for being able to run: NOBREW, and BREWDIR. (both are set in the launchers.)
 
 * **pcbasic_brewer:** 
 PC-BASIC interpreter of robhagermans, specifically customized to handle serial communications with Brewers, and to ignore the extra arguments added by pycharm when debugging.
