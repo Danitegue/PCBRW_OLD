@@ -28,7 +28,8 @@ This folder is an already configured pycharm project, with all the launchers nee
 
 ## Run the PCBASIC interpreter into an ansi console:
 * run the launcher C:\PCBasic_Brewer_Repo\pcbasic_brewer\Launcher_pcbasic.bat, a console window will open showing the pcbasic enviroment:
-![pcbasic_test_image](images/PCBASIC_test_preview.png)
+
+![pcbasic_test](images/PCBASIC_test_preview.png)
 
 
 ## Configurations needed for running the Brewer Software with PCBASIC:
@@ -43,7 +44,8 @@ C:\Users\[username]\AppData\Roaming\pcbasic-dev\PCBASIC.INI, with the following 
 ## Run the Brewer software, offline mode, into an ansi console:
 * run the launcher C:\PCBasic_Brewer_Repo\pcbasic_brewer\Launcher_brewer185_nobrew.bat, 
 a console window will open showing the main.asc brewer program:
-![pcbasic_test_image](PCBasic_Brewer_Repo/images/Test_mainasc_ansi_nobrew.PNG)
+
+![Test_mainasc_ansi_nobrew](images/Test_mainasc_ansi_nobrew.PNG)
 
 
 ## Prepare pycharm:
@@ -51,12 +53,14 @@ For being able to run pcbasic programs from pycharm with line per line debbuging
 * Open pycharm
 * Go to File > Open > Select the repo folder C:\PCBasic_Brewer_Repo, and it automatically will detect the existing project into the .idea folder. Open the project.
 * Prepare the debugging configurations: go to Run > Edit Configurations... here is needed to adapt the paths of the script, installed python interpreter, and working directory for each configuration, with the correct paths in your PC.
-![pcbasic_test_image](images/Pycharm2.PNG)
+
+![Pycharm2](images/Pycharm2.PNG)
 
 
 ## Test the Brewer software, offline mode, using pycharm, into a pygame console:
 * In the configuration selector of pycharm, select brewer185_pygame_nobrew, then run or debug the configuration as prefered.
-![pcbasic_test_image](PCBasic_Brewer_Repo/images/Pycharm3.PNG)
+
+![Pycharm3](images/Pycharm3.PNG)
 
 
 ## Test to run some routines into the brewer program:
