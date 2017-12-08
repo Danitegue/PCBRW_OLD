@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3ba28e3-c00b-4544-aeed-3aa4f3b61564" name="Default" comment="" />
+    <list default="true" id="d3ba28e3-c00b-4544-aeed-3aa4f3b61564" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pcbasic_brewer" afterPath="$PROJECT_DIR$/pcbasic_brewer" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/GWBasic_Interpreter.iml" afterPath="$PROJECT_DIR$/.idea/GWBasic_Interpreter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/brewer185_pygame_serialbrewer_combridge.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/brewer185_pygame_serialbrewer_combridge.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/brw#185/bdata185/D31217.185" afterPath="$PROJECT_DIR$/brw#185/bdata185/D31217.185" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,15 +19,24 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.1">
+    <splitter split-orientation="horizontal" split-proportion="0.20038785">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="default.ini" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/data/default.ini">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1281">
+                  <caret line="61" column="10" lean-forward="false" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="ports.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/ports.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="5474">
+                <state relative-caret-position="6762">
                   <caret line="331" column="109" lean-forward="false" selection-start-line="331" selection-start-column="12" selection-end-line="331" selection-end-column="109" />
                   <folding>
                     <element signature="e#310#324#0" expanded="true" />
@@ -32,7 +48,7 @@
           <file leaf-file-name="SerialBrewerWin32.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/SerialBrewerWin32.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="527">
+                <state relative-caret-position="651">
                   <caret line="49" column="28" lean-forward="false" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
                   <folding />
                 </state>
@@ -42,43 +58,9 @@
           <file leaf-file-name="backend.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/backend.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="4862">
+                <state relative-caret-position="6006">
                   <caret line="294" column="21" lean-forward="false" selection-start-line="294" selection-start-column="21" selection-end-line="294" selection-end-column="21" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="statements.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/statements.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="41871">
-                  <caret line="2465" column="26" lean-forward="false" selection-start-line="2465" selection-start-column="26" selection-end-line="2465" selection-end-column="26" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/run.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="714">
-                  <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#135#147#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="expressions.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/expressions.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3961">
-                  <caret line="252" column="9" lean-forward="false" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="9" />
-                  <folding>
-                    <element signature="e#233#262#0" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -86,38 +68,18 @@
           <file leaf-file-name="var.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/var.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state relative-caret-position="105">
+                  <caret line="5" column="50" lean-forward="false" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="__main__.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/__main__.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="config.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/config.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2635">
+                <state relative-caret-position="494">
                   <caret line="162" column="33" lean-forward="false" selection-start-line="162" selection-start-column="33" selection-end-line="162" selection-end-column="33" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="devices.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/devices.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="190">
-                  <caret line="295" column="19" lean-forward="false" selection-start-line="295" selection-start-column="19" selection-end-line="295" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
@@ -126,22 +88,102 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="default.ini" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/data/default.ini">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+          <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1037">
-                  <caret line="61" column="10" lean-forward="false" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
+                <state relative-caret-position="1659">
+                  <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ansipipe.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/ansipipe.py">
+          <file leaf-file-name="memory.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/memory.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="293">
-                  <caret line="84" column="16" lean-forward="false" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+                <state relative-caret-position="3192">
+                  <caret line="160" column="0" lean-forward="false" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="session.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/session.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="13209">
+                  <caret line="659" column="0" lean-forward="false" selection-start-line="659" selection-start-column="0" selection-end-line="659" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="statements.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/parser/statements.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="447">
+                  <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="formatter.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/formatter.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="483">
+                  <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="files.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/files.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="9177">
+                  <caret line="451" column="0" lean-forward="false" selection-start-line="451" selection-start-column="0" selection-end-line="451" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="interpreter.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/interpreter.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1869">
+                  <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="expressions.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/parser/expressions.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="6174">
+                  <caret line="306" column="0" lean-forward="false" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="strings.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/values/strings.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3381">
+                  <caret line="166" column="17" lean-forward="false" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="contextlib.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/Anaconda2/Lib/contextlib.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="441">
+                  <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -160,8 +202,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>KeyH</find>
-      <find>key</find>
       <find>Merge</find>
       <find>merge</find>
       <find>locate</find>
@@ -189,6 +229,8 @@
       <find>= 255</find>
       <find>= 256</find>
       <find>=256</find>
+      <find>pan2</find>
+      <find>scaling</find>
       <find>E$</find>
     </findStrings>
     <replaceStrings>
@@ -209,11 +251,15 @@
       <replace>keyword</replace>
       <replace>n_counter</replace>
       <replace>answ_key</replace>
+      <replace />
     </replaceStrings>
     <dirStrings>
       <dir>C:\GWBasic_Interpreter\pcbasic_brewer</dir>
       <dir>C:\GWBasic_Interpreter\pcbasic_nestor\pcbasic</dir>
     </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -240,7 +286,6 @@
         <option value="$PROJECT_DIR$/pcbasic_nestor/pcbasic/__main__.py" />
         <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/main.py" />
         <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/files.py" />
-        <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/config.py" />
         <option value="$PROJECT_DIR$/pcbasic_nestor/pcbasic/SerialBrewerWin32.py" />
         <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/brewlib/serial/serialwin32_brewer.py" />
         <option value="$PROJECT_DIR$/pcbasic_nestor/pcbasic/ports.py" />
@@ -250,14 +295,15 @@
         <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/parser/statements.py" />
         <option value="$PROJECT_DIR$/BrewerSimulator.py" />
         <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/values/values.py" />
-        <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/parser/expressions.py" />
         <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/scalars.py" />
-        <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/memory.py" />
         <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/values/strings.py" />
+        <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/config.py" />
+        <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/memory.py" />
+        <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/parser/expressions.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -280,94 +326,57 @@
     <panes>
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GWBasic_Interpreter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GWBasic_Interpreter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GWBasic_Interpreter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GWBasic_Interpreter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pcbasic_nestor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GWBasic_Interpreter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GWBasic_Interpreter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pcbasic_nestor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pcbasic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GWBasic_Interpreter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GWBasic_Interpreter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pcbasic_brewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="PCBasic_Brewer_Repo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PCBasic_Brewer_Repo" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/brewlib/serialbrewer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\GWBasic_Interpreter\pcbasic_brewer\pcbasic\brewlib\serialbrewer" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.brewer185_pygame_serialbrewer_combridge">
-    <configuration default="false" name="BrewerSimulator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.brewer185_pygame_nobrew">
+    <configuration name="BrewerSimulator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\DS_Pandora\Anaconda2\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="GWBasic_Interpreter" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BrewerSimulator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
+      <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -503,227 +512,188 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="pcbasic.py" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="brewer185_nestor_ansi_serialbrewer" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="NOBREW" value="" />
+        <env name="BREWDIR" value="C:\" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\DS_Pandora\Anaconda2\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="GWBasic_Interpreter" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_nestor/pcbasic.py" />
+      <option name="PARAMETERS" value="&quot;--run=C:\PCBasic_Brewer_Repo\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\PCBasic_Brewer_Repo\brw#185\Program,D:C:\PCBasic_Brewer_Repo\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=ansi&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--com1=PORT:COM8&quot; &quot;--use-serial-brewer=True&quot; &quot;--logfile=C:\Temp\pcbasic_nestor_log.txt&quot;" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="brewer185_nestor_pygame" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="NOBREW" value="" />
+        <env name="BREWDIR" value="C:\" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\DS_Pandora\Anaconda2\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="GWBasic_Interpreter" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_nestor/pcbasic.py" />
+      <option name="PARAMETERS" value="&quot;--run=C:\GWBasic_Interpreter\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\GWBasic_Interpreter\brw#185\Program,D:C:\GWBasic_Interpreter\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=pygame&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--logfile=C:\Temp\pcbasic_nestor_log.txt&quot;" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="brewer185_nestor_pygame_nobrew" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="NOBREW" value="1" />
+        <env name="BREWDIR" value="C:\" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\DS_Pandora\Anaconda2\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="GWBasic_Interpreter" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_nestor/pcbasic.py" />
+      <option name="PARAMETERS" value="&quot;--run=C:\GWBasic_Interpreter\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\GWBasic_Interpreter\brw#185\Program,D:C:\GWBasic_Interpreter\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=ansi&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--logfile=C:\Temp\pcbasic_nestor_log.txt&quot;" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="brewer185_nestor_pygame_serialbrewer" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="NOBREW" value="" />
+        <env name="BREWDIR" value="C:\" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\DS_Pandora\Anaconda2\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="GWBasic_Interpreter" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_nestor/pcbasic.py" />
+      <option name="PARAMETERS" value="&quot;--run=C:\PCBasic_Brewer_Repo\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\PCBasic_Brewer_Repo\brw#185\Program,D:C:\PCBasic_Brewer_Repo\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=pygame&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--com1=PORT:COM8&quot; &quot;--use-serial-brewer=True&quot; &quot;--verbose-brewer=True&quot; &quot;--logfile=C:\Temp\pcbasic_nestor_log.txt&quot;" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="brewer185_nestor_pygame_serialbrewer_combridge" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="NOBREW" value="" />
+        <env name="BREWDIR" value="C:\" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\DS_Pandora\Anaconda2\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="GWBasic_Interpreter" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_nestor/pcbasic.py" />
+      <option name="PARAMETERS" value="&quot;--run=C:\PCBasic_Brewer_Repo\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\PCBasic_Brewer_Repo\brw#185\Program,D:C:\PCBasic_Brewer_Repo\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=pygame&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--com1=PORT:COM14&quot; &quot;--use-serial-brewer=True&quot; &quot;--verbose-brewer=True&quot; &quot;--logfile=C:\Temp\pcbasic_nestor_log.txt&quot;" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="brewer185_pygame_nobrew" type="PythonConfigurationType" factoryName="Python" show_console_on_std_out="true" show_console_on_std_err="true">
+      <log_file path="C:/Temp/pcbasic_brewer_log.txt" checked="false" skipped="false" show_all="false" alias="pcbasic_brewer_log" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="NOBREW" value="1" />
+        <env name="BREWDIR" value="C:\" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\DS_Pandora\Anaconda2\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="GWBasic_Interpreter" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_brewer/pcbasic.py" />
+      <option name="PARAMETERS" value="&quot;--run=C:\PCBasic_Brewer_Repo\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\PCBasic_Brewer_Repo\brw#185\Program,D:C:\PCBasic_Brewer_Repo\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=pygame&quot; &quot;-f=10&quot; &quot;-s=128&quot; &quot;--double=True&quot; &quot;--logfile=C:\Temp\pcbasic_brewer_log.txt&quot;" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="brewer185_pygame_serial" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="NOBREW" value="" />
+        <env name="BREWDIR" value="C:\" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\DS_Pandora\Anaconda2\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="GWBasic_Interpreter" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_brewer/pcbasic.py" />
+      <option name="PARAMETERS" value="&quot;--mount=C:C:\PCBasic_Brewer_Repo\brw#185\Program,D:C:\PCBasic_Brewer_Repo\brw#185\bdata185&quot; &quot;--run=C:\PCBasic_Brewer_Repo\brw#185\Program\main.asc&quot; &quot;--interface=pygame&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--com1=PORT:COM8&quot; &quot;--serial-buffer-size=size=4096&quot; &quot;--quit=False&quot; &quot;--logfile=C:\Temp\pcbasic_brewer_log.txt&quot;" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="brewer185_pygame_serialbrewer" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="NOBREW" value="" />
+        <env name="BREWDIR" value="C:\" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="GWBasic_Interpreter" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_brewer/pcbasic.py" />
+      <option name="PARAMETERS" value="&quot;--run=C:\GWBasic_Interpreter\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\GWBasic_Interpreter\brw#185\Program,D:C:\GWBasic_Interpreter\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=pygame&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--com1=PORT:COM8&quot; &quot;--serial-buffer-size=255&quot; &quot;--use-serial-brewer=True&quot; &quot;--use-serial-brewer-verbose=True&quot; &quot;--logfile=C:\Temp\pcbasic_brewer_log.txt&quot;" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="pcbasic_pygame" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\pandora\Anaconda2\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\DS_Pandora\Anaconda2\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pcbasic_brewer" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="GWBasic_Interpreter" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_brewer/pcbasic.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="PARAMETERS" value="&quot;--interface=pygame&quot;" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
+      <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration default="false" name="brewer193_nobrew" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="NOBREW" value="1" />
-        <env name="BREWDIR" value="C:\" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#193/Program/" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="GWBasic_Interpreter" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_brewer/pcbasic.py" />
-      <option name="PARAMETERS" value="--mount=C:C:\GWBasic_Interpreter\brw#193\Program,D:C:\GWBasic_Interpreter\brw#193\bdata193 --quit=False  --t “-f=10 --max-memory=67108864”" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="brewer185" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="NOBREW" value="" />
-        <env name="BREWDIR" value="C:\" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\pandora\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="GWBasic_Interpreter" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_brewer/pcbasic.py" />
-      <option name="PARAMETERS" value="C:\GWBasic_Interpreter\brw#185\Program\main.asc --mount=C:C:\GWBasic_Interpreter\brw#185\Program,D:C:\GWBasic_Interpreter\brw#185\bdata185 --quit=False --interface=ansi -f=10 -s=256 --double=True --com1=PORT:COM8 --max-memory=67108864 --logfile=C:\O.txt" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="brewer185_pygame" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="NOBREW" value="" />
-        <env name="BREWDIR" value="C:\" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\pandora\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="GWBasic_Interpreter" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_brewer/pcbasic.py" />
-      <option name="PARAMETERS" value="&quot;--run=C:\GWBasic_Interpreter\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\GWBasic_Interpreter\brw#185\Program,D:C:\GWBasic_Interpreter\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=pygame&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--com1=PORT:COM8&quot; &quot;--serial-buffer-size=size=4096&quot; &quot;--logfile=C:\O.txt&quot;" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="brewer185_pygame_serialbrewer" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="NOBREW" value="" />
-        <env name="BREWDIR" value="C:\" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\pandora\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="GWBasic_Interpreter" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_brewer/pcbasic.py" />
-      <option name="PARAMETERS" value="&quot;--run=C:\GWBasic_Interpreter\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\GWBasic_Interpreter\brw#185\Program,D:C:\GWBasic_Interpreter\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=pygame&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--com1=PORT:COM8&quot; &quot;--serial-buffer-size=255&quot; &quot;--use-serial-brewer=True&quot; &quot;--use-serial-brewer-verbose=True&quot; &quot;--logfile=C:\O.txt&quot;" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="brewer185_pygame_nobrew" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="NOBREW" value="1" />
-        <env name="BREWDIR" value="C:\" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\pandora\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="GWBasic_Interpreter" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_brewer/pcbasic.py" />
-      <option name="PARAMETERS" value="&quot;--run=C:\GWBasic_Interpreter\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\GWBasic_Interpreter\brw#185\Program,D:C:\GWBasic_Interpreter\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=pygame&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--logfile=C:\O.txt&quot;" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="brewer185_nestor_ansi_serialbrewer" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="NOBREW" value="" />
-        <env name="BREWDIR" value="C:\" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\pandora\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="GWBasic_Interpreter" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_nestor/pcbasic.py" />
-      <option name="PARAMETERS" value="&quot;--run=C:\GWBasic_Interpreter\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\GWBasic_Interpreter\brw#185\Program,D:C:\GWBasic_Interpreter\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=ansi&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--com1=PORT:COM8&quot; &quot;--use-serial-brewer=True&quot; &quot;--logfile=C:\O.txt&quot;" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="brewer185_nestor_pygame_serialbrewer" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="NOBREW" value="" />
-        <env name="BREWDIR" value="C:\" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\pandora\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="GWBasic_Interpreter" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_nestor/pcbasic.py" />
-      <option name="PARAMETERS" value="&quot;--run=C:\GWBasic_Interpreter\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\GWBasic_Interpreter\brw#185\Program,D:C:\GWBasic_Interpreter\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=pygame&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--com1=PORT:COM8&quot; &quot;--use-serial-brewer=True&quot; &quot;--verbose-brewer=True&quot; &quot;--logfile=C:\O.txt&quot;" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="brewer185_nestor_pygame_serialbrewer_combridge" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="NOBREW" value="" />
-        <env name="BREWDIR" value="C:\" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\pandora\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="GWBasic_Interpreter" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_nestor/pcbasic.py" />
-      <option name="PARAMETERS" value="&quot;--run=C:\GWBasic_Interpreter\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\GWBasic_Interpreter\brw#185\Program,D:C:\GWBasic_Interpreter\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=pygame&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--com1=PORT:COM14&quot; &quot;--use-serial-brewer=True&quot; &quot;--verbose-brewer=True&quot; &quot;--logfile=C:\O.txt&quot;" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="brewer185_nestor_pygame" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="NOBREW" value="" />
-        <env name="BREWDIR" value="C:\" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\pandora\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="GWBasic_Interpreter" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_nestor/pcbasic.py" />
-      <option name="PARAMETERS" value="&quot;--run=C:\GWBasic_Interpreter\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\GWBasic_Interpreter\brw#185\Program,D:C:\GWBasic_Interpreter\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=pygame&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--logfile=C:\O.txt&quot;" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="brewer185_nestor_pygame_nobrew" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="NOBREW" value="1" />
-        <env name="BREWDIR" value="C:\" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\pandora\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="GWBasic_Interpreter" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_nestor/pcbasic.py" />
-      <option name="PARAMETERS" value="&quot;--run=C:\GWBasic_Interpreter\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\GWBasic_Interpreter\brw#185\Program,D:C:\GWBasic_Interpreter\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=ansi&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--logfile=C:\O.txt&quot;" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <list size="13">
-      <item index="0" class="java.lang.String" itemvalue="Python.pcbasic.py" />
-      <item index="1" class="java.lang.String" itemvalue="Python.brewer193_nobrew" />
-      <item index="2" class="java.lang.String" itemvalue="Python.brewer185" />
-      <item index="3" class="java.lang.String" itemvalue="Python.brewer185_pygame" />
-      <item index="4" class="java.lang.String" itemvalue="Python.brewer185_pygame_serialbrewer" />
-      <item index="5" class="java.lang.String" itemvalue="Python.brewer185_pygame_serialbrewer_combridge" />
-      <item index="6" class="java.lang.String" itemvalue="Python.brewer185_pygame_nobrew" />
-      <item index="7" class="java.lang.String" itemvalue="Python.brewer185_nestor_ansi_serialbrewer" />
-      <item index="8" class="java.lang.String" itemvalue="Python.brewer185_nestor_pygame_serialbrewer" />
-      <item index="9" class="java.lang.String" itemvalue="Python.brewer185_nestor_pygame_serialbrewer_combridge" />
-      <item index="10" class="java.lang.String" itemvalue="Python.brewer185_nestor_pygame" />
-      <item index="11" class="java.lang.String" itemvalue="Python.brewer185_nestor_pygame_nobrew" />
-      <item index="12" class="java.lang.String" itemvalue="Python.BrewerSimulator" />
+    <list size="11">
+      <item index="0" class="java.lang.String" itemvalue="Python.pcbasic_pygame" />
+      <item index="1" class="java.lang.String" itemvalue="Python.brewer185_pygame_nobrew" />
+      <item index="2" class="java.lang.String" itemvalue="Python.brewer185_pygame_serialbrewer" />
+      <item index="3" class="java.lang.String" itemvalue="Python.brewer185_pygame_serialbrewer_combridge" />
+      <item index="4" class="java.lang.String" itemvalue="Python.brewer185_pygame_serial" />
+      <item index="5" class="java.lang.String" itemvalue="Python.brewer185_nestor_ansi_serialbrewer" />
+      <item index="6" class="java.lang.String" itemvalue="Python.brewer185_nestor_pygame_serialbrewer" />
+      <item index="7" class="java.lang.String" itemvalue="Python.brewer185_nestor_pygame_serialbrewer_combridge" />
+      <item index="8" class="java.lang.String" itemvalue="Python.brewer185_nestor_pygame" />
+      <item index="9" class="java.lang.String" itemvalue="Python.brewer185_nestor_pygame_nobrew" />
+      <item index="10" class="java.lang.String" itemvalue="Python.BrewerSimulator" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -754,26 +724,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1060" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12276786" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987553" sideWeight="0.49789253" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41993463" sideWeight="0.4330357" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24585062" sideWeight="0.46680716" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1734694" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.49570355" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21205357" sideWeight="0.43984962" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40848213" sideWeight="0.56122446" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24553572" sideWeight="0.462406" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4940476" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.49194413" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27566963" sideWeight="0.5601504" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5539216" sideWeight="0.57738096" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34751037" sideWeight="0.38303477" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41993463" sideWeight="0.56696427" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -879,14 +850,29 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/memory.py</url>
-          <line>207</line>
+          <line>210</line>
           <option name="timeStamp" value="375" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/memory.py</url>
+          <line>160</line>
+          <option name="timeStamp" value="380" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/memory.py</url>
+          <line>134</line>
+          <option name="timeStamp" value="382" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/parser/expressions.py</url>
+          <line>306</line>
+          <option name="timeStamp" value="383" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="376" />
+      <option name="time" value="384" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -902,58 +888,10 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/shell.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/dos.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2023">
-          <caret line="125" column="39" lean-forward="false" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="e#135#147#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/SerialBrewerWin32_orig.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/__main__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2635">
-          <caret line="162" column="33" lean-forward="false" selection-start-line="162" selection-start-column="33" selection-end-line="162" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="337" column="0" lean-forward="true" selection-start-line="337" selection-start-column="0" selection-end-line="337" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -971,13 +909,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/serial/serialutil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="405" column="20" lean-forward="true" selection-start-line="405" selection-start-column="20" selection-end-line="405" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/serial/serialutil.py" />
     <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/__main__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -989,22 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="605" column="171" lean-forward="true" selection-start-line="605" selection-start-column="171" selection-end-line="605" selection-end-column="171" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/SerialBrewerWin32.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="49" column="28" lean-forward="false" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/backend.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4862">
-          <caret line="294" column="21" lean-forward="false" selection-start-line="294" selection-start-column="21" selection-end-line="294" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1058,24 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/ports.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5474">
-          <caret line="331" column="109" lean-forward="false" selection-start-line="331" selection-start-column="12" selection-end-line="331" selection-end-column="109" />
-          <folding>
-            <element signature="e#310#324#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/statements.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41871">
-          <caret line="2465" column="26" lean-forward="false" selection-start-line="2465" selection-start-column="26" selection-end-line="2465" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BrewerSimulator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1098,13 +996,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2016.3/system/python_stubs/918072383/_io.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12665">
-          <caret line="748" column="8" lean-forward="false" selection-start-line="748" selection-start-column="8" selection-end-line="748" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2016.3/system/python_stubs/918072383/_io.py" />
     <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/display.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -1119,28 +1011,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/files.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="451" column="0" lean-forward="false" selection-start-line="451" selection-start-column="0" selection-end-line="451" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/arrays.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/expressions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3961">
-          <caret line="252" column="9" lean-forward="false" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="9" />
-          <folding>
-            <element signature="e#233#262#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1151,44 +1025,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/contextlib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/parser/statements.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/interpreter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/parser/expressions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2295">
-          <caret line="147" column="29" lean-forward="false" selection-start-line="147" selection-start-column="29" selection-end-line="147" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/scalars.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -1196,41 +1032,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/data/default.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="10" lean-forward="false" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/cassette.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="65" column="19" lean-forward="false" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/var.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/devices.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="295" column="19" lean-forward="false" selection-start-line="295" selection-start-column="19" selection-end-line="295" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/formatter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="61" column="90" lean-forward="false" selection-start-line="61" selection-start-column="90" selection-end-line="61" selection-end-column="90" />
         </state>
       </provider>
     </entry>
@@ -1257,32 +1062,195 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/memory.py">
+    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/ansipipe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3434">
-          <caret line="210" column="0" lean-forward="true" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
+        <state relative-caret-position="1722">
+          <caret line="84" column="16" lean-forward="false" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Blick1.3.4/src/blick_psio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2769">
+          <caret line="938" column="12" lean-forward="false" selection-start-line="938" selection-start-column="8" selection-end-line="938" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/devices.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="295" column="19" lean-forward="false" selection-start-line="295" selection-start-column="19" selection-end-line="295" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/data/default.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1281">
+          <caret line="61" column="10" lean-forward="false" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/SerialBrewerWin32.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="49" column="28" lean-forward="false" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/ports.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6762">
+          <caret line="331" column="109" lean-forward="false" selection-start-line="331" selection-start-column="12" selection-end-line="331" selection-end-column="109" />
+          <folding>
+            <element signature="e#310#324#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="708">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/expressions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="708">
+          <caret line="252" column="9" lean-forward="false" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/statements.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="708">
+          <caret line="2465" column="26" lean-forward="false" selection-start-line="2465" selection-start-column="26" selection-end-line="2465" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/backend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6006">
+          <caret line="294" column="21" lean-forward="false" selection-start-line="294" selection-start-column="21" selection-end-line="294" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/__main__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/var.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="50" lean-forward="false" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="162" column="33" lean-forward="false" selection-start-line="162" selection-start-column="33" selection-end-line="162" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/brewlib/serial/tools/list_ports_osx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="121" column="50" lean-forward="false" selection-start-line="121" selection-start-column="50" selection-end-line="121" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1464">
+          <caret line="317" column="170" lean-forward="false" selection-start-line="317" selection-start-column="170" selection-end-line="317" selection-end-column="170" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1659">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/values/strings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="176" column="0" lean-forward="true" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+        <state relative-caret-position="3381">
+          <caret line="166" column="17" lean-forward="false" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/formatter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/files.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9177">
+          <caret line="451" column="0" lean-forward="false" selection-start-line="451" selection-start-column="0" selection-end-line="451" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/contextlib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/memory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3192">
+          <caret line="160" column="0" lean-forward="false" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/session.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="263" column="11" lean-forward="false" selection-start-line="263" selection-start-column="11" selection-end-line="263" selection-end-column="11" />
+        <state relative-caret-position="13209">
+          <caret line="659" column="0" lean-forward="false" selection-start-line="659" selection-start-column="0" selection-end-line="659" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_nestor/pcbasic/ansipipe.py">
+    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/interpreter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="84" column="16" lean-forward="false" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+        <state relative-caret-position="1869">
+          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/parser/expressions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6174">
+          <caret line="306" column="0" lean-forward="false" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/parser/statements.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
           <folding />
         </state>
       </provider>
