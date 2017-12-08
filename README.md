@@ -28,7 +28,7 @@ This folder is an already configured pycharm project, with all the launchers nee
 
 ## Run the PCBASIC interpreter into an ansi console:
 * run the launcher C:\PCBasic_Brewer_Repo\pcbasic_brewer\Launcher_pcbasic.bat, a console window will open showing the pcbasic enviroment:
-![pcbasic_test_image](https://www.dropbox.com/s/excytyvxuscajlt/PCBASIC_test.PNG?dl=0)
+![pcbasic_test_image](images/PCBASIC_test_preview.png)
 
 
 ## Configurations needed for running the Brewer Software with PCBASIC:
@@ -43,7 +43,7 @@ C:\Users\[username]\AppData\Roaming\pcbasic-dev\PCBASIC.INI, with the following 
 ## Run the Brewer software, offline mode, into an ansi console:
 * run the launcher C:\PCBasic_Brewer_Repo\pcbasic_brewer\Launcher_brewer185_nobrew.bat, 
 a console window will open showing the main.asc brewer program:
-![pcbasic_test_image](https://www.dropbox.com/s/zgpu4teoumq0vni/Test_mainasc_ansi_nobrew.PNG?dl=0)
+![pcbasic_test_image](PCBasic_Brewer_Repo/images/Test_mainasc_ansi_nobrew.PNG)
 
 
 ## Prepare pycharm:
@@ -51,19 +51,19 @@ For being able to run pcbasic programs from pycharm with line per line debbuging
 * Open pycharm
 * Go to File > Open > Select the repo folder C:\PCBasic_Brewer_Repo, and it automatically will detect the existing project into the .idea folder. Open the project.
 * Prepare the debugging configurations: go to Run > Edit Configurations... here is needed to adapt the paths of the script, installed python interpreter, and working directory for each configuration, with the correct paths in your PC.
-![pcbasic_test_image](https://www.dropbox.com/s/8deo02hejv6040k/Pycharm2.PNG?dl=0)
+![pcbasic_test_image](images/Pycharm2.PNG)
 
 
 ## Test the Brewer software, offline mode, using pycharm, into a pygame console:
 * In the configuration selector of pycharm, select brewer185_pygame_nobrew, then run or debug the configuration as prefered.
-![pcbasic_test_image](https://www.dropbox.com/s/ywqtw8s87srrkq2/Pycharm3.PNG?dl=0)
+![pcbasic_test_image](PCBasic_Brewer_Repo/images/Pycharm3.PNG)
 
 
 ## Test to run some routines into the brewer program:
 Once the brewer program is loaded in offline mode, one can try to run some offline-compatible routines to test the proper function of the software. For example just writting pdhp and pressing enter, the program will execute the routine pd and then the routine hp.
 
 ## To do:
--Some string variables are being detached. Researching the causes... https://github.com/robhagemans/pcbasic/issues/49)
+-Some string variables are being detached in the memory.py, clear function. Researching the causes... https://github.com/robhagemans/pcbasic/issues/49)
 
 
 
