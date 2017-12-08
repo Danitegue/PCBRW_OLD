@@ -19,15 +19,15 @@ This folder is an already configured pycharm project, with all the launchers nee
 
 
 ## Installation
--Create a new folder into unit C. This repo is already configured to work in a folder called C:\PCBasic_Brewer_Repo\
--Clone this repository into that folder. 
--Install python 2.7. (Or Anaconda package with python 2.7) 
--Install the needed extra libraries: pip install pypiwin32 pysdl2 numpy pygame pyaudio (pyserial won't be needed since this customized version of pcbasic_brewer has an in built customized version of pyserial)
+* Create a new folder into unit C. This repo is already configured to work in a folder called C:\PCBasic_Brewer_Repo\
+* Clone this repository into that folder. 
+* Install python 2.7. (Or Anaconda package with python 2.7) 
+* Install the needed extra libraries: pip install pypiwin32 pysdl2 numpy pygame pyaudio (pyserial won't be needed since this customized version of pcbasic_brewer has an in built customized version of pyserial)
 
 
 
 ## Test PCBASIC
--run the program C:\PCBasic_Brewer_Repo\Launcher_pcbasic.bat
+* run the program C:\PCBasic_Brewer_Repo\Launcher_pcbasic.bat
 a console windows will open showing the pcbasic enviroment:
 ![pcbasic_test_image](https://www.dropbox.com/s/excytyvxuscajlt/PCBASIC_test.PNG?dl=0)
 
