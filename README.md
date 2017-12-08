@@ -41,7 +41,7 @@ C:\Users\[username]\AppData\Roaming\pcbasic-dev\PCBASIC.INI, with the following 
 
 
 ## Run the Brewer software, offline mode, into an ansi console:
-* run the launcher C:\PCBasic_Brewer_Repo\pcbasic_brewer\Launcher_brewer185_nobrew.bat
+* run the launcher C:\PCBasic_Brewer_Repo\pcbasic_brewer\Launcher_brewer185_nobrew.bat, 
 a console window will open showing the main.asc brewer program:
 ![pcbasic_test_image](https://www.dropbox.com/s/zgpu4teoumq0vni/Test_mainasc_ansi_nobrew.PNG?dl=0)
 
