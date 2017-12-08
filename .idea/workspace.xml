@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d3ba28e3-c00b-4544-aeed-3aa4f3b61564" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pcbasic_brewer" afterPath="$PROJECT_DIR$/pcbasic_brewer" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/GWBasic_Interpreter.iml" afterPath="$PROJECT_DIR$/.idea/GWBasic_Interpreter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/brewer185_pygame_serialbrewer_combridge.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/brewer185_pygame_serialbrewer_combridge.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/brw#185/bdata185/D31217.185" afterPath="$PROJECT_DIR$/brw#185/bdata185/D31217.185" />
     </list>
@@ -99,11 +96,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="memory.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="memory.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/memory.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3192">
-                  <caret line="160" column="0" lean-forward="false" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+                <state relative-caret-position="199">
+                  <caret line="96" column="25" lean-forward="false" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -119,11 +116,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="statements.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="statements.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/parser/statements.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="447">
-                  <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+                <state relative-caret-position="153">
+                  <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -162,7 +159,7 @@
           <file leaf-file-name="expressions.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/parser/expressions.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="6174">
+                <state relative-caret-position="278">
                   <caret line="306" column="0" lean-forward="false" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
                   <folding />
                 </state>
@@ -202,9 +199,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Merge</find>
-      <find>merge</find>
-      <find>locate</find>
       <find>Input</find>
       <find>input</find>
       <find>bad data</find>
@@ -232,6 +226,9 @@
       <find>pan2</find>
       <find>scaling</find>
       <find>E$</find>
+      <find>scalars</find>
+      <find>scalars.cl</find>
+      <find>.clear</find>
     </findStrings>
     <replaceStrings>
       <replace>self._rtsState</replace>
@@ -298,12 +295,12 @@
         <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/scalars.py" />
         <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/values/strings.py" />
         <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/config.py" />
-        <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/memory.py" />
         <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/parser/expressions.py" />
+        <option value="$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/memory.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -330,6 +327,11 @@
             <path>
               <item name="PCBasic_Brewer_Repo" type="b2602c69:ProjectViewProjectNode" />
               <item name="PCBasic_Brewer_Repo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PCBasic_Brewer_Repo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PCBasic_Brewer_Repo" type="462c0819:PsiDirectoryNode" />
+              <item name="pcbasic_brewer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -724,13 +726,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1060" extended-state="7" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1734694" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.49570355" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21205357" sideWeight="0.43984962" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40848213" sideWeight="0.56122446" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22321428" sideWeight="0.44092375" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22321428" sideWeight="0.55907625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24553572" sideWeight="0.462406" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -850,13 +851,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/memory.py</url>
-          <line>210</line>
+          <line>208</line>
           <option name="timeStamp" value="375" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/memory.py</url>
-          <line>160</line>
-          <option name="timeStamp" value="380" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/memory.py</url>
@@ -1215,14 +1211,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/memory.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3192">
-          <caret line="160" column="0" lean-forward="false" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/session.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13209">
@@ -1239,18 +1227,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/parser/statements.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/parser/expressions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6174">
+        <state relative-caret-position="278">
           <caret line="306" column="0" lean-forward="false" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/parser/statements.py">
+    <entry file="file://$PROJECT_DIR$/pcbasic_brewer/pcbasic/basic/memory/memory.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+        <state relative-caret-position="199">
+          <caret line="96" column="25" lean-forward="false" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="25" />
           <folding />
         </state>
       </provider>
