@@ -27,8 +27,7 @@ This folder is an already configured pycharm project, with all the launchers nee
 
 
 ## Run the PCBASIC interpreter into an ansi console:
-* run the launcher C:\PCBasic_Brewer_Repo\pcbasic_brewer\Launcher_pcbasic.bat
-a console window will open showing the pcbasic enviroment:
+* run the launcher C:\PCBasic_Brewer_Repo\pcbasic_brewer\Launcher_pcbasic.bat, a console window will open showing the pcbasic enviroment:
 ![pcbasic_test_image](https://www.dropbox.com/s/excytyvxuscajlt/PCBASIC_test.PNG?dl=0)
 
 
