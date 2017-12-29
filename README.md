@@ -6,7 +6,7 @@ Based in the Rob Hagemans PCBasic project: https://github.com/robhagemans/pcbasi
 
 ## Contents
 * **brw#185:** 
-Folder of the Brewer program, with all the necessary files to make it run. This includes the main BASIC program "main.asc", routines, schedules, calibration files, etc. The program can be used in both, online and offline mode, having or not a real brewer connected to the serial port. The program needs two enviroment variables set to be able to run NOBREW, and BREWDIR, both are set in the launchers.
+Folder of the Brewer program, with all the necessary files to make it run. This includes the main BASIC program "main.asc", routines, schedules, calibration files, etc. The program can be used in both, online and offline mode, having or not a real brewer connected to the serial port. The program needs two enviroment variables set for being able to run: NOBREW, and BREWDIR. (both are set in the launchers.)
 
 * **pcbasic_brewer:** 
 PC-BASIC interpreter of robhagermans, specifically customized to handle serial communications with Brewers, and to ignore the extra arguments added by pycharm when debugging.
@@ -28,7 +28,8 @@ This folder is an already configured pycharm project, with all the launchers nee
 
 ## Run the PCBASIC interpreter into an ansi console:
 * run the launcher C:\PCBasic_Brewer_Repo\pcbasic_brewer\Launcher_pcbasic.bat, a console window will open showing the pcbasic enviroment:
-![pcbasic_test_image](https://www.dropbox.com/s/excytyvxuscajlt/PCBASIC_test.PNG?dl=0)
+
+![pcbasic_test](images/PCBASIC_test_preview.png)
 
 
 ## Configurations needed for running the Brewer Software with PCBASIC:
@@ -43,7 +44,8 @@ C:\Users\[username]\AppData\Roaming\pcbasic-dev\PCBASIC.INI, with the following 
 ## Run the Brewer software, offline mode, into an ansi console:
 * run the launcher C:\PCBasic_Brewer_Repo\pcbasic_brewer\Launcher_brewer185_nobrew.bat, 
 a console window will open showing the main.asc brewer program:
-![pcbasic_test_image](https://www.dropbox.com/s/zgpu4teoumq0vni/Test_mainasc_ansi_nobrew.PNG?dl=0)
+
+![Test_mainasc_ansi_nobrew](images/Test_mainasc_ansi_nobrew.PNG)
 
 
 ## Prepare pycharm:
@@ -51,19 +53,21 @@ For being able to run pcbasic programs from pycharm with line per line debbuging
 * Open pycharm
 * Go to File > Open > Select the repo folder C:\PCBasic_Brewer_Repo, and it automatically will detect the existing project into the .idea folder. Open the project.
 * Prepare the debugging configurations: go to Run > Edit Configurations... here is needed to adapt the paths of the script, installed python interpreter, and working directory for each configuration, with the correct paths in your PC.
-![pcbasic_test_image](https://www.dropbox.com/s/8deo02hejv6040k/Pycharm2.PNG?dl=0)
+
+![Pycharm2](images/Pycharm2.PNG)
 
 
 ## Test the Brewer software, offline mode, using pycharm, into a pygame console:
 * In the configuration selector of pycharm, select brewer185_pygame_nobrew, then run or debug the configuration as prefered.
-![pcbasic_test_image](https://www.dropbox.com/s/ywqtw8s87srrkq2/Pycharm3.PNG?dl=0)
+
+![Pycharm3](images/Pycharm3.PNG)
 
 
 ## Test to run some routines into the brewer program:
 Once the brewer program is loaded in offline mode, one can try to run some offline-compatible routines to test the proper function of the software. For example just writting pdhp and pressing enter, the program will execute the routine pd and then the routine hp.
 
 ## To do:
--Some string variables are being detached. Researching the causes... https://github.com/robhagemans/pcbasic/issues/49)
+-Some string variables are being detached in the memory.py, clear function. Researching the causes... https://github.com/robhagemans/pcbasic/issues/49)
 
 
 
