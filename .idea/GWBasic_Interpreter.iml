@@ -4,6 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/brw#185" />
       <excludeFolder url="file://$MODULE_DIR$/brw#193" />
+      <excludeFolder url="file://$MODULE_DIR$/images" />
     </content>
     <orderEntry type="jdk" jdkName="Python 2.7.14 (C:\Users\DS_Pandora\Anaconda2\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
