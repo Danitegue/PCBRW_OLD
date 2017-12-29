@@ -1,10 +1,11 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="brewer185_pygame_serialbrewer_combridge" type="PythonConfigurationType" factoryName="Python">
+  <configuration default="false" name="brewer185_pcbasic_brewer_pygame_nobrew" type="PythonConfigurationType" factoryName="Python" show_console_on_std_out="true" show_console_on_std_err="true">
+    <log_file path="$PROJECT_DIR$/../Temp/pcbasic_brewer_log.txt" checked="false" skipped="false" show_all="false" alias="pcbasic_brewer_log" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <envs>
+      <env name="NOBREW" value="1" />
       <env name="PYTHONUNBUFFERED" value="1" />
-      <env name="NOBREW" value="" />
       <env name="BREWDIR" value="C:\" />
     </envs>
     <option name="SDK_HOME" value="C:\Users\DS_Pandora\Anaconda2\python.exe" />
@@ -14,9 +15,10 @@
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <module name="GWBasic_Interpreter" />
     <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_brewer/pcbasic.py" />
-    <option name="PARAMETERS" value="&quot;--run=C:\PCBasic_Brewer_Repo\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\PCBasic_Brewer_Repo\brw#185\Program,D:C:\PCBasic_Brewer_Repo\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=pygame&quot; &quot;-f=10&quot; &quot;-s=128&quot; &quot;--max-memory=65535&quot; &quot;--double=True&quot; &quot;--com1=PORT:COM14&quot; &quot;--use-serial-brewer=True&quot; &quot;--use-serial-brewer-verbose=True&quot; &quot;--logfile=C:\Temp\pcbasic_brewer_log.txt&quot;" />
+    <option name="PARAMETERS" value="&quot;--run=C:\PCBasic_Brewer_Repo\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\PCBasic_Brewer_Repo\brw#185\Program,D:C:\PCBasic_Brewer_Repo\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=pygame&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--logfile=C:\Temp\pcbasic_brewer_log.txt&quot; &quot;--shell=native&quot;" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />
+    <option name="MODULE_MODE" value="false" />
     <method />
   </configuration>
 </component>
