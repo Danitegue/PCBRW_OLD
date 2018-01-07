@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="d3ba28e3-c00b-4544-aeed-3aa4f3b61564" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/brewer185_pcbasic_brewer_pygame_nobrew.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/b185_pcbasic_brewer_sdl2_nobrew.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/brewer185_pcbasic_brewer_pygame_serial.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/b185_pcbasic_brewer_sdl2_serial.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/brewer185_pcbasic_brewer_pygame_serialbrewer.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/b185_pcbasic_brewer_sdl2_serialbrew.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/brewer185_pcbasic_brewer_pygame_serialbrewer_combridge.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/b185_pcbasic_brewer_sdl2_serialbrew_combridge.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/brewer185_pcbasic_nestor_ansi_serialbrewer.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/b185_pcbasic_nestor_ansi_serialbrew.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/brewer185_pcbasic_nestor_pygame.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/b185_pcbasic_nestor_pygame.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/brewer185_pcbasic_nestor_pygame_nobrew.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/b185_pcbasic_nestor_sdl2_nobrew.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/brewer185_pcbasic_nestor_pygame_serialbrewer.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/b185_pcbasic_nestor_pygame_serialbrew.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/brewer185_pcbasic_nestor_pygame_serialbrewer_combridge.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/b185_pcbasic_nestor_pygame_serialbrew_combridge.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/brewer185_pcbasic_orig_pygame_nobrew.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/b185_pcbasic_orig_sdl2_nobrew.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/pcbasic_brewer_pygame.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/pcbasic_brewer_sdl2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/brw#185/bdata185/B31217.185" afterPath="$PROJECT_DIR$/brw#185/bdata185/B31217.185" />
       <change beforePath="$PROJECT_DIR$/brw#185/bdata185/D31217.185" afterPath="$PROJECT_DIR$/brw#185/bdata185/D31217.185" />
-      <change beforePath="$PROJECT_DIR$/pcbasic_brewer" afterPath="$PROJECT_DIR$/pcbasic_brewer" />
-      <change beforePath="$PROJECT_DIR$/pcbasic_nestor/pcbasic/audio_sdl2.py" afterPath="$PROJECT_DIR$/pcbasic_nestor/pcbasic/audio_sdl2.py" />
-      <change beforePath="$PROJECT_DIR$/pcbasic_nestor/pcbasic/video_sdl2.py" afterPath="$PROJECT_DIR$/pcbasic_nestor/pcbasic/video_sdl2.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -317,7 +302,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="119" />
     <option name="y" value="11" />
     <option name="width" value="1382" />
@@ -682,7 +667,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1060" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14119513" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.49570355" order="6" side_tool="false" content_ui="tabs" />
