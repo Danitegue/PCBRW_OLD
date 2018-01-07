@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="brewer185_pcbasic_nestor_pygame_serialbrewer_combridge" type="PythonConfigurationType" factoryName="Python">
+  <configuration default="false" name="b185_pcbasic_nestor_pygame" type="PythonConfigurationType" factoryName="Python">
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <envs>
@@ -14,7 +14,7 @@
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <module name="GWBasic_Interpreter" />
     <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_nestor/pcbasic.py" />
-    <option name="PARAMETERS" value="&quot;--run=C:\PCBasic_Brewer_Repo\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\PCBasic_Brewer_Repo\brw#185\Program,D:C:\PCBasic_Brewer_Repo\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=pygame&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--com1=PORT:COM14&quot; &quot;--use-serial-brewer=True&quot; &quot;--verbose-brewer=True&quot; &quot;--logfile=C:\Temp\pcbasic_nestor_log.txt&quot;" />
+    <option name="PARAMETERS" value="&quot;--run=C:\PCBasic_Brewer_Repo\brw#185\Program\main.asc&quot; &quot;--mount=C:C:\PCBasic_Brewer_Repo\brw#185\Program,D:C:\PCBasic_Brewer_Repo\brw#185\bdata185&quot; &quot;--quit=False&quot; &quot;--interface=pygame&quot; &quot;-f=10&quot; &quot;-s=256&quot; &quot;--double=True&quot; &quot;--logfile=C:\Temp\pcbasic_nestor_log.txt&quot;" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />
     <option name="MODULE_MODE" value="false" />

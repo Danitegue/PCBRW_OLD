@@ -12,6 +12,20 @@ from math import ceil
 import logging
 import Queue
 from collections import deque
+import os
+import sys
+import platform
+
+# on Windows, set environment variable to point to SDL2 DLL location
+if platform.system() == 'Windows':
+    if hasattr(sys, 'frozen'):
+        # we're a package: get the directory of the packaged executable
+        # (__file__ is undefined in pyinstaller packages)
+        os.environ['PYSDL2_DLL_PATH'] = os.path.dirname(sys.executable)
+    else:
+        # unpackaged: get the directory of the video_sdl2 module
+        os.environ['PYSDL2_DLL_PATH'] = os.path.dirname(os.path.realpath(__file__))
+
 
 try:
     import sdl2

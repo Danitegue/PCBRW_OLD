@@ -131,7 +131,7 @@ class VideoSDL2(video_graphical.VideoGraphical):
         # initialise SDL
         sdl2.SDL_Init(sdl2.SDL_INIT_EVERYTHING)
         # set clipboard handler to SDL2
-        backend.clipboard_handler = SDL2Clipboard()
+        self.clipboard_handler = get_clipboard_handler()
         # display palettes for blink states 0, 1
         self.show_palette = [sdl2.SDL_AllocPalette(256), sdl2.SDL_AllocPalette(256)]
         # get physical screen dimensions (needs to be called before set_mode)
@@ -238,6 +238,8 @@ class VideoSDL2(video_graphical.VideoGraphical):
                 self._handle_key_up(event)
             elif event.type == sdl2.SDL_TEXTINPUT:
                 self._handle_text_input(event)
+            elif event.type == sdl2.SDL_TEXTEDITING:
+                self.set_caption_message(event.text.text)
             elif event.type == sdl2.SDL_MOUSEBUTTONDOWN:
                 pos = self._normalise_pos(event.button.x, event.button.y)
                 # copy, paste and pen may be on the same button, so no elifs
@@ -247,7 +249,8 @@ class VideoSDL2(video_graphical.VideoGraphical):
                             1 + (pos[0]+self.font_width//2) // self.font_width)
                 if event.button.button == self.mousebutton_paste:
                     # MIDDLE button: paste
-                    self.clipboard.paste(mouse=True)
+                    text = self.clipboard_handler.paste(mouse=True)
+                    self.clipboard.paste(text)
                 if event.button.button == self.mousebutton_pen:
                     # right mouse button is a pen press
                     backend.input_queue.put(backend.Event(backend.PEN_DOWN, pos))
@@ -395,7 +398,9 @@ class VideoSDL2(video_graphical.VideoGraphical):
         sdl2.SDL_Delay(24)
 
     def _check_display(self):
-        """ Check screen and blink events; update screen if necessary. """
+        """Check screen and blink events; update screen if necessary."""
+        if not self._has_window:
+            return
         self.blink_state = 0
         if self.mode_has_blink:
             self.blink_state = 0 if self.cycle < self.blink_cycles * 2 else 1
@@ -458,6 +463,8 @@ class VideoSDL2(video_graphical.VideoGraphical):
             sdl2.SDL_BlitScaled(self.overlay, None, self.display_surface, None)
         # flip the display
         sdl2.SDL_UpdateWindowSurface(self.display)
+        # destroy the temporary surface
+        sdl2.SDL_FreeSurface(conv)
 
     def _show_cursor(self, do_show):
         """ Draw or remove the cursor on the visible page. """
@@ -553,6 +560,7 @@ class VideoSDL2(video_graphical.VideoGraphical):
         self.border_y = int(canvas_height * self.border_width // 200)
         work_width = canvas_width + 2*self.border_x
         work_height = canvas_height + 2*self.border_y
+        sdl2.SDL_FreeSurface(self.work_surface)
         self.work_surface = sdl2.SDL_CreateRGBSurface(
                                 0, work_width, work_height, 8, 0, 0, 0, 0)
         self.work_pixels = pixels2d(self.work_surface.contents)[
@@ -567,11 +575,16 @@ class VideoSDL2(video_graphical.VideoGraphical):
         self.clipboard = video_graphical.ClipboardInterface(self,
                 mode_info.width, mode_info.height)
         self.screen_changed = True
+        self._has_window = True
 
     def set_caption_message(self, msg):
         """ Add a message to the window caption. """
         title = self.caption + (' - ' + msg if msg else '')
         sdl2.SDL_SetWindowTitle(self.display, title)
+
+    def set_clipboard_text(self, text, mouse):
+        """Put text on the clipboard."""
+        self.clipboard_handler.copy(text, mouse)
 
     def set_palette(self, rgb_palette_0, rgb_palette_1):
         """ Build the palette. """
@@ -751,7 +764,22 @@ class SDL2Clipboard(clipboard.Clipboard):
         text = sdl2.SDL_GetClipboardText()
         if text is None:
             return u''
-        return text.decode('utf-8', 'replace')
+        return text.decode('utf-8', 'replace').replace('\r\n', '\n').replace('\n', '\r')
+
+
+def get_clipboard_handler():
+    """Get a working Clipboard handler object."""
+    # only use the SDL clipboard on Windows or Linus if xclip/xsel not available
+    if platform.system() == 'Darwin':
+        handler = clipboard.MacClipboard()
+    elif platform.system() != 'Windows' and clipboard.XClipboard().ok:
+        handler = clipboard.XClipboard()
+    else:
+        handler = SDL2Clipboard()
+    if not handler.ok:
+        logging.warning('Clipboard copy and paste not available.')
+        handler = clipboard.Clipboard()
+    return handler
 
 
 ###############################################################################
