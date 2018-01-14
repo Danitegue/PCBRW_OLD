@@ -4,6 +4,7 @@ import warnings
 import serial
 import io
 from copy import deepcopy
+import datetime
 
 # This script is to simulate the COM port answers of a brewer instrument
 # com0com software is needed to build a com14 to com15 bridge.
@@ -48,12 +49,12 @@ def check_line(line):
 
     if '?MOTOR.CLASS[2]' in line and not gotkey:
         print 'Got keyword: ?MOTOR.CLASS[2]'
-        answer = ['TRACKERMOTOR']+deepcopy(brewer_something)
+        answer = ['TRACKERMOTOR']+deepcopy(brewer_something)+['wait0.5']+deepcopy(brewer_none)
         gotkey = True
 
     if 'B,0' in line and not gotkey:
         print 'Got keyword: B,0'
-        answer=['wait1']+deepcopy(brewer_none)
+        answer=['wait0.5']+deepcopy(brewer_none)
         #answer = ['wait1'] + deepcopy(brewer_none)+['wait2'] + deepcopy(brewer_none)
         gotkey = True
 
@@ -172,13 +173,16 @@ def check_line(line):
 line_counter=0
 
 # Open serial connection with COM15
-print 'Opening serial connection...'
-sw = serial.Serial('COM15', baudrate=1200, timeout=1)
+comport='COM15'
+print 'Opening '+comport+' serial connection...'
+
+sw = serial.Serial(comport, baudrate=1200, timeout=0.2)
 #this is for changing the end of line detection
 sio = io.TextIOWrapper(io.BufferedRWPair(sw, sw))
 
 time.sleep(1)
 sw.flushInput()
+
 
 b_initialized=False
 n_counter=0 #This is only to answer only to the last carriage return,
@@ -197,7 +201,7 @@ with sw:
                 continue
             else:
                 line_counter = line_counter + 1
-                print str(line_counter), ' Line received:', str(line.replace('\r','\\r').replace('\n','\\n'))
+                print str(line_counter), str(datetime.datetime.now())+' Line received:', str(line.replace('\r','\\r').replace('\n','\\n'))
 
                 gotkey, answer = check_line(line)
 
@@ -213,7 +217,7 @@ with sw:
                                 print 'Brewer initializated'
                                 b_initialized=True
                     if b_initialized:
-                        print 'Writting to com port:', str(answer)
+                        print str(datetime.datetime.now()) + ' - Writting to com port:', str(answer)
                         for a in answer:
                             if 'wait' in a:
                                 time.sleep(float(a.split('wait')[1]))
@@ -222,7 +226,6 @@ with sw:
                             else:
                                 sio.write(unicode(a))
                             #time.sleep(0.01)
-
         except ValueError:
             warnings.warn("Line {} didn't parse, skipping".format(line))
         except KeyboardInterrupt:
