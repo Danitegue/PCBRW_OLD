@@ -5,6 +5,10 @@ import serial
 import io
 from copy import deepcopy
 import datetime
+import logging
+
+logging.basicConfig(filename='C:/Temp/BrewerSimulator_Log.txt', format='%(asctime)s.%(msecs)04d %(message)s', level=logging.INFO, datefmt='%H:%M:%S', filemode='w')
+
 
 # This script is to simulate the COM port answers of a brewer instrument
 # com0com software is needed to build a com14 to com15 bridge.
@@ -50,6 +54,7 @@ def check_line(line):
     if '?MOTOR.CLASS[2]' in line and not gotkey:
         print 'Got keyword: ?MOTOR.CLASS[2]'
         answer = ['TRACKERMOTOR']+deepcopy(brewer_something)+['wait0.5']+deepcopy(brewer_none)
+        #answer = ['TRACKERMOTOR'] + deepcopy(brewer_something)
         gotkey = True
 
     if 'B,0' in line and not gotkey:
@@ -105,6 +110,7 @@ def check_line(line):
 
 
     if not gotkey:
+
         if line.count(',')==2:
             Mcmds = ['M,1,','M,3,','M,4,','M,5,','M,9,','M,10,']
             for ii in range(len(Mcmds)):
@@ -113,17 +119,32 @@ def check_line(line):
                     print 'Got keyworkd: ',Mcm
                     answer=deepcopy(brewer_none)
                     gotkey = True
+                    break
 
+        # for HP routine commands, like M,9, 20;R, 6, 6,4;O
         if line.count(',')==5:
-            Mcmds = ['M,9, 0','M,9, 10','M,9, 20','M,9, 30','M,9, 40','M,9, 50','M,9, 60','M,9, 70','M,9, 80','M,9, 90','M,9, 100','M,9, 110','M,9, 120','M,9, 130','M,9, 140','M,9, 150','M,9, 160']
-            Mcmds_answs = ['90387', '120514', '152680', '183620', '210321', '225618', '229940', '230096', '230667','229401', '221551', '198234', '167614', '138376', '107594', '75888','43487']
-            for ii in range(len(Mcmds)):
-                Mcm = Mcmds[ii]
-                Mcm_answ = Mcmds_answs[ii]
-                if Mcm in line and not gotkey:
-                    print 'Got keyword: ',Mcm
-                    answer=[Mcm_answ]+deepcopy(brewer_something)
+            #Mcmds = ['M,9, 0','M,9, 10','M,9, 20','M,9, 30','M,9, 40','M,9, 50','M,9, 60','M,9, 70','M,9, 80','M,9, 90','M,9, 100','M,9, 110','M,9, 120','M,9, 130','M,9, 140','M,9, 150','M,9, 160']
+            #Mcmds_answs = ['90387', '120514', '152680', '183620', '210321', '225618', '229940', '230096', '230667','229401', '221551', '198234', '167614', '138376', '107594', '75888','43487']
+
+            HPdict={'M,9, 0':66347,'M,9, 10':96514,'M,9, 20':127847,'M,9, 30':159928,'M,9, 40':190187,
+                    'M,9, 50':215028,'M,9, 60':227272,'M,9, 70':230169,'M,9, 80':230486,'M,9, 90':231098,
+                    'M,9, 100':229171,'M,9, 110':217183,'M,9, 120':190595,'M,9, 130':159295,'M,9, 140':128684,
+                    'M,9, 150':97926,'M,9, 160':64454}
+
+            for ii in HPdict.keys():
+                if ii in line and not gotkey:
+                    print 'Got keyword: ', ii
+                    answer = [str(HPdict[ii])] + deepcopy(brewer_something)
                     gotkey = True
+                    break
+
+            #for ii in range(len(Mcmds)):
+            #    Mcm = Mcmds[ii]
+            #    Mcm_answ = Mcmds_answs[ii]
+            #    if Mcm in line and not gotkey:
+            #        print 'Got keyword: ',Mcm
+            #        answer=[Mcm_answ]+deepcopy(brewer_something)
+            #        gotkey = True
 
 
         if line.count(',')==3:
@@ -134,6 +155,8 @@ def check_line(line):
                     print 'Got keyword: ',Mcm
                     answer=deepcopy(brewer_none)
                     gotkey = True
+                    break
+
 
         if line.count(',')==4:
             Mcmds = ['O:M,10,60:M,9,60:R','O:M,10,50:M,9,50:R','O:M,10,70:M,9,70:R','O:M,10,80:M,9,80:R','O:M,10,90:M,9,90:R','O:M,10,100:M,9,100:R','O:M,10,110:M,9,110:R','O:M,10,120:M,9,120:R','O:M,10,130:M,9,130:R','O:M,10,140:M,9,140:R','O:M,10,150:M,9,150:R','O:M,10,160:M,9,160:R','O:M,10,170:M,9,170:R','O:M,10,180:M,9,180:R','O:M,10,190:M,9,190:R','O:M,10,200:M,9,200:R','O:M,10,210:M,9,210:R','O:M,10,220:M,9,220:R','O:M,10,230:M,9,230:R','O:M,10,240:M,9,240:R']
@@ -145,6 +168,7 @@ def check_line(line):
                     print 'Got keyword: ',Mcm
                     answer=[Mcm_answ]+deepcopy(brewer_something)
                     gotkey = True
+                    break
 
 
     if not gotkey:
@@ -176,7 +200,12 @@ line_counter=0
 comport='COM15'
 print 'Opening '+comport+' serial connection...'
 
+
 sw = serial.Serial(comport, baudrate=1200, timeout=0.2)
+sw.close()
+sw.open()
+
+#sw = serial.Serial(comport, baudrate=1200, timeout=0.2)
 #this is for changing the end of line detection
 sio = io.TextIOWrapper(io.BufferedRWPair(sw, sw))
 
@@ -188,46 +217,43 @@ b_initialized=False
 n_counter=0 #This is only to answer only to the last carriage return,
 # when some of them are received in the initial connection with the brewer
 print 'Done. Monitoring serial...'
+#logging.info('Done. Monitoring serial...')
 with sw:
     while True:
         try:
             line = sio.readline()
-
             if not line:
                 #print 'Line received: None data'
                 # HACK: Descartamos líneas vacías porque fromstring produce
                 # resultados erróneos, ver
                 # https://github.com/numpy/numpy/issues/1714
+                time.sleep(0.001)
                 continue
             else:
                 line_counter = line_counter + 1
-                print str(line_counter), str(datetime.datetime.now())+' Line received:', str(line.replace('\r','\\r').replace('\n','\\n'))
 
+                log=str(line_counter)+" "+ str(datetime.datetime.now())+' Line received:'+ (str(line).replace('\r','\\r').replace('\n','\\n'))
+                print log
+                logging.info('Line received:'+ (str(line).replace('\r','\\r').replace('\n','\\n')))
                 gotkey, answer = check_line(line)
 
                 if gotkey:
-                    b_initialized = True
-                    if not b_initialized:
-                        #Ignore the first 4 carriage returns to have brewer initialized
-                        if line == '\n':
-                            n_counter=n_counter+1
-                            if n_counter < 4:
-                                print 'Ignoring the first \\n ('+str(n_counter)+'/3)'
-                            if n_counter == 4 or n_counter==8:
-                                print 'Brewer initializated'
-                                b_initialized=True
-                    if b_initialized:
-                        print str(datetime.datetime.now()) + ' - Writting to com port:', str(answer)
-                        for a in answer:
-                            if 'wait' in a:
-                                time.sleep(float(a.split('wait')[1]))
-                            elif 'flush' in a:
-                                sio.flush()
-                            else:
-                                sio.write(unicode(a))
-                            #time.sleep(0.01)
+                    log=str(datetime.datetime.now())+ ' - Writting to com port:'+ str(answer)
+                    print log
+                    logging.info('Writting to COM port:'+ str(answer))
+                    for a in answer:
+                        if 'wait' in a:
+                            time.sleep(float(a.split('wait')[1]))
+                        elif 'flush' in a:
+                            sio.flush()
+                            print "All data written. Out waiting=", sw.out_waiting
+                        else:
+                            sio.write(unicode(a))
+                        #time.sleep(0.01)
         except ValueError:
             warnings.warn("Line {} didn't parse, skipping".format(line))
         except KeyboardInterrupt:
+            sw.close()
+            #ctrl+c
             print("Exiting")
             break
