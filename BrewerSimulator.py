@@ -53,8 +53,8 @@ def check_line(line):
 
     if '?MOTOR.CLASS[2]' in line and not gotkey:
         print 'Got keyword: ?MOTOR.CLASS[2]'
-        answer = ['TRACKERMOTOR']+deepcopy(brewer_something)+['wait0.5']+deepcopy(brewer_none)
-        #answer = ['TRACKERMOTOR'] + deepcopy(brewer_something)
+        #answer = ['TRACKERMOTOR']+deepcopy(brewer_something)+['wait0.5']+deepcopy(brewer_none)
+        answer = ["\r"]+['TRACKERMOTOR'] + deepcopy(brewer_something)
         gotkey = True
 
     if 'B,0' in line and not gotkey:
@@ -123,13 +123,10 @@ def check_line(line):
 
         # for HP routine commands, like M,9, 20;R, 6, 6,4;O
         if line.count(',')==5:
-            #Mcmds = ['M,9, 0','M,9, 10','M,9, 20','M,9, 30','M,9, 40','M,9, 50','M,9, 60','M,9, 70','M,9, 80','M,9, 90','M,9, 100','M,9, 110','M,9, 120','M,9, 130','M,9, 140','M,9, 150','M,9, 160']
-            #Mcmds_answs = ['90387', '120514', '152680', '183620', '210321', '225618', '229940', '230096', '230667','229401', '221551', '198234', '167614', '138376', '107594', '75888','43487']
-
-            HPdict={'M,9, 0':66347,'M,9, 10':96514,'M,9, 20':127847,'M,9, 30':159928,'M,9, 40':190187,
-                    'M,9, 50':215028,'M,9, 60':227272,'M,9, 70':230169,'M,9, 80':230486,'M,9, 90':231098,
-                    'M,9, 100':229171,'M,9, 110':217183,'M,9, 120':190595,'M,9, 130':159295,'M,9, 140':128684,
-                    'M,9, 150':97926,'M,9, 160':64454}
+            HPdict={'M,9, 0;':66347,'M,9, 10;':96514,'M,9, 20;':127847,'M,9, 30;':159928,'M,9, 40;':190187,
+                    'M,9, 50;':215028,'M,9, 60;':227272,'M,9, 70;':230169,'M,9, 80;':230486,'M,9, 90;':231098,
+                    'M,9, 100;':229171,'M,9, 110;':217183,'M,9, 120;':190595,'M,9, 130;':159295,'M,9, 140;':128684,
+                    'M,9, 150;':97926,'M,9, 160;':64454}
 
             for ii in HPdict.keys():
                 if ii in line and not gotkey:
@@ -137,15 +134,6 @@ def check_line(line):
                     answer = [str(HPdict[ii])] + deepcopy(brewer_something)
                     gotkey = True
                     break
-
-            #for ii in range(len(Mcmds)):
-            #    Mcm = Mcmds[ii]
-            #    Mcm_answ = Mcmds_answs[ii]
-            #    if Mcm in line and not gotkey:
-            #        print 'Got keyword: ',Mcm
-            #        answer=[Mcm_answ]+deepcopy(brewer_something)
-            #        gotkey = True
-
 
         if line.count(',')==3:
             Mcmds = ['R,0,7,1','R,1,1,1','R,0,0,4']
