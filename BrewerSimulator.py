@@ -19,32 +19,79 @@ brewer_none = ['\n', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '->', '\x20
 
 brewer_something = ['\n', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\n', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '->', '\x20', 'flush']
 
+HPdict = {'M,9, 0;': 66347,
+          'M,9, 10;': 96514,
+          'M,9, 20;': 127847,
+          'M,9, 30;': 159928,
+          'M,9, 40;': 190187,
+          'M,9, 50;': 215028,
+          'M,9, 60;': 227272,
+          'M,9, 70;': 230169,
+          'M,9, 80;': 230486,
+          'M,9, 90;': 231098,
+          'M,9, 100;': 229171,
+          'M,9, 110;': 217183,
+          'M,9, 120;': 190595,
+          'M,9, 130;': 159295,
+          'M,9, 140;': 128684,
+          'M,9, 150;': 97926,
+          'M,9, 160;': 64454}
+
+HGdict0 = {'HGdict':0,
+          'O:M,10,50:M,9,50:R':451,
+          'O:M,10,60:M,9,60:R':822,
+          'O:M,10,70:M,9,70:R':2955,
+          'O:M,10,80:M,9,80:R':16681,
+          'O:M,10,90:M,9,90:R':35602,
+          'O:M,10,100:M,9,100:R':52238,
+          'O:M,10,110:M,9,110:R':70289,
+          'O:M,10,120:M,9,120:R':90096,
+          'O:M,10,130:M,9,130:R':109954,
+          'O:M,10,140:M,9,140:R':121203,
+          'O:M,10,150:M,9,150:R':123202,
+          'O:M,10,160:M,9,160:R':117150,
+          'O:M,10,170:M,9,170:R':98919,
+          'O:M,10,180:M,9,180:R':80088,
+          'O:M,10,190:M,9,190:R':59799,
+          'O:M,10,200:M,9,200:R':40881,
+          'O:M,10,210:M,9,210:R':21490,
+          'O:M,10,220:M,9,220:R':4302,
+          'O:M,10,230:M,9,230:R':587,
+          'O:M,10,240:M,9,240:R':206}
+
+HGdict1 = {'HGdict':1,
+          'O:M,10,50:M,9,50:R':498,
+          'O:M,10,60:M,9,60:R':889,
+          'O:M,10,70:M,9,70:R':3226,
+          'O:M,10,80:M,9,80:R':17812,
+          'O:M,10,90:M,9,90:R':37250,
+          'O:M,10,100:M,9,100:R':54635,
+          'O:M,10,110:M,9,110:R':73008,
+          'O:M,10,120:M,9,120:R':92826,
+          'O:M,10,130:M,9,130:R':112827,
+          'O:M,10,140:M,9,140:R':124267,
+          'O:M,10,150:M,9,150:R':125312,
+          'O:M,10,160:M,9,160:R':118875,
+          'O:M,10,170:M,9,170:R':100355,
+          'O:M,10,180:M,9,180:R':80903,
+          'O:M,10,190:M,9,190:R':60590,
+          'O:M,10,200:M,9,200:R':41175,
+          'O:M,10,210:M,9,210:R':21619,
+          'O:M,10,220:M,9,220:R':4190,
+          'O:M,10,230:M,9,230:R':588,
+          'O:M,10,240:M,9,240:R':218}
+
 
 def check_line(line):
+
     gotkey=False
     answer=[]
-
-    # if '\r' == line and not gotkey:
-    #     print 'Got keyword: \\r'
-    #     answer = ['->','\x20']
-    #     gotkey = True
 
     if '\n' == line and not gotkey:
         print 'Got keyword: \\n'
         answer=deepcopy(brewer_none)
         #answer = ['->','\x20']
         gotkey = True
-
-    #
-    # if '\r\n' == line and not gotkey:
-    #     print 'Got keyword: \\r \\n'
-    #     answer=['->','\x20']
-    #     gotkey=True
-    #
-    # if '\n\r' == line and not gotkey:
-    #     print 'Got keyword: \\n \\r'
-    #     answer=['->','\x20']
-    #     gotkey=True
 
     if 'F,0,2:V,120,1' in line and not gotkey:
         print 'Got keyword: F,0,2:V,120,1'
@@ -108,10 +155,9 @@ def check_line(line):
         answer=['309']+deepcopy(brewer_something)
         gotkey = True
 
-
     if not gotkey:
-
-        if line.count(',')==2:
+        # 2 comma commands:
+        if line.count(',')==2 and not gotkey:
             Mcmds = ['M,1,','M,3,','M,4,','M,5,','M,9,','M,10,']
             for ii in range(len(Mcmds)):
                 Mcm = Mcmds[ii]
@@ -121,21 +167,8 @@ def check_line(line):
                     gotkey = True
                     break
 
-        # for HP routine commands, like M,9, 20;R, 6, 6,4;O
-        if line.count(',')==5:
-            HPdict={'M,9, 0;':66347,'M,9, 10;':96514,'M,9, 20;':127847,'M,9, 30;':159928,'M,9, 40;':190187,
-                    'M,9, 50;':215028,'M,9, 60;':227272,'M,9, 70;':230169,'M,9, 80;':230486,'M,9, 90;':231098,
-                    'M,9, 100;':229171,'M,9, 110;':217183,'M,9, 120;':190595,'M,9, 130;':159295,'M,9, 140;':128684,
-                    'M,9, 150;':97926,'M,9, 160;':64454}
-
-            for ii in HPdict.keys():
-                if ii in line and not gotkey:
-                    print 'Got keyword: ', ii
-                    answer = [str(HPdict[ii])] + deepcopy(brewer_something)
-                    gotkey = True
-                    break
-
-        if line.count(',')==3:
+        # 3 comma commands:
+        if line.count(',')==3 and not gotkey:
             Mcmds = ['R,0,7,1','R,1,1,1','R,0,0,4']
             for ii in range(len(Mcmds)):
                 Mcm = Mcmds[ii]
@@ -145,19 +178,31 @@ def check_line(line):
                     gotkey = True
                     break
 
-
-        if line.count(',')==4:
-            Mcmds = ['O:M,10,60:M,9,60:R','O:M,10,50:M,9,50:R','O:M,10,70:M,9,70:R','O:M,10,80:M,9,80:R','O:M,10,90:M,9,90:R','O:M,10,100:M,9,100:R','O:M,10,110:M,9,110:R','O:M,10,120:M,9,120:R','O:M,10,130:M,9,130:R','O:M,10,140:M,9,140:R','O:M,10,150:M,9,150:R','O:M,10,160:M,9,160:R','O:M,10,170:M,9,170:R','O:M,10,180:M,9,180:R','O:M,10,190:M,9,190:R','O:M,10,200:M,9,200:R','O:M,10,210:M,9,210:R','O:M,10,220:M,9,220:R','O:M,10,230:M,9,230:R','O:M,10,240:M,9,240:R']
-            Mcmds_answs = ['389','300','375','594','1199','8746','19452','30016','40703','40500','30500','19000','8700','1000','500','333','300','100','45','15']
-            for ii in range(len(Mcmds)):
-                Mcm = Mcmds[ii]
-                Mcm_answ = Mcmds_answs[ii]
-                if Mcm in line and not gotkey:
-                    print 'Got keyword: ',Mcm
-                    answer=[Mcm_answ]+deepcopy(brewer_something)
-                    gotkey = True
+        # 4 comma commands:
+        if line.count(',')==4 and not gotkey:
+            # HG routine commands, like O:M,10,100:M,9,100:R
+            for Dict in [HGdict0]:
+                for ii in Dict.keys():
+                    if ii in line and not gotkey:
+                        print 'Got keyword: ', ii
+                        answer = [str(Dict[ii])] + deepcopy(brewer_something)
+                        gotkey = True
+                        break
+                if gotkey:
                     break
 
+        # 5 comma commands:
+        if line.count(',')==5 and not gotkey:
+            # HP routine commands, like M,9, 20;R, 6, 6,4;O
+            for Dict in [HPdict]:
+                for ii in Dict.keys():
+                    if ii in line and not gotkey:
+                        print 'Got keyword: ', ii
+                        answer = [str(Dict[ii])] + deepcopy(brewer_something)
+                        gotkey = True
+                        break
+                if gotkey:
+                    break
 
     if not gotkey:
         if 'O' in line and line.count(',')==0:
@@ -178,8 +223,9 @@ def check_line(line):
             gotkey = True
 
     if not gotkey:
-        print 'No key found for line:', str(line.replace('\r','\\r').replace('\n','\\n').replace('\x00','null'))
-
+        print ""
+        print '!!!!! No key found for line:', str(line.replace('\r','\\r').replace('\n','\\n').replace('\x00','null'))
+        print ""
     return gotkey, answer
 
 line_counter=0
@@ -228,13 +274,13 @@ with sw:
                 if gotkey:
                     log=str(datetime.datetime.now())+ ' - Writting to com port:'+ str(answer)
                     print log
+                    print ""
                     logging.info('Writting to COM port:'+ str(answer))
                     for a in answer:
                         if 'wait' in a:
                             time.sleep(float(a.split('wait')[1]))
                         elif 'flush' in a:
                             sio.flush()
-                            print "All data written. Out waiting=", sw.out_waiting
                         else:
                             sio.write(unicode(a))
                         #time.sleep(0.01)
