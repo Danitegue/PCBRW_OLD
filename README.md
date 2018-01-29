@@ -4,6 +4,10 @@ A repository with all the needed things to run and control BREWER instruments so
 
 Based in the Rob Hagemans PCBasic project: https://github.com/robhagemans/pcbasic/ 
 
+Main programmers: Daniel Santana Díaz, Nestor Morales Hernández.
+
+Principal collaborators: Alberto Redondas Marrero, Sergio Leon Luis, Virgilio Carreño.
+
 ## Contents
 * **brw#185:** 
 Folder of the Brewer program, with all the necessary files to make it run. This includes the main BASIC program "main.asc", routines, schedules, calibration files, etc. The program can be used in both, online and offline mode, having or not a real brewer connected to the serial port. The program needs two enviroment variables set for being able to run: NOBREW, and BREWDIR. (both are set in the launchers.)
