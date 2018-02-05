@@ -58,14 +58,26 @@ a console window will open showing the main.asc brewer program:
 ## Test to run some routines into the brewer program:
 Once the brewer program is loaded in offline mode, one can try to run some instrument offline-compatible routines to test the proper function of the software. For example just writting pdhp and pressing enter, the program will execute the routine pd and then the routine hp.
 
+![OfflineTest1](images/OfflineTest1.PNG)
+![OfflineTest2](images/OfflineTest2.PNG)
+![OfflineTest3](images/OfflineTest3.PNG)
+
 ## Run the Brewer software, online mode, into an ansi console:
+This allows to control a real instrument connected to the pc.
 * Configure the COM port number in the launcher C:\PCBasic_Brewer_Repo\pcbasic_brewer\Launcher_brewer185.bat
 * run the launcher.
+
 a console window will open showing the main.asc brewer program, in the same way of the previous images, but with the com port communications enabled, and being able to control a real instrument through the configured com port. 
+
+![OfflineTest1](images/OfflineTest1.PNG)
+![OnlineTest01](images/OnlineTest01.PNG)
+![OnlineTest1](images/OnlineTest1.PNG)
+
+
 
 -----------------------------------------------------------------------------------------------
 ## Brewer Simulator:
-This is a small script that simulates the instrument com port answers when connecting, and also the answers for a few brewer routines like hp or hg (for now). It is used for debugging the pcbasic com port communications, without the need of having a real instrument connected to the pc.
+This is a small script that simulates the instrument com port answers when connecting, and also the answers for a few brewer routines like hp or hg (only these ones for now). It is used for debugging the pcbasic com port communications, without the need of having a real instrument connected to the pc.
 
 For using it, it is needed install a com bridge in the pc (in windows can be used the com0com software, for example), and also configure the Brewer launcher to use the com port number of the bridge.
 
@@ -77,12 +89,13 @@ In the case of an installed COM14&COM15 bridge, and a Brewer launcher configured
 * COM14 <-> COM15 (COM Bridge)
 * BrewerSimulator <-> COM15 (Instrument simulator)
 
+![BrewerSimulator1](images/BrewerSimulator1.PNG)
 
 ----------------------------------------------------------------------------------
 
 ## For running or debugging pcbasic with pycharm:
 
-## Prepare pycharm:
+### Prepare pycharm:
 For being able to run pcbasic programs from pycharm with line per line debbuging capabilities is needed to configure pycharm:
 * Open pycharm
 * Go to File > Open > Select the repo folder C:\PCBasic_Brewer_Repo, and it automatically will detect the existing project into the .idea folder. Open the project.
@@ -90,9 +103,15 @@ For being able to run pcbasic programs from pycharm with line per line debbuging
 
 ![Pycharm2](images/Pycharm2.PNG)
 
+in the parameters section of the pycharm launcher one can configure the parameters to use in the pcbasic session:
+![Pycharm2.1](images/Pycharm2.1.PNG)
+
+in the enviroment variables one can configure the needed BREWDIR and NOBREW enviroment variables for using the brewer software:
+![Pycharm2.2](images/Pycharm2.2.PNG)
 
 
-## Test the Brewer software from pycharm, offline mode, into a sdl2 console:
+
+### Test the Brewer software from pycharm, offline mode, into a sdl2 console:
 * In the configuration selector of pycharm, select b185_pcbasic_brewer_sdl2_nobrew, then run or debug the configuration as prefered.
 
 ![Pycharm3](images/Pycharm3.PNG)
