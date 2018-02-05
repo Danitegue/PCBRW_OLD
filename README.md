@@ -103,12 +103,20 @@ For being able to run pcbasic programs from pycharm with line per line debbuging
 
 ![Pycharm2](images/Pycharm2.PNG)
 
-in the parameters section of the pycharm launcher one can configure the parameters to use in the pcbasic session:
+in the parameters section of every pycharm launcher one can see the parameters used to launch the pcbasic session. 
+
+here an example of the parameters and enviroment variables used for a offline launcher:
+
 ![Pycharm2.1](images/Pycharm2.1.PNG)
 
-in the enviroment variables one can configure the needed BREWDIR and NOBREW enviroment variables for using the brewer software:
 ![Pycharm2.2](images/Pycharm2.2.PNG)
 
+
+and here an example of the parameters and enviroment variables used for a online launcher:
+
+![Pycharm2.1.2](images/Pycharm2.1.2.PNG)
+
+![Pycharm2.1.3](images/Pycharm2.1.3.PNG)
 
 
 ### Test the Brewer software from pycharm, offline mode, into a sdl2 console:
@@ -116,7 +124,12 @@ in the enviroment variables one can configure the needed BREWDIR and NOBREW envi
 
 ![Pycharm3](images/Pycharm3.PNG)
 
+### Test the Brewer software from pycharm, online mode, into a sdl2 console:
+* In the configuration selector of pycharm, select b185_pcbasic_brewer_sdl2_serial to control a real instrument, or the b185_pcbasic_brewer_sdl2_serial_combridge for using it with a previously opened BrewerSimulator.py script. Then run or debug the configuration as prefered.
 
+(The unique diference btw these two online launchers is the com port number).
+
+![Pycharm4](images/Pycharm4.PNG)
 
 
 
