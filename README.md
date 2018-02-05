@@ -36,13 +36,17 @@ This folder is an already configured pycharm project, with all the launchers nee
 ![pcbasic_test](images/PCBASIC_test_preview.png)
 
 
-## Configurations needed for running the Brewer Software with PCBASIC:
-* for running the brewer program is needed to configure the PCBASIC.INI file, which for windows is created after the first launch at 
-C:\Users\[username]\AppData\Roaming\pcbasic-dev\PCBASIC.INI, with the following entries:
+## Configurations needed for running the Brewer Software with PCBASIC: 
+* In the provided launchers it is defined to write a log file of the pcbasic session (pcbasic_brewer_log.txt) into 'C:\Temp' folder. So it is needed to create this folder or modify the launchers accordingly. 
+
+* Only in the case of needing an extended debugging file (for COM communications, or memory debug) it is useful to configure the PCBASIC.INI file, which for windows is created after the first launch at 
+C:\Users\[username]\AppData\Roaming\pcbasic-dev\PCBASIC.INI, uncommenting the following entries:
   * debug=True
-  * scaling=native
   
-* Also is needed to create a 'C:\Temp' folder, in which is going to be saved the pcbasic session output file (pcbasic_brewer_log.txt, very useful for debugging). 
+  Other options for extended debugging are:
+  * To enable the memory addressing messages into the log file: In file \pcbasic_brewer\pcbasic\basic\strings.py; set StringsLogging=True
+  * To enable the COM port communication messages into the log file: In file \pcbasic_brewer\pcbasic\basic\devices\ports.py; set self.log_COM_Messages=True
+  * To enable the COM port event messages into the log file: In file \pcbasic_brewer\pcbasic\basic\events.py; set self.log_COM_events = True
 
 
 ## Run the Brewer software, offline mode, into an ansi console:
@@ -51,6 +55,18 @@ a console window will open showing the main.asc brewer program:
 
 ![Test_mainasc_ansi_nobrew](images/Test_mainasc_ansi_nobrew.PNG)
 
+
+## Run the Brewer software, online mode, into an ansi console:
+* Configure the COM port number in the launcher C:\PCBasic_Brewer_Repo\pcbasic_brewer\Launcher_brewer185.bat
+* run the launcher.
+a console window will open showing the main.asc brewer program:
+
+
+
+----------------------------------------------------------------------------------
+
+
+## For running or debugging pcbasic with pycharm:
 
 ## Prepare pycharm:
 For being able to run pcbasic programs from pycharm with line per line debbuging capabilities is needed to configure pycharm:
@@ -61,18 +77,31 @@ For being able to run pcbasic programs from pycharm with line per line debbuging
 ![Pycharm2](images/Pycharm2.PNG)
 
 
-## Test the Brewer software, offline mode, using pycharm, into a pygame console:
-* In the configuration selector of pycharm, select brewer185_pygame_nobrew, then run or debug the configuration as prefered.
+
+## Test the Brewer software from pycharm, offline mode, into a sdl2 console:
+* In the configuration selector of pycharm, select b185_pcbasic_brewer_sdl2_nobrew, then run or debug the configuration as prefered.
 
 ![Pycharm3](images/Pycharm3.PNG)
+
 
 
 ## Test to run some routines into the brewer program:
 Once the brewer program is loaded in offline mode, one can try to run some offline-compatible routines to test the proper function of the software. For example just writting pdhp and pressing enter, the program will execute the routine pd and then the routine hp.
 
-## To do:
--Some string variables are being detached in the memory.py, clear function. Researching the causes... https://github.com/robhagemans/pcbasic/issues/49)
+-----------------------------------------------------------------------------------------------
+## Brewer Simulator:
+This is a small script that simulates the instrument com port answers when connecting, and also the answers for a few brewer routines like hp or hg (for now). It is used for debugging the pcbasic com port communications, without having a real instrument connected to the pc.
+
+For using it, it is needed to have installed a com bridge software in the pc (in windows can be used the com0com software, for example), and also configure the Brewer launcher to use the com port number of the bridge.
+
+One must run the BrewerSimulator.py script (cd C:\PCBasic_Brewer_Repo; python C:\PCBasic_Brewer_Repo\BrewerSimulator.py) before running the online Brewer Launcher (C:\PCBasic_Brewer_Repo\pcbasic_brewer\Launcher_brewer185.bat).
+
+In the case of an installed COM14&COM15 bridge, and a Brewer launcher configured to use the COM14 the communications will be: 
+
+* pcbasic <-> COM14 (Brewer software)
+* COM14 <-> COM15 (COM Bridge)
+* BrewerSimulator <-> COM15 (Instrument simulator)
 
 
-
+-------------------------------------------------------------
 
