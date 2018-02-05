@@ -1,0 +1,6 @@
+10000 REM ************ PY.rtn ************ 
+10010 DATA py
+11020 B$="RESULT OF DUPLICATE(2)="+STR$(_DUPLICATE(2)):PRINT#4,B$
+11030 RETURN
+55555 '
+65529 REM proper last line

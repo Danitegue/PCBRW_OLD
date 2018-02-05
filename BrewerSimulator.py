@@ -5,9 +5,9 @@ import serial
 import io
 from copy import deepcopy
 import datetime
-import logging
+#import logging
 
-logging.basicConfig(filename='C:/Temp/BrewerSimulator_Log.txt', format='%(asctime)s.%(msecs)04d %(message)s', level=logging.INFO, datefmt='%H:%M:%S', filemode='w')
+#logging.basicConfig(filename='C:/Temp/BrewerSimulator_Log.txt', format='%(asctime)s.%(msecs)04d %(message)s', level=logging.INFO, datefmt='%H:%M:%S', filemode='w')
 
 
 # This script is to simulate the COM port answers of a brewer instrument
@@ -266,16 +266,16 @@ with sw:
             else:
                 line_counter = line_counter + 1
 
-                log=str(line_counter)+" "+ str(datetime.datetime.now())+' Line received:'+ (str(line).replace('\r','\\r').replace('\n','\\n'))
-                print log
-                logging.info('Line received:'+ (str(line).replace('\r','\\r').replace('\n','\\n')))
+                logl=str(line_counter)+" "+ str(datetime.datetime.now())+' Line received:'+ (str(line).replace('\r','\\r').replace('\n','\\n'))
+                print logl
+                #logging.info('Line received:'+ (str(line).replace('\r','\\r').replace('\n','\\n')))
                 gotkey, answer = check_line(line)
 
                 if gotkey:
-                    log=str(datetime.datetime.now())+ ' - Writting to com port:'+ str(answer)
-                    print log
+                    logl=str(datetime.datetime.now())+ ' - Writting to com port:'+ str(answer)
+                    print logl
                     print ""
-                    logging.info('Writting to COM port:'+ str(answer))
+                    #logging.info('Writting to COM port:'+ str(answer))
                     for a in answer:
                         if 'wait' in a:
                             time.sleep(float(a.split('wait')[1]))
