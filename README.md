@@ -24,10 +24,19 @@ This folder is an already configured pycharm project, with all the launchers nee
 
 
 ## Installation:
-* Create a new folder into unit C. This repo is already configured to work in a folder called C:\PCBasic_Brewer_Repo\
-* Clone this repository into that folder. 
+* Install git
+* From the git shell, clone recursively the repository into C:\ 
+```
+git clone --recursive https://github.com/Danitegue/PCBasic_Brewer_Repo
+
+). This will create the repository folder C:\PCBasic_Brewer_Repo\.
+```
 * Install python 2.7. (Or Anaconda package with python 2.7) 
-* Install the needed extra libraries: pip install pypiwin32 pysdl2 numpy pygame pyaudio (pyserial won't be needed since this customized version of pcbasic_brewer has an in built customized version of pyserial)
+* Install the python needed extra libraries: 
+
+```
+pip install pypiwin32 pysdl2 numpy pygame pyaudio pyserial
+```
 
 
 ## Run the PCBASIC interpreter into an ansi console:
@@ -37,7 +46,48 @@ This folder is an already configured pycharm project, with all the launchers nee
 
 
 ## Configurations needed for running the Brewer Software with PCBASIC: 
-* In the provided launchers it is defined to write a log file of the pcbasic session (pcbasic_brewer_log.txt) into 'C:\Temp' folder. So it is needed to create this folder or modify the launchers accordingly. 
+* In the provided launchers it is necesary to configure the paths of the brewer software, pcbasic and python.exe, accodingly to the user installation folders. For example, in the launcher file C:\PCBasic_Brewer_Repo\pcbasic_brewer\Launcher_brewer185.bat:
+
+```
+rem ****************************************************************************
+rem Use the variables in this section to configure the execution of the Brewer program
+rem ****************************************************************************
+
+rem PCBASIC_PATH is the path in which the run.py file is located
+set PCBASIC_PATH=C:\PCBasic_Brewer_Repo\pcbasic_brewer
+
+rem PYTHON_DIR is the folder in which the python.exe is located
+set PYTHON_DIR=C:\Users\DS_Pandora\Anaconda2
+
+rem Set the folder to mount as unit C: (For Brewer soft, we are going to mount the folder where the main.asc BASIC program is as C:)
+set MOUNT_C=C:\PCBasic_Brewer_Repo\brw#185\Program
+
+rem Set the folder to mount as unit D: (For brewer soft, we are going to mount the bdata folder as unit D:)
+set MOUNT_D=C:\PCBasic_Brewer_Repo\brw#185\bdata185
+
+rem Set the name of the BASIC program to run (For brewer soft, main.asc)
+set PROGRAM=main.asc
+
+rem COM_PORT is the identifier of the port in which the brewer is connected, for example COM_PORT=COM8
+set COM_PORT=COM14
+
+rem Set the LOG_DIR in order to write the pcbasic session log.
+set LOG_DIR=C:\Temp
+
+
+rem ****************************************************************************
+rem Do not change anything below this line
+rem ****************************************************************************
+```
+
+
+* Also in the LOG_DIR is going to be written a log file of the pcbasic session (pcbasic_brewer_log.txt). So it is needed to create this folder if it does not exist, otherwise the launcher is not going to work.
+
+```
+...  --logfile=C:\Temp\pcbasic_brewer_log.txt
+
+```
+
 
 * Only in the case of needing an extended debugging file (for COM communications, or memory debug) it is useful to configure the PCBASIC.INI file, which for windows is created after the first launch at 
 C:\Users\[username]\AppData\Roaming\pcbasic-dev\PCBASIC.INI, uncommenting the following entries:
@@ -90,6 +140,154 @@ In the case of an installed COM14&COM15 bridge, and a Brewer launcher configured
 * BrewerSimulator <-> COM15 (Instrument simulator)
 
 ![BrewerSimulator1](images/BrewerSimulator1.PNG)
+
+----------------------------------------------------------------------------------
+## Connect the brewer software with the outside world: Using PCBasic Extensions 
+
+the pcbasic extensions are explained here: https://github.com/robhagemans/pcbasic/blob/master/docsrc/devguide.html
+here some examples:
+
+### Simple Extensions:
+The simple extensions of pcbasic allows to:
+* trigger python procedures from BASIC routines.
+* Call to python functions from BASIC routines, (allowed to return one unique value per function).
+
+
+#### Simple Extension example 1 - Trigger a python procedure form a "special" BASIC statement (No return): 
+
+Having a BASIC routine like this "C:\PCBasic_Brewer_Repo\brw#185\Program\pu.rtn" (notice the non BASIC code _MKBACKUP): 
+
+```
+10000 REM ************ PU.rtn ************
+10010 DATA pu
+11020 B$="MAKING BACKUP BY EXTENSION FUNCTION MKBACKUP":PRINT#4,B$
+11030 _MKBACKUP
+11040 RETURN
+55555 '
+65529 REM proper last line
+```
+
+and a pcbasic extension: "C:\PCBASIC_Brewer_Repo\Brw_extensions_simple1.py":
+
+```
+import shutil
+def mkbackup():
+    try:
+        filename='test.txt'
+        sourcepath='C:/filepath_source/'
+        targetpath='C:/filepath_target/'
+        shutil.copy2(sourcepath+filename, targetpath)
+    except:
+        pass
+```
+
+if the pcbasic launcher has the extra argument "--extension=Brw_extensions_simple1", pcbasic will load the functions and procedures of the extension module, in a way that when the special BASIC statement _MKBACKUP of the PU.rtn routine is going to be executed, pcbasic automatically detects that it is not a BASIC syntax, and it will try to look in the loaded extension functions for a proper function or procedure to "solve" the statement. Of course the function match is not case sensitive, so the _MKBACKUP basic statement can be handled by a "mkbackup()" as well as a "MkBackup()" python functions.
+
+In this case, when loading the brewer software with this extra argument in the launcher, and running the "pu" routine from the brewer software command line, the pu BASIC routine is going to trigger the mkbackup() python procedure, which will be in charge of make wathever in the python world, in this case a backup of a file.
+
+In the output file #4 (which in this case corresponds to the D02018.185 file), will be written:
+
+```
+PROGRAM start : JAN 20/18 at 23:44:50
+MAKING BACKUP BY EXTENSION FUNCTION MKBACKUP
+```
+
+
+### Simple Extension example 2 - Use a python function to solve a "special" BASIC statement: 
+
+Having a BASIC routine like this "C:\PCBasic_Brewer_Repo\brw#185\Program\py.rtn" (notice the non BASIC code _DUPLICATE(2)): 
+
+```
+10000 REM ************ PY.rtn ************
+10010 DATA py
+11020 B$="RESULT OF DUPLICATE(2)="+STR$(_DUPLICATE(2)):PRINT#4,B$
+11030 RETURN
+55555 '
+65529 REM proper last line
+```
+
+and a pcbasic extension: "C:\PCBASIC_Brewer_Repo\Brw_extensions_simple2.py":
+
+```
+def duplicate(n):
+    try:
+        return 2*int(n)
+    except IndexError:
+        return -1
+```
+
+
+In the same way of the previous example, launching the brewer software with the extra argument --extension=Brw_extensions_simple2, and running the "py" routine from the brewer software command line, the py BASIC routine is going to use the duplicate(2) python function to solve the value of the _DUPLICATE(2) statement. Notice that the python function only can return one value result per call.
+
+In the output file #4 (which in this case corresponds to the D02018.185 file), will be written:
+
+```
+PROGRAM start : JAN 20/18 at 23:44:50
+RESULT OF DUPLICATE(2)= 4
+```
+
+
+### Advanced Extensions:
+In these extensions, it is inherited the session class of the pcbasic, where we can have access to all the variables in the BASIC world at the same time (and much more). This can be used for:
+* Get and set the BASIC variables from python using the .get and .set methods of the session class.
+* Make python plots with the variable values stored in the memory.
+
+
+### Advanced extension example 1:
+
+Having a BASIC routine like this "C:\PCBasic_Brewer_Repo\brw#185\Program\px.rtn" (notice the non BASIC code _HFSWITCH): 
+
+```
+px.rtn:
+10000 REM ************ PX.rtn ************
+10010 DATA px
+11020 B$="HF% VALUE="+STR$(HF%):PRINT#4,B$
+11025 _HFSWITCH
+11030 B$="HF% VALUE="+STR$(HF%):PRINT#4,B$
+11030 RETURN
+55555 '
+65529 REM proper last line
+```
+
+and a pcbasic extension like this: "C:\PCBASIC_Brewer_Repo\Brw_extensions.py": 
+
+
+```
+from pcbasic.basic import Session
+
+class ExtendedSession(Session):
+    def __init__(self):
+        Session.__init__(self, stdio=True, extension=self)
+
+    def getHF_session(self):
+        hf=self.get_variable("HF%")
+        return hf
+    
+    def setHF_session(self,value):
+        self.set_variable("HF%",value)
+        
+def HFswitch():
+    try:
+        with ExtendedSession() as s:
+            HF=s.getHF_session()
+            if HF==1:
+               s.setHF_session(0)
+            elif HF==0:
+               s.setHF_session(1)
+    except IndexError:
+        return -1
+```
+
+The _HFSWITCH BASIC statment will trigger the HFswitch() python procedure, and it will use the inherited session class to get and set the values of the BASIC variables with the .get and .set procedures, in order to switch the value of the variable HF%
+
+In the output file #4 (which in this case corresponds to the D02018.185 file), will be written:
+
+```
+PROGRAM start : JAN 21/18 at 00:49:49
+HF% VALUE= 0
+HF% VALUE= 1
+```
+
 
 ----------------------------------------------------------------------------------
 
