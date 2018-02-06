@@ -193,7 +193,7 @@ RESULT OF BACKUP=None
 ```
 
 
-### Simple Extension example 2 - Trigger a python function form a "special" BASIC statement (with args):
+#### Simple Extension example 2 - Trigger a python function form a "special" BASIC statement (with args):
 
 Having a BASIC routine like this "C:\PCBasic_Brewer_Repo\brw#185\Program\py.rtn" (notice the non BASIC code _DUPLICATE(2)): 
 
@@ -233,7 +233,7 @@ In these extensions, it is inherited the session class of the pcbasic, where we 
 * Make python plots with the variable values stored in the memory.
 
 
-### Advanced extension example 1:
+#### Advanced extension example 1:
 
 Having a BASIC routine like this "C:\PCBasic_Brewer_Repo\brw#185\Program\px.rtn" (notice the non BASIC code _HFSWITCH): 
 
