@@ -1,0 +1,1 @@
+ansipipe-launcher.exe C:\Users\DS_Pandora\Anaconda2\python.exe C:\PCBasic_Brewer_Repo\pcbasic\run.py --interface=pygame

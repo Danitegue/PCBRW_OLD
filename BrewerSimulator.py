@@ -5,9 +5,9 @@ import serial
 import io
 from copy import deepcopy
 import datetime
-#import logging
+import logging
 
-#logging.basicConfig(filename='C:/Temp/BrewerSimulator_Log.txt', format='%(asctime)s.%(msecs)04d %(message)s', level=logging.INFO, datefmt='%H:%M:%S', filemode='w')
+logging.basicConfig(filename='C:/Temp/BrewerSimulator_Log.txt', format='%(asctime)s.%(msecs)04d %(message)s', level=logging.INFO, datefmt='%H:%M:%S', filemode='w')
 
 
 # This script is to simulate the COM port answers of a brewer instrument
@@ -158,7 +158,7 @@ def check_line(line):
     if not gotkey:
         # 2 comma commands:
         if line.count(',')==2 and not gotkey:
-            Mcmds = ['M,1,','M,3,','M,4,','M,5,','M,9,','M,10,']
+            Mcmds = ['M,1,','M,2,','M,3,','M,4,','M,5,','M,9,','M,10,']
             for ii in range(len(Mcmds)):
                 Mcm = Mcmds[ii]
                 if Mcm in line and not gotkey:
@@ -190,6 +190,15 @@ def check_line(line):
                         break
                 if gotkey:
                     break
+
+            # M,2, 12993:M,1, 208
+            if not gotkey:
+                if ('M,2,' in line) and ('M,1,' in line):
+                    answer = deepcopy(brewer_none)
+                    gotkey = True
+
+
+
 
         # 5 comma commands:
         if line.count(',')==5 and not gotkey:
@@ -224,7 +233,9 @@ def check_line(line):
 
     if not gotkey:
         print ""
-        print '!!!!! No key found for line:', str(line.replace('\r','\\r').replace('\n','\\n').replace('\x00','null'))
+        s= '!!!!! No key found for line:', str(line.replace('\r','\\r').replace('\n','\\n').replace('\x00','null'))
+        print s
+        logging.info(s)
         print ""
     return gotkey, answer
 
@@ -232,8 +243,9 @@ line_counter=0
 
 # Open serial connection with COM15
 comport='COM15'
-print 'Opening '+comport+' serial connection...'
-
+s='Opening '+comport+' serial connection...'
+print s
+logging.info(s)
 
 sw = serial.Serial(comport, baudrate=1200, timeout=0.2)
 sw.close()
@@ -250,8 +262,9 @@ sw.flushInput()
 b_initialized=False
 n_counter=0 #This is only to answer only to the last carriage return,
 # when some of them are received in the initial connection with the brewer
-print 'Done. Monitoring serial...'
-#logging.info('Done. Monitoring serial...')
+s= 'Done. Monitoring serial...'
+print s
+logging.info(s)
 with sw:
     while True:
         try:
@@ -268,14 +281,14 @@ with sw:
 
                 logl=str(line_counter)+" "+ str(datetime.datetime.now())+' Line received:'+ (str(line).replace('\r','\\r').replace('\n','\\n'))
                 print logl
-                #logging.info('Line received:'+ (str(line).replace('\r','\\r').replace('\n','\\n')))
+                logging.info('Line received:'+ (str(line).replace('\r','\\r').replace('\n','\\n')))
                 gotkey, answer = check_line(line)
 
                 if gotkey:
                     logl=str(datetime.datetime.now())+ ' - Writting to com port:'+ str(answer)
                     print logl
                     print ""
-                    #logging.info('Writting to COM port:'+ str(answer))
+                    logging.info('Writting to COM port:'+ str(answer))
                     for a in answer:
                         if 'wait' in a:
                             time.sleep(float(a.split('wait')[1]))
