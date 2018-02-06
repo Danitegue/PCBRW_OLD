@@ -1,2 +1,0 @@
-40 PRINT#1, C, VARPTR(C)
-

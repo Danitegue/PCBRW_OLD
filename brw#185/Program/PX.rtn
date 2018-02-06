@@ -1,6 +1,8 @@
-10000 REM ************ PX.rtn ************ 
+10000 REM ************ PX.rtn ************
 10010 DATA px
-11020 B$="HF% VALUE="+STR$(_GETHF):PRINT#4,B$
-11030 RETURN
+11020 B$="HF% VALUE="+STR$(HF%):PRINT#4,B$
+11030 HF%=_HFSWITCH
+11040 B$="HF% VALUE="+STR$(HF%):PRINT#4,B$
+11050 RETURN
 55555 '
 65529 REM proper last line

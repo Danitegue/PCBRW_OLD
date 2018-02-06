@@ -1,0 +1,234 @@
+ PROGRAM start :  JAN 22/18 at 13:18:00 PROGRAM start :  JAN 22/18 at 13:22:30 PROGRAM start :  JAN 22/18 at 13:56:01
+
+**** 2nd Spectrometer Alignment - HP Test ****
+Spectrometer alignment trouble. PROGRAM start :  JAN 22/18 at 13:57:28
+
+**** 2nd Spectrometer Alignment - HP Test ****
+Spectrometer alignment trouble. PROGRAM start :  JAN 22/18 at 13:58:44
+
+**** 2nd Spectrometer Alignment - HP Test ****
+Spectrometer alignment trouble. PROGRAM start :  JAN 22/18 at 14:00:40
+
+**** 2nd Spectrometer Alignment - HP Test ****
+Spectrometer alignment trouble. PROGRAM start :  JAN 22/18 at 14:02:24 PROGRAM start :  JAN 22/18 at 14:07:42
+
+**** 2nd Spectrometer Alignment - HP Test ****
+Spectrometer alignment trouble.
+
+**** 2nd Spectrometer Alignment - HP Test ****
+Spectrometer alignment trouble. PROGRAM start :  JAN 22/18 at 14:14:32 PROGRAM start :  JAN 22/18 at 14:15:14 PROGRAM start :  JAN 22/18 at 14:17:28
+
+**** 2nd Spectrometer Alignment - HP Test **** PROGRAM start :  JAN 22/18 at 14:17:57 PROGRAM start :  JAN 22/18 at 14:18:34 PROGRAM start :  JAN 22/18 at 14:19:22
+
+**** 2nd Spectrometer Alignment - HP Test ****
+14:19:48 JAN 22/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045  PROGRAM start :  JAN 22/18 at 14:24:29 PROGRAM start :  JAN 22/18 at 14:37:48 PROGRAM start :  JAN 22/18 at 14:38:54 PROGRAM start :  JAN 22/18 at 14:47:33
+
+**** 2nd Spectrometer Alignment - HP Test ****
+14:47:50 JAN 22/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045  PROGRAM start :  JAN 22/18 at 15:24:08 PROGRAM start :  JAN 22/18 at 16:54:44
+
+**** 2nd Spectrometer Alignment - HP Test ****
+Spectrometer alignment trouble. PROGRAM start :  JAN 22/18 at 17:04:13 PROGRAM start :  JAN 22/18 at 17:06:12 PROGRAM start :  JAN 22/18 at 17:11:44
+
+**** 2nd Spectrometer Alignment - HP Test ****
+17:12:10 JAN 22/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045  PROGRAM start :  JAN 22/18 at 17:14:33
+
+**** 2nd Spectrometer Alignment - HP Test ****
+17:14:55 JAN 22/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045  PROGRAM start :  JAN 22/18 at 10:05:52
+Using wide slit0 on line 296.7 nm HG line ...
+
+**** HG Calibration ****
+10:06:16 JAN 22/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+HG FW#2 at step  0
+10:08:24 JAN 22/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+10:09:04 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+10:09:44 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps
+
+**** 2nd Spectrometer Alignment - HP Test ****
+10:10:47 JAN 22/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045  PROGRAM start :  JAN 22/18 at 10:12:51
+ PROGRAM start :  JAN 22/18 at 10:25:50
+
+**** 2nd Spectrometer Alignment - HP Test ****
+10:26:13 JAN 22/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045 
+ PROGRAM start :  JAN 22/18 at 10:29:38
+
+**** 2nd Spectrometer Alignment - HP Test ****
+10:30:11 JAN 22/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045 
+
+**** 2nd Spectrometer Alignment - HP Test ****
+10:31:29 JAN 22/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045 
+Using wide slit0 on line 296.7 nm HG line ...
+
+**** HG Calibration ****
+10:33:52 JAN 22/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+HG FW#2 at step  0
+10:36:00 JAN 22/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+10:36:41 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+10:37:21 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps PROGRAM start :  JAN 22/18 at 10:38:38
+
+**** 2nd Spectrometer Alignment - HP Test ****
+10:38:56 JAN 22/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045 
+Using wide slit0 on line 296.7 nm HG line ...
+
+**** HG Calibration ****
+10:40:05 JAN 22/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+HG FW#2 at step  0
+10:42:13 JAN 22/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+10:42:54 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+10:43:34 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps PROGRAM start :  JAN 22/18 at 14:02:35 PROGRAM start :  JAN 22/18 at 14:03:00
+MAKING BACKUP BY EXTENSION FUNCTION MKBACKUP PROGRAM start :  JAN 22/18 at 14:03:38
+MAKING BACKUP BY EXTENSION FUNCTION MKBACKUP
+ PROGRAM start :  JAN 22/18 at 14:11:47
+MAKING BACKUP BY EXTENSION FUNCTION MKBACKUP PROGRAM start :  JAN 22/18 at 14:12:17
+MAKING BACKUP BY EXTENSION FUNCTION MKBACKUP PROGRAM start :  JAN 22/18 at 14:12:53
+MAKING BACKUP BY EXTENSION FUNCTION MKBACKUP PROGRAM start :  JAN 22/18 at 14:13:43
+MAKING BACKUP BY EXTENSION FUNCTION MKBACKUP PROGRAM start :  JAN 22/18 at 14:16:01
+MAKING BACKUP BY EXTENSION FUNCTION MKBACKUP PROGRAM start :  JAN 22/18 at 14:16:23
+MAKING BACKUP BY EXTENSION FUNCTION MKBACKUP PROGRAM start :  JAN 22/18 at 14:24:00
+MAKING BACKUP BY EXTENSION FUNCTION MKBACKUP
+RESULT OF BACKUP=None
+MAKING BACKUP BY EXTENSION FUNCTION MKBACKUP
+RESULT OF BACKUP=None PROGRAM start :  JAN 22/18 at 14:36:15
+HF% VALUE= 0
+HF% VALUE= 0 PROGRAM start :  JAN 22/18 at 14:37:32
+HF% VALUE= 0
+HF% VALUE= 0 PROGRAM start :  JAN 22/18 at 14:43:38
+HF% VALUE= 0
+HF% VALUE= 0 PROGRAM start :  JAN 22/18 at 14:44:48
+HF% VALUE= 0 PROGRAM start :  JAN 22/18 at 14:54:55
+HF% VALUE= 0
+HF% VALUE= 1

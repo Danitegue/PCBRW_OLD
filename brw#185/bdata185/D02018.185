@@ -1,0 +1,701 @@
+
+**** 2nd Spectrometer Alignment - HP Test ****
+18:21:08 JAN 20/18 Brewer temp = 0C ( 1.784871V) (T2 =  309C  T3=  18C) moisture = 23.27 g/m3 (00.0%)
+Maximum intensity found at step:  90.2 243191.7 R^2:  .9337344 
+Maximum intensity found at step:  90.3 235832.5 R^2:  .9943702 
+Maximum intensity found at step:  90.3 235832.5 R^2:  .9943702 
+Maximum intensity found at step:  90.3 235832.5 R^2:  .9943702 
+Maximum intensity found at step:  90.3 235832.5 R^2:  .9943702 
+Maximum intensity found at step:  90.3 235832.5 R^2:  .9943702 
+Spectrometer alignment trouble. PROGRAM start :  JAN 20/18 at 18:44:34 PROGRAM start :  JAN 20/18 at 19:21:05 PROGRAM start :  JAN 20/18 at 19:27:06 PROGRAM start :  JAN 20/18 at 19:29:11 PROGRAM start :  JAN 20/18 at 19:34:12 PROGRAM start :  JAN 20/18 at 19:34:39 PROGRAM start :  JAN 20/18 at 19:39:10 PROGRAM start :  JAN 20/18 at 19:43:26 PROGRAM start :  JAN 20/18 at 19:48:25 PROGRAM start :  JAN 20/18 at 19:48:42 PROGRAM start :  JAN 20/18 at 20:04:42 PROGRAM start :  JAN 20/18 at 20:05:00 PROGRAM start :  JAN 20/18 at 20:10:00 PROGRAM start :  JAN 20/18 at 20:18:10 PROGRAM start :  JAN 20/18 at 20:18:25
+
+**** 2nd Spectrometer Alignment - HP Test ****
+20:18:49 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045 
+Using wide slit0 on line 296.7 nm HG line ...
+
+**** HG Calibration ****
+20:22:23 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+HG FW#2 at step  0
+20:24:33 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+ 5             442 
+ 6             675 
+ 7             983 
+ 8             1574 
+ 9             9340 
+ 10            20651 
+ 11            38762 
+ 12            60155 
+ 13            70516 
+ 14            71203 
+ 15            59500 
+ 16            39200 
+ 17            20000 
+ 18            9200 
+ 19            1333 
+ 20            800 
+ 21            433 
+ 22            345 
+ 23            115 
+ 24            98 
+20:25:21 ( 0.0000 )  corr est for step 1012.00 target is step 1020   59500     0.05
+ micro is moved by  -8 steps
+ 5             442 
+ 6             675 
+ 7             983 
+ 8             1574 
+ 9             9340 
+ 10            20651 
+ 11            38762 
+ 12            60155 
+ 13            70516 
+ 14            71203 
+ 15            59500 
+ 16            39200 
+ 17            20000 
+ 18            9200 
+ 19            1333 
+ 20            800 
+ 21            433 
+ 22            345 
+ 23            115 
+ 24            98 
+20:26:09 ( 0.0000 )  corr est for step 1012.00 target is step 1020   59500     0.05
+ micro is moved by  -8 steps
+ 5             442 
+ 6             675 
+ 7             983 
+ 8             1574 
+ 9             9340 
+ 10            20651 
+ 11            38762 
+ 12            60155 
+ 13            70516 
+ 14            71203 
+ 15            59500 
+ 16            39200 
+ 17            20000 
+ 18            9200 
+ 19            1333 
+ 20            800 
+ 21            433 
+ 22            345 
+ 23            115 
+ 24            98 
+20:26:57 ( 0.0000 )  corr est for step 1012.00 target is step 1020   59500     0.05
+ micro is moved by  -8 steps
+ 5             442 
+ 6             675 
+ 7             983 
+ 8             1574 
+ 9             9340 
+ 10            20651 
+ 11            38762 
+ 12            60155 
+ 13            70516 
+ 14            71203 
+ 15            59500 
+ 16            39200 
+ 17            20000 
+ 18            9200 
+ 19            1333 
+ 20            800 
+ 21            433 
+ 22            345 
+ 23            115 
+ 24            98 
+20:27:45 ( 0.0000 )  corr est for step 1012.00 target is step 1020   59500     0.05
+ micro is moved by  -8 steps
+ 5             442 
+ 6             675 
+ 7             983 
+ 8             1574 
+ 9             9340 
+ 10            20651 
+ 11            38762 
+ 12            60155 
+ 13            70516 
+ 14            71203 
+ 15            59500 
+ 16            39200 
+ 17            20000 
+ 18            9200 
+ 19            1333 
+ 20            800 
+ 21            433 
+ 22            345 
+ 23            115 
+ 24            98 
+20:28:32 ( 0.0000 )  corr est for step 1012.00 target is step 1020   59500     0.05
+ micro is moved by  -8 steps
+HG failed - no diode offset constant
+
+**** 2nd Spectrometer Alignment - HP Test ****
+20:38:09 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045  PROGRAM start :  JAN 20/18 at 14:13:18 PROGRAM start :  JAN 20/18 at 14:24:06 PROGRAM start :  JAN 20/18 at 20:27:54 PROGRAM start :  JAN 20/18 at 20:30:55 PROGRAM start :  JAN 20/18 at 20:32:46
+
+**** 2nd Spectrometer Alignment - HP Test ****
+20:33:09 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045  PROGRAM start :  JAN 20/18 at 20:59:34
+Using wide slit0 on line 296.7 nm HG line ...
+
+**** HG Calibration ****
+20:59:57 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+HG FW#2 at step  0
+21:02:06 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+ 5             442 
+ 6             675 
+ 7             983 
+ 8             1574 
+ 9             9340 
+ 10            20651 
+ 11            38762 
+ 12            60155 
+ 13            70516 
+ 14            71203 
+ 15            59500 
+ 16            39200 
+ 17            20000 
+ 18            9200 
+ 19            1333 
+ 20            800 
+ 21            433 
+ 22            345 
+ 23            115 
+ 24            98 
+21:02:54 ( 0.0000 )  corr est for step 1012.00 target is step 1020   59500     0.05
+ micro is moved by  -8 steps
+ 5             442 
+ 6             675 
+ 7             983 
+ 8             1574 
+ 9             9340 
+ 10            20651 
+ 11            38762 
+ 12            60155 
+ 13            70516 
+ 14            71203 
+ 15            59500 
+ 16            39200 
+ 17            20000 
+ 18            9200 
+ 19            1333 
+ 20            800 
+ 21            433 
+ 22            345 
+ 23            115 
+ 24            98 
+21:03:42 ( 0.0000 )  corr est for step 1012.00 target is step 1020   59500     0.05
+ micro is moved by  -8 steps
+ 5             442 
+ 6             675 
+ 7             983 
+ 8             1574 
+ 9             9340 
+ 10            20651 
+ 11            38762 
+ 12            60155 
+ 13            70516 
+ 14            71203 
+ 15            59500 
+ 16            39200 
+ 17            20000 
+ 18            9200 
+ 19            1333 
+ 20            800 
+ 21            433 
+ 22            345 
+ 23            115 
+ 24            98 
+21:04:29 ( 0.0000 )  corr est for step 1012.00 target is step 1020   59500     0.05
+ micro is moved by  -8 steps
+ 5             442 
+ 6             675 
+ 7             983 
+ 8             1574 
+ 9             9340 
+ 10            20651 
+ 11            38762 
+ 12            60155 
+ 13            70516 
+ 14            71203 
+ 15            59500 
+ 16            39200 
+ 17            20000 
+ 18            9200 
+ 19            1333 
+ 20            800 
+ 21            433 
+ 22            345 
+ 23            115 
+ 24            98 
+21:05:17 ( 0.0000 )  corr est for step 1012.00 target is step 1020   59500     0.05
+ micro is moved by  -8 steps PROGRAM start :  JAN 20/18 at 21:22:59
+Using wide slit0 on line 296.7 nm HG line ...
+
+**** HG Calibration ****
+21:23:33 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+HG FW#2 at step  0
+21:25:43 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+bad data
+
+      
+bad data
+
+      
+bad data
+
+       PROGRAM start :  JAN 20/18 at 21:32:09
+
+**** 2nd Spectrometer Alignment - HP Test ****
+21:32:33 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045 
+Using wide slit0 on line 296.7 nm HG line ...
+
+**** HG Calibration ****
+21:37:50 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+HG FW#2 at step  0
+21:39:59 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+bad data
+
+       PROGRAM start :  JAN 20/18 at 21:44:04
+Using wide slit0 on line 296.7 nm HG line ...
+
+**** HG Calibration ****
+21:44:26 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+HG FW#2 at step  0
+21:46:36 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+21:47:24 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+21:48:12 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+21:49:00 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+21:49:48 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+21:50:36 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps
+HG failed - no diode offset constant PROGRAM start :  JAN 20/18 at 21:58:34
+Using wide slit0 on line 296.7 nm HG line ...
+
+**** HG Calibration ****
+21:58:52 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+HG FW#2 at step  0
+22:01:01 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+ 5             942 
+ 6             3724 
+ 7             18701 
+ 8             40476 
+ 9             72447 
+ 10            110258 
+ 11            147461 
+ 12            185835 
+ 13            217093 
+ 14            238139 
+ 15            243142 
+ 16            225667 
+ 17            199778 
+ 18            160945 
+ 19            122078 
+ 20            82209 
+ 21            45365 
+ 22            22207 
+ 23            4408 
+ 24            641 
+22:01:49 ( 0.0000 )  corr est for step 1022.00 target is step 1020  243142     0.00
+ micro is moved by   2 steps
+ 5             942 
+ 6             3724 
+ 7             18701 
+ 8             40476 
+ 9             72447 
+ 10            110258 
+ 11            147461 
+ 12            185835 
+ 13            217093 
+ 14            238139 
+ 15            243142 
+ 16            225667 
+ 17            199778 
+ 18            160945 
+ 19            122078 
+ 20            82209 
+ 21            45365 
+ 22            22207 
+ 23            4408 
+ 24            641 
+22:02:37 ( 0.0000 )  corr est for step 1022.00 target is step 1020  243142     0.00
+ micro is moved by   2 steps
+ 5             942 
+ 6             3724 
+ 7             18701 
+ 8             40476 
+ 9             72447 
+ 10            110258 
+ 11            147461 
+ 12            185835 
+ 13            217093 
+ 14            238139 
+ 15            243142 
+ 16            225667 
+ 17            199778 
+ 18            160945 
+ 19            122078 
+ 20            82209 
+ 21            45365 
+ 22            22207 
+ 23            4408 
+ 24            641 
+22:03:25 ( 0.0000 )  corr est for step 1022.00 target is step 1020  243142     0.00
+ micro is moved by   2 steps
+ 5             942 
+ 6             3724 
+ 7             18701 
+ 8             40476 
+ 9             72447 
+ 10            110258 
+ 11            147461 
+ 12            185835 
+ 13            217093 
+ 14            238139 
+ 15            243142 
+ 16            225667 
+ 17            199778 
+ 18            160945 
+ 19            122078 
+ 20            82209 
+ 21            45365 
+ 22            22207 
+ 23            4408 
+ 24            641 
+22:04:13 ( 0.0000 )  corr est for step 1022.00 target is step 1020  243142     0.00
+ micro is moved by   2 steps
+ 5             942 
+ 6             3724 
+ 7             18701 
+ 8             40476 
+ 9             72447 
+ 10            110258 
+ 11            147461 
+ 12            185835 
+ 13            217093 
+ 14            238139 
+ 15            243142 
+ 16            225667 
+ 17            199778 
+ 18            160945 
+ 19            122078 
+ 20            82209 
+ 21            45365 
+ 22            22207 
+ 23            4408 
+ 24            641 
+22:05:01 ( 0.0000 )  corr est for step 1022.00 target is step 1020  243142     0.00
+ micro is moved by   2 steps
+HG failed - no diode offset constant PROGRAM start :  JAN 20/18 at 22:15:49
+Using wide slit0 on line 296.7 nm HG line ...
+
+**** HG Calibration ****
+22:16:11 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+HG FW#2 at step  0
+22:18:20 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%) PROGRAM start :  JAN 20/18 at 22:38:17
+Using wide slit0 on line 296.7 nm HG line ...
+
+**** HG Calibration ****
+22:38:40 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+HG FW#2 at step  0
+22:40:50 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+ PROGRAM start :  JAN 20/18 at 22:44:51
+
+**** 2nd Spectrometer Alignment - HP Test ****
+22:45:16 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Aborted
+Using wide slit0 on line 296.7 nm HG line ...
+
+**** HG Calibration ****
+22:46:14 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+HG FW#2 at step  0
+22:48:24 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+22:49:22 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+22:50:10 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+22:50:58 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+22:51:46 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+22:52:34 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps
+HG failed - no diode offset constant PROGRAM start :  JAN 20/18 at 23:05:39
+
+**** 2nd Spectrometer Alignment - HP Test ****
+23:06:01 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045 
+
+**** 2nd Spectrometer Alignment - HP Test ****
+23:07:19 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045 
+
+**** 2nd Spectrometer Alignment - HP Test ****
+23:08:33 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045 
+Using wide slit0 on line 296.7 nm HG line ...
+
+**** HG Calibration ****
+23:09:45 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+HG FW#2 at step  0
+23:11:54 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%) PROGRAM start :  JAN 20/18 at 23:18:51 PROGRAM start :  JAN 20/18 at 23:20:06
+Using wide slit0 on line 296.7 nm HG line ...
+
+**** HG Calibration ****
+23:21:06 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+HG FW#2 at step  0
+23:23:16 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+ 5             875 
+ 6             3406 
+ 7             17503 
+ 8             38557 
+ 9             68919 
+ 10            105891 
+ 11            142334 
+ 12            180243 
+ 13            211299 
+ 14            233156 
+ 15            238353 
+ 16            222121 
+ 17            197238 
+ 18            158718 
+ 19            120969 
+ 20            81289 
+ 21            45183 
+ 22            22077 
+ 23            4508 
+ 24            640 
+23:24:04 ( 0.0000 )  corr est for step 1022.00 target is step 1020  238353     0.00
+ micro is moved by   2 steps PROGRAM start :  JAN 20/18 at 23:25:45
+
+**** 2nd Spectrometer Alignment - HP Test ****
+23:26:04 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045  PROGRAM start :  JAN 20/18 at 23:45:55 PROGRAM start :  JAN 20/18 at 23:49:31 PROGRAM start :  JAN 20/18 at 23:50:28 PROGRAM start :  JAN 20/18 at 23:50:55
+
+**** 2nd Spectrometer Alignment - HP Test ****
+23:51:20 JAN 20/18 Brewer temp = 19C ( 2.804185V) (T2 =  20C  T3=  18C) moisture = 03.54 g/m3 (20.5%)
+Maximum intensity found at step:  80.4 238062 R^2:  .9956045  PROGRAM start :  JAN 20/18 at 09:09:33 PROGRAM start :  JAN 20/18 at 09:10:35 PROGRAM start :  JAN 20/18 at 09:11:36 PROGRAM start :  JAN 20/18 at 09:16:18 PROGRAM start :  JAN 20/18 at 09:24:46 PROGRAM start :  JAN 20/18 at 09:25:40 PROGRAM start :  JAN 20/18 at 09:26:34 PROGRAM start :  JAN 20/18 at 09:28:53 PROGRAM start :  JAN 20/18 at 09:30:11
+ PROGRAM start :  JAN 20/18 at 09:30:28
+ PROGRAM start :  JAN 20/18 at 09:31:13 PROGRAM start :  JAN 20/18 at 09:44:45 PROGRAM start :  JAN 20/18 at 09:46:32 PROGRAM start :  JAN 20/18 at 22:00:01 PROGRAM start :  JAN 20/18 at 22:00:15 PROGRAM start :  JAN 20/18 at 22:03:55 PROGRAM start :  JAN 20/18 at 15:24:35 PROGRAM start :  JAN 20/18 at 16:03:43 PROGRAM start :  JAN 20/18 at 17:25:09 PROGRAM start :  JAN 20/18 at 17:34:03 PROGRAM start :  JAN 20/18 at 17:59:15 PROGRAM start :  JAN 20/18 at 18:01:57 PROGRAM start :  JAN 20/18 at 18:03:19 PROGRAM start :  JAN 20/18 at 18:07:27 PROGRAM start :  JAN 20/18 at 18:09:20 PROGRAM start :  JAN 20/18 at 22:16:21 PROGRAM start :  JAN 20/18 at 22:33:34
+Pointing to zenith.
+Pointing to zenith. PROGRAM start :  JAN 20/18 at 22:35:11 PROGRAM start :  JAN 20/18 at 22:43:25 PROGRAM start :  JAN 20/18 at 22:45:44 PROGRAM start :  JAN 20/18 at 22:50:11
+RESULT OF DUPLICATE(2) 4 PROGRAM start :  JAN 20/18 at 22:57:10
+RESULT OF DUPLICATE(2)= 4 PROGRAM start :  JAN 20/18 at 23:02:14
+RESULT OF DUPLICATE(2)= 4 PROGRAM start :  JAN 20/18 at 23:04:11 PROGRAM start :  JAN 20/18 at 23:07:25 PROGRAM start :  JAN 20/18 at 23:11:34 PROGRAM start :  JAN 20/18 at 23:13:32 PROGRAM start :  JAN 20/18 at 23:17:01 PROGRAM start :  JAN 20/18 at 23:33:35 PROGRAM start :  JAN 20/18 at 23:40:18 PROGRAM start :  JAN 20/18 at 23:44:50
+RESULT OF DUPLICATE(2)= 4
+    Observations for JAN 21/18 PROGRAM start :  JAN 21/18 at 00:19:07
+Pointing to zenith.
+Command file px not found --- continuing PROGRAM start :  JAN 21/18 at 00:20:59 PROGRAM start :  JAN 21/18 at 00:22:36 PROGRAM start :  JAN 21/18 at 00:24:34 PROGRAM start :  JAN 21/18 at 00:29:03 PROGRAM start :  JAN 21/18 at 00:31:11 PROGRAM start :  JAN 21/18 at 00:31:41 PROGRAM start :  JAN 21/18 at 00:36:05 PROGRAM start :  JAN 21/18 at 00:36:28 PROGRAM start :  JAN 21/18 at 00:39:10 PROGRAM start :  JAN 21/18 at 00:39:49 PROGRAM start :  JAN 21/18 at 00:42:29 PROGRAM start :  JAN 21/18 at 00:43:06 PROGRAM start :  JAN 21/18 at 00:49:49
+HF% VALUE= 0 PROGRAM start :  JAN 21/18 at 00:54:30
+RESULT OF DUPLICATE(2)= 4 PROGRAM start :  JAN 21/18 at 00:58:39
+
+**** 2nd Spectrometer Alignment - HP Test ****
+Spectrometer alignment trouble.
+RESULT OF DUPLICATE(2)= 4 PROGRAM start :  JAN 21/18 at 01:07:13
+RESULT OF DUPLICATE(2)= 4
