@@ -1,1 +1,1 @@
-"c:\Program Files (x86)\DOSBox-0.74\dosbox.exe" -noconsole -conf BrewCom1no.conf
+dosbox.exe -noconsole -conf BrewCom1no.conf
