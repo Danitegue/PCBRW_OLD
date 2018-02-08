@@ -1,10 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="b185_pcbasic_brewer_sdl2_nobrew" type="PythonConfigurationType" factoryName="Python" show_console_on_std_out="true" show_console_on_std_err="true">
-    <log_file path="$PROJECT_DIR$/../Temp/pcbasic_brewer_log.txt" checked="false" skipped="false" show_all="false" alias="pcbasic_brewer_log" />
+  <configuration default="false" name="b185_pcbasic_brewer_sdl2" type="PythonConfigurationType" factoryName="Python">
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <envs>
-      <env name="NOBREW" value="1" />
+      <env name="NOBREW" value="" />
       <env name="PYTHONUNBUFFERED" value="1" />
       <env name="BREWDIR" value="C:\" />
     </envs>
@@ -15,7 +14,7 @@
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <module name="GWBasic_Interpreter" />
     <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_brewer/run.py" />
-    <option name="PARAMETERS" value="&quot;--run=main.asc&quot; &quot;--mount=C:$PROJECT_DIR$/../&quot; &quot;--quit=False&quot; &quot;--interface=sdl2&quot; &quot;-f=10&quot; &quot;--shell=CMD.EXE&quot; &quot;--debug=True&quot; &quot;--logfile=$PROJECT_DIR$/../Temp/pcbasic_brewer_log.txt&quot;" />
+    <option name="PARAMETERS" value="&quot;--run=main.asc&quot; &quot;--mount=C:$PROJECT_DIR$/../&quot; &quot;--quit=False&quot; &quot;--interface=sdl2&quot; &quot;-f=10&quot; &quot;--com1=PORT:COM1&quot; &quot;--shell=CMD.EXE&quot; &quot;--debug=True&quot; &quot;--logfile=C:\Temp\pcbasic_brewer_log.txt&quot;" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />
     <option name="MODULE_MODE" value="false" />

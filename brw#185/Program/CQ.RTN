@@ -1,0 +1,13 @@
+10000 REM ************ CO.rtn ************
+10010 DATA co
+11020 B$="SHELL COPY TEST":PRINT#4,B$
+11021 REM Global Variables Referenced DD$, JD$, YF$, NO$,
+11025 B$=JD$+YF$+"."+NO$
+11026 FTMP$ = DD$+"TEMP\UV"+B$
+11027 B$="copy "+FTMP$+"+"+DD$+"TEMP\dum.dta "+DD$+"TEMP\dum2.dta"
+11028 PRINT#4,B$
+11029 SHELL B$
+11040 B$="DONE":PRINT#4,B$
+11050 RETURN
+55555 '
+65529 REM proper last line
