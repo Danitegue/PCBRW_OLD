@@ -10,7 +10,7 @@ Principal collaborators: Alberto Redondas Marrero, Sergio Leon Luis, Virgilio Ca
 
 ## Contents
 * **brw#185:** 
-Folder of the Brewer program, with all the necessary files to make it run. This includes the main BASIC program "main.asc", routines, schedules, calibration files, etc. The program can be used in both, online and offline mode, having or not a real brewer connected to the serial port. The program needs two enviroment variables set for being able to run: NOBREW, and BREWDIR. (both are set in the launchers.)
+Example folder of the Brewer 185 program, with all the necessary files to make it run. This includes the main BASIC program "main.asc", routines, schedules, calibration files, etc. The program can be used in both, online and offline mode, having or not a real brewer connected to the serial port. The program needs two enviroment variables set for being able to run: NOBREW, and BREWDIR. (both are set in the launchers.)
 
 * **pcbasic_brewer:** 
 PC-BASIC interpreter of robhagermans, specifically customized to handle serial communications with Brewers, and to ignore the extra arguments added by pycharm when debugging.
@@ -59,21 +59,23 @@ set PCBASIC_PATH=C:\PCBasic_Brewer_Repo\pcbasic_brewer
 rem PYTHON_DIR is the folder in which the python.exe is located
 set PYTHON_DIR=C:\Users\DS_Pandora\Anaconda2
 
-rem Set the folder to mount as unit C: (For Brewer soft, we are going to mount the folder where the main.asc BASIC program is as C:)
-set MOUNT_C=C:\PCBasic_Brewer_Repo\brw#185\Program
+rem Set the folder to mount as unit C: (For Brewer soft, C: must be C: Otherwise SHELL commands won't work.)
+set MOUNT_C=C:\
 
-rem Set the folder to mount as unit D: (For brewer soft, we are going to mount the bdata folder as unit D:)
-set MOUNT_D=C:\PCBasic_Brewer_Repo\brw#185\bdata185
+rem Set the folder to mount as unit D: (For Brewer soft, D: must be D: Otherwise SHELL commands won't work.)(Empty if not needed)
+set MOUNT_D=
 
 rem Set the name of the BASIC program to run (For brewer soft, main.asc)
 set PROGRAM=main.asc
 
-rem COM_PORT is the identifier of the port in which the brewer is connected, for example COM_PORT=COM8
-set COM_PORT=COM14
-
 rem Set the LOG_DIR in order to write the pcbasic session log.
 set LOG_DIR=C:\Temp
 
+rem Set the BREWDIR enviroment variable: where to find the main.asc respect the pcbasic mounted drives (full path)
+set BREWDIR=C:\PCBasic_Brewer_Repo\brw#185\Program
+
+rem Set the NOBREW enviroment variable: If NOBREW=1 the brewer program will run in offline mode (No COM port communications).
+set NOBREW=1
 
 rem ****************************************************************************
 rem Do not change anything below this line
