@@ -91,12 +91,13 @@ rem ****************************************************************************
 ```
 
 
-* Only in the case of needing an extended debugging file (for COM communications, or memory debug) it is useful to add an extra argument in the launcher: "--debug=True".
+* Only in the case of needing an extended debugging file (for COM communications, memory addressing or shell commands debug) it is useful to add an extra argument in the launcher: "--debug=True".
 
-Other options for extended debugging are:
+The options for the extended debugging are:
   * To enable the memory addressing messages into the log file: In file \pcbasic_brewer\pcbasic\basic\strings.py; set StringsLogging=True
   * To enable the COM port communication messages into the log file: In file \pcbasic_brewer\pcbasic\basic\devices\ports.py; set self.log_COM_Messages=True
   * To enable the COM port event messages into the log file: In file \pcbasic_brewer\pcbasic\basic\events.py; set self.log_COM_events = True
+  * To enable the SHELL commands and returns into the log file: In file \pcbasic_brewer\pcbasic\basic\dos.py; set DosLogging=True
 
 
 ## Run the Brewer software, offline mode, into an ansi console:
