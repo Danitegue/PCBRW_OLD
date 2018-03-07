@@ -44,6 +44,12 @@ pip install pypiwin32 pysdl2 numpy pygame pyaudio pyserial
 
 ![pcbasic_test](images/PCBASIC_test_preview.png)
 
+## Running Brewer's Software: To have into account
+* Old versions of the Brewer software often use external .exe files to perform external tasks (like for example noeof.exe). These .exe files could be compiled for old windows versions (16bits) and therefore they wont work in the newer versions (64 bits).
+To make them work is necessary to have the sourcecode and recompile them accordingly to the OS used. The noeof.exe version included in the brw#185/Program/ of this repo, is already recompiled for 64bits.
+
+* The windows command "shell copy file1+file2 dest" works in a different way in win x64 than in win x86. In x86 the file1 will be created if it does not exist. (An empty file). In x64 the command simply does not work if the file1 does not exist. 
+So in this customized version of PCBASIC (pcbasic_brewer), the SHELL command has been customized to emulate the old behavior, using python commands. (modification in pcbasic_brewer\pcbasic\basic\dos.py, function launch)
 
 ## Configurations needed for running the Brewer Software with PCBASIC: 
 * In the provided launchers it is necesary to configure the paths of the brewer software, pcbasic and python.exe, accodingly to the user installation folders. Here also can be defined the COM port to be used for communicating with the instrument, in the online launchers. For example, in the launcher file C:\PCBasic_Brewer_Repo\pcbasic_brewer\Launcher_brewer185.bat:
@@ -98,6 +104,8 @@ The options for the extended debugging are:
   * To enable the COM port communication messages into the log file: In file \pcbasic_brewer\pcbasic\basic\devices\ports.py; set self.log_COM_Messages=True
   * To enable the COM port event messages into the log file: In file \pcbasic_brewer\pcbasic\basic\events.py; set self.log_COM_events = True
   * To enable the SHELL commands and returns into the log file: In file \pcbasic_brewer\pcbasic\basic\dos.py; set DosLogging=True
+  
+
 
 
 ## Run the Brewer software, offline mode, into an ansi console:
