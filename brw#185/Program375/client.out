@@ -1,0 +1,749 @@
+Starting refresh from 163 to http://www.iberonesia.net/brewer
+Files to process: ['c:\\brewer.163\\bdata\\2006\\B33506.163', 'c:\\brewer.163\\bdata\\2006\\B33606.163', 'c:\\brewer.163\\bdata\\2006\\B33706.163', 'c:\\brewer.163\\bdata\\2006\\B33806.163', 'c:\\brewer.163\\bdata\\2006\\B33906.163', 'c:\\brewer.163\\bdata\\2006\\B34006.163', 'c:\\brewer.163\\bdata\\2006\\B34106.163', 'c:\\brewer.163\\bdata\\2006\\B34206.163', 'c:\\brewer.163\\bdata\\2006\\B34306.163', 'c:\\brewer.163\\bdata\\2006\\B34406.163', 'c:\\brewer.163\\bdata\\2006\\B34506.163', 'c:\\brewer.163\\bdata\\2006\\B34606.163', 'c:\\brewer.163\\bdata\\2006\\B34706.163', 'c:\\brewer.163\\bdata\\2006\\B34806.163', 'c:\\brewer.163\\bdata\\2006\\B34906.163', 'c:\\brewer.163\\bdata\\2006\\B35006.163', 'c:\\brewer.163\\bdata\\2006\\B35106.163', 'c:\\brewer.163\\bdata\\2006\\B35206.163', 'c:\\brewer.163\\bdata\\2006\\B35306.163', 'c:\\brewer.163\\bdata\\2006\\B35406.163', 'c:\\brewer.163\\bdata\\2006\\B35506.163', 'c:\\brewer.163\\bdata\\2006\\B35606.163', 'c:\\brewer.163\\bdata\\2006\\B35706.163', 'c:\\brewer.163\\bdata\\2006\\B35806.163', 'c:\\brewer.163\\bdata\\2006\\B35906.163', 'c:\\brewer.163\\bdata\\2006\\B36006.163', 'c:\\brewer.163\\bdata\\2006\\B36106.163', 'c:\\brewer.163\\bdata\\2006\\B36206.163', 'c:\\brewer.163\\bdata\\2006\\B36306.163', 'c:\\brewer.163\\bdata\\2006\\B36406.163', 'c:\\brewer.163\\bdata\\2006\\B36506.163', 'c:\\brewer.163\\bdata\\2006\\D33506.163', 'c:\\brewer.163\\bdata\\2006\\D33606.163', 'c:\\brewer.163\\bdata\\2006\\D33706.163', 'c:\\brewer.163\\bdata\\2006\\D33806.163', 'c:\\brewer.163\\bdata\\2006\\D33906.163', 'c:\\brewer.163\\bdata\\2006\\D34006.163', 'c:\\brewer.163\\bdata\\2006\\D34106.163', 'c:\\brewer.163\\bdata\\2006\\D34206.163', 'c:\\brewer.163\\bdata\\2006\\D34306.163', 'c:\\brewer.163\\bdata\\2006\\D34406.163', 'c:\\brewer.163\\bdata\\2006\\D34506.163', 'c:\\brewer.163\\bdata\\2006\\D34606.163', 'c:\\brewer.163\\bdata\\2006\\D34706.163', 'c:\\brewer.163\\bdata\\2006\\D34806.163', 'c:\\brewer.163\\bdata\\2006\\D34906.163', 'c:\\brewer.163\\bdata\\2006\\D35006.163', 'c:\\brewer.163\\bdata\\2006\\D35106.163', 'c:\\brewer.163\\bdata\\2006\\D35206.163', 'c:\\brewer.163\\bdata\\2006\\D35306.163', 'c:\\brewer.163\\bdata\\2006\\D35406.163', 'c:\\brewer.163\\bdata\\2006\\D35506.163', 'c:\\brewer.163\\bdata\\2006\\D35606.163', 'c:\\brewer.163\\bdata\\2006\\D35706.163', 'c:\\brewer.163\\bdata\\2006\\D35806.163', 'c:\\brewer.163\\bdata\\2006\\D35906.163', 'c:\\brewer.163\\bdata\\2006\\D36006.163', 'c:\\brewer.163\\bdata\\2006\\D36106.163', 'c:\\brewer.163\\bdata\\2006\\D36206.163', 'c:\\brewer.163\\bdata\\2006\\D36306.163', 'c:\\brewer.163\\bdata\\2006\\D36406.163', 'c:\\brewer.163\\bdata\\2006\\D36506.163', 'c:\\brewer.163\\bdata\\2006\\DUV33906.163', 'c:\\brewer.163\\bdata\\2006\\DUV34006.163', 'c:\\brewer.163\\bdata\\2006\\DUV34106.163', 'c:\\brewer.163\\bdata\\2006\\DUV34206.163', 'c:\\brewer.163\\bdata\\2006\\DUV34306.163', 'c:\\brewer.163\\bdata\\2006\\DUV34406.163', 'c:\\brewer.163\\bdata\\2006\\DUV34506.163', 'c:\\brewer.163\\bdata\\2006\\DUV34606.163', 'c:\\brewer.163\\bdata\\2006\\DUV34706.163', 'c:\\brewer.163\\bdata\\2006\\DUV34806.163', 'c:\\brewer.163\\bdata\\2006\\DUV34906.163', 'c:\\brewer.163\\bdata\\2006\\DUV35006.163', 'c:\\brewer.163\\bdata\\2006\\DUV35106.163', 'c:\\brewer.163\\bdata\\2006\\DUV35206.163', 'c:\\brewer.163\\bdata\\2006\\DUV35306.163', 'c:\\brewer.163\\bdata\\2006\\DUV35406.163', 'c:\\brewer.163\\bdata\\2006\\DUV35506.163', 'c:\\brewer.163\\bdata\\2006\\DUV35606.163', 'c:\\brewer.163\\bdata\\2006\\DUV35706.163', 'c:\\brewer.163\\bdata\\2006\\DUV35806.163', 'c:\\brewer.163\\bdata\\2006\\DUV35906.163', 'c:\\brewer.163\\bdata\\2006\\DUV36006.163', 'c:\\brewer.163\\bdata\\2006\\DUV36106.163', 'c:\\brewer.163\\bdata\\2006\\DUV36206.163', 'c:\\brewer.163\\bdata\\2006\\DUV36306.163', 'c:\\brewer.163\\bdata\\2006\\DUV36406.163', 'c:\\brewer.163\\bdata\\2006\\DUV36506.163', 'c:\\brewer.163\\bdata\\2006\\FV33906.163', 'c:\\brewer.163\\bdata\\2006\\FV34006.163', 'c:\\brewer.163\\bdata\\2006\\FV34106.163', 'c:\\brewer.163\\bdata\\2006\\FV34206.163', 'c:\\brewer.163\\bdata\\2006\\FV34306.163', 'c:\\brewer.163\\bdata\\2006\\FV34406.163', 'c:\\brewer.163\\bdata\\2006\\FV34506.163', 'c:\\brewer.163\\bdata\\2006\\FV34606.163', 'c:\\brewer.163\\bdata\\2006\\FV34706.163', 'c:\\brewer.163\\bdata\\2006\\FV34806.163', 'c:\\brewer.163\\bdata\\2006\\FV35006.163', 'c:\\brewer.163\\bdata\\2006\\FV35106.163', 'c:\\brewer.163\\bdata\\2006\\FV35206.163', 'c:\\brewer.163\\bdata\\2006\\FV35306.163', 'c:\\brewer.163\\bdata\\2006\\FV35406.163', 'c:\\brewer.163\\bdata\\2006\\FV35506.163', 'c:\\brewer.163\\bdata\\2006\\FV35606.163', 'c:\\brewer.163\\bdata\\2006\\FV35706.163', 'c:\\brewer.163\\bdata\\2006\\FV35806.163', 'c:\\brewer.163\\bdata\\2006\\FV35906.163', 'c:\\brewer.163\\bdata\\2006\\FV36006.163', 'c:\\brewer.163\\bdata\\2006\\FV36106.163', 'c:\\brewer.163\\bdata\\2006\\FV36206.163', 'c:\\brewer.163\\bdata\\2006\\FV36306.163', 'c:\\brewer.163\\bdata\\2006\\FV36406.163', 'c:\\brewer.163\\bdata\\2006\\FV36506.163', 'c:\\brewer.163\\bdata\\2006\\GS33706.163', 'c:\\brewer.163\\bdata\\2006\\GS34406.163', 'c:\\brewer.163\\bdata\\2006\\GS35106.163', 'c:\\brewer.163\\bdata\\2006\\GS35806.163', 'c:\\brewer.163\\bdata\\2006\\GS36506.163', 'c:\\brewer.163\\bdata\\2006\\OZOAVG05.163', 'c:\\brewer.163\\bdata\\2006\\OZOAVG06.163', 'c:\\brewer.163\\bdata\\2006\\S33506.163', 'c:\\brewer.163\\bdata\\2006\\S33606.163', 'c:\\brewer.163\\bdata\\2006\\S33706.163', 'c:\\brewer.163\\bdata\\2006\\S33806.163', 'c:\\brewer.163\\bdata\\2006\\S33906.163', 'c:\\brewer.163\\bdata\\2006\\S34006.163', 'c:\\brewer.163\\bdata\\2006\\S34106.163', 'c:\\brewer.163\\bdata\\2006\\S34206.163', 'c:\\brewer.163\\bdata\\2006\\S34306.163', 'c:\\brewer.163\\bdata\\2006\\S34406.163', 'c:\\brewer.163\\bdata\\2006\\S34506.163', 'c:\\brewer.163\\bdata\\2006\\S34606.163', 'c:\\brewer.163\\bdata\\2006\\S34706.163', 'c:\\brewer.163\\bdata\\2006\\S34806.163', 'c:\\brewer.163\\bdata\\2006\\S34906.163', 'c:\\brewer.163\\bdata\\2006\\S35006.163', 'c:\\brewer.163\\bdata\\2006\\S35106.163', 'c:\\brewer.163\\bdata\\2006\\S35206.163', 'c:\\brewer.163\\bdata\\2006\\S35306.163', 'c:\\brewer.163\\bdata\\2006\\S35406.163', 'c:\\brewer.163\\bdata\\2006\\S35506.163', 'c:\\brewer.163\\bdata\\2006\\S35606.163', 'c:\\brewer.163\\bdata\\2006\\S35706.163', 'c:\\brewer.163\\bdata\\2006\\S35806.163', 'c:\\brewer.163\\bdata\\2006\\S35906.163', 'c:\\brewer.163\\bdata\\2006\\S36006.163', 'c:\\brewer.163\\bdata\\2006\\S36106.163', 'c:\\brewer.163\\bdata\\2006\\S36206.163', 'c:\\brewer.163\\bdata\\2006\\S36306.163', 'c:\\brewer.163\\bdata\\2006\\S36406.163', 'c:\\brewer.163\\bdata\\2006\\S36506.163', 'c:\\brewer.163\\bdata\\2006\\UV33906.163', 'c:\\brewer.163\\bdata\\2006\\UV34006.163', 'c:\\brewer.163\\bdata\\2006\\UV34106.163', 'c:\\brewer.163\\bdata\\2006\\UV34206.163', 'c:\\brewer.163\\bdata\\2006\\UV34306.163', 'c:\\brewer.163\\bdata\\2006\\UV34406.163', 'c:\\brewer.163\\bdata\\2006\\UV34506.163', 'c:\\brewer.163\\bdata\\2006\\UV34606.163', 'c:\\brewer.163\\bdata\\2006\\UV34706.163', 'c:\\brewer.163\\bdata\\2006\\UV34806.163', 'c:\\brewer.163\\bdata\\2006\\UV34906.163', 'c:\\brewer.163\\bdata\\2006\\UV35006.163', 'c:\\brewer.163\\bdata\\2006\\UV35106.163', 'c:\\brewer.163\\bdata\\2006\\UV35206.163', 'c:\\brewer.163\\bdata\\2006\\UV35306.163', 'c:\\brewer.163\\bdata\\2006\\UV35406.163', 'c:\\brewer.163\\bdata\\2006\\UV35506.163', 'c:\\brewer.163\\bdata\\2006\\UV35606.163', 'c:\\brewer.163\\bdata\\2006\\UV35706.163', 'c:\\brewer.163\\bdata\\2006\\UV35806.163', 'c:\\brewer.163\\bdata\\2006\\UV35906.163', 'c:\\brewer.163\\bdata\\2006\\UV36006.163', 'c:\\brewer.163\\bdata\\2006\\UV36106.163', 'c:\\brewer.163\\bdata\\2006\\UV36206.163', 'c:\\brewer.163\\bdata\\2006\\UV36306.163', 'c:\\brewer.163\\bdata\\2006\\UV36406.163', 'c:\\brewer.163\\bdata\\2006\\UV36506.163']
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B33506.163, datetime = 2006-12-01 23:09:52, size = 2669, md5sum = ecdf2061cbf67eb62d553de9d95b67d6
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B33606.163, datetime = 2006-12-02 23:10:16, size = 9212, md5sum = 6731c75d8ead19bd9ca247e5ea46491a
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B33706.163, datetime = 2006-12-03 23:10:40, size = 9211, md5sum = c9ed1392b82bc95771c0ef6250177c5e
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B33806.163, datetime = 2006-12-04 23:11:02, size = 12141, md5sum = 91c650f1c625ca67cf21b34d1325e17e
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B33906.163, datetime = 2006-12-05 23:11:26, size = 69716, md5sum = 5a3d8e97fc0e8b142b7e7c574aa306bd
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B34006.163, datetime = 2006-12-06 23:11:52, size = 89242, md5sum = 6eccd8a862209e2e0f116bb98408415d
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B34106.163, datetime = 2006-12-07 23:12:18, size = 89840, md5sum = a6755aed66a63b0c52ead7efe313a103
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B34206.163, datetime = 2006-12-08 23:12:44, size = 89094, md5sum = d288a5ade36494ddd7ac288a308b2d2a
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B34306.163, datetime = 2006-12-09 23:13:12, size = 73411, md5sum = 70df9a99d4b62b00fc49aec90c5f645c
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B34406.163, datetime = 2006-12-10 23:13:38, size = 83507, md5sum = bcb5c0b46d81040a764fae3e8e51be2b
+Sending files: ['B33506.163', 'B33606.163', 'B33706.163', 'B33806.163', 'B33906.163', 'B34006.163', 'B34106.163', 'B34206.163', 'B34306.163', 'B34406.163']   Total size = 528043
+Adding file 'B33506.163' to zipfile.
+Adding file 'B33606.163' to zipfile.
+Adding file 'B33706.163' to zipfile.
+Adding file 'B33806.163' to zipfile.
+Adding file 'B33906.163' to zipfile.
+Adding file 'B34006.163' to zipfile.
+Adding file 'B34106.163' to zipfile.
+Adding file 'B34206.163' to zipfile.
+Adding file 'B34306.163' to zipfile.
+Adding file 'B34406.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B34506.163, datetime = 2006-12-11 23:14:06, size = 87435, md5sum = 4924c51f79e9eeb01345789e63759176
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B34606.163, datetime = 2006-12-12 23:14:34, size = 85046, md5sum = 7bff085d72c4bd8db201c948067d8508
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B34706.163, datetime = 2006-12-13 23:15:02, size = 86741, md5sum = e6ed72ade6b076fb89dd0a8a34ad1cb7
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B34806.163, datetime = 2006-12-14 23:15:32, size = 89033, md5sum = 91d6e917d0f4bbe839df3672884cf4a2
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B34906.163, datetime = 2006-12-15 23:16:00, size = 54215, md5sum = fa558c33810ec13e6c301ca7a26c8686
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B35006.163, datetime = 2006-12-16 23:16:30, size = 88394, md5sum = dc28c5df4135973c3e1e5080b810d822
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B35106.163, datetime = 2006-12-17 23:16:58, size = 86093, md5sum = 60e3281a68d6a498f03787df7354c854
+Sending files: ['B34506.163', 'B34606.163', 'B34706.163', 'B34806.163', 'B34906.163', 'B35006.163', 'B35106.163']   Total size = 576957
+Adding file 'B34506.163' to zipfile.
+Adding file 'B34606.163' to zipfile.
+Adding file 'B34706.163' to zipfile.
+Adding file 'B34806.163' to zipfile.
+Adding file 'B34906.163' to zipfile.
+Adding file 'B35006.163' to zipfile.
+Adding file 'B35106.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B35206.163, datetime = 2006-12-18 23:17:28, size = 76051, md5sum = 2f5ff53e14f7665363580dc5c3f34e32
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B35306.163, datetime = 2006-12-19 23:17:58, size = 78979, md5sum = e1f7bb89b68add279d62fb04505f6ac3
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B35406.163, datetime = 2006-12-20 23:18:28, size = 85964, md5sum = 83a476fd8c2544c51c777050c23456cf
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B35506.163, datetime = 2006-12-21 23:18:56, size = 86644, md5sum = ee6e98ccae3f440258978e8c99ffcf64
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B35606.163, datetime = 2006-12-22 23:19:26, size = 85951, md5sum = 724fbf129f29a31d9d6cdcfaf36d29db
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B35706.163, datetime = 2006-12-23 23:19:56, size = 88762, md5sum = 00d3a6f93086c917e4b122b69fbcab1d
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B35806.163, datetime = 2006-12-24 23:20:26, size = 87923, md5sum = b738dbd95efcb93c4c572d045505b6e6
+Sending files: ['B35206.163', 'B35306.163', 'B35406.163', 'B35506.163', 'B35606.163', 'B35706.163', 'B35806.163']   Total size = 590274
+Adding file 'B35206.163' to zipfile.
+Adding file 'B35306.163' to zipfile.
+Adding file 'B35406.163' to zipfile.
+Adding file 'B35506.163' to zipfile.
+Adding file 'B35606.163' to zipfile.
+Adding file 'B35706.163' to zipfile.
+Adding file 'B35806.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B35906.163, datetime = 2006-12-25 23:20:56, size = 88787, md5sum = 7c1ac4b0369d17422b7362c34c042650
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B36006.163, datetime = 2006-12-26 23:21:26, size = 88914, md5sum = 8dc97fe841fe693253f75beb918938b4
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B36106.163, datetime = 2006-12-27 23:21:56, size = 88098, md5sum = 9982d992f78ce8f965fdf2cbbcd6ae38
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B36206.163, datetime = 2006-12-28 23:22:24, size = 88795, md5sum = e5384798282f5eea7dcdc87bd2c26ede
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B36306.163, datetime = 2006-12-29 23:22:54, size = 88893, md5sum = 1181211e01ee92cd15409a37bf058478
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B36406.163, datetime = 2006-12-30 23:23:22, size = 88034, md5sum = e8c891cac127255fa0297be510fb016f
+Sending files: ['B35906.163', 'B36006.163', 'B36106.163', 'B36206.163', 'B36306.163', 'B36406.163']   Total size = 531521
+Adding file 'B35906.163' to zipfile.
+Adding file 'B36006.163' to zipfile.
+Adding file 'B36106.163' to zipfile.
+Adding file 'B36206.163' to zipfile.
+Adding file 'B36306.163' to zipfile.
+Adding file 'B36406.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\B36506.163, datetime = 2006-12-31 23:23:50, size = 91617, md5sum = 63593ebb8a823cd027cdeb5525870a9a
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D33506.163, datetime = 2006-12-01 23:33:32, size = 18140, md5sum = 30a39c9bba21ced78c9ca18b3008c914
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D33606.163, datetime = 2006-12-03 00:32:32, size = 33794, md5sum = 4afbd0f6d14092b18d48e91f36fe8a05
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D33706.163, datetime = 2006-12-03 23:33:52, size = 33143, md5sum = 95d95945b4f01a12eaa03878e9bfe51b
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D33806.163, datetime = 2006-12-04 23:34:38, size = 40681, md5sum = 0b702881893b6258607914426b2c0b33
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D33906.163, datetime = 2006-12-05 23:37:02, size = 176239, md5sum = 5767489897e8b7908256c0db3e5be73e
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D34006.163, datetime = 2006-12-06 23:33:48, size = 230575, md5sum = b478506c3e60f029d1c2594a06a14538
+Sending files: ['B36506.163', 'D33506.163', 'D33606.163', 'D33706.163', 'D33806.163', 'D33906.163', 'D34006.163']   Total size = 624189
+Adding file 'B36506.163' to zipfile.
+Adding file 'D33506.163' to zipfile.
+Adding file 'D33606.163' to zipfile.
+Adding file 'D33706.163' to zipfile.
+Adding file 'D33806.163' to zipfile.
+Adding file 'D33906.163' to zipfile.
+Adding file 'D34006.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D34106.163, datetime = 2006-12-07 23:34:10, size = 222514, md5sum = c7cb3671c825570e5c08d1955b902b62
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D34206.163, datetime = 2006-12-08 23:34:38, size = 212889, md5sum = 952eb6a94493c7cce8d59e1bc1ff262a
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D34306.163, datetime = 2006-12-10 00:34:30, size = 189788, md5sum = 0fbd53a8034a89d0b6d52aedf3599584
+Sending files: ['D34106.163', 'D34206.163', 'D34306.163']   Total size = 625191
+Adding file 'D34106.163' to zipfile.
+Adding file 'D34206.163' to zipfile.
+Adding file 'D34306.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D34406.163, datetime = 2006-12-10 23:39:32, size = 199998, md5sum = 22478789dffd7808cd19d94fe920b9bc
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D34506.163, datetime = 2006-12-11 23:39:58, size = 204917, md5sum = f7034000ddc5ea4a8c2f17b1978ba6fe
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D34606.163, datetime = 2006-12-12 23:40:52, size = 209148, md5sum = 01df3b8574dd901a72a0e0664c1ee62b
+Sending files: ['D34406.163', 'D34506.163', 'D34606.163']   Total size = 614063
+Adding file 'D34406.163' to zipfile.
+Adding file 'D34506.163' to zipfile.
+Adding file 'D34606.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D34706.163, datetime = 2006-12-13 23:41:22, size = 201322, md5sum = 55dacd0c26bf9ad5af24d411c8f1f4e3
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D34806.163, datetime = 2006-12-14 23:41:48, size = 205629, md5sum = 979aa45212fbaecc79ecb83a1393e1e9
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D34906.163, datetime = 2006-12-15 23:42:20, size = 126060, md5sum = 123eab7233f206c78341743749c57da5
+Sending files: ['D34706.163', 'D34806.163', 'D34906.163']   Total size = 533011
+Adding file 'D34706.163' to zipfile.
+Adding file 'D34806.163' to zipfile.
+Adding file 'D34906.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D35006.163, datetime = 2006-12-17 00:37:48, size = 206223, md5sum = 7c9d47cfd7dbb911aa8852796a7f0f37
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D35106.163, datetime = 2006-12-17 23:43:12, size = 212155, md5sum = d73e38ef190ab1c4f319b9d3e5b3c3df
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D35206.163, datetime = 2006-12-18 23:43:42, size = 189243, md5sum = d02b58bacf964c14c195715645e67f9e
+Sending files: ['D35006.163', 'D35106.163', 'D35206.163']   Total size = 607621
+Adding file 'D35006.163' to zipfile.
+Adding file 'D35106.163' to zipfile.
+Adding file 'D35206.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D35306.163, datetime = 2006-12-19 23:44:12, size = 188533, md5sum = a59c7d4e7e5628f47c20a1b3985d7129
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D35406.163, datetime = 2006-12-20 23:44:42, size = 199626, md5sum = 36b84ea61db7bafc2442e88fe9bc986b
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D35506.163, datetime = 2006-12-21 23:45:12, size = 201235, md5sum = 7d799a34810de458428d408a8401ec6d
+Sending files: ['D35306.163', 'D35406.163', 'D35506.163']   Total size = 589394
+Adding file 'D35306.163' to zipfile.
+Adding file 'D35406.163' to zipfile.
+Adding file 'D35506.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D35606.163, datetime = 2006-12-22 23:45:42, size = 200073, md5sum = d7ccce35918feef7b3ef8183ccf8dcc3
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D35706.163, datetime = 2006-12-24 00:45:16, size = 205647, md5sum = 4b460f6432a260eb4573d297d4bc0e6e
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D35806.163, datetime = 2006-12-24 23:46:42, size = 204395, md5sum = 1461b99427c1e897c47047902ad3a2ab
+Sending files: ['D35606.163', 'D35706.163', 'D35806.163']   Total size = 610115
+Adding file 'D35606.163' to zipfile.
+Adding file 'D35706.163' to zipfile.
+Adding file 'D35806.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D35906.163, datetime = 2006-12-25 23:47:12, size = 205452, md5sum = 03f8a159f4b0f938d4b1df8cf7b72c0c
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D36006.163, datetime = 2006-12-26 23:47:42, size = 205458, md5sum = 94ff44497a6039ae13e7b5901deb48d3
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D36106.163, datetime = 2006-12-27 23:48:14, size = 204431, md5sum = d98e3c42616d84cadfdc595170ad970c
+Sending files: ['D35906.163', 'D36006.163', 'D36106.163']   Total size = 615341
+Adding file 'D35906.163' to zipfile.
+Adding file 'D36006.163' to zipfile.
+Adding file 'D36106.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D36206.163, datetime = 2006-12-28 23:48:38, size = 205322, md5sum = 6d5e9abffac28a43fac01eb603310761
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D36306.163, datetime = 2006-12-29 23:49:08, size = 205806, md5sum = 7faf4551dc3ccf4f7751d4dab7b529c0
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D36406.163, datetime = 2006-12-31 00:49:02, size = 206003, md5sum = 2dc060b0cb29e9f57779298076f37e9f
+Sending files: ['D36206.163', 'D36306.163', 'D36406.163']   Total size = 617131
+Adding file 'D36206.163' to zipfile.
+Adding file 'D36306.163' to zipfile.
+Adding file 'D36406.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\D36506.163, datetime = 2006-12-31 23:46:04, size = 211223, md5sum = b872d0228f8f59a812a9ec4ff4cfdee2
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV33906.163, datetime = 2006-12-05 15:38:42, size = 599, md5sum = 1de69ac785a0d11a3359e2e58102955f
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV34006.163, datetime = 2006-12-06 15:26:28, size = 806, md5sum = b812c19033853af5ec6a550bf8ac3bdc
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV34106.163, datetime = 2006-12-07 15:06:12, size = 760, md5sum = fab1f4af65b7d6e1c2955d41c791fdcc
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV34206.163, datetime = 2006-12-08 15:03:14, size = 737, md5sum = ecfc3016f4357fae31488eb0eee7d16d
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV34306.163, datetime = 2006-12-09 15:06:38, size = 645, md5sum = bb15d702d3149e2d1248d794d1c4321d
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV34406.163, datetime = 2006-12-10 15:10:32, size = 691, md5sum = 1ace41c6b57a1ab69674deb546d1f188
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV34506.163, datetime = 2006-12-11 15:04:32, size = 691, md5sum = 01d20127e4c0e462e47e0f541e276364
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV34606.163, datetime = 2006-12-12 15:04:30, size = 714, md5sum = dc1674cd0e100e64029d211ede3e65d3
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV34706.163, datetime = 2006-12-13 15:02:48, size = 691, md5sum = d9183f2ef50bc51135a3bd7f99585d91
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV34806.163, datetime = 2006-12-14 15:01:56, size = 691, md5sum = d60165fb9708d77ef9b1fa8248e91aa5
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV34906.163, datetime = 2006-12-15 15:03:40, size = 323, md5sum = 5e41f1e1d4704d0c469ef69305359af6
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV35006.163, datetime = 2006-12-16 15:04:34, size = 714, md5sum = e6236974ff65d1a7267b7fb3429a5ab1
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV35106.163, datetime = 2006-12-17 15:03:02, size = 714, md5sum = a499d9622c7eb2f88ead74cc22c83086
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV35206.163, datetime = 2006-12-18 15:10:22, size = 645, md5sum = 1aa83f3009076991a0fb6d902169f47f
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV35306.163, datetime = 2006-12-19 15:09:20, size = 645, md5sum = 01c56fb7ff01c0bbb49f030729ecb755
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV35406.163, datetime = 2006-12-20 15:06:44, size = 691, md5sum = 18804d31a705d40abd2d06e76c9a0a7a
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV35506.163, datetime = 2006-12-21 15:03:52, size = 691, md5sum = f0acae01069a1548606cbe5fd9e539d8
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV35606.163, datetime = 2006-12-22 15:04:54, size = 691, md5sum = 3039ebf2bc49ea8693ad2464f0e67d04
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV35706.163, datetime = 2006-12-23 15:07:06, size = 691, md5sum = 4bde4673e63d4995332e2a8bcb62636d
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV35806.163, datetime = 2006-12-24 15:07:28, size = 691, md5sum = b9c24f5790d0c3236658b6d05e21b661
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV35906.163, datetime = 2006-12-25 15:07:36, size = 691, md5sum = 4d3692679ea3753dc5021c67baf5406b
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV36006.163, datetime = 2006-12-26 15:07:58, size = 691, md5sum = 95f7880137aa5de6c186befccf984f59
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV36106.163, datetime = 2006-12-27 15:08:08, size = 691, md5sum = 99e45da06dd4ebb5b645f396caa134e9
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV36206.163, datetime = 2006-12-28 15:08:36, size = 691, md5sum = dcee8023fee9f546cef301e262253e5b
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV36306.163, datetime = 2006-12-29 15:13:48, size = 714, md5sum = 6344540fae470e192f775aec362d19b1
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV36406.163, datetime = 2006-12-30 15:13:36, size = 714, md5sum = 80745f47d1e517bcbbfa78fb112c12af
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\DUV36506.163, datetime = 2006-12-31 15:14:30, size = 714, md5sum = bd7b86c8f80560f1f3563c05830d7d91
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV33906.163, datetime = 2006-12-05 10:27:36, size = 2279, md5sum = 16df9ad39af85e334b0df8d43e87ffea
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV34006.163, datetime = 2006-12-06 11:21:00, size = 2276, md5sum = b82411ae59a2e5149c467f05ffd7e0ae
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV34106.163, datetime = 2006-12-07 13:13:58, size = 9081, md5sum = 8b967a8d77f205697fd9d86c3000ae7f
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV34206.163, datetime = 2006-12-08 11:38:36, size = 4578, md5sum = 5cb69731805bcebe62b56c39d53756d2
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV34306.163, datetime = 2006-12-09 11:43:16, size = 4451, md5sum = 79bf17a102666c082cb3b0fa5e4d8107
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV34406.163, datetime = 2006-12-10 11:28:50, size = 4643, md5sum = 83668eee362c2e584f2d4ddee35fcb2c
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV34506.163, datetime = 2006-12-11 11:36:04, size = 4637, md5sum = 27b6beb75960fe213d136c9d50e6c7e6
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV34606.163, datetime = 2006-12-12 11:22:38, size = 4607, md5sum = 0ab3b8a97f04b7d97962563e06ecfe15
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV34706.163, datetime = 2006-12-13 12:26:36, size = 9336, md5sum = 149777dce90950f592feaf2b41a923a6
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV34806.163, datetime = 2006-12-14 11:33:12, size = 4644, md5sum = cd55e8de1e899203788c7420b460c1d8
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV35006.163, datetime = 2006-12-16 11:30:48, size = 4647, md5sum = 98200c4523f612d42a32ebcb65f5da34
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV35106.163, datetime = 2006-12-17 11:18:30, size = 4543, md5sum = cea98a502c35600c4343f5a3a1ee5144
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV35206.163, datetime = 2006-12-18 11:51:06, size = 4587, md5sum = 68ba3705fb4ab3c22752c05c931621ca
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV35306.163, datetime = 2006-12-19 11:19:32, size = 4622, md5sum = 5960a8a27fb8b3769ae6cdb89ff836e2
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV35406.163, datetime = 2006-12-20 11:45:08, size = 4640, md5sum = 4db29e8699e55ac83da2ac128892d370
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV35506.163, datetime = 2006-12-21 11:41:46, size = 4638, md5sum = 31704763c7e6ad4b76172407b0c0b92c
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV35606.163, datetime = 2006-12-22 11:42:10, size = 4643, md5sum = 37b64d7d51630e3d20e866acd4d6f6a8
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV35706.163, datetime = 2006-12-23 11:38:48, size = 4643, md5sum = 72f84a7246b7f79809109ec60b77a09f
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV35806.163, datetime = 2006-12-24 11:39:08, size = 4647, md5sum = a0cfb346db29450107cb14b64c5fc7fa
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV35906.163, datetime = 2006-12-25 11:39:20, size = 4645, md5sum = ca8e43c5b251c8abfc901355c751f261
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV36006.163, datetime = 2006-12-26 11:39:38, size = 4641, md5sum = 78cdf22754b16039d3dcde422941dac6
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV36106.163, datetime = 2006-12-27 11:39:48, size = 4632, md5sum = 01950dd97d6f13a65a9bf3b68cddb863
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV36206.163, datetime = 2006-12-28 11:40:06, size = 4648, md5sum = 129a83dd4c23022aa37c5f61cd6ae5cd
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV36306.163, datetime = 2006-12-29 11:40:18, size = 4634, md5sum = d44877853efce2358fc77940afd40bca
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV36406.163, datetime = 2006-12-30 11:40:26, size = 4660, md5sum = 7b3bcdc004bf27cf11301356d2bb2aa7
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\FV36506.163, datetime = 2006-12-31 11:32:26, size = 4631, md5sum = 14016b505b02a85bcd291560a99c0275
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\GS33706.163, datetime = 2006-12-03 00:28:02, size = 15517, md5sum = d3b6ac8c21ef80caf54457881ac2057c
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\GS34406.163, datetime = 2006-12-10 00:31:44, size = 15556, md5sum = 2c12eef65fd1c78308ae0724a4a49284
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\GS35106.163, datetime = 2006-12-17 00:34:34, size = 15569, md5sum = 06fab506baa624bec3988734fb14838a
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\GS35806.163, datetime = 2006-12-24 00:38:04, size = 15606, md5sum = 9d5deed053a596b48fe0e3956bc2c958
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\GS36506.163, datetime = 2006-12-31 00:45:48, size = 15572, md5sum = 6710efc92ae8febf94044e68d832da38
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\OZOAVG05.163, datetime = 2005-12-30 23:28:24, size = 19923, md5sum = 18161fd17661300399135df896248a45
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\OZOAVG06.163, datetime = 2006-12-31 23:23:52, size = 12702, md5sum = 74fa57aacfc5d461ca39fc882d9c13e0
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S33506.163, datetime = 2006-12-01 23:09:54, size = 335, md5sum = b109da2165dce072448f7d2adcafb4b5
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S33606.163, datetime = 2006-12-02 23:10:16, size = 1280, md5sum = 4044e47d92212c0f4eab8ed6e2e0dc7c
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S33706.163, datetime = 2006-12-03 23:10:40, size = 1279, md5sum = b86d883144daeb6d69a8e8257e384bef
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S33806.163, datetime = 2006-12-04 23:11:02, size = 2196, md5sum = 1a891da7e9faf1d6062307b045441272
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S33906.163, datetime = 2006-12-05 23:11:28, size = 9972, md5sum = f8c98463bcc5e1aefa427ec190e59553
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S34006.163, datetime = 2006-12-06 23:11:54, size = 12231, md5sum = 7589cfcc37e843c9fee76a1d012e8e04
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S34106.163, datetime = 2006-12-07 23:12:20, size = 12057, md5sum = dd3f8882791ebb4e610b17225e4f2e54
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S34206.163, datetime = 2006-12-08 23:12:46, size = 11534, md5sum = 9180f3ecea36d94e742e3b63ecc8ff67
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S34306.163, datetime = 2006-12-09 23:13:12, size = 10579, md5sum = 46445cace3ea03750bf06f65afa2d250
+Sending files: ['D36506.163', 'DUV33906.163', 'DUV34006.163', 'DUV34106.163', 'DUV34206.163', 'DUV34306.163', 'DUV34406.163', 'DUV34506.163', 'DUV34606.163', 'DUV34706.163', 'DUV34806.163', 'DUV34906.163', 'DUV35006.163', 'DUV35106.163', 'DUV35206.163', 'DUV35306.163', 'DUV35406.163', 'DUV35506.163', 'DUV35606.163', 'DUV35706.163', 'DUV35806.163', 'DUV35906.163', 'DUV36006.163', 'DUV36106.163', 'DUV36206.163', 'DUV36306.163', 'DUV36406.163', 'DUV36506.163', 'FV33906.163', 'FV34006.163', 'FV34106.163', 'FV34206.163', 'FV34306.163', 'FV34406.163', 'FV34506.163', 'FV34606.163', 'FV34706.163', 'FV34806.163', 'FV35006.163', 'FV35106.163', 'FV35206.163', 'FV35306.163', 'FV35406.163', 'FV35506.163', 'FV35606.163', 'FV35706.163', 'FV35806.163', 'FV35906.163', 'FV36006.163', 'FV36106.163', 'FV36206.163', 'FV36306.163', 'FV36406.163', 'FV36506.163', 'GS33706.163', 'GS34406.163', 'GS35106.163', 'GS35806.163', 'GS36506.163', 'OZOAVG05.163', 'OZOAVG06.163', 'S33506.163', 'S33606.163', 'S33706.163', 'S33806.163', 'S33906.163', 'S34006.163', 'S34106.163', 'S34206.163', 'S34306.163']   Total size = 526191
+Adding file 'D36506.163' to zipfile.
+Adding file 'DUV33906.163' to zipfile.
+Adding file 'DUV34006.163' to zipfile.
+Adding file 'DUV34106.163' to zipfile.
+Adding file 'DUV34206.163' to zipfile.
+Adding file 'DUV34306.163' to zipfile.
+Adding file 'DUV34406.163' to zipfile.
+Adding file 'DUV34506.163' to zipfile.
+Adding file 'DUV34606.163' to zipfile.
+Adding file 'DUV34706.163' to zipfile.
+Adding file 'DUV34806.163' to zipfile.
+Adding file 'DUV34906.163' to zipfile.
+Adding file 'DUV35006.163' to zipfile.
+Adding file 'DUV35106.163' to zipfile.
+Adding file 'DUV35206.163' to zipfile.
+Adding file 'DUV35306.163' to zipfile.
+Adding file 'DUV35406.163' to zipfile.
+Adding file 'DUV35506.163' to zipfile.
+Adding file 'DUV35606.163' to zipfile.
+Adding file 'DUV35706.163' to zipfile.
+Adding file 'DUV35806.163' to zipfile.
+Adding file 'DUV35906.163' to zipfile.
+Adding file 'DUV36006.163' to zipfile.
+Adding file 'DUV36106.163' to zipfile.
+Adding file 'DUV36206.163' to zipfile.
+Adding file 'DUV36306.163' to zipfile.
+Adding file 'DUV36406.163' to zipfile.
+Adding file 'DUV36506.163' to zipfile.
+Adding file 'FV33906.163' to zipfile.
+Adding file 'FV34006.163' to zipfile.
+Adding file 'FV34106.163' to zipfile.
+Adding file 'FV34206.163' to zipfile.
+Adding file 'FV34306.163' to zipfile.
+Adding file 'FV34406.163' to zipfile.
+Adding file 'FV34506.163' to zipfile.
+Adding file 'FV34606.163' to zipfile.
+Adding file 'FV34706.163' to zipfile.
+Adding file 'FV34806.163' to zipfile.
+Adding file 'FV35006.163' to zipfile.
+Adding file 'FV35106.163' to zipfile.
+Adding file 'FV35206.163' to zipfile.
+Adding file 'FV35306.163' to zipfile.
+Adding file 'FV35406.163' to zipfile.
+Adding file 'FV35506.163' to zipfile.
+Adding file 'FV35606.163' to zipfile.
+Adding file 'FV35706.163' to zipfile.
+Adding file 'FV35806.163' to zipfile.
+Adding file 'FV35906.163' to zipfile.
+Adding file 'FV36006.163' to zipfile.
+Adding file 'FV36106.163' to zipfile.
+Adding file 'FV36206.163' to zipfile.
+Adding file 'FV36306.163' to zipfile.
+Adding file 'FV36406.163' to zipfile.
+Adding file 'FV36506.163' to zipfile.
+Adding file 'GS33706.163' to zipfile.
+Adding file 'GS34406.163' to zipfile.
+Adding file 'GS35106.163' to zipfile.
+Adding file 'GS35806.163' to zipfile.
+Adding file 'GS36506.163' to zipfile.
+Adding file 'OZOAVG05.163' to zipfile.
+Adding file 'OZOAVG06.163' to zipfile.
+Adding file 'S33506.163' to zipfile.
+Adding file 'S33606.163' to zipfile.
+Adding file 'S33706.163' to zipfile.
+Adding file 'S33806.163' to zipfile.
+Adding file 'S33906.163' to zipfile.
+Adding file 'S34006.163' to zipfile.
+Adding file 'S34106.163' to zipfile.
+Adding file 'S34206.163' to zipfile.
+Adding file 'S34306.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S34406.163, datetime = 2006-12-10 23:13:40, size = 10651, md5sum = 50b5f27c597de2e309f504688ead0669
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S34506.163, datetime = 2006-12-11 23:14:08, size = 10888, md5sum = 28ae8bffb8d91b117dfa6160c143b4ac
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S34606.163, datetime = 2006-12-12 23:14:36, size = 11401, md5sum = 9cf120eb81d53722010ebd559352958c
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S34706.163, datetime = 2006-12-13 23:15:04, size = 10466, md5sum = 4adb295e3c3e87be66fdc10e8f6fbf49
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S34806.163, datetime = 2006-12-14 23:15:32, size = 10982, md5sum = c725dfb733247e263472a16e50df952b
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S34906.163, datetime = 2006-12-15 23:16:00, size = 7530, md5sum = 160416a649eaf8c3c177c3e70eeec397
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S35006.163, datetime = 2006-12-16 23:16:30, size = 11048, md5sum = 7a59ca10f18e86866a3fe04abe7a8472
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S35106.163, datetime = 2006-12-17 23:17:00, size = 11526, md5sum = 43db71469509d6f5f2029b7c6325f3f2
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S35206.163, datetime = 2006-12-18 23:17:28, size = 10271, md5sum = 17b4676b05c141a34f1b4476f7464e1d
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S35306.163, datetime = 2006-12-19 23:17:58, size = 10186, md5sum = 957cc083b4bef99226879409a985b4ea
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S35406.163, datetime = 2006-12-20 23:18:28, size = 10474, md5sum = 7d9a47f3fd65216ee5c6254d5f6cb103
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S35506.163, datetime = 2006-12-21 23:18:58, size = 10637, md5sum = d49d1810a2b50082f930a2c7f389955b
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S35606.163, datetime = 2006-12-22 23:19:28, size = 10478, md5sum = 838e9064d79ec69b7d45cf2a6a0e14ef
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S35706.163, datetime = 2006-12-23 23:19:58, size = 11035, md5sum = cc4ca5b56fb6e60e19538655405cabc9
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S35806.163, datetime = 2006-12-24 23:20:28, size = 10866, md5sum = 06efe5a9d104eb6a43bff02cdf9db616
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S35906.163, datetime = 2006-12-25 23:20:56, size = 10986, md5sum = 24140eb8be95fc98e2b63817c2a49615
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S36006.163, datetime = 2006-12-26 23:21:26, size = 10969, md5sum = f7e9b83c18e0b0fdc8cd28dbfa7b086d
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S36106.163, datetime = 2006-12-27 23:21:56, size = 10865, md5sum = f873bfc6f838eb17421694bce3c22dda
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S36206.163, datetime = 2006-12-28 23:22:26, size = 10972, md5sum = dbb68fc85c3c182ef9dfb7abc87b3ac9
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S36306.163, datetime = 2006-12-29 23:22:54, size = 10994, md5sum = 704959eacfce7e2004051be6a5f70282
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S36406.163, datetime = 2006-12-30 23:23:24, size = 10952, md5sum = 932ed6768ffc081c3be526bb4cb7ba88
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\S36506.163, datetime = 2006-12-31 23:23:52, size = 11120, md5sum = 5e162e0b1a38da1cc9c20e16eb957c9a
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV33906.163, datetime = 2006-12-05 15:38:40, size = 123875, md5sum = 587df28657c21e9eaff37857c1ec21c9
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV34006.163, datetime = 2006-12-06 15:26:28, size = 165752, md5sum = ef433b77b4635e3986d1a4183fd0f609
+Sending files: ['S34406.163', 'S34506.163', 'S34606.163', 'S34706.163', 'S34806.163', 'S34906.163', 'S35006.163', 'S35106.163', 'S35206.163', 'S35306.163', 'S35406.163', 'S35506.163', 'S35606.163', 'S35706.163', 'S35806.163', 'S35906.163', 'S36006.163', 'S36106.163', 'S36206.163', 'S36306.163', 'S36406.163', 'S36506.163', 'UV33906.163', 'UV34006.163']   Total size = 524924
+Adding file 'S34406.163' to zipfile.
+Adding file 'S34506.163' to zipfile.
+Adding file 'S34606.163' to zipfile.
+Adding file 'S34706.163' to zipfile.
+Adding file 'S34806.163' to zipfile.
+Adding file 'S34906.163' to zipfile.
+Adding file 'S35006.163' to zipfile.
+Adding file 'S35106.163' to zipfile.
+Adding file 'S35206.163' to zipfile.
+Adding file 'S35306.163' to zipfile.
+Adding file 'S35406.163' to zipfile.
+Adding file 'S35506.163' to zipfile.
+Adding file 'S35606.163' to zipfile.
+Adding file 'S35706.163' to zipfile.
+Adding file 'S35806.163' to zipfile.
+Adding file 'S35906.163' to zipfile.
+Adding file 'S36006.163' to zipfile.
+Adding file 'S36106.163' to zipfile.
+Adding file 'S36206.163' to zipfile.
+Adding file 'S36306.163' to zipfile.
+Adding file 'S36406.163' to zipfile.
+Adding file 'S36506.163' to zipfile.
+Adding file 'UV33906.163' to zipfile.
+Adding file 'UV34006.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV34106.163, datetime = 2006-12-07 15:06:10, size = 158719, md5sum = 329406f54af3df9fe10d93f75b0949d7
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV34206.163, datetime = 2006-12-08 15:03:14, size = 153677, md5sum = a197bc3c365738ea4eb7a9d73e816850
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV34306.163, datetime = 2006-12-09 15:06:38, size = 130419, md5sum = 5b5d445a1046ed04a5bff404a73ae8f3
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV34406.163, datetime = 2006-12-10 15:10:32, size = 144303, md5sum = 97a08ecaf374d3e4ebc8fcdff2cdfe9d
+Sending files: ['UV34106.163', 'UV34206.163', 'UV34306.163', 'UV34406.163']   Total size = 587118
+Adding file 'UV34106.163' to zipfile.
+Adding file 'UV34206.163' to zipfile.
+Adding file 'UV34306.163' to zipfile.
+Adding file 'UV34406.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV34506.163, datetime = 2006-12-11 15:04:32, size = 144953, md5sum = 0f4f3782d364d4fb47a41949bfaf8993
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV34606.163, datetime = 2006-12-12 15:04:30, size = 148934, md5sum = 3b9cff6902bbf386b83e5e2667e4ed8d
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV34706.163, datetime = 2006-12-13 15:02:48, size = 144970, md5sum = 06fc09cc29e98739751e0e03879ce67f
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV34806.163, datetime = 2006-12-14 15:01:56, size = 145139, md5sum = 3ec3dc2e42b6ee0b26b87ee96cd1977b
+Sending files: ['UV34506.163', 'UV34606.163', 'UV34706.163', 'UV34806.163']   Total size = 583996
+Adding file 'UV34506.163' to zipfile.
+Adding file 'UV34606.163' to zipfile.
+Adding file 'UV34706.163' to zipfile.
+Adding file 'UV34806.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV34906.163, datetime = 2006-12-15 15:03:38, size = 67078, md5sum = 3a4b3d5380047fe7af35e37eb9c166aa
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV35006.163, datetime = 2006-12-16 15:04:34, size = 149439, md5sum = 0429b6db59246b81114c55b71acb241d
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV35106.163, datetime = 2006-12-17 15:03:00, size = 148716, md5sum = 513891a7819fa9159d636c938f00ff2b
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV35206.163, datetime = 2006-12-18 15:10:20, size = 134003, md5sum = 250dd6129e3aa4908024a07a92a39aab
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV35306.163, datetime = 2006-12-19 15:09:20, size = 134302, md5sum = a72a98c7f6e0c678a2cc5bd3d7d1e220
+Sending files: ['UV34906.163', 'UV35006.163', 'UV35106.163', 'UV35206.163', 'UV35306.163']   Total size = 633538
+Adding file 'UV34906.163' to zipfile.
+Adding file 'UV35006.163' to zipfile.
+Adding file 'UV35106.163' to zipfile.
+Adding file 'UV35206.163' to zipfile.
+Adding file 'UV35306.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV35406.163, datetime = 2006-12-20 15:06:44, size = 144780, md5sum = 16c63fce58af91b55bf2c0b35aa09bc1
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV35506.163, datetime = 2006-12-21 15:03:50, size = 144657, md5sum = 2c151702419bd4f7311b154493dd2d46
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV35606.163, datetime = 2006-12-22 15:04:52, size = 144776, md5sum = 8431aa3066adda88048b75781138fe36
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV35706.163, datetime = 2006-12-23 15:07:04, size = 144643, md5sum = d44e284c2c410d37e7a4c0b88b5aabe4
+Sending files: ['UV35406.163', 'UV35506.163', 'UV35606.163', 'UV35706.163']   Total size = 578856
+Adding file 'UV35406.163' to zipfile.
+Adding file 'UV35506.163' to zipfile.
+Adding file 'UV35606.163' to zipfile.
+Adding file 'UV35706.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV35806.163, datetime = 2006-12-24 15:07:26, size = 144723, md5sum = 82c8267a0e7c82010a0085b29ff3e59d
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV35906.163, datetime = 2006-12-25 15:07:36, size = 144864, md5sum = ff70fa9934051100c207bb08e808049f
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV36006.163, datetime = 2006-12-26 15:07:58, size = 144891, md5sum = 6e45e9640a5d045ae70b7b0f1321ad0c
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV36106.163, datetime = 2006-12-27 15:08:08, size = 144880, md5sum = 5f17296aedf785d2c52fe8e25f06c4f4
+Sending files: ['UV35806.163', 'UV35906.163', 'UV36006.163', 'UV36106.163']   Total size = 579358
+Adding file 'UV35806.163' to zipfile.
+Adding file 'UV35906.163' to zipfile.
+Adding file 'UV36006.163' to zipfile.
+Adding file 'UV36106.163' to zipfile.
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV36206.163, datetime = 2006-12-28 15:08:36, size = 144850, md5sum = d8af68d78e6197146a97f443122efc57
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV36306.163, datetime = 2006-12-29 15:13:48, size = 149699, md5sum = 7794f6d11194af25346328327491518c
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV36406.163, datetime = 2006-12-30 15:13:36, size = 149630, md5sum = 1b0431520f2085016a8b0fbb0f4ddd4a
+Comparing:
+	 None 
+	 filename = c:\brewer.163\bdata\2006\UV36506.163, datetime = 2006-12-31 15:14:30, size = 149783, md5sum = 9be30e6d3c44fa7cc8839e76f58998a8
+Sending files: ['UV36206.163', 'UV36306.163', 'UV36406.163', 'UV36506.163']   Total size = 593962
+Adding file 'UV36206.163' to zipfile.
+Adding file 'UV36306.163' to zipfile.
+Adding file 'UV36406.163' to zipfile.
+Adding file 'UV36506.163' to zipfile.
+
+Brewer163 -> www.iberonesia.net
+-------------------------------
+Files available: 180
+Files sent: 180
+Failed: 0

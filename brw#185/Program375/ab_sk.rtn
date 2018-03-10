@@ -1,0 +1,18 @@
+10000 REM ****************** ab_sk routine 20/12/94 ********************
+10001 REM             MKII/MKIII/MKIV Abort Schedule Routine 
+10002 REM
+10003 REM
+10004 REM **************************************************************
+10010 DATA ab_sk
+32000 ED%=1:PRINT CL$
+32010 LOCATE 10,SP:PRINT "Observations were last interrupted from"
+32020 LOCATE 11,SP:PRINT SK$;" schedule in ";DI$;" routine."
+32030 LOCATE 13,SP:PRINT "Schedule will resume in     seconds"
+32040 LOCATE 14,SP:PRINT "unless you press HOME for main menu"
+32050 TA=900:GOSUB 7050
+32060 TI=TIMER*60:LOCATE 13,SP+24:PRINT RIGHT$("   "+STR$(INT((TA-TI)/60+1)),2)
+32070 IF TI>TA THEN PRINT CL$:G$(0)=DI$:RETURN
+32080 A$=INKEY$:IF A$<>Q2$ THEN 32060
+32090 PRINT CL$:SK$="":DI$="menu":GOSUB 5200:RETURN
+65529 REM proper last line
+                                                                                                   

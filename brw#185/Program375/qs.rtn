@@ -1,0 +1,181 @@
+10000 REM ******************* ql routine 18/09/01 **********************
+10001 REM               MKII/MKIII/MKIV: Lamp Quick Scan:
+10010 REM NOTE: QL output file has CORRECTED(not raw) INTENSITIES!!!!
+10011 REM 23/11/02 corrected for new electronics in line 30071
+10012 REM 18/09/01 created from old QS.rtn by IOS with improved wavelengths
+10015 REM **************************************************************
+11000 IF MDD$="o3" THEN 11100
+11010   PRINT#4,"QL is not an NO2 routine":PRINT"QL is not an NO2 routine"
+11020   X=1:GOSUB 7220:RETURN
+11100 DATA ql: avdiff=0
+11108 IF TYP$="mkii" or (TYP$="mkiv" AND ZERO=3469) THEN XR=0 ELSE XR=1
+11110 IF Q8%=0 THEN RETURN: REM if no uvb port
+11120 IF DN%<>8 THEN RETURN: REM if no disk recording
+12000 REM
+12001 REM Initialization
+12002 REM
+12010 PRINT CL$: DIM FU0(30), FU1(30), fwl(30)
+12020 FILE$ = "QL" + RIGHT$("______" + LM$, 6) + "." + NO$
+12030 ON ERROR GOTO 32000: OPEN "i", 3, DD$ + FILE$
+12040 INPUT #3,LE%,AAA1,AAA2,A,D,duv0: FOR I = 1 TO LE%: INPUT #3,fwl(i),FU0(I): NEXT
+12050 CLOSE 3: AAA1$ = RIGHT$("   " + STR$(AAA1), 6)
+12060 ON ERROR GOTO 32200
+12070 PRINT "Turn on the lamp " + LM$: PRINT
+12080 LOCATE 7, 26: PRINT "Waiting for 5.00 min to warm up"
+12090 LOCATE 8, 27: PRINT "Press  Del  to skip the delay": AA$="": goto 12150
+12100 IF QSF% = 0 THEN QSF% = 1 ELSE GOTO 12150
+12110   CTIMER = TIMER + 300
+12120   WHILE AA$ <> Q1$ AND TIMER < CTIMER: AA$ = INKEY$
+12130     LOCATE 7, 38: PRINT USING "#.##"; (CTIMER - TIMER) / 60
+12140   WEND
+12150 S3 = 0: S4 = 0
+13000 REM
+13001 REM Take UVB observation
+13002 REM
+13003 IF TYP$="mkiii" THEN WV=3500 ELSE WV=3250
+13004 SQ=1: GOSUB 33000: SWITCH.1TO5 = STEP.NUMBER: SWITCH.WL = wv
+13005 WV=3530: SQ=1: GOSUB 33000: LIMIT.OF1 = STEP.NUMBER
+13006 WV=3705: SQ=5: GOSUB 33000: LIMIT.OF5 = STEP.NUMBER
+13007 ND.SWITCH$ = STR$(VAL(UF$)+128)
+13010 MN = 2865: MX = 3635: DD = 35: REM max, min and increment
+13012 if XR=0 then mx = 3250: ' NO extended range
+13020 LE% = INT((MX-MN)/DD + 1.5): REM number of lambdas
+13030 CX$ = "20": TR$ = "s" + "a": REM cycle count and track mode
+13040 GOSUB 2450
+13050 GOSUB 6610: GOSUB 6635: M5$ = UF$: GOSUB 6650
+13060 TD=1500:GOSUB 7000:GOSUB 7750:GOSUB 6700:M1$=STR$(ZU%):GOSUB 9870
+13070 LOCATE ,SP: PRINT "4 - Brewer azimuth to sun"
+13080 LOCATE ,SP: PRINT "5 - Director prism to UVB sensor": GOSUB 9650
+13090 M8$ = "-" + MC$: GOSUB 9805: M8$ = STR$(-ZERO): GOSUB 9805
+13100 PRINT CL$: LOCATE 4,21
+13110 PRINT "UVB scan on lamp #"+LEFT$(LM$+"    ",4)+"  (distance: "+RIGHT$("  "+STR$(DI),2)+" cm)"
+13120 LOCATE 5,21: PRINT "-----------------------------------------": LOCATE 6,11
+13130 PRINT "Wavelength    Lamp intensity (c/s)   Change from day";LEFT$(AAA1$,4)+"/"+RIGHT$(AAA1$, 2)
+13140 IF FP% = 0 THEN 13190
+13150   PRINT #4,
+13160   PRINT #4,SPC(21);"UVB scan on lamp #"+LEFT$(LM$+"    ",4)+"  (distance: "+RIGHT$("  "+STR$(DI),2)+" cm)"
+13170   PRINT #4,SPC(21); "-----------------------------------------"
+13180   PRINT #4,SPC(11);"Wavelength    Lamp intensity (c/s)   Change from day";LEFT$(AAA1$,4)+"/" +RIGHT$(AAA1$,2):PRINT #4,
+13190 STIM$ = TIME$
+13200 W1 = MN: W2 = MX: DW = DD: SQ = 1: scanup=1: GOSUB 30000: 'IF HF% = 1 THEN 14000
+13202 IF HF% = 0 THEN GOSUB 31000
+13205 W1 = Mx: W2 = Mn: DW = -DD: scanup=0: GOSUB 30000: 'IF HF% = 1 THEN 14000
+13210 M8$ = STR$(ZERO+1): GOSUB 9805: M8$="-1": GOSUB 9805: M8$=MC$: GOSUB 9805: GOSUB 9500
+13220 IF HF% = 0 THEN GOSUB 31000
+13230 IF HF% = 1 THEN 14000
+13500 REM *** Clean up
+13510 PRINT #4, "UVL extended quick scan started at  "; STIM$ + "      volts=______"
+13520 PRINT #4, "UVL extended quick scan finished at "; TIME$ + " Avg. volts=______"
+13530 ON ERROR GOTO 3100: ERASE FU0,FU1,fwl: RETURN
+14000 REM
+14001 REM Home flag abort handling
+14002 REM
+14010 PRINT #4, "UVL extended quick scan aborted at "; TIME$
+14015 IF TYP$="mkiv" AND Q9%=1 THEN O1$="M,6"+str$(mx%): GOSUB 9450
+14020 ON ERROR GOTO 3100: ERASE FU0,FU1,fwl: RETURN
+20000 '
+20001 ' *** Switch to Extended Range ***
+20002 '
+20010 SQ=5: B=DC(SQ,2): C=DC(SQ,3): DQ$=STR$(SQ+1)
+20020 IF TYP$="mkiv" AND Q9%=1 THEN O1$="M,6,50": GOSUB 9450: M5$=ND.SWITCH$: GOSUB 9800
+20030 RETURN
+20100 '
+20101 ' *** Switch from Extended Range ***
+20102 '
+20110 SQ=1: B=DC(SQ,2): C=DC(SQ,3): DQ$=STR$(SQ+1)
+20120 IF TYP$="mkiv" AND Q9%=1 THEN O1$="M,6,242": GOSUB 9450: M5$=uf$: GOSUB 9800
+20130 RETURN
+20500 '
+20501 ' *** Switch to Extended Range ***
+20502 '
+20510 SQ=5: B=DC(SQ,2): C=DC(SQ,3): DQ$=STR$(SQ+1)
+20520 IF TYP$="mkiv" AND Q9%=1 THEN O1$="M,6,50": GOSUB 9450
+20530 RETURN
+20600 '
+20601 ' *** Switch to Extended Range ***
+20602 '
+20610 SQ=1: B=DC(SQ,2): C=DC(SQ,3): DQ$=STR$(SQ+1)
+20620 IF TYP$="mkiv" AND Q9%=1 THEN O1$="M,6,242": GOSUB 9450
+20630 RETURN
+30000 '
+30001 ' *** Scan W1 to W2 step DW on slit SQ ***
+30002 '
+30010 O1$="R,1,1,"+CX$+":O": GOSUB 9450: GOSUB 9190
+30020 DK=INT(VA*10+.5)/10
+30030 B=DC(SQ, 2): C=DC(SQ, 3): DQ$=STR$(SQ+1): N%=0
+30040 FOR WV = W1 TO W2 STEP DW: N% = N% + 1: if wv<3000 then cx$="30" else cx$="20"
+30050   GOSUB 2090: IF HF%<>0 THEN PRINT "aborted": WV=W2: RETURN
+30060   SN$ = STR$(INT((-B+SQR(B*B - 4*(DC(SQ,1) - WV)*C))/2/C))
+30061   SNN$=STR$(INT(VAL(SN$)*GS+GI))
+30062   IF VAL(SN$)>SWITCH.1TO5 THEN IF SQ=1 and scanup=1 THEN switch.wl=wv-dw: WV=WV-DW: LE%=LE%+1: GOSUB 20000: GOTO 30060
+30063   IF VAL(SN$)>LIMIT.OF1 THEN IF SQ=1 and scanup=1 THEN WV=WV-DW: LE%=LE%+1: GOSUB 20500: GOTO 30060
+30064   IF VAL(SN$)>LIMIT.OF5 THEN IF SQ=5 and scanup=1 THEN WV=W2: RETURN
+30065   IF wv<SWITCH.wl THEN IF SQ=5 and scanup=0 THEN WV=WV-DW: GOSUB 20100: GOTO 30060
+30068   IF VAL(SN$)<0 OR (VAL(SNN$)<0 AND TYP$="mkiii") THEN 30210
+30071   IF TYP$="mkiii" and q14%=1 THEN O1$=SE$+"M,"+N9$+","+SNN$ ELSE O1$=""
+30072   IF TYP$="mkiii" and q14%=1 THEN O1$="M,10,"+SN$+O1$:goto 30075
+30073   IF TYP$="mkiii" and q14%=0 THEN O1$="X,"+SN$+","+SNN$ ELSE O1$="M,10,"+SN$
+30075   O1$ = O1$ + ":R," + DQ$ + "," + DQ$ + "," + CX$ + ":O"
+30080   TI = TIMER*60: TM=TI: GOSUB 9450: TM=INT((TM+TI)/72)/100: VA=VA-DK: IF VA<0 THEN VA=1
+30090   VA = VA * 2 / VAL(CX$) / IT: REM convert to c/s
+30100   IF VA < 2 THEN VA = 2:  REM prevent negative values
+30105   if va > 4000000 then va = 4000000
+30110   F1 = VA: FOR JM = 0 TO 8: VA = F1 * EXP(VA * T1): NEXT: REM corect dead time
+30120   fwl(n%) = wv:FU1(N%) = INT(VA * 10 + .5) / 10: if n%>15 then mmn%=n%-15 else mmn%=n%
+30130   LOCATE 7+mmN%,11: PRINT USING "   ####            ########.#              ";WV;FU1(N%);
+30140   IF FU0(N%)<>-999 and dw>0 THEN PRINT USING "###.## %";-(FU0(N%) - FU1(N%))*100/FU0(N%)
+30142   IF FU0(N%)<>-999 and dw<0 THEN PRINT USING "###.## %";-(FU0(le%-N%+1) - FU1(N%))*100/FU0(le%-N%+1)
+30145   LOCATE 8+mmN%,11: PRINT "                                                        ";
+30150   IF FP% = 0 GOTO 30180
+30160     PRINT #4,SPC(11);: PRINT #4, USING "   ####            ########.#              ";WV;FU1(N%);
+30170     IF FU0(N%)<>-999 and dw>0 THEN PRINT #4, USING "###.## %";-(FU0(N%)-FU1(N%))*100/FU0(N%);
+30172     IF FU0(N%)<>-999 and dw<0 THEN PRINT #4, USING "###.## %";-(FU0(le%-N%+1) - FU1(N%))*100/FU0(le%-N%+1);
+30175     PRINT #4,
+30180   IF WV < 3000 THEN DV = 1 - .36 * ((WV - 2700) / 200) ^ 1.64: REM ACGIH-NIOSH curve
+30190   IF WV >= 3000 THEN DV = .3 * .7356 ^ ((WV - 3000) / 10)
+30195   IF FU0(N%)<>-999 and dw>0 THEN AvDiff = AvDiff + (FU0(N%)-FU1(N%))*100/FU0(N%) 
+30196   IF FU0(N%)<>-999 and dw<0 THEN AvDiff = AvDiff + (FU0(le%-N%+1)-FU1(N%))*100/FU0(le%-N%+1) 
+30200   S0 = DV: S3 = S3 + S0 * VA: S4 = S4 + S0
+30210 NEXT: AvDiff = -AvDiff/LE% :RETURN
+31000 '
+31001 ' *** Print Results ***
+31002 '
+31010 DV = .00001 * S3 / 2
+31020 '
+31030 '
+31040 IF FP% = 0 GOTO 31080
+31050   PRINT #4,SPC(11);: PRINT #4, USING "Average difference ->  ###.## %";AvDiff;
+31070   PRINT #4,
+31080 OPEN "a", 3, DD$ + FILE$
+31090 PRINT #3, using "## && ###.# +## ### +###.## ";LE%;JD$;YF$;DI;TE%;DK;AvDiff;:
+31092 if dw>0 then FOR I = 1 TO LE%: PRINT #3, using " #### #######.# ";fwl(i);FU1(I);: NEXT:print#3,time$: CLOSE 3:goto 31200
+31094 if dw<0 then FOR I = le% TO 1 step -1: PRINT #3, using " #### #######.# ";fwl(i);FU1(I);: NEXT:print#3,time$: CLOSE 3:LOCATE 23, 28: PRINT "Press any key to continue"
+31100 A1$(IO)=LF$+"co"+CR$+TIME$+CR$+"ql: scan with lamp "+LM$+" done":IO=IO+1
+31102 GOSUB 3225
+31110 IF QSF% = 1 THEN QSF% = 2 ELSE GOTO 31200
+31120   CTIMER = TIMER+1: AA$ = "": WHILE AA$ = "" AND TIMER < CTIMER: AA$ = INKEY$: WEND
+31200 RETURN
+32000 '
+32001 ' *** Error handling ***
+32002 '
+32010 BEEP: IF ERR <> 53 THEN PRINT "Lamp file " + FILE$ + " is incorrect ": GOTO 32030
+32020   PRINT "Cannot find the lamp file " + FILE$ + " on  drive " + DD$:goto 32080
+32030 PRINT : PRINT "Insert a disk with this lamp file and press ENTER"
+32040 PRINT : PRINT "or press ESC to create a new lamp file " + FILE$
+32050 AA$ = INKEY$: IF AA$ = "" GOTO 32050
+32060 IF AA$ = CHR$(13) THEN CLOSE 3: PRINT CL$: RESUME 12030
+32070 IF AA$ <> CHR$(27) THEN BEEP: GOTO 32050
+32080 PRINT CL$
+32090 IF FP% <> 0 THEN PRINT #4,"Lamp file "+FILE$+" created on drive "+DD$+" at "+TIME$+"  "+DATE$
+32100 CLOSE 3: OPEN "o",3,DD$+FILE$: CLOSE 3
+32110 FOR I = 1 TO 28: FU0(I)=-999: NEXT: DUV0=-999: AAA1$ = " -----": RESUME 12060
+32200 IF ERR<24 OR ERR>27 THEN ERASE FU0,FU1,fwl
+32210 GOTO 3100
+33000 ' 
+33001 ' *** Determine The Step Number Given SQ and WV ***
+33002 '
+33010 B=DC(SQ,2): C=DC(SQ,3)
+33020 STEP.NUMBER = INT((-B+ SQR(B*B-4*(DC(SQ,1)-WV)*C))/2/C)
+33030 RETURN
+65529 REM proper last line
+

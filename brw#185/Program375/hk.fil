@@ -1,0 +1,14 @@
+hk,housekeeping menu 
+po,print instrument constants
+ap,display A/D monitor
+az,zero azimuth tracker
+ze,zero zenith prism
+cf,edit instrument constants
+ic,edit system configuration
+lf,edit station locations
+si,manually site the sun
+sim,manually site the moon
+re,resets instrument
+fr,reset FW#3 and micrometer
+st,read instrument status
+

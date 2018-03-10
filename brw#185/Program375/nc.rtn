@@ -1,0 +1,5 @@
+10000 rem Call NC.exe
+10010 data nc
+20000 shell("c:\tools\nortcom3\nc.exe")
+30000 return
+65529 rem dummy

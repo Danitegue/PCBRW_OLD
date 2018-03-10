@@ -1,0 +1,186 @@
+10000 REM ****************** fv routine 31/12/96 **********************
+10010 REM            MKII/MKIII/MKIV Direct Sun Observations
+10020 REM
+10030 REM            (SCI-TEC Instruments, September 1995)
+10040 REM
+10060 REM *************************************************************
+10070 REM
+10080 REM  Direct sun scan
+10090 REM
+10220 REM  Global Variables Referenced:
+10230 REM    MS() DS% HF% UC% ND TD XN
+10240 REM    CL$ CY$ CZ$ M5$ MDD$ SQ$ TR$ TYP$ ZS$
+10250 REM
+10260 REM  Exits: 13020
+10270 REM
+10280 REM  Uses:  2450, 3200, 3220, 4200, 6610, 6630, 6636, 6650,
+10290 REM         6690, 7000, 7500, 7750, 8000, 8200, 9650, 9670,
+10300 REM         9700, 9900
+10310 REM
+10500 REM **************************************************************
+10501 REM  History: dd/mm/yy
+10505 REM 20 6 08 gregor: adapted fn.rtn for sky scans - Filter 'Clear apperture, ZE-scan from 0..180, DS scans and Alumcanter scan
+10506 REM 23 1 08 gregor: adapted fv.rtn for polarization scans - Filter 'Clear apperture, ZE-scan from 0..90
+10507 REM 24 8 98 julian use azimuth for morning/afternoon.
+10508 REM 31 3 98 julian add fvdone to ed.rtn
+10509 REM 14 1 98 change to steps and add linefit to correct zenith.
+10510 REM 6 1 98 julian adapt for schedule.
+10511 REM 8/1/97 -julian. add questions about filters.
+10512 REM  31/12/96 julian- corrects movement.
+10515 REM  27/11/96 - measures field of view of brewer. -julian
+10520 REM  27/09/95 - Aborts if counts are too high, fixed home key
+10530 REM  abort and temperature check
+10540 REM  20/12/94 - Rewritten by TM
+10550 REM **************************************************************
+11000 '
+11001 ' *** Setup ***
+11002 '
+11010 DATA fs
+11020 TR$="d"+"s":UC%=0:T0=TIMER/60
+11021 IF M2<3.5 AND T0-OLDTIME>60 THEN GOTO 11028
+11022 IF M2>3.5 THEN OLDTIME=0:RETURN
+11023 IF RM%<>0 THEN RETURN
+11028 OLDTIME=TIMER/60
+11029 REM DS measurment 1 ================
+11030 IF VAL(SQ$)<128 AND M2<2 THEN SQ$="128"
+11050 GOSUB 6610:IF MDD$="o3" THEN GOSUB 6630 ELSE GOSUB 6636   'Filter#1 def to 0-5=6620,30,35,36,37 
+11060 M5$=SQ$                                                   'Filter#2 to SQ$
+11065 GOSUB 6650                                        
+11070 GOSUB 6690:GOSUB 7750                                     'Iris closed, AZ/ZE to sun
+11080 LOCATE ,SP:PRINT "4 - Point Brewer at sun"
+11090 GOSUB 9650:GOSUB 7500                                     'Wait until ready, test intensity, not know, but later
+12000 '
+12001 ' *** Take Set of Observations ***
+12002 '
+12070 B$=JD$+YF$+"."+NO$
+12075 OPEN DD$ + "fs"+B$ FOR APPEND AS 8  ' open file for output
+12076 print #8,"Polarization Clear Aperture Scan; Columns: AJU-Rel,ZJU-Abs,AZ,ZE,TIME,F0,F1,F2,F3,F4,F5,F6"
+12077 print #4,"Polarization Clear Aperture Scan started at ";TIME$
+12090 CZ$="2":WL$="0":WU$="6":GOSUB 9880
+12095 GOSUB 2450;CZ$=CY$:GOSUB 9700      ' get temp
+12100 GOSUB 9670:REM prints start of measurement
+12105 print #8,"DS Measurement 1, started at ";TIME$; ", FW #1:";STR$(ABS(VAL(M4$)/64-5)); ", FW #2:";STR$(VAL(M5$)/64);
+12106 PRINT #8, ", CY: ";CZ$;" SL: ";VAL(WL$);"-";VAL(WU$)
+12107 print "Polarization Clear Aperture Scan Part 1/5 - DS 1st - started at ";TIME$
+12110 GOSUB 8000:MS(0)=11:DS%=0
+12111 SQ$=M5$:GOSUB 7800:AJU=0:ZJU=ZA
+12112 DS%=DS%+1:GOSUB 18000 
+12113 IF HF%=1 OR DS%=3 THEN 12115
+12114 GOTO 12112
+12115 IF HF%=1 THEN 13000
+12116 REM ZE Sky Scan ================
+12119 GOSUB 6610:IF MDD$="o3" THEN GOSUB 6635 ELSE GOSUB 6636   'Filter#1 def to 0-5=6620,30,35,36,37 
+12120 M5$="0":REM IF VAL(M5$)<192 AND M2<2 THEN M5$="192"       'Filter#2 to 0 f=0
+12121 GOSUB 6650
+12122 GOSUB 6690:GOSUB 7750                                     'Iris closed, AZ/ZE to sun
+12123 LOCATE ,SP:PRINT "4 - Point Brewer at sun"
+12130 print #8,"ZE Sky Scan,      started at ";TIME$; ", FW #1:";STR$(ABS(VAL(M4$)/64-5)); ", FW #2:";STR$(VAL(M5$)/64);
+12131 print "Polarization Clear Aperture Scan Part 2/5 - ZE Sky Scan - started at ";TIME$
+12132 CZ$="2":WL$="0":WU$="6":GOSUB 9880:PRINT #8, ", CY: ";CZ$;" SL: ";VAL(WL$);"-";VAL(WU$)
+12133 GOSUB 7800    ' get new AZ% and ZE%
+12150 track=1:AJU=0:nju=0:FOR ZJU=90 to 0 STEP -5               'Zenith angle in deg now, ZJU and AJU are absolut
+12160 nju=nju+1:GOSUB 20000
+12170 NEXT ZJU
+12175 PRINT "Turning 180deg..."
+12180 O1$="!MOTOR.MAX.VEL[2] 30":GOSUB 9450    ' default 30
+12181 O1$="!MOTOR.MAX.ACC[2] 2":GOSUB 9450     ' default 5
+12190 AJU=180:IF AZ+180>360 THEN AJU=-180 ' Azimuth is relative to sun position
+12200 track=2:nju=0:FOR ZJU=0 to 90 STEP 5     ' Zenith angle in deg now second half of hemisphere
+12210 nju=nju+1:GOSUB 20000
+12220 NEXT ZJU
+12225 REM DS Measurement 2 ================
+12230 GOSUB 6610:IF MDD$="o3" THEN GOSUB 6630 ELSE GOSUB 6636   'Filter#1 def to 0-5=6620,30,35,36,37 
+12231 M5$=SQ$                                                   'Filter#2 to SQ
+12232 GOSUB 6650
+12233 GOSUB 6690:GOSUB 7750                                     'Iris closed, AZ/ZE to sun
+12234 LOCATE ,SP:PRINT "4 - Point Brewer at sun"
+12235 print #8,"DS Measurement 2, started at ";TIME$; ", FW #1:";STR$(ABS(VAL(M4$)/64-5)); ", FW #2:";STR$(VAL(M5$)/64);
+12236 print "Polarization Clear Aperture Scan Part 3/5 - DS 2nd - started at ";TIME$
+12237 CZ$="2":WL$="0":WU$="6":GOSUB 9880:PRINT #8, ", CY: ";CZ$;" SL: ";VAL(WL$);"-";VAL(WU$)
+12240 GOSUB 2450;CZ$=CY$:GOSUB 9700      ' get temp
+12241 GOSUB 9670:REM prints start of measurement
+12242 GOSUB 8000:MS(0)=11:DS%=0
+12243 SQ$=M5$:GOSUB 7800:AJU=0:ZJU=ZA
+12244 DS%=DS%+1:GOSUB 18000 
+12245 IF HF%=1 OR DS%=3 THEN 12247
+12246 GOTO 12244
+12247 IF HF%=1 THEN 13000
+12250 REM AZ Sky Scan ================
+12251 GOSUB 6610:IF MDD$="o3" THEN GOSUB 6635 ELSE GOSUB 6636   'Filter#1 def to 0-5=6620,30,35,36,37 
+12252 M5$="0":REM IF VAL(M5$)<192 AND M2<2 THEN M5$="192"       'Filter#2 to 3 f=1.5
+12253 GOSUB 6650                                                'Filter#2 to SQ$
+12254 GOSUB 6690:GOSUB 7750                                     'Iris closed, AZ/ZE to sun
+12255 LOCATE ,SP:PRINT "4 - Point Brewer at sun"
+12256 print #8,"AZ Sky Scan,      started at ";TIME$; ", FW #1:";STR$(ABS(VAL(M4$)/64-5)); ", FW #2:";STR$(VAL(M5$)/64);
+12257 print "Polarization Clear Aperture Scan Part 4/5 started at ";TIME$
+12258 CZ$="2":WL$="0":WU$="6":GOSUB 9880:PRINT #8, ", CY: ";CZ$;" SL: ";VAL(WL$);"-";VAL(WU$)
+12260 if AZ>180 GOTO 12270
+12261 track=1:nju=0:FOR AJU=5 to 180 STEP 5               'Azimuth is relative to sun position
+12262 nju=nju+1:GOSUB 7800:ZJU=ZA:GOSUB 20000
+12263 NEXT AJU
+12265 GOTO 12325
+12270 track=1:nju=0:FOR AJU=-5 to -180 STEP -5            'Azimuth is relative to sun position
+12271 nju=nju+1:GOSUB 7800:ZJU=ZA:GOSUB 20000
+12272 NEXT AJU
+12325 REM DS Measurement 3 ================
+12330 GOSUB 6610:IF MDD$="o3" THEN GOSUB 6630 ELSE GOSUB 6636   'Filter#1 def to 0-5=6620,30,35,36,37 
+12331 M5$=SQ$                                                   'Filter#2 to SQ
+12332 GOSUB 6650
+12333 GOSUB 6690:GOSUB 7750                                     'Iris closed, AZ/ZE to sun
+12334 LOCATE ,SP:PRINT "4 - Point Brewer at sun"
+12335 print #8,"DS Measurement 3, started at ";TIME$; ", FW #1:";STR$(ABS(VAL(M4$)/64-5)); ", FW #2:";STR$(VAL(M5$)/64);
+12336 print "Polarization Clear Aperture Scan Part 5/5 - DS 3nd - started at ";TIME$
+12337 CZ$="2":WL$="0":WU$="6":GOSUB 9880:PRINT #8, ", CY: ";CZ$;" SL: ";VAL(WL$);"-";VAL(WU$)
+12340 GOSUB 2450;CZ$=CY$:GOSUB 9700      ' get temp
+12341 GOSUB 9670:REM prints start of measurement
+12342 GOSUB 8000:MS(0)=11:DS%=0
+12343 SQ$=M5$:GOSUB 7800:AJU=0:ZJU=ZA
+12344 DS%=DS%+1:GOSUB 18000 
+12345 IF HF%=1 OR DS%=3 THEN 12347
+12346 GOTO 12344
+12347 IF HF%=1 THEN 13000
+12985 print #8,"Scan finished at ";TIME$
+12990 A1$(IO)=A1$(IO)+CR$+"ze"+CR$+STR$(ZA)+CR$+STR$(I)+CR$+STR$(MAZ)+CR$
+13000 '
+13001 ' *** Clean Up and Exit ***
+13010 GOSUB 4200:GOSUB 3220
+13011 GOSUB 3200:IO=IO+1
+13050 IF HF%=1 THEN PRINT "Scan aborted" else PRINT "Scan Finished"
+13060 PRINT "Restore pointing to sun..."
+13080 GOSUB 7800:GOSUB 7950 ' restore pointing to sun.
+13081 O1$="!MOTOR.MAX.VEL[2] 6":GOSUB 9450    ' default 30
+13082 O1$="!MOTOR.MAX.ACC[2] 5":GOSUB 9450    ' default 5
+13090 CLOSE 8
+13091 print #4,"Polarization Clear Aperture Scan finished at ";TIME$
+13100 RETURN
+18000 '
+18001 ' *** Direct Sun Observation - ds ***
+18002 '
+18010 GOSUB 9670:GOSUB 9900                         'Get data in F(WL) when ready
+18020 IF F(6)>4000000 OR HF%=1 THEN DS%=2:RETURN    'Terminate measurement
+18030 IF XN=1 OR DS%<3 THEN GOSUB 9700              'Take a reading
+18040 O1$="R,"+WL$+","+WU$+","+CZ$:GOSUB 9400
+18041 WT=(WU-WL+1)*VAL(CZ$)*18/7*IT
+18042 T0=TIMER*60+WT/120
+18043 PRINT #8,USING"####.###   ";AJU;ZA;AZ;ZA;T0/3600;:PRINT #8,USING"######.# ";F(0);F(1);F(2);F(3);F(4);F(5);F(6)
+18044 PRINT USING"####.###   ";AJU;ZA;AZ;ZA;:PRINT F(WU)
+18045 IF XN=1 THEN 18010:REM restart obs
+18070 ND=ND+1:RETURN 
+18080 REM *** dummy line ***
+20000 '
+20001 ' *** Direct Sun Observation - ze ***
+20002 '
+20010 GOSUB 7800    ' get new AZ% and ZE%
+20011 if ZJU<ZA+3 AND ZJU>ZA-3 AND track=1 AND AJU=0 THEN RETURN
+20020 AZC%=SR%*(AZ+AJU)/360+.5+NC%+UC%     ' move to absolute position
+20030 ZEC%=ER%*(1-ZJU/180)/2+.5+HC%     ' move to absolute position
+20040 GOSUB 7950   ' move motors to updated position, while tracking sun
+20050 O1$="R,"+WL$+","+WU$+","+CZ$:GOSUB 9400
+20060 WT=(WU-WL+1)*VAL(CZ$)*18/7*IT
+20070 T0=TIMER*60+WT/120
+20080 TI=TIMER*60:TS=TI/7200:TD=200+WT*60:GOSUB 7000
+20090 GOSUB 9900  ' get data when ready data in F(WL)
+20100 PRINT #8,USING"####.###   ";AJU;ZJU;AZ;ZA;T0/3600;:PRINT #8,USING"######.# ";F(0);F(1);F(2);F(3);F(4);F(5);F(6)
+20110 PRINT USING"####.###   ";AJU;ZJU;AZ;ZA;:PRINT F(WU)
+20120 RETURN
+65529 REM *** dummy line ***

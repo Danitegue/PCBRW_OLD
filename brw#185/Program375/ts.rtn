@@ -1,0 +1,16 @@
+10000 rem
+10010 rem 3 2 2000 julian set time using rdate
+10550 REM **************************************************************
+11000 '
+11001 ' *** Setup ***
+11002 '
+11010 DATA ts
+12000 print#4,"Setting time from cape7"
+12020 REM O1$="rdate cape7"
+12025 REM O1$="NET TIME \\cape7 /set"
+12030 REM PRINT #4,O1$
+12040 REM shell O1$
+12250 O1$=""
+12260 GOSUB 7400 ' set brewer internal time
+13020 return
+65529 REM *** dummy line ***

@@ -1,0 +1,66 @@
+10000 REM ******************* no routine 30/05/97 **********************
+10010 REM           MKII/MKIII/MKIV Change Instrument Number
+10020 REM
+10030 REM              (SCI-TEC Instruments, May 1997)
+10040 REM
+10050 REM  See Also:
+10060 REM **************************************************************
+10070 REM
+10080 REM  This routine changes the current instrument number.
+10090 REM
+10100 REM  Side Effects:  see above
+10110 REM
+10120 REM  Global Variables Used:
+10130 REM    IO SP
+10140 REM    DCF$ DD$ DL$ ICF$ O1$ NO$ ZSF$
+10150 REM
+10160 REM  Exits: 11050
+10170 REM
+10180 REM  Uses:  2030, 2550, 3100, 4450, 5200, 5300, 5400, 9450
+10190 REM
+10300 REM **************************************************************
+10310 REM  History: dd/mm/yy
+10320 REM  14/07/95 - Directory copying has been removed
+10330 REM  06/04/95 - Small bugfixes
+10340 REM  19/09/94 - New header, changed directory copying to be more
+10350 REM  intuitive
+10360 REM  08/08/94 - Major rewrite
+10370 REM  07/07/94 - Better commenting
+10380 REM **************************************************************
+10500 '
+10501 ' *** Setup ***
+10502 '
+10510 DATA no
+10520 AB$=NO$
+11000 '
+11001 ' *** Prompt for Instrument Number ***
+11002 '
+11010 CLS:PRINT CL$:LOCATE 10,SP:PRINT "Instrument # = ";AB$
+11020 LOCATE ,SP:PRINT"If correct press return"
+11030 LOCATE ,SP:PRINT"If incorrect press enter the proper value (xxx) "
+11040 LOCATE ,SP+10:PRINT "->";
+11050 GOSUB 2030:IF A$=CR$ THEN GOSUB 20000:RETURN
+11060 AB$=A$:GOSUB 2050:AB$=AB$+B$:GOSUB 2550:GOTO 11000
+20000 '
+20001 ' *** Change to New Instrument Number ***
+20002 '
+20010 GOSUB 5200:REM            write out old operating state
+20020 ON ERROR GOTO 30000:REM   to handle creation of new directory
+20030 CLOSE 8:OPEN DD$+AB$+"\op_st."+AB$ FOR INPUT AS 8:CLOSE 8
+20040 NO$=AB$:ON ERROR GOTO 3100
+21000 '
+21001 ' *** Read in New Instrument Data ***
+21002 '
+21010 GOSUB 5300:REM      read in new operating state (new dir already exists by now)
+21020 I=0:GOSUB 5400:REM  read instrument constants
+21030 IF Q14%=0 THEN O1$="L,18041,"+DL$:GOSUB 9450
+21050 IF IO=1 THEN IO=0
+21060 GOSUB 3225:RETURN
+30000 '
+30001 ' *** Error Handler ***
+30002 '
+30010 IF ERR<>76 THEN 3100
+30020 RESUME 30030
+30030 PRINT AB$;" instrument does not exist - change failed"
+30040 X=1:GOSUB 7220:RETURN
+65529 REM proper last line

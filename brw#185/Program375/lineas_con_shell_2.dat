@@ -1,0 +1,5 @@
+UV_10minutes.RTN:19220 B$=JD$+YF$+"."+NO$: SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+UV_5minutes.RTN:19220 B$=JD$+YF$+"."+NO$: SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+Uv_2022010.RTN:19220 B$=JD$+YF$+"."+NO$: SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+g1.RTN:14930 SHELL "copy " + DD$ + "G1" + B$ + "+" + DD$ + "dum.dta " + DD$ + "G1" + B$
+g5.RTN:14930 SHELL "copy " + DD$ + "G5" + B$ + "+" + DD$ + "dum.dta " + DD$ + "G5" + B$

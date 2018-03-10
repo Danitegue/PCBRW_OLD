@@ -1,0 +1,16 @@
+10000 REM ******************* rf routine 30/10/00 **********************
+10010 REM 17 09 2001 JULIAN ONLY FOR NEW ELECTRONICS. DO ONLY MOTOR RESET (3,4,5) FOR ED
+10590 REM **************************************************************
+11000 DATA rf
+12000 PRINT #4,"Resetting iris, fw 1 and fw2"
+12010 O1$="I,3&I,4&I,5":GOSUB 9450
+17000 '
+17001 ' *** RESET MOTORS. ***
+17002 '
+17020 O1$="?MOTOR.ALLSTILL":GOSUB 9450:NLOOP%=NLOOP%+1:IF INSTR(I$,"FALSE")>0 AND NLOOP%<200 THEN 17020
+18000 '
+18001 ' *** Quit ***
+18002 '
+18022 GOSUB 9500:TA=120:GOSUB 7120
+19000 RETURN
+65529 REM proper last line

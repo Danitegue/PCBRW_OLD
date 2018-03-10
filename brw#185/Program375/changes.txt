@@ -1,0 +1,261 @@
+Revision History Since Last Major Release
+=========================================
+
+3.75a (March 30, 1999)
+-----
+
+ - The DELAY variable no longer needs to be set.  Brewer communications
+   is now timed precisely.  (Specifically, line 280 of MAIN.BAS/ASC
+   changed: "->" is now "-> ".
+ - The FR routine reported discrepancies incorrectly for Brewers with
+   new Brewer electronics.  This has been fixed.
+
+3.75 (January 18, 1999)
+----
+
+ - The Brewer software is now year 2000 compliant.  Several bug fixes
+   were required to do this.  This does NOT address the problem of PC
+   clocks that do not support date settings beyond the year 2000, which
+   cannot be fixed via software.  It should also be noted that this
+   software will NOT work past the year 2049; a new software system
+   will be available well before that time.
+
+ - The new Brewer electronics are fully supported with this release.
+   The software usage is the same as for older Brewers; however, you
+   may notice slight differences in some diagnostic messages.  AP
+   displays several new values if the new Brewer electronics are
+   present.  Resets (such as via RE) take longer in the new electronics,
+   but motor resets are quicker (because the hardware resets them, not
+   the software).
+
+ - The year was not rolling over correctly in most parts of the world.
+   In addition, an incorrect B file was created between the Julian year
+   rollover and GMT year rollover.  This has been fixed.
+
+ - Support for a moisture sensor has been added to the software.  Both
+   relative humidity and moisture values can be obtained.
+
+ - FM was causing strange problems if it was the last entry in a
+   schedule file.  This has been fixed.
+
+ - FM did not work correctly over a Julian or GMT day change.  This has
+   been fixed.
+
+ - A new constant, the zenith UVB dome step position, has been added to
+   the constants file.  Old constants files do NOT have to be updated;
+   the software will properly handle the absence of the new constant.
+
+ - DT and RS turn off the lamp when terminated by the home key.
+
+ - ST did not handle the azimuth and zenith motor positioning correctly.
+   This has been fixed.
+
+ - Some miscellaneous scheduling problems have been fixed.
+
+ - RE has been enhanced to provide additional diagnostic information
+   during reset.  A reminder is displayed to inform the operator if the
+   tracker is supposed to be on; if one is not available, than IC should
+   be used to disable it.
+
+ - A new routine, RL, has been added to read log messages from the
+   Brewer.  This is only useful for the new electronics boards.
+
+ - The response utilities (RES_II/RES_III/RES_IV) now fit the logarithm
+   of Y versus X instead of Y versus X.
+
+ - The version number of the software is now displayed on the screen.
+
+ - The size of the MAIN.BAS file has been reduced by about 250 bytes.
+
+
+3.74e (April 8, 1996)
+-----
+
+ - The Brewer disks have been reorganzied.  The operating software and
+   all SCI-TEC utilities have been moved onto the operating software
+   disk, and all customer utilities are on the utilities disk.
+   SCI-TEC distributes but DOES NOT SUPPORT any utilities on the
+   utilities disk.
+
+ - The filename of the UV response file being used is now recorded on
+   the UVSUM printout, as well as in the UVOAVG file.
+
+ - An additional diagnostic line has been added to the standard
+   printout text for the HG test.
+
+ - The date change bug at the end of year that affected some sites has
+   been fixed.  Input checking has been changed to allow entry of
+   dates beyond the year 1999.
+
+ - The display box of recent results on the screen has been fixed to
+   correctly show the first reading of the day, and clear when the
+   julian day changes.  The box is shown while a schedule is waiting
+   for the next zenith angle entry to occur.
+
+ - The current zenith angle is now displayed at all times, in the
+   upper right-hand side of the screen.
+
+ - The Brewer prompt message no longer prints to the printer.  It
+   prints to the screen only.
+
+ - The AUC routine now runs the end-of-day sequence.
+
+ - The 374CVT.EXE utility has been fixed to generate its output files
+   correctly.  A couple of unnecessary questions have been removed.
+
+ - SC has been upgraded to print to file if PD is in effect.  Error
+   checking has been added to prevent it from crashing.
+
+ - UM has been changed to correctly point the Brewer at all times.
+
+ - The 'device fault in 3287' bug has been fixed.
+
+ - OZSUM and FZSUM have been changed so that the '%' character does
+   not show up when poor SO2 readings are written to the relevant
+   average files.
+
+ - Aborting the TT routine when using the R command caused the Brewer
+   to reset.  This has been fixed.
+
+ - Certain reset conditions caused the Brewer to reset twice instead
+   of once.  This has been fixed.
+
+ - The CI routine has been updated to the correct wavelengths for
+   each Brewer type.  Also, a bug affecting usage with non-extended
+   range MKIV Brewers has been fixed.
+
+ - TESTFW2 has been changed to append each test to its output file.
+
+ - FZSUM now corrects its FZ data for the current day if ETC values
+   or temperature constants have been changed.
+
+ - ZC/ZB/ZP have been updated to include the minimum filterwheel #2
+   position test.
+
+
+3.74d (October 30, 1995)
+-----
+
+ - Main.bas program operation was speeded up in lines 45, 1410, 3580,
+ 6910, 6915, 8215, 9460.  Aborts were improved in lines 2093,
+ 9460-9490, 9510, 9930.  Comment and prompt messages in lines 3060 and
+ 9585-9590.  Info Box on screen in lines 4275 and 6815.  DI default in
+ line 290 changed to 5 cm.  The version number recorded at start of
+ B-files was changed to 2 (line 4505), to signify mainly that slit 0
+ is not used on FM, FZ and UM measurements now - like version 0 again
+ for these measurements.
+
+ - RE.rtn was found to need FW#3 reset code also to solve FW#3 error
+ movement in MKIV Brewers after an RE without a FR following it.  In
+ ED this sequence of REFR was being done which would set the FW#3
+ motor.  However if only a RE was done then the first UV scan
+ following would end with FW#3 postioned to step 225 instead of 242.
+ Initialization of Filterwheels 1+2 and Iris was improved also.
+
+ - UV.rtn was speeded up by increasing speed of micrometer motor(s)
+ which decreases measurement times by 25% and allow the UA measurement
+ to be done with 3 second increments.  Errors with certain UVRES files
+ with MKIV Brewers were corrected.  The file recording structure into
+ the UV file was changed by added line feed after each wavelength
+ measurement.  The time of measurement recorded in DUVjddyr.### file
+ was fixed to be time at 325nm for each type of measurement.  This
+ change was also made in UVSUM.rtn for printout.
+
+- HG, SI, SIM, SR routines had changes made so they print error and 
+ final setting messages into B-file as comments.
+
+ - FZ routine bug with SKY Light counts (only 1 cycle) was fixed and
+ slit 0 measurements removed.  The SKY light counts are now recorded
+ to B-file.
+
+ - DS and ZS routines were changed so that temperature is measured
+ just before the start - to remove some errors in temperature on some
+ systems.  The possibility of filterwheel #2 moving to position 5 if
+ HOME key pressed during intensity check is removed, we believe.  The 
+ ZB, ZC and ZP routines were made similar to ZS to avoid confusion.
+
+ - FM measurements improved to stay on moon tracking and not move back
+ to sun during other measurements.  Slit 0 measurements removed to
+ reduce the total measurement time.
+
+ - UM measurements were changed back to not collecting data from Slit 0.
+ This required a small change to SUM routine also.
+
+ - The OZSUM and NOSUM routines were revised to re-format printouts 
+ better.  OZSUM now writes daily mean to OZOAVGyr.### file, year added
+ in name.
+ 
+ - SKC operation was improved with initialization of ZS to -200 in
+ main program lines 310, 3490, 5924.  The sreen display box is now 
+ displayed when SKC operation is waiting.  The SA routine was up-dated
+ to stop a problem with SKC operation after use of SA.
+
+ - No Brewer operation was changed to only requiring a separate batch
+ file to start, rather than having to edit in IC routine and OP_ST.###
+ files.  To accomodate this Q12% operation was reserved and set in
+ lines 5262, 5370 of MAIN program.  Environment variable NOBREW is
+ read and set in line 46.  NOBREW.bat file must contain setting of this
+ variable now, (modify BREWER.bat file with addtion of 'SET NOBREW=1' at
+ beginning of file and 'SET NOBREW=' at the end).  At the beginning of
+ BREWER.bat file the statement 'SET NOBREW=' should be added also.
+ IC.rtn had a small change to show Q12% being reserved now.  The
+ CI.rtn was modified to change measurement ranges for MKIII and MKIV
+ Brewers. The AU routine had a invalid line which was affecting
+ operation in NO2 mode with MKIV.
+
+
+3.74c (August 16, 1995)
+-----
+
+ - UB.RTN is now identical to UVSUM.RTN
+ - Removed unnecessary error message when the Brewer software is first
+   run
+ - Changed output format slightly in FU.RTN
+ - Fixed a time display bug in DUSUM.RTN
+ - CZ.RTN now appears on the help menus
+
+3.74b (July 21, 1995)
+-----
+
+ - OP_ST.FIL now contains only the first two entries from the OP_ST.###
+   file (the instrument number and the data directory name)
+ - Changed peak counts limit to 10000000 from 2000000 (line 8355)
+ - Corrected output to files MIOAVG, SLOAVG, SLNAVG, OZOAVG
+ - PO.RTN printout is corrected
+ - Brewer software completely handles non-extended range MKIV Brewers now
+   (affects CZ.RTN, UV.RTN, UVSUM.RTN, DSP.RTN and so on)
+ - Main program reduced in size to eliminate "out of string space" error
+ - Added light check to DS.RTN and FZ.RTN (scans are aborted if raw counts
+   on slit 5 exceed 4000000)
+ - Fixed ZSSUM.RTN bug calculating ZS NO2 error (affects MKIV's only)
+ - Fixed filterwheel #2 oscillation problem (affected some Brewers with
+   poor neutral density filter values)
+ - Improved DUV calculation
+ - SUM.RTN supports both old and new format B files
+ - Data summary routines have better data rejection criteria - for example,
+   negative ozone is rejected
+ - UA scan timing is fixed
+ - SIM.RTN routine is fixed
+ - SNWV.EXE and UMLIN.EXE now work correctly
+ - 374CVT.EXE now provides more helpful output documentation
+ - NO.RTN does not create a new instrument number directory
+
+3.74a (April 21, 1995)
+-----
+
+ - Fixed micrometer positioning problems with MKIII Brewer (affects UA, UF,
+   UV, UX, and CZ)
+ - Fixed lamp state problems with MKIII Brewer (affects CZ and FR)
+ - Fixed slitmask position during lamp warmup (affects all routines using
+   internal lamps)
+ - Pressing the HOME key no longer causes errors in motor positions
+ - TT cleaned up, and now works on COM2
+ - GS now correctly moves the zenith prism to the lamps
+ - Corrected HP/HG reset algorithms
+ - Corrected software crashes during xxSUM printouts when printer runs out
+   of paper
+ - Fixed schedule bug (affects SK and SKC)
+ - Fixed sighting bug (affects SI and SIM)
+ - Fixed clock resetting bug
+ - Improved data output from CI and CZ
+ - Various small bugfixes

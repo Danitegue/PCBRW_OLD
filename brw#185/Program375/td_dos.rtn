@@ -1,0 +1,12 @@
+10000 REM ********************** td routine 26/11/97 ********************
+10001 REM           MKII/MKIII/MKIV This Routine 
+10002 REM
+10003 REM gets TRUE time from PC clock by going to RIGHT!! dos shell and back
+1004 REM julian groebner 26 11 97 julian
+10004 REM ***************************************************************
+10005 DATA td
+10080 PRINT#4,"Getting time from PC clock..."
+10100 shell("rdate cape")
+10200 return
+65529 REM *** proper last line ***
+   

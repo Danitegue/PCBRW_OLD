@@ -1,0 +1,93 @@
+10000 REM ****************** fv routine 31/12/96 **********************
+10010 REM            MKII/MKIII/MKIV Direct Sun Observations
+10020 REM
+10030 REM            (SCI-TEC Instruments, September 1995)
+10040 REM
+10060 REM *************************************************************
+10070 REM
+10080 REM  Direct sun scan
+10090 REM
+10220 REM  Global Variables Referenced:
+10230 REM    MS() DS% HF% UC% ND TD XN
+10240 REM    CL$ CY$ CZ$ M5$ MDD$ SQ$ TR$ TYP$ ZS$
+10250 REM
+10260 REM  Exits: 13020
+10270 REM
+10280 REM  Uses:  2450, 3200, 3220, 4200, 6610, 6630, 6636, 6650,
+10290 REM         6690, 7000, 7500, 7750, 8000, 8200, 9650, 9670,
+10300 REM         9700, 9900
+10310 REM
+10500 REM **************************************************************
+10501 REM  History: dd/mm/yy
+10506 REM 23 1 08 gregor: adapted fv.rtn for polarization scans - Filter 90 deg POL, ZE-scan from 0..90
+10507 REM 24 8 98 julian use azimuth for morning/afternoon.
+10508 REM 31 3 98 julian add fvdone to ed.rtn
+10509 REM 14 1 98 change to steps and add linefit to correct zenith.
+10510 REM 6 1 98 julian adapt for schedule.
+10511 REM 8/1/97 -julian. add questions about filters.
+10512 REM  31/12/96 julian- corrects movement.
+10515 REM  27/11/96 - measures field of view of brewer. -julian
+10520 REM  27/09/95 - Aborts if counts are too high, fixed home key
+10530 REM  abort and temperature check
+10540 REM  20/12/94 - Rewritten by TM
+10550 REM **************************************************************
+11000 '
+11001 ' *** Setup ***
+11002 '
+11010 DATA fv
+11020 TR$="d"+"s":UC%=0
+11050 GOSUB 6610:IF MDD$="o3" THEN GOSUB 6637 ELSE GOSUB 6636   'Filter#1 def to 0-5=6620,30,35,36,37 
+11060 M5$="0":IF VAL(M5$)<192 AND M2<2 THEN M5$="192"           'Filter#2 to 0 f=0
+11065 GOSUB 6650                    'Filter#2 to SQ$
+11070 GOSUB 6690:GOSUB 7750                 'Iris closed, AZ/ZE to sun
+11080 LOCATE ,SP:PRINT "4 - Point Brewer at sun"
+11090 GOSUB 9650:REM GOSUB 7500          'Wait until ready, test intensity, not know, but later
+12000 '
+12001 ' *** Take Set of Observations ***
+12002 '
+12070 B$=JD$+YF$+"."+NO$
+12075 OPEN DD$ + "f9"+B$ FOR APPEND AS 8  ' open file for output
+12080 print #8,"Polarization 90deg Scan started at ";TIME$; ", filter:";STR$(VAL(M5$)/64);
+12085 print "Polarization 90deg Scan started at ";TIME$
+12090 CZ$="2":WL$="0":WU$="6":GOSUB 9880:PRINT #8, " CY: ";CZ$;" SL: ";VAL(WL$);"-";VAL(WU$)
+12095 GOSUB 2450 ' get temp
+12109 GOSUB 9670:REM prints start of measurement
+12115 IF HF%=1 THEN 13000
+12150 track=1:AJU=0:nju=0:FOR ZJU=90 to 0 STEP -5    ' Zenith angle in deg now, ZJU is absolut
+12160  nju=nju+1:GOSUB 20000
+12170 NEXT ZJU
+12175 PRINT "Turning 180deg..."
+12180 O1$="!MOTOR.MAX.VEL[2] 30":GOSUB 9450    ' default 30
+12181 O1$="!MOTOR.MAX.ACC[2] 2":GOSUB 9450     ' default 5
+12190 AJU=180:IF AZ+180>360 THEN AJU=-180      ' Azimuth is relative to sun position
+12200 track=2:nju=0:FOR ZJU=0 to 90 STEP 5     ' Zenith angle in deg now second half of hemisphere
+12210 nju=nju+1:GOSUB 20000
+12220 NEXT ZJU
+12230 A1$(IO)=A1$(IO)+CR$+"ze"+CR$+STR$(ZA)+CR$+STR$(I)+CR$+STR$(MAZ)+CR$
+13000 '
+13001 ' *** Clean Up and Exit ***
+13010 GOSUB 3200:IO=IO+1
+13050 IF HF%=1 THEN PRINT "Scan aborted" else PRINT "Scan Finished"
+13060 PRINT "Restore pointing to sun..."
+13080 GOSUB 7800:GOSUB 7950 ' restore pointing to sun.
+13081 O1$="!MOTOR.MAX.VEL[2] 6":GOSUB 9450    ' default 30
+13082 O1$="!MOTOR.MAX.ACC[2] 5":GOSUB 9450    ' default 5
+13090 CLOSE 8
+13100 RETURN
+20000 '
+20001 ' *** Direct Sun Observation ***
+20002 '
+20010 GOSUB 7800    ' get new AZ% and ZE%
+20011 if ZJU<ZA+3 AND ZJU>ZA-3 AND track=1 THEN RETURN
+20020 AZC%=SR%*(AZ+AJU)/360+.5+NC%+UC%  ' move to absolute position
+20030 ZEC%=ER%*(1-ZJU/180)/2+.5+HC%     ' move to absolute position
+20040 GOSUB 7950   ' move motors to updated position, while tracking sun
+20050 O1$="R,"+WL$+","+WU$+","+CZ$:GOSUB 9400
+20060 WT=(WU-WL+1)*VAL(CZ$)*18/7*IT
+20070 T0=TIMER*60+WT/120
+20080 TI=TIMER*60:TS=TI/7200:TD=200+WT*60:GOSUB 7000
+20090 GOSUB 9900  ' get data when ready data in F(WL)
+20100 PRINT #8,USING"####.###   ";AJU;ZJU;AZ;ZA;T0/3600;:PRINT #8,USING"######.# ";F(0)/val(CZ$);F(1)/val(CZ$);F(2)/val(CZ$);F(3)/val(CZ$);F(4)/val(CZ$);F(5)/val(CZ$);F(6)/val(CZ$)
+20110 PRINT USING"####.###   ";AJU;ZJU;AZ;ZA;:PRINT F(WU)/val(CZ$)
+20120 RETURN
+65529 REM *** dummy line ***

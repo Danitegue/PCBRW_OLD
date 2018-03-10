@@ -1,0 +1,35 @@
+10000 REM ******************* ze routine 23/03/98 *********************
+10010 REM 17 9 2001 JULIAN clean up for #163
+10560 REM **************************************************************
+11000 '
+11001 ' *** Setup ***
+11002 '
+11010 DATA ze
+15000 '
+15001 ' *** Zeroing Zenith Motor ***
+15002 '
+15010 IF Q1%=0 THEN 16000:REM No zenith motor present
+15020 PRINT CL$:LOCATE ,SP:PRINT"Zeroing zenith":MS%=0:A$="101":IF ZE%>ER%*2/3 THEN A$="1"
+15030 Y=0:IF Q14%=1 THEN FLAG=1:M1$="1"
+15040 O1$="?MOTOR.ZERO.POS["+M1$+"]":GOSUB 9450:YY%=VA:PRINT#4,"MOTOR.ZERO.POS[1]="+STR$(VA)
+15050 O1$="?MOTOR.ORIGIN["+M1$+"]":GOSUB 9450:YY%=YY%-VA:PRINT#4,"MOTOR.ORIGIN[1]="+STR$(VA)
+15060 O1$="?MOTOR.SLOPE["+M1$+"]":GOSUB 9450::PRINT#4,"MOTOR.SLOPE[1]="+STR$(VA):IF VA<>0 THEN YY%=INT(YY%/VA+.5)
+15070 O1$="I,"+M1$:GOSUB 9450:GOSUB 6500:PRINT#4,"MOTOR POS[1]="+STR$(VA)
+15080 IF Y<0 THEN B$=TIME$+" Motor "+M1$+" appears to be stuck - Check the instrument":PRINT#4,B$
+15090 O1$="?MOTOR.DISCREPANCY["+M1$+"]":GOSUB 9450:Y=YY%-VA:PRINT#4,"MOTORDISCREPANCY[1]="+STR$(VA)
+15100 MS%=ZE%-Y:GOTO 15310
+15310 PRINT CL$:LOCATE ,SP:B$="Zenith discrepancy = "+STR$(ZE%-MS%)
+15320 PRINT B$:PRINT#4,"Zenith zeroed at ";TIME$;" ";B$
+15330 GOSUB 3050
+15340 TA%=0:ZE%=0:GOTO 16000
+15350 :
+15800 REM *** Zenith zeroing (non-critical) failure
+15810 LOCATE ,SP:ZE%=ZE%-MS%
+15820 IF TA%=0 THEN B$="Zenith ZEROING FAILURE !!":PRINT B$:PRINT#4,B$:GOSUB 3050
+15830 IF TA%=1 THEN TA%=0:PRINT "Aborted":PRINT#4, "Zenith zeroing aborted"
+15840 X=1:GOSUB 7220:GOTO 16000
+16000 '
+16001 ' *** Quit ***
+16002 '
+16010 GOSUB 3220:RETURN
+65529 REM proper last line

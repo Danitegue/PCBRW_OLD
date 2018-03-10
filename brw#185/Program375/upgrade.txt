@@ -1,0 +1,497 @@
+Upgrading Your Brewer Software to Version 3.74
+==============================================
+
+Copyright(C) 1996, SCI-TEC Instruments Inc.
+
+    1503 Fletcher Road
+    Saskatoon, Sask. S7M 5S5
+    Phone: 306 - 934 - 0101
+    Fax: 306 - 978 - 2339
+
+
+1.  Introduction
+
+This document is intended to explain the major changes to the new 3.74
+software to users of the old software.
+
+
+2.  Changes in Software Setup
+
+The following is a summary of the new procedure for upgrading an old
+software installation to version 3.74:
+
+*   Use 374CVT.EXE to convert old instrument constant files into
+    3.74 versions.  The files generated are OP_ST.nnn, ICFVAL.nnn,
+    DCFVAL.nnn, ZSFVAL.nnn, INSTNOTE.TXT and BREWER.BAT.
+    INSTNOTE.TXT contains installation instructions similar to the
+    ones written here.
+
+*   Check the contents of OP_ST.nnn and ICFVAL.nnn to make sure
+    that your settings are OK.  Most importantly, make sure that
+    the data directory entry (the second one in OP_ST.nnn, usually
+    C:\BDATA\ or similar) is correct.
+
+*   Create a subdirectory under this directory with your
+    instrument number as the name.  (It may already exist there.)
+    Copy OP_ST.nnn, ICFVAL.nnn, DCFVAL.nnn, ZSFVAL.nnn, and your
+    UV response file into this subdirectory.
+
+*   Create a \BREWER directory and copy MAIN.BAS, *.RTN, and *.FIL
+    into it.  Place a copy of OP_ST.nnn in this directory also, and
+    rename it to OP_ST.FIL.
+
+*   Copy BREWER.BAT to a directory present in the PATH statement.
+    Edit BREWER.BAT to include the full path of the Brewer
+    directory.
+
+*   Update AUTOEXEC.BAT, if needed, by adding the line
+    CALL BREWER.BAT.
+
+*   Run the software by rebooting the computer or by typing BREWER
+    at a DOS prompt.
+
+If this is a new installation of the software, use this procedure
+instead:
+
+*   Create a \BDATA directory for your Brewer data, and an
+    instrument directory under this one.  Copy OP_ST.nnn,
+    ICFVAL.nnn, DCFVAL.nnn, ZSFVAL.nnn, and your UV response file
+    into the instrument directory.
+
+*   Create a \BREWER directory and copy MAIN.BAS, *.RTN, and *.FIL
+    into it.
+
+*   Edit OP_ST.nnn to ensure that the instrument number entry (the
+    first entry) and the data directory entry (the second entry)
+    are correct.  Edit ICFVAL.nnn to ensure that the instrument
+    type (the 23rd entry) and COM port (the 24th entry) are
+    correct.  Editing all other instrument constants may also be
+    done now, or can be done with CF and IC once the Brewer
+    software is running.
+
+*   Place a copy of OP_ST.nnn into the \BREWER directory, and
+    rename it to OP_ST.FIL.
+
+*   Copy BREWER.BAT to a directory present in the PATH statement.
+    Edit BREWER.BAT to include the full path of the Brewer
+    directory.
+
+*   Update AUTOEXEC.BAT, if needed, by adding the line
+    CALL BREWER.BAT.
+
+*   Run the software by rebooting the computer or by typing
+    BREWER at a DOS prompt.
+
+
+3.  Software Reorganization
+
+There is a significant change to the organization of the Brewer
+software.  The changes are summarized here:
+
+*   There were eight separate versions of the 3.73 Brewer
+    software.  For the 3.74 software release, there are only
+    three:  a version for the MKII, one for MKIII, and one for
+    MKIV.  NO2/O3 modes are handled internally by the MKIV
+    software, and the temperature circuit changes are handled
+    internally.
+
+*   As previously mentioned, the instrument constants entries
+    have been reorganized.  Several entries have also been added.
+
+*   The four instrument constant files (OP_ST.nnn, ICFVAL.nnn,
+    DCFVAL.nnn, and ZSFVAL.nnn), and the UV response file are
+    separated by instrument.  A copy of OP_ST.nnn is stored in
+    the \BREWER directory as OP_ST.FIL to ensure that the
+    software knows which instrument number to use upon startup.
+    All five of these files are stored in the Brewer data
+    directory under each instrument number.  When NO is used to
+    switch, the software uses the new instrument number's
+    constant files instead.
+
+*   The old software required a MODE.BAS, NOMODE.BAS, and
+    DISK.FIL to work properly.  This has been eliminated in the
+    new software.
+
+
+4.  Software Improvements and Changes
+
+The Brewer software has changed significantly since the 3.73 version.
+The following subsections discuss these changes.  Refer to the README
+file included with this software for any changes since the release of
+3.74 (such as 3.74a, 3.74b, etc.)
+
+4.1.    New Brewer Commands
+
+*   In the old software, you had to press CTRL-BREAK before you
+    could shell to DOS.  Now, simply type SHELL at the Brewer
+    prompt (without pressing CTRL-BREAK) to enter DOS.  Typing
+    EXIT will return you to the Brewer program.
+
+*   The old MKIV software used an SW routine to switch operating
+    modes.  In 3.74, this has been replaced with N2 and O3.  The
+    new commands guarantee that the Brewer ends them in the
+    proper operating mode.  Also, SW has been disabled in the
+    new software because it is no longer reliable.
+
+4.2.    Changes to Brewer Commands
+
+*   CF now allows you to change the filename of the ICFVAL.nnn
+    file.  However, NO must now be used to change the
+    instrument number.
+
+*   CI uses the extended range of a MKIII and MKIV Brewer, if
+    present.  Also, the scan resolution is selectable to 1, 2,
+    or 5 angstroms.
+
+*   The DSP tests now offer use of the extended range of the
+    MKIII/MKIV Brewers.  They also offer better (selectable)
+    lamp arrangements, and handle variable numbers of scan
+    lines for manual entry.
+
+*   Low intensity dead time times were of poor quality in the
+    old Brewer software.  DT has been fixed in 3.74 to solve
+    this problem.
+
+*   ED and ED-PD have a new command sequence that includes
+    all summaries and all standard tests such as DT, RS, and
+    HG.
+
+*   EX, INST, and OP_ST are now built into the main program.
+    This means that INST and OP_ST do not exist as RTN files
+    anymore.
+
+*   FR resets the micrometer(s), and the third filterwheel if
+    present, on all Brewer models.  The MR routine has been
+    eliminated, and should be replaced with FR in schedules.
+
+*   HG has had many changes to it in the 3.74 software:
+
+    *   HG now has a selectable spectrum, based on
+        whether you have a narrow or wide HG exit slit.
+        Use IC to set this flag.
+
+    *   HG is disallowed in NO2 mode.
+
+    *   When HG fails, it resets the micrometer(s).  If HG
+        fails again, it quits trying and aborts any
+        schedule currently running.
+
+*   HP attempts to align the second spectrometer twice.  If it
+    fails the first time, it performs an FR.  If it fails the
+    second time, it quits and aborts any schedule currently
+    running.
+
+*   HP now has an improved algorithm for matching its measured
+    spectra.
+
+*   NO will now automatically create a new instrument
+    directory if it does not exist, creating new constant
+    files from the files currently being used.  The two sets
+    of files can now be managed independently.
+
+*   PB now handles the functions of both NPB and OPB, based on
+    the current operating mode.
+
+*   PO now prints out all instrument constants.  This means
+    that DSPPO is no longer needed.
+
+*   RE now resets every motor, except the micrometer(s) and
+    the third filterwheel, on all Brewer models.  This is
+    also done when the software is booted.
+
+*   Printout errors in REP, NOSUM, and ZSSUM have been fixed.
+
+*   There is now a single UV and UVSUM routine which are
+    capable of handling all types of UV scans:  UA, UF, UV,
+    and UX.  All data is written to a single UVdddyy.nnn file.
+
+*   UVSUM had incorrect temperature output values, which have
+    now been fixed.
+
+*   The following routines have been removed from the
+    software:  ES, ES-PD, FS, HESUM,  SUM_DAY, DC, DIS, DIS1,
+    MI, HU, INIT-PF, INIT-PN, SU, SZ, and WS.
+
+*   Several routines missing from the MKIII software have
+    been included.  These are AU, AUC, CS, ED-PD, MD, PB, SA,
+    and UB.
+
+4.3.    General Bug Fixes
+
+*   On certain months, it is possible to get a day 0 on a
+    printout, such as "April 0", in older Brewer software.
+    This bug has now been fixed.
+
+*   UA had incorrect timing after switching to extended
+    range.  This has been fixed.
+
+*   The Julian day was calculated incorrectly between local
+    midnight and solar midnight in certain areas of the
+    world, and after the Brewer time was set with TI.  This
+    has been fixed.
+
+*   The clock test routine failed at midnight when the clock
+    rolled over to the new day.  This has been fixed.
+
+4.4.    General Changes
+
+*   All software routines automatically detect whether they
+    are in NO2 or ozone mode.  If you run a routine (on a
+    MKIV) from the wrong operating mode, the routine will
+    inform you of the fact, and will not run.  Note that
+    this does not abort any schedules currently running.
+
+*   The menus have been reorganized to a more intuitive
+    structure.
+
+*   The main program, now called MAIN.BAS, is identical for
+    all versions of the Brewer software.
+
+4.5.    Changes to Support Utilities
+
+*   LINEFIT.EXE and UMLIN.EXE have been updated to handle
+    the new instrument file format.  Also, some known bugs
+    were fixed.
+
+*   RD_UX.EXE has been updated to handle the new
+    UVdddyy.nnn file format.  Also, it will process raw
+    counts into counts/second if no UV response file is
+    provided.
+
+4.6.    Changes to Instrument Constant Files
+
+*   As previously mentioned, the instrument constant files
+    now consist of ICFVAL.nnn, DCFVAL.nnn, and ZSFVAL.nnn.
+    OP_ST.FIL is still present, with a small name change to
+    OP_ST.nnn.
+
+*   ICF/DCF/ZSF all contain a release date field, which can
+    be used to hold useful reminders about the contents of
+    the file, such as a modification date, or a reminder
+    that this is a test set of constants.
+
+*   The zenith sky coefficients are now found in the file
+    ZSFVAL.nnn.  The 374CVT.EXE conversion utility will
+    generate this file, using default values if none are
+    provided.
+
+*   The dispersion constants are now found in the file
+    DCFVAL.nnn.  The 374CVT.EXE conversion utility will
+    generate this file, using the constants from the old
+    #nnn.FIL.
+
+*   All other instrument constants are found in the file
+    ICFVAL.nnn.  This includes many constants that only
+    have meaning for one instrument type.  Any constants
+    that fall into this category are ignored if the
+    instrument is not the right type.
+
+*   There are several new instrument constants in
+    ICFVAL.nnn:
+
+    *   Brewer type (MKII/MKIII/MKIV)
+    *   COM port
+    *   O3/NO2 positions for filterwheel #1
+    *   Standard and UV positions for filterwheel #2
+
+
+5.  Introduction to the 374CVT.EXE Conversion Utility
+
+The conversion utility will ask you a number of questions about
+your old Brewer software and the instrument itself.  Before you
+begin, make notes on the following questions:
+
+*   What type of Brewer do you have? (MKII, MKIII, or MKIV)
+
+*   What version of the Brewer software do you have now?
+    This number will appear, whenever you run the Brewer
+    software, on the title screen.  (Note:  if you have
+    version 3.73 or later of the software, then the next
+    three questions should already be answered for you.)
+
+*   What micrometer zero position do you use?  This step
+    value is normally 3469 on the MKII, 2469 on the MKIII,
+    and 2669 on the MKIV.
+
+*   How many steps are required to open the iris?  The old
+    string motors need 75 steps, and the new linear drive
+    motors need 250 steps.
+
+*   How fast is your computer?  There is a buffer delay
+    setting to compensate for fast machines not waiting
+    long enough for responses from the Brewer.
+
+*   What positions do you use for filterwheels #1 and #2?
+    This information can be found by examining the DT.RTN
+    and INIT.RTN files.  In DT.RTN, the variable M4$ is
+    set to a specific value, depending on whether you are
+    in ozone or NO2 mode (NO2 mode is specific to the MKIV
+    Brewer), which is used for positioning the first
+    filterwheel.  The variable M5$ is set in DT.RTN as
+    well, to specific values in the low intensity and high
+    intensity tests, which are used for the second
+    filterwheel.  Finally, the variable UF$ (found in
+    INIT.RTN) contains the UV mode setting for the second
+    filterwheel.  Record all of these values for reference.
+
+*   What zenith sky coefficients do you use?  These values
+    can be found in the main program at lines 8900 to 9000.
+
+*   What zenith offset do you need?  This is the distance,
+    in steps, from the sensor zeroing position to the hard
+    stop.  It is easily measured, and is typically around
+    30 to 50 steps.
+
+*   Do you have:
+
+    *   a second film polarizer?
+    *   a wide HG exit slit?  (typical of newer Brewers)
+    *   new Brewer electronics?  (as of Feb 8/95, these
+        are not available to customers yet)
+
+If you have not modified your version of the software, the
+default filterwheel positions and zenith sky coefficients
+suggested by the program should work.
+
+First, BACK UP your old Brewer software and instrument constants
+files.  Copy the following files into a single directory:
+#nnn.FIL, OP_ST.FIL, and DISK.FIL.  If you are on a MKIV, you
+will also have #000.FIL present in your NO2 directory.  Note
+this directory for reference.  Finally, delete all files in your
+Brewer and data directories.
+
+You should now install the new Brewer software by copying all
+files in A:\BREWER to your Brewer directory.
+
+Now, you are ready to run the conversion utility.
+
+
+6.  Converting Your Instrument Constant Files
+
+As mentioned above, the old software had three or four constants
+files that are now together in one directory.  The conversion
+utility will convert these into four files, plus two utility
+files.  The new filenames are as follows:
+
+*   ICFVAL.nnn:  This file contains instrument constant
+    values.  It is similar to the old #nnn.FIL.
+
+*   ZSFVAL.nnn:  This file contains all zenith sky
+    coefficients for your Brewer.
+
+*   DCFVAL.nnn:  This file contains the dispersion
+    coefficients for your Brewer.
+
+*   OP_ST.nnn:  This file contains the Brewer's current
+    operating state.
+
+*   BREWER.BAT:  This is a sample batch file to demonstate
+    the correct method to run the 3.74 versions of the
+    Brewer software.
+
+*   NOBREW.BAT:  This is a sample batch file to demonstate
+    the correct method to run the 3.74 versions of the
+    Brewer software, with no Brewer attached.
+
+*   INSTNOTE.TXT:  This file is a brief summary of the
+    installation procedure for the 3.74 software.
+
+You must create a directory to hold these output files, since
+the conversion utility will expect you to provide one.
+
+Run the conversion utility by typing 374CVT.  The program will
+ask you many questions, based on the information gathered in
+Section 2.  Default answers are always given in brackets:  if
+you change an answer, the program will re-display it in
+brackets to verify.  If an answer is correct, press ENTER
+without typing in a new answer.  Be certain to read a question
+carefully before typing anything!
+
+Once the program is done, the above six files will be written
+to the specified output directory.  The file INSTNOTE.TXT
+explains what to do with the output files.
+
+NOTE:  keep a backup copy of your old instrument constant
+files for reference.  If you run into trouble with the new
+software, you can use CF or IC to manually change the
+instrument constant entries.
+
+
+7.  Troubleshooting
+
+This section attempts to address any problems that you may
+run across with the new Brewer software.  If you still have
+trouble after reading this section, please contact SCI-TEC
+Instruments Inc. with your question.  Please gather as much
+information as possible before calling; this makes it much
+easier for us to deal with any problem you may have.
+
+*   Problem:  The new Brewer software is really slow!
+    It takes forever to accomplish anything!
+
+*   Solution:  If your old software was version 3.73 or
+    later, check your original copy of #nnn.FIL.  The
+    last entry in the file should be a small number,
+    typically in the range 0.2 to 0.8.  This is the
+    DELAY setting.  If the last number is much larger,
+    such as 75 or 250, then the true last entry is
+    missing.  If this is the case, use a text editor to
+    add 0.2 to the end of #nnn.FIL.  Then, rerun the
+    conversion utility and install the output files as
+    before.
+
+*   Problem 1:  The Brewer software can't find any of
+    the menus or the RTN files!
+*   Problem 2:  The Brewer software always stops with
+    the error "missing environment variable BREWDIR".
+
+*   Solution:  You probably have the BREWDIR
+    environment variable set wrong (or not at all), or
+    you forgot to change to the Brewer directory in
+    your batch file.  Make sure that either BREWER.BAT
+    or AUTOEXEC.BAT (not both) contains the following
+    two commands:
+
+    cd C:\BREWER        ; substitute the Brewer
+                  software directory here
+    set BREWDIR=C:\BREWER   ; this entry should have
+                  exactly the same path as
+                  above
+
+*   Problem:  The Brewer software always stops with the
+    error "cannot find C:\BDATA-O\OP_ST.000" (or some
+    other directory name)!
+
+*   Solution:  Your C:\BDATA-O\nnn\OP_ST.nnn and
+    C:\BREWER\OP_ST.FIL files are not identical.  The
+    first seven entries in OP_ST.FIL tell the Brewer
+    where to find the Brewer data directory, what the
+    instrument number is, and what files contain the
+    instrument constants.  If any of these entries are
+    wrong, you will see the error message.  Fix the
+    entries in OP_ST.nnn, copy this new file to your
+    \BREWER directory, and rename it to OP_ST.FIL.
+    This must be done in the order specified!  If you
+    only edit OP_ST.FIL, the error will occur again!
+
+*   Problem:  (MKIV)  Why can't I use the SW command
+    anymore?
+
+*   Solution:  The new software does not work with the
+    old SW command, so it has been disabled.  Use the
+    N2 and O3 commands to switch directly to NO2 or
+    ozone mode.  The command will inform you if you
+    are already in the mode you requested, but this
+    does not hurt anything.
+
+*   Problem:  (MKIV)  Where are the BDATA-N and
+    BDATA-O directories?  There used to be separate
+    NO2 and ozone mode 'B' files.
+
+*   Solution:  The new MKIV software has been combined
+    into one version.  All data goes to a single BDATA
+    directory.  The average files contain an entry to
+    indicate the current operating mode.  Also, all 'B'
+    files have n2 flags in front of data obtained from
+    NO2 mode.  For example, NO2 summaries have
+    "n2summary" instead of "summary" at the beginning.

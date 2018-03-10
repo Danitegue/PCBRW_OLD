@@ -1,0 +1,52 @@
+10000 REM ******************* s2 ************************
+10010 REM do sl on external lamps.
+10280 REM ****************************************************************
+10500 DATA s2
+10505 GOTO 12000                                'Main Module
+10510 '
+10511 ' *** Get Standard Lamp Data ***
+10512 '
+10530 GOSUB 9900                                'Wait until finished then get data
+10550 IF HF%=1 THEN PRINT CL$:PRINT"sl measurement terminated":RETURN
+10560 IF XN=1 OR ND%<2 THEN GOSUB 9710
+10570 IF XN=1 THEN 10530                        'Restart Observation
+10580 GOSUB 4400:GOSUB 8200:GOSUB 3215          'Calculate Ratios
+10590 RETURN 
+11000 '
+11001 ' *** Filter Positions, Prism Rotation, Lamp Warm-Up ***
+11002 '
+11010 GOSUB 6610
+11020 IF MDD$="n2" THEN M4$=STR$(NOFW1) ELSE M4$=STR$(OZFW1)
+11030 REM GOSUB 6660
+11035 GOSUB 6635
+11040 REM IF MDD$="n2" THEN M5$="64" ELSE M5$=STR$(POFW2):REM     Make NOFW2 an instrument constant!
+11045 M5$="0"
+11050 GOSUB 6650:GOSUB 6700:TD=1500:GOSUB 7000:REM set wait time
+11060 M1$=STR$(ZU%):GOSUB 9870:GOSUB 9650
+11070 T0=TA/3600:GOSUB 8600
+11080 PRINT CL$
+11090 REM LOCATE , SP:PRINT"Waiting until ";H$;" for lamp warmup":GOSUB 6900:RETURN
+11091 RETURN
+12000 '
+12001 ' *** Standard Lamp Measurement ***
+12002 '
+12010 REM IF M9$<>"2" THEN GOSUB 9820			 'Standard Lamp On
+12020 PRINT#4,
+12030 PRINT#4,"**** "+MDD$+" Standard Lamp S2 Test ****"
+12040 GOSUB 11000                                        'Setup
+12050 REM IF LO%=1 THEN 12130                                'End if Lamp is Off
+12060 REM GOSUB 6800:IF HF%=1 THEN 12130                     'End if Aborted
+12070 GOSUB 2450                                         'Get Brewer Temperature
+12075 GOSUB 21200
+12080 CZ$="20":WL$="0":WU$="6"                            'Set sl Wavelengths 0 to 6
+12090 GOSUB 9670:GOSUB 9710:GOSUB 8000:MS(0)=11:ND%=0    'Start 1st obs and zero sums
+12100 ND%=ND%+1:IF ND%<3 THEN GOSUB 10510                'Get data
+12110 IF HF%=1 OR ND%=2 THEN GOSUB 4200:O1$="":GOTO 12130
+12120 GOSUB 9670:GOTO 12100                              'Repeat
+12130 GOSUB 3230:REM IF RM%=0 THEN GOSUB 9840
+12140 REM IF G$(JJ+1)<>"lo" THEN GOSUB 9840
+12150 RETURN 
+21200 SQ=1:WV=3300:MDD$="o3":GOSUB 8500
+21210 M1=M1+ZERO-VAL(MC$):M2=M2+ZERO-VAL(MC$):O1$="M,10,"+STR$(M1)+SE$+"M,"+N9$+","+STR$(M2):GOSUB 9450:RETURN
+65529 REM proper last line
+

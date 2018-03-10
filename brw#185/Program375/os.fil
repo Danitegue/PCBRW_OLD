@@ -1,0 +1,11 @@
+os,operations setup
+cy,set slit mask cycles
+au,setup auto command sequence
+cs,setup command sequence
+sa,make printout of solar angles
+se,edit a schedule
+sk,run a schedule today
+skc,run a schedule continuously
+o3,switch to ozone mode (MKIV)
+n2,switch to NO2 mode (MKIV)
+w0-w4,waits (1/5/10/20/30 min.)

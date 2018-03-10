@@ -1,0 +1,26 @@
+10000 REM ******************* da_lo routine 31/08/98 *******************
+10001 REM          MKII/MKIII/MKIV Get Date and Location Routine
+10002 REM
+10003 REM 17 9 2001 JULIAN DO NOT SET DATE FROM op_st anymore.
+10004 REM **************************************************************
+10005 DATA da_lo
+10010 REM this routine gets date and location parameters from op_st.fil
+10020 LD%=0:ZA%=0:T0%=0
+11410 R%=2:VA=0:GOSUB 12000:REM set location
+11420 IF Q14%=0 OR Q6%=0 THEN 11800
+11430   O1$="?TIME":GOSUB 9450:REM get date from Brewer
+11600 PRINT#4,"BREWER DATE="+I$:I$=DATE$
+11610 PRINT#$,"SET BASIC DATE USING PC="+I$
+11620 MO$=MID$(I$,1,2):DA$=MID$(I$,4,2):YE$=MID$(I$,9,2)
+11630 YE%=VAL(YE$):GOSUB 5600 'LY%
+11640 DA=VAL(DA$)
+11800 GOSUB 6200:IO=0:REM set date
+11810 REM GOSUB 5700:REM set IBM date
+11820 RETURN
+11999 :
+12000 REM -12399 input location
+12310 LB$=LO$+LF$+CR$+" Lat = "+L1$+"; Long = "+L2$+"; Pressure = "+L3$
+12315 PZ$=L3$:IF R%<>2 THEN PRINT#4,"Obs made at ";LB$
+12320 LA=VAL(L1$):LO=VAL(L2$):PZ%=VAL(L3$):LC$=LO$
+12330 RETURN 
+65529 REM **** proper last line ****

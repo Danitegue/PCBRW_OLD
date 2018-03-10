@@ -1,0 +1,35 @@
+main.asc:2400 REM DOS shell
+main.asc:2410 CLS:PRINT"Entering DOS, type EXIT to return...":SHELL:RETURN
+main.asc:2767 IF C$="shell" THEN GOSUB 2400:GOTO 2600
+main.asc:2785 IF C$="ddp" THEN SHELL "DIR *.*>prn":GOTO 2600
+main.asc:2916 IF C$="dd" THEN SHELL "DIR "+DD$+"*.*>prn":FLAG=1:GOTO 2990
+main_01.asc:2400 REM DOS shell
+main_01.asc:2410 CLS:PRINT"Entering DOS, type EXIT to return...":SHELL:RETURN
+main_01.asc:2767 IF C$="shell" THEN GOSUB 2400:GOTO 2600
+main_01.asc:2785 IF C$="ddp" THEN SHELL "DIR *.*>prn":GOTO 2600
+main_01.asc:2916 IF C$="dd" THEN SHELL "DIR "+DD$+"*.*>prn":FLAG=1:GOTO 2990
+main_02.asc:2400 REM DOS shell
+main_02.asc:2410 CLS:PRINT"Entering DOS, type EXIT to return...":SHELL:RETURN
+main_02.asc:2767 IF C$="shell" THEN GOSUB 2400:GOTO 2600
+main_02.asc:2785 IF C$="ddp" THEN SHELL "DIR *.*>prn":GOTO 2600
+main_02.asc:2916 IF C$="dd" THEN SHELL "DIR "+DD$+"*.*>prn":FLAG=1:GOTO 2990
+main_03.asc:2400 REM DOS shell
+main_03.asc:2410 CLS:PRINT"Entering DOS, type EXIT to return...":SHELL:RETURN
+main_03.asc:2767 IF C$="shell" THEN GOSUB 2400:GOTO 2600
+main_03.asc:2785 IF C$="ddp" THEN SHELL "DIR *.*>prn":GOTO 2600
+main_03.asc:2916 IF C$="dd" THEN SHELL "DIR "+DD$+"*.*>prn":FLAG=1:GOTO 2990
+main_08012009.asc:2400 REM DOS shell
+main_08012009.asc:2410 CLS:PRINT"Entering DOS, type EXIT to return...":SHELL:RETURN
+main_08012009.asc:2767 IF C$="shell" THEN GOSUB 2400:GOTO 2600
+main_08012009.asc:2785 IF C$="ddp" THEN SHELL "DIR *.*>prn":GOTO 2600
+main_08012009.asc:2916 IF C$="dd" THEN SHELL "DIR "+DD$+"*.*>prn":FLAG=1:GOTO 2990
+main_10092004.asc:2400 REM DOS shell
+main_10092004.asc:2410 CLS:PRINT"Entering DOS, type EXIT to return...":SHELL:RETURN
+main_10092004.asc:2767 IF C$="shell" THEN GOSUB 2400:GOTO 2600
+main_10092004.asc:2785 IF C$="ddp" THEN SHELL "DIR *.*>prn":GOTO 2600
+main_10092004.asc:2916 IF C$="dd" THEN SHELL "DIR "+DD$+"*.*>prn":FLAG=1:GOTO 2990
+main_10122003.asc:2400 REM DOS shell
+main_10122003.asc:2410 CLS:PRINT"Entering DOS, type EXIT to return...":SHELL:RETURN
+main_10122003.asc:2767 IF C$="shell" THEN GOSUB 2400:GOTO 2600
+main_10122003.asc:2785 IF C$="ddp" THEN SHELL "DIR *.*>prn":GOTO 2600
+main_10122003.asc:2916 IF C$="dd" THEN SHELL "DIR "+DD$+"*.*>prn":FLAG=1:GOTO 2990

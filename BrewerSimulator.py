@@ -93,8 +93,8 @@ def check_line(line):
         #answer = ['->','\x20']
         gotkey = True
 
-    if 'F,0,2:V,120,1' in line and not gotkey:
-        print 'Got keyword: F,0,2:V,120,1'
+    if 'F,0,2:V,' in line and not gotkey:
+        print 'Got keyword: F,0,2:V,'
         answer = deepcopy(brewer_none)
         gotkey = True
 

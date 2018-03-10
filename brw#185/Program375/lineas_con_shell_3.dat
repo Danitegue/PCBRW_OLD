@@ -1,0 +1,82 @@
+UV.rtn:19220 SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+Uv_07072011.rtn:19220 SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+Uv_13012012.rtn:19220 SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+Uv_19032003.rtn:19220 SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+Uv_2010.rtn:19220 SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+Uv_aro2010_org.rtn:19220 SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+Uv_aro2010_org0.rtn:19220 SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+ba.rtn:12040 shell O1$
+ba.rtn:12070 shell O1$
+ba.rtn:12130 shell O1$
+ba.rtn:12160 shell O1$
+ba.rtn:12224 shell O1$:O1$=""
+ba.rtn:12240 shell O1$:O1$=""
+ba.rtn:12280 shell O1$
+ba.rtn:12320 shell O1$:O1$=""
+ba.rtn:12340 shell O1$:O1$=""
+ba_12072002.rtn:12040 shell O1$
+ba_12072002.rtn:12070 shell O1$
+ba_12072002.rtn:12130 shell O1$
+ba_12072002.rtn:12160 shell O1$
+ba_12072002.rtn:12224 shell O1$:O1$=""
+ba_12072002.rtn:12240 shell O1$:O1$=""
+ba_12072002.rtn:12280 shell O1$
+ba_12072002.rtn:12320 shell O1$:O1$=""
+ba_12072002.rtn:12340 shell O1$:O1$=""
+ba_dos.rtn:12040 shell O1$
+ba_dos.rtn:12070 shell O1$
+ba_dos.rtn:12100 shell O1$
+ba_dos.rtn:12130 shell O1$
+ba_dos.rtn:12160 shell O1$
+ba_dos.rtn:12220 shell O1$:O1$=""
+ba_dos.rtn:12224 shell O1$:O1$=""
+ba_dos.rtn:12240 shell O1$:O1$=""
+ba_dos.rtn:12260 shell O1$:O1$=""
+ba_dos.rtn:12280 shell O1$
+ba_dos.rtn:12320 shell O1$:O1$=""
+ci.rtn:14930 SHELL "copy "+DD$+"CI"+B$+"+"+DD$+"dum.dta "+DD$+"CI"+B$
+cr.rtn:14950 SHELL "copy "+DD$+"CR"+B$+"+"+DD$+"dum.dta "+DD$+"CR"+B$
+cz.rtn:20010 CLOSE 6:SHELL "copy "+DD$+"dum.dta "+DD$+"cz.cfg"
+cz.rtn:22050 SHELL "copy "+DD$+"CZ"+B$+"+"+DD$+"dum.dta "+DD$+"CZ"+B$
+fu.rtn:12090 SHELL "copy "+DD$+"fu"+B$+"+"+DD$+"dum.dta "+DD$+"fu"+B$
+gs.rtn:14930 SHELL "copy " + DD$ + "GS" + B$ + "+" + DD$ + "dum.dta " + DD$ + "GS" + B$
+gs_0.rtn:14930 SHELL "copy " + DD$ + "GS" + B$ + "+" + DD$ + "dum.dta " + DD$ + "GS" + B$
+hl.rtn:20010 CLOSE 6:SHELL "copy "+DD$+"dum.dta "+DD$+"HL.cfg"
+hl.rtn:22050 SHELL "copy "+DD$+"HL"+B$+"+"+DD$+"dum.dta "+DD$+"HL"+B$
+hs.rtn:20010 CLOSE 6:SHELL "copy "+DD$+"dum.dta "+DD$+"hs.cfg"
+hs.rtn:22050 SHELL "copy "+DD$+"HS"+B$+"+"+DD$+"dum.dta "+DD$+"HS"+B$
+ic.rtn:12180 SHELL "copy op_st.fil "+DD$+NO$+"\op_st."+NO$
+l5.rtn:14940 SHELL "copy " + DD$ + "L5" + B$ + "+" + DD$ + "dum.dta " + DD$ + "L5" + B$
+main_02.rtn:2400 REM DOS shell
+main_02.rtn:2410 CLS:PRINT"Entering DOS, type EXIT to return...":SHELL:RETURN
+main_02.rtn:2767 IF C$="shell" THEN GOSUB 2400:GOTO 2600
+main_02.rtn:2785 IF C$="ddp" THEN SHELL "DIR *.*>prn":GOTO 2600
+main_02.rtn:2916 IF C$="dd" THEN SHELL "DIR "+DD$+"*.*>prn":FLAG=1:GOTO 2990
+nc.rtn:20000 shell("c:\tools\nortcom3\nc.exe")
+nd.rtn:10080 SHELL "format a:"
+newinst.rtn:30030 SHELL "md "+DD$+AB$:PRINT "Copying ";NO$;" data files to ";AB$;"..."
+newinst.rtn:30040 SHELL "copy "+DD$+NO$+"\"+ICF$+"."+NO$+" "+DD$+AB$+"\"+ICF$+"."+AB$
+newinst.rtn:30050 SHELL "copy "+DD$+NO$+"\"+DCF$+"."+NO$+" "+DD$+AB$+"\"+DCF$+"."+AB$
+newinst.rtn:30060 SHELL "copy "+DD$+NO$+"\"+ZSF$+"."+NO$+" "+DD$+AB$+"\"+ZSF$+"."+AB$
+ss.rtn:14940 SHELL "copy " + DD$ + "SS" + B$ + "+" + DD$ + "dum.dta " + DD$ + "SS" + B$
+td.rtn:10003 REM gets TRUE time from PC clock by going to RIGHT!! dos shell and back
+td.rtn:10100 shell("cmd /C")
+td_dos.rtn:10003 REM gets TRUE time from PC clock by going to RIGHT!! dos shell and back
+td_dos.rtn:10100 shell("rdate cape")
+ts.rtn:12040 REM shell O1$
+ul.rtn:14940 SHELL "copy "+DD$+"UL"+B$+"+"+DD$+"dum.dta "+DD$+"UL"+B$
+uq.rtn:14470 SHELL "COPY "+DD$+"UQ"+B$+"+"+DD$+"dum.dta "+DD$+"UQ"+B$
+uv-.rtn:19220 SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+uv-spain.rtn:19220 SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+uv0.rtn:19220 SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+uv_01.rtn:19220 SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+uv_04022002.rtn:19220 SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+uv_23072008.rtn:19220 SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+uv_27072008.rtn:19220 SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+uv_29112001.rtn:19220 SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+uv_spain.rtn:19220 SHELL "copy "+DD$+"uv"+B$+"+"+DD$+"dum.dta "+DD$+"uv"+B$
+vd.rtn:19220 SHELL "copy "+DD$+C$+B$+"+"+DD$+"dum.dta "+DD$+C$+B$
+vj.rtn:19220 SHELL "copy "+DD$+C$+B$+"+"+DD$+"dum.dta "+DD$+C$+B$
+x1.rtn:14050 SHELL "copy "+DD$+"X1"+B$+"+"+DD$+"dum.dta "+DD$+"X1"+B$
+x2.rtn:14050 SHELL "copy "+DD$+"X2"+B$+"+"+DD$+"dum.dta "+DD$+"X2"+B$
+xl.rtn:14050 SHELL "copy "+DD$+"XL"+B$+"+"+DD$+"dum.dta "+DD$+"XL"+B$

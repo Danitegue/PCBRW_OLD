@@ -1,0 +1,109 @@
+10000 REM ******************** init routine 20/12/94 **********************
+10010 REM	       MKII/MKIII/MKIV Initialization Routine 
+10020 REM
+10030 REM               (Sci-Tec Instruments, December 1994)
+10040 REM
+10050 REM  See Also:
+10060 REM *****************************************************************
+10070 REM
+10080 REM  This routine initializes several global variables and arrays
+10090 REM  for the Brewer.
+10100 REM
+10110 REM  Side Effects:
+10120 REM
+10130 REM  Global Variables Referenced:
+10140 REM    BE()
+10150 REM    CO  IT  P0  PI  PP  SP
+10160 REM    B1%-B6% FP% P3% P4%
+10170 REM    B0$-B9$ BR$ BS$ CL$ CR$ CY$ HO$ LB$ LX$ LY$ M9$ MD$
+10180 REM    MN$ MP$ Q0$-QF$ RC$ SP$ SQ$ TF$ TR$ TYP$ ZS$
+10150 REM
+10160 REM  Exits: 15080
+10170 REM
+10180 REM  Uses:  1701, 3100
+10190 REM
+10200 REM *****************************************************************
+10210 REM  History: dd/mm/yy
+10220 REM  19/09/94 - Moved HG spectrum to HG.RTN (configurable)
+10230 REM  07/07/94 - Removed UF$ from init (now in #nnn.FIL instead)
+10240 REM *****************************************************************
+10500 '
+10501 ' *** Constants and Dimensioning ***
+10502 '
+10510 DATA init
+10520 SP=19:PP=22				'lateral position on screen
+10530 LOCATE ,SP:PRINT "Initializing"
+10540 DIM BE(8),TC(8),NTC(8),SS(20),MS(40),S(40),MZ(40),Z(40),F(8),A1$(20)
+10550 DIM G$(30),AF(6),DC(6,3),NDC(6,3)
+11000 '
+11001 ' *** Open Printer or Default to Screen ***
+11002 '
+11010 'ON ERROR GOTO 11070
+11020 'FP%=1:OPEN "lpt1:" FOR OUTPUT AS 4
+11030 'PRINT#4,CHR$(27);"C";CHR$(66);
+11040 'PRINT#4,CHR$(27);"N";CHR$(6);
+11050 'ON ERROR GOTO 3100:GOTO 12000
+11060 'REM if it fails open the console for O/P on 4
+11070 'RESUME 11080
+11080 'ON ERROR GOTO 3100
+11090 FP%=0:CLOSE 4:OPEN "scrn:" FOR OUTPUT AS 4
+12000 '
+12001 ' *** Read In Constants ***
+12002 '
+12010 RC$=CR$+"if correct press return"+CR$+"if incorrect enter "
+12020 MP$="un"+"known":LB$=MP$:TF$="temp "+MP$
+12030 SP$="           "+"           "
+12040 MD$="000031059090120151"+"181212243273304334"
+12050 MN$="janfebmaraprmayjun"+"julaugsepoctnovdec"
+12060 FOR I=2 TO 6:READ BE(I):NEXT:REM  read Rayleigh coeffs
+12070 DATA 4870,4620,4410,4220,4040
+12080 PI=3.141593:P0=PI/180:CO=LOG(10)
+12090 CY$="2"+"0":SQ$="0"+"":ZS$="0"+"":M9$="0"+""
+12100 IT=.1147:B1%=1:B2%=2:B3%=64:B4%=128:B5%=4:B6%=16
+12110 P4%=10000:P3%=1000
+12120 TR$="d"+"s"
+12130 BR$=CHR$(179):B1$=CHR$(218):B2$=CHR$(194):B3$=CHR$(191)
+12140 B4$=CHR$(192):B5$=CHR$(193):B6$=CHR$(217)
+12150 B7$=CHR$(195):B8$=CHR$(197):B9$=CHR$(180)
+12160 B0$=CHR$(196)
+12170 LX$="":FOR I=1 TO 7:LX$=LX$+B0$:NEXT
+12180 LY$="":FOR I=1 TO 30:LY$=LY$+B0$:NEXT
+13000 '
+13001 ' *** Set Up Control Key Codes ***
+13002 '
+13010 Q0$=CHR$(0)+CHR$(82)		'insert
+13020 Q1$=CHR$(0)+CHR$(83)		'delete
+13030 Q2$=CHR$(0)+CHR$(71)		'home
+13040 Q3$=CHR$(0)+CHR$(119)		'ctrl-home
+13050 Q4$=CHR$(0)+CHR$(75)		'crsr left
+13060 Q5$=CHR$(8)			'ascii backspace
+13070 Q6$=CHR$(0)+CHR$(77)		'crsr right
+13080 Q7$=CHR$(0)+CHR$(72)		'crsr up
+13090 Q8$=CHR$(0)+CHR$(80)		'crsr down
+13100 Q9$=CHR$(29)			'alt left arrow
+13110 QA$="*"				'ast for prt scrn
+13120 QB$=CHR$(0)+CHR$(117)		'cntrl end
+13130 QC$=CHR$(0)+CHR$(116)		'cntrl crsr right
+13140 QD$=CHR$(0)+CHR$(115)		'cntrl crsr lft
+13150 QE$=CHR$(0)+CHR$(73)		'page up
+13160 QF$=CHR$(0)+CHR$(81)		'pg down
+13170 BS$=Q9$+" "+Q9$
+14000 '
+14001 ' *** Setting Up CL$ String ***
+14002 '
+14010 CLS:HO$="   ***   ":CL$=CHR$(12)+HO$+"INITIALIZING "+HO$+CR$
+14020 CL$=CL$+"                                                RS232"
+14030 CL$=CL$+"  in:   out:"+CR$
+14040 CL$=CL$+LX$+LY$+LX$+LY$+CR$
+15000 ' 
+15001 ' *** Set up Soft Keys ***
+15002 '
+15010 KEY 1,"ds"+CR$:KEY 2,"zs"+CR$
+15020 KEY 3,"zb"+CR$:KEY 4,"hg"+CR$:IF TYP$="mkiii" THEN KEY 4,"hphg"+CR$
+15030 KEY 5,"sl"+CR$:KEY 6,"hgsl"+CR$:IF TYP$="mkiii" THEN KEY 6,"hphgsl"+CR$
+15040 KEY 7,"dszs2"+CR$:KEY 8,"hgzc2"+CR$
+15050 KEY 9,"hgsldszsds"+CR$:KEY 10,"dtrshgsl"+CR$
+15060 KEY 20, CHR$(0)+CHR$(&H47):ON KEY (20) GOSUB 1701
+15070 KEY OFF:KEY (20) ON
+15080 RETURN
+65529 REM  **** proper last line *****

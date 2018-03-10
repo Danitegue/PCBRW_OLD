@@ -1,0 +1,8 @@
+break=on
+files=50
+buffers=32
+lastdrive=z
+fcbs=16,8
+device=a:\dos\himem.sys
+dos=high,umb
+shell=a:\command.com /p /e:800

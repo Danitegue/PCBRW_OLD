@@ -1,0 +1,37 @@
+10000 rem
+10010 rem 13 7 98 julian use pkzip to zip day files into specific directory
+10015 rem 21 7 98 julian change hgsum and this to read day -1
+10020 rem 1 2 2000 julian use it to copy files from br#066 to putaud.
+10024 rem 10 10 2001 julian is used to copy to cape6 (win98)
+10030 rem Is called by schedule in the morning
+10550 REM **************************************************************
+11000 '
+11001 ' *** Setup ***
+11002 '
+11010 DATA ba
+12000 print#4,"start to copy yesterday's day files..."
+12020 O1$="xcopy "+DD$+"B???"+YE$+"."+NO$+" F:\brewarch.163\20"+YE$+"\B_20"+YE$+"\ /M /C"
+12030 PRINT #4,O1$
+12040 shell O1$
+12050 O1$="xcopy "+DD$+"D???"+YE$+"."+NO$+" F:\brewarch.163\20"+YE$+"\D_20"+YE$+"\ /M /C"
+12060 PRINT #4,O1$
+12070 shell O1$
+12110 O1$="xcopy "+DD$+"DUV???"+YE$+"."+NO$+" F:\brewarch.163\20"+YE$+"\DUV_20"+YE$+"\ /M /C"
+12120 PRINT #4,O1$
+12130 shell O1$
+12140 O1$="xcopy "+DD$+"UV???"+YE$+"."+NO$+" F:\brewarch.163\20"+YE$+"\UV_20"+YE$+"\ /M /C"
+12150 PRINT #4,O1$
+12160 shell O1$
+12222 O1$="xcopy "+DD$+"UL???"+YE$+"."+NO$+" F:\brewarch.163\20"+YE$+"\UL_20"+YE$+"\ /M /C"
+12223 PRINT #4,O1$
+12224 shell O1$:O1$=""
+12230 O1$="xcopy *.* F:\brewarch.163\brewprog\brewer\ /M /C"
+12240 shell O1$:O1$=""
+12270 O1$="xcopy "+DD$+"??oavg*."+NO$+" F:\brewarch.163\oavg\ /M /C"
+12280 shell O1$
+12310 O1$="xcopy "+DD$+"*."+NO$+" F:\brewarch.163\20"+YE$+"\msc_20"+YE$+"\ /M /C"
+12320 shell O1$:O1$=""
+12330 O1$="xcopy "+DD$+"\"+NO$+"\*."+NO$+" F:\brewarch.163\20"+YE$+"\op_st\ /M /C"
+12340 shell O1$:O1$=""
+13020 return
+65529 REM *** dummy line ***

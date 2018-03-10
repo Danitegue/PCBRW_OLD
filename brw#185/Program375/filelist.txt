@@ -1,0 +1,173 @@
+List of Files Included with this Disk (3.75a release)
+=====================================
+
+\                         Root directory
+----------------------------------------
+\AUTOEXEC.BA_             Sample boot file for computer
+\BREWER.BAT               Batch file to run Brewer software (required)
+\CHANGES.TXT              Summary of all changes since the last major release
+\CONFIG.SY_               Sample configuration file for computer
+\FILELIST.TXT             This file
+\INSTALL.BAT              Installation batch file
+\NOBREW.BAT               Batch file to run Brewer software without Brewer
+\README.TXT               Important notes about this release
+\UPGRADE.TXT              Document describing the 3.74 upgrade
+
+
+\BREWER\                  Directory containing the Brewer software
+------------------------------------------------------------------
+\BREWER\MAIN.BAS          Main program
+\BREWER\MAIN.ASC          Main program in simple text format (for reference)
+
+\BREWER\DM.FIL            Data management menu
+\BREWER\EM.FIL            Extended menu
+\BREWER\HK.FIL            Housekeeping menu
+\BREWER\MENU.FIL          Main menu
+\BREWER\NM.FIL            Non-menu items
+\BREWER\OM.FIL            Observations menu
+\BREWER\OS.FIL            Observarion setup menu
+\BREWER\SM.FIL            Summary printout menu
+\BREWER\SP.FIL            Special operations menu
+\BREWER\TM.FIL            Test menu
+\BREWER\UP.FIL            Update menu
+\BREWER\LOC.FIL           Locations data file
+\BREWER\NAME.FIL          Instrument constants names list (used by CF.RTN)
+\BREWER\NAME2.FIL         Modified list for new electronics (used by CF.RTN)
+
+\BREWER\AB_SK.RTN         Abort schedule routine
+\BREWER\AP.RTN            Display and print A/D values
+\BREWER\AU.RTN            Automatic operation
+\BREWER\AZ.RTN            Zero azimuth
+\BREWER\CF.RTN            Constants file editor
+\BREWER\CI.RTN            Internal HG lamp scan
+\BREWER\CS.RTN            Command sequence setup
+\BREWER\CZ.RTN            Fully customizable scan routine
+\BREWER\DA_LO.RTN         Date and location
+\BREWER\DS.RTN            Direct sun observation
+\BREWER\DSP.RTN           Dispersion test
+\BREWER\DSP1.RTN          (Part of dispersion test)
+\BREWER\DSSUM.RTN         DS summary
+\BREWER\DT.RTN            Dead-time test
+\BREWER\ED.RTN            End of day (automatically executed in schedules)
+\BREWER\ED-PD.RTN         End of day (with print to disk active)
+\BREWER\END_DAY.RTN       Manual end of day for a specified date
+\BREWER\ENDDAY.RTN        (Part of END_DAY)
+\BREWER\FF.RTN            Printer form feed
+\BREWER\FM.RTN            Focused moon
+\BREWER\FMSUM.RTN         Focused moon summary
+\BREWER\FR.RTN            Micrometer and FW#3 reset
+\BREWER\FZ.RTN            Focused sun observation
+\BREWER\FZSUM.RTN         Focused sun summary
+\BREWER\GS.RTN            Test routine to determine GS/GI (MKIII only)
+\BREWER\HG.RTN            Internal mercury lamp test
+\BREWER\HGSUM.RTN         HG Daily tests summary
+\BREWER\HP.RTN            Second micrometer alignment test (MKIII only)
+\BREWER\HV.RTN            High voltage test
+\BREWER\HVSET.RTN         Set high voltage point (new electronics only)
+\BREWER\IC.RTN            Instrument configuration
+\BREWER\INIT.RTN          Software initialization
+\BREWER\LF.RTN            Send linefeed to printer
+\BREWER\LL.RTN            Location editor
+\BREWER\ND.RTN            Format new data disk
+\BREWER\NO.RTN            Change instrument number
+\BREWER\NOSUM.RTN         NO2 summary
+\BREWER\OZSUM.RTN         Ozone summary
+\BREWER\PB.RTN            Data playback
+\BREWER\PO.RTN            Print out instrument constants
+\BREWER\QS.RTN            Lamp quick scan
+\BREWER\RE.RTN            Instrument reset
+\BREWER\REP.RTN           Report
+\BREWER\RL.RTN            Read instrument log (new electronics only)
+\BREWER\RS.RTN            Run-stop test
+\BREWER\SA.RTN            Solar/lunar angles
+\BREWER\SC.RTN            Direct sun scan test
+\BREWER\SE.RTN            Schedule edit
+\BREWER\SH.RTN            Motor timing test
+\BREWER\SI.RTN            Manual siting (of the sun)
+\BREWER\SIM.RTN           Manual siting (of the moon)
+\BREWER\SK.RTN            Run schedule
+\BREWER\SKC.RTN           Run schedule continuously
+\BREWER\SL.RTN            Standard lamp test
+\BREWER\SLSUM.RTN         Standard lamp summary
+\BREWER\SR.RTN            Measure azimuth steps/revolution
+\BREWER\SS.RTN            Extended UV direct sun scan
+\BREWER\ST.RTN            Brewer status
+\BREWER\SUM.RTN           Generate daily summary 'S' file
+\BREWER\SW.RTN            Switch operating modes
+\BREWER\TCSUM.RTN         Temperature constant summary
+\BREWER\TESTFW2.RTN       Measure neutral densities filters + Diffuser
+\BREWER\TT.RTN            Teletype mode
+\BREWER\TU.RTN            Test UVB alignment
+\BREWER\UB.RTN            DUV summary (same as UVSUM)
+\BREWER\UL.RTN            Lamp scan routine
+\BREWER\UM.RTN            Umkehr measurement
+\BREWER\UV.RTN            UV scans, includes UF, UV, UA, UX types
+\BREWER\UVSUM.RTN         Daily DUV summary printout
+\BREWER\W0.RTN            One minute time delay
+\BREWER\W1.RTN            Five minute time delay
+\BREWER\W2.RTN            Ten minute time delay
+\BREWER\W3.RTN            Twenty minute time delay
+\BREWER\W4.RTN            Thirty minute time delay
+\BREWER\XL.RTN            Extended external lamp scan
+\BREWER\ZB.RTN            Zenith blue measurement
+\BREWER\ZC.RTN            Zenith cloudy measurement
+\BREWER\ZE.RTN            Zenith prism reset
+\BREWER\ZP.RTN            Zenith perpendicular measurement
+\BREWER\ZS.RTN            Zenith sky measurement
+\BREWER\ZSSUM.RTN         Zenith sky summary
+
+\BREWER\EPA1.SKD          Sample schedule
+\BREWER\EPA2.SKD          Second sample schedule
+
+
+\BREWER\MISC\             Miscellaneous developmental routines
+--------------------------------------------------------------
+\BREWER\MISC\CR.RTN       Cosine response test
+\BREWER\MISC\DB.RTN       Identical to DSSUM (for use in schedules)
+\BREWER\MISC\DUSUM.RTN    UVSUM variant to get new DUV file
+\BREWER\MISC\FU.RTN       Fast UVB scan (test release)
+\BREWER\MISC\FW.RTN       Filterwheel #3 reset routine (test release)
+\BREWER\MISC\INIT-72.RTN  INIT.rtn for long (72 line) European paper
+\BREWER\MISC\MD.RTN       Generate DSSUM for modem transfer (old)
+\BREWER\MISC\NC.RTN       For shelling to Norton Commander
+\BREWER\MISC\NEWINST.RTN  To create initial files for new instrument
+
+
+\DOS\                     Directory containing some DOS utilities
+-----------------------------------------------------------------
+\DOS\GWBASIC.EXE          GW-BASIC program (required)
+\DOS\PRN2FILE.COM         For redirecting printer to file
+\DOS\SEE.EXE              Simple file editor
+
+
+\UTIL\                    Brewer utilities
+------------------------------------------
+\UTIL\374CVT.EXE          Converts old instrument constants files to 3.74 version
+
+\UTIL\RD_GS.EXE           Process GS tests to detemine grating slope and intercept (MKIII only)
+
+\UTIL\SLTEST.BAT          Standard lamp test analysis utility to generate temperature coefficients
+\UTIL\SLTEST.BAS          (part of standard lamp test utility)
+\UTIL\SLTESTN.BAT         NO2 standard lamp test analysis utility to generate temperature coefficients
+\UTIL\SLTESTN.BAS         (part of NO2 standard lamp test utility)
+\UTIL\MKLST.BAT           Used by SLTEST.BAS and SLTESTN.BAS
+
+\UTIL\SNWV.EXE            Step <-> wavelength conversion (uses dispersion constants file)
+
+\UTIL\YEAR.EXE            Adds missing days as zero entries to average files
+
+
+\UV-LAMP\                 Brewer UV utilities
+---------------------------------------------
+\UV-LAMP\AB_UVDAT.EXE     Utility to process UV scans into UVB and DUV files
+
+\UV-LAMP\IRR.BAT          Utility to generate IRR files for new lamps
+\UV-LAMP\BREWIRR.ASC      (part of IRR utility)
+\UV-LAMP\MKLST.BAT        Used by BREWIRR.ASC
+
+\UV-LAMP\RD_UX.EXE        Utility to process all types of UV scans into PUV files
+
+\UV-LAMP\RES_II.EXE       Utility to generate new UVRES file for MKII instrument
+\UV-LAMP\RES_III.EXE      Utility to generate new UVRES file for MKIII instrument
+\UV-LAMP\RES_IV.EXE       Utility to generate new UVRES file for MKIV instrument
+
