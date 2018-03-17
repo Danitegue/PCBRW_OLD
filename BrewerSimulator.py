@@ -7,17 +7,22 @@ from copy import deepcopy
 import datetime
 import logging
 
-logging.basicConfig(filename='C:/Temp/BrewerSimulator_Log.txt', format='%(asctime)s.%(msecs)04d %(message)s', level=logging.INFO, datefmt='%H:%M:%S', filemode='w')
-
 
 # This script is to simulate the COM port answers of a brewer instrument
-# com0com software is needed to build a com14 to com15 bridge.
+# com0com software is needed to build a com14 to com15 bridge (for example).
 # the main.asc brewer software has to connect to com14
-# this program will be on com15, answering the com14 questions.
+# this program will be connected to the com15, answering the com14 questions.
 
-brewer_none = ['\n', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '->', '\x20', 'flush']
 
-brewer_something = ['\n', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\n', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '->', '\x20', 'flush']
+#Parameters:
+logfile="C:/Temp/BrewerSimulator_Log.txt"
+comport='COM15'
+
+
+#Brewer answers
+brewer_none = ['\r','\n', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '->', '\x20', 'flush']
+
+brewer_something = ['\r','\n', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\r','\n', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '->', '\x20', 'flush']
 
 HPdict = {'M,9, 0;': 66347,
           'M,9, 10;': 96514,
@@ -81,7 +86,7 @@ HGdict1 = {'HGdict':1,
           'O:M,10,230:M,9,230:R':588,
           'O:M,10,240:M,9,240:R':218}
 
-
+#Function to assign the each com port question with an answer
 def check_line(line):
 
     gotkey=False
@@ -90,7 +95,11 @@ def check_line(line):
     if '\n' == line and not gotkey:
         print 'Got keyword: \\n'
         answer=deepcopy(brewer_none)
-        #answer = ['->','\x20']
+        gotkey = True
+
+    if '\r' == line and not gotkey:
+        print 'Got keyword: \\r'
+        answer=deepcopy(brewer_none)
         gotkey = True
 
     if 'F,0,2:V,' in line and not gotkey:
@@ -239,28 +248,27 @@ def check_line(line):
         print ""
     return gotkey, answer
 
-line_counter=0
 
-# Open serial connection with COM15
-comport='COM15'
+
+#Initialize the logger
+logging.basicConfig(filename=logfile, format='%(asctime)s.%(msecs)04d %(message)s', level=logging.INFO, datefmt='%H:%M:%S', filemode='w')
+
+
+#Open serial connection:
 s='Opening '+comport+' serial connection...'
 print s
 logging.info(s)
-
 sw = serial.Serial(comport, baudrate=1200, timeout=0.2)
 sw.close()
 sw.open()
 
-#sw = serial.Serial(comport, baudrate=1200, timeout=0.2)
 #this is for changing the end of line detection
-sio = io.TextIOWrapper(io.BufferedRWPair(sw, sw))
+#sio = io.TextIOWrapper(io.BufferedRWPair(sw, sw))
 
 time.sleep(1)
 sw.flushInput()
+line_counter=0
 
-
-b_initialized=False
-n_counter=0 #This is only to answer only to the last carriage return,
 # when some of them are received in the initial connection with the brewer
 s= 'Done. Monitoring serial...'
 print s
@@ -268,15 +276,17 @@ logging.info(s)
 with sw:
     while True:
         try:
-            line = sio.readline()
+            #line = sio.readline()
+            line=''
+            c= ''
+            while c != '\r':
+                c=sw.read(1)
+                line +=c
             if not line:
-                #print 'Line received: None data'
-                # HACK: Descartamos líneas vacías porque fromstring produce
-                # resultados erróneos, ver
-                # https://github.com/numpy/numpy/issues/1714
                 time.sleep(0.001)
                 continue
             else:
+                time.sleep(0.1)
                 line_counter = line_counter + 1
 
                 logl=str(line_counter)+" "+ str(datetime.datetime.now())+' Line received:'+ (str(line).replace('\r','\\r').replace('\n','\\n'))
@@ -293,10 +303,11 @@ with sw:
                         if 'wait' in a:
                             time.sleep(float(a.split('wait')[1]))
                         elif 'flush' in a:
-                            sio.flush()
+                            #sio.flush()
+                            sw.flush()
                         else:
-                            sio.write(unicode(a))
-                        #time.sleep(0.01)
+                            #sio.write(unicode(a))
+                            sw.write(a)
         except ValueError:
             warnings.warn("Line {} didn't parse, skipping".format(line))
         except KeyboardInterrupt:
