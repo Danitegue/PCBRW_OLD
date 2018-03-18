@@ -6,7 +6,7 @@ import io
 from copy import deepcopy
 import datetime
 import logging
-
+from random import randint
 
 # This script is to simulate the COM port answers of a brewer instrument
 # com0com software is needed to build a com14 to com15 bridge (for example).
@@ -42,6 +42,7 @@ HPdict = {'M,9, 0;': 66347,
           'M,9, 150;': 97926,
           'M,9, 160;': 64454}
 
+#HG commands like 'O:M,10,50:M,9,50:R' or 'O:M,10,50&M,9,50:R'
 HGdict0 = {'HGdict':0,
           'O:M,10,50:M,9,50:R':451,
           'O:M,10,60:M,9,60:R':822,
@@ -65,26 +66,27 @@ HGdict0 = {'HGdict':0,
           'O:M,10,240:M,9,240:R':206}
 
 HGdict1 = {'HGdict':1,
-          'O:M,10,50:M,9,50:R':498,
-          'O:M,10,60:M,9,60:R':889,
-          'O:M,10,70:M,9,70:R':3226,
-          'O:M,10,80:M,9,80:R':17812,
-          'O:M,10,90:M,9,90:R':37250,
-          'O:M,10,100:M,9,100:R':54635,
-          'O:M,10,110:M,9,110:R':73008,
-          'O:M,10,120:M,9,120:R':92826,
-          'O:M,10,130:M,9,130:R':112827,
-          'O:M,10,140:M,9,140:R':124267,
-          'O:M,10,150:M,9,150:R':125312,
-          'O:M,10,160:M,9,160:R':118875,
-          'O:M,10,170:M,9,170:R':100355,
-          'O:M,10,180:M,9,180:R':80903,
-          'O:M,10,190:M,9,190:R':60590,
-          'O:M,10,200:M,9,200:R':41175,
-          'O:M,10,210:M,9,210:R':21619,
-          'O:M,10,220:M,9,220:R':4190,
-          'O:M,10,230:M,9,230:R':588,
-          'O:M,10,240:M,9,240:R':218}
+          'O:M,10,50&M,9,50:R':451,
+          'O:M,10,60&M,9,60:R':822,
+          'O:M,10,70&M,9,70:R':2955,
+          'O:M,10,80&M,9,80:R':16681,
+          'O:M,10,90&M,9,90:R':35602,
+          'O:M,10,100&M,9,100:R':52238,
+          'O:M,10,110&M,9,110:R':70289,
+          'O:M,10,120&M,9,120:R':90096,
+          'O:M,10,130&M,9,130:R':109954,
+          'O:M,10,140&M,9,140:R':121203,
+          'O:M,10,150&M,9,150:R':123202,
+          'O:M,10,160&M,9,160:R':117150,
+          'O:M,10,170&M,9,170:R':98919,
+          'O:M,10,180&M,9,180:R':80088,
+          'O:M,10,190&M,9,190:R':59799,
+          'O:M,10,200&M,9,200:R':40881,
+          'O:M,10,210&M,9,210:R':21490,
+          'O:M,10,220&M,9,220:R':4302,
+          'O:M,10,230&M,9,230:R':587,
+          'O:M,10,240&M,9,240:R':206}
+
 
 #Function to assign the each com port question with an answer
 def check_line(line):
@@ -96,73 +98,88 @@ def check_line(line):
         print 'Got keyword: \\n'
         answer=deepcopy(brewer_none)
         gotkey = True
+        return gotkey, answer
 
     if '\r' == line and not gotkey:
         print 'Got keyword: \\r'
         answer=deepcopy(brewer_none)
         gotkey = True
+        return gotkey, answer
 
     if 'F,0,2:V,' in line and not gotkey:
         print 'Got keyword: F,0,2:V,'
         answer = deepcopy(brewer_none)
         gotkey = True
+        return gotkey, answer
 
     if '?MOTOR.CLASS[2]' in line and not gotkey:
         print 'Got keyword: ?MOTOR.CLASS[2]'
         #answer = ['TRACKERMOTOR']+deepcopy(brewer_something)+['wait0.5']+deepcopy(brewer_none)
-        answer = ["\r"]+['TRACKERMOTOR'] + deepcopy(brewer_something)
+        #answer = ["\r"]+['TRACKERMOTOR'] + deepcopy(brewer_something)
+        answer = ['TRACKERMOTOR'] + deepcopy(brewer_something)
         gotkey = True
+        return gotkey, answer
 
     if 'B,0' in line and not gotkey:
         print 'Got keyword: B,0'
         answer=['wait0.5']+deepcopy(brewer_none)
         #answer = ['wait1'] + deepcopy(brewer_none)+['wait2'] + deepcopy(brewer_none)
         gotkey = True
+        return gotkey, answer
 
     if 'B,1' in line and not gotkey:
         print 'Got keyword: B,1'
         answer=deepcopy(brewer_none)
         gotkey = True
+        return gotkey, answer
 
     if 'B,2' in line and not gotkey:
         print 'Got keyword: B,2'
         answer=deepcopy(brewer_none)
         gotkey = True
+        return gotkey, answer
 
     if '?TEMP[PMT]' in line and not gotkey:
         print 'Got keyworkd: ?TEMP[PMT]'
         answer=['19.158888']+deepcopy(brewer_something)
         gotkey = True
+        return gotkey, answer
 
     if '?TEMP[FAN]' in line and not gotkey:
         print 'Got keyworkd: ?TEMP[FAN]'
         answer=['19.633333']+deepcopy(brewer_something)
         gotkey = True
+        return gotkey, answer
 
     if '?TEMP[BASE]' in line and not gotkey:
         print 'Got keyworkd: ?TEMP[BASE]'
         answer=['17.637777']+deepcopy(brewer_something)
         gotkey = True
+        return gotkey, answer
 
     if '?TEMP[EXTERNAL]' in line and not gotkey:
         print 'Got keyworkd: ?TEMP[EXTERNAL]'
         answer=['-37.777777']+deepcopy(brewer_something)
         gotkey = True
+        return gotkey, answer
 
     if '?RH.SLOPE' in line and not gotkey:
         print 'Got keyworkd: ?RH.SLOPE'
         answer=['0.031088']+deepcopy(brewer_something)
         gotkey = True
+        return gotkey, answer
 
     if '?RH.ORIGIN' in line and not gotkey:
         print 'Got keyworkd: ?RH.ORIGIN'
         answer=['0.863000']+deepcopy(brewer_something)
         gotkey = True
+        return gotkey, answer
 
     if '?ANALOG.NOW[20]' in line and not gotkey:
         print 'Got keyworkd: ?ANALOG.NOW[20]'
         answer=['309']+deepcopy(brewer_something)
         gotkey = True
+        return gotkey, answer
 
     if not gotkey:
         # 2 comma commands:
@@ -174,7 +191,7 @@ def check_line(line):
                     print 'Got keyworkd: ',Mcm
                     answer=deepcopy(brewer_none)
                     gotkey = True
-                    break
+                    return gotkey, answer
 
         # 3 comma commands:
         if line.count(',')==3 and not gotkey:
@@ -185,7 +202,17 @@ def check_line(line):
                     print 'Got keyword: ',Mcm
                     answer=deepcopy(brewer_none)
                     gotkey = True
-                    break
+                    return gotkey, answer
+            #For uv.rtn
+            Mcmds = ['R,1,1,20']
+            for ii in range(len(Mcmds)):
+                Mcm = Mcmds[ii]
+                if Mcm in line and not gotkey:
+                    print 'Got keyword: ',Mcm
+                    answer=[str(36)]+deepcopy(brewer_something)
+                    gotkey = True
+                    return gotkey, answer
+
 
         # 4 comma commands:
         if line.count(',')==4 and not gotkey:
@@ -196,17 +223,23 @@ def check_line(line):
                         print 'Got keyword: ', ii
                         answer = [str(Dict[ii])] + deepcopy(brewer_something)
                         gotkey = True
-                        break
-                if gotkey:
-                    break
+                        return gotkey, answer
+
+            # HG routine commands, like O:M,10,100&M,9,100:R
+            for Dict in [HGdict1]:
+                for ii in Dict.keys():
+                    if ii in line and not gotkey:
+                        print 'Got keyword: ', ii
+                        answer = [str(Dict[ii])] + deepcopy(brewer_something)
+                        gotkey = True
+                        return gotkey, answer
 
             # M,2, 12993:M,1, 208
             if not gotkey:
                 if ('M,2,' in line) and ('M,1,' in line):
                     answer = deepcopy(brewer_none)
                     gotkey = True
-
-
+                    return gotkey, answer
 
 
         # 5 comma commands:
@@ -218,27 +251,37 @@ def check_line(line):
                         print 'Got keyword: ', ii
                         answer = [str(Dict[ii])] + deepcopy(brewer_something)
                         gotkey = True
-                        break
-                if gotkey:
-                    break
+                        return gotkey, answer
+
+        # 7 comma commands:
+        if line.count(',') == 7 and not gotkey:
+            # UV routine commands, like 'M,10, 7278&M,9, 7235:R, 2, 2,2:O'
+            if "M,10" in line:
+                print 'Got keyword: ', "UV routine M,10,..."
+                answer = [str(randint(0, 80000))] + deepcopy(brewer_something)
+                gotkey = True
+                return gotkey, answer
 
     if not gotkey:
         if 'O' in line and line.count(',')==0:
             print 'Got keyworkd: O'
             answer = ["53,2,12,11,20431,11,11,22"]+deepcopy(brewer_something)
             gotkey = True
+            return gotkey, answer
 
     if not gotkey:
         if 'T' in line and line.count(',') == 0:
             print 'Got keyworkd: T'
             answer = ["53,2,12,11,20431,11,11,22"]+deepcopy(brewer_something)
             gotkey = True
+            return gotkey, answer
 
     if not gotkey:
         if '\x00'==line:
             print 'Got keyworkd: Null'
             answer = deepcopy(brewer_none)
             gotkey = True
+            return gotkey, answer
 
     if not gotkey:
         print ""
