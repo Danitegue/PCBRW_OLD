@@ -204,12 +204,14 @@ def check_line(line):
                     gotkey = True
                     return gotkey, answer
             #For uv.rtn
-            Mcmds = ['R,1,1,20']
-            for ii in range(len(Mcmds)):
-                Mcm = Mcmds[ii]
-                if Mcm in line and not gotkey:
-                    print 'Got keyword: ',Mcm
-                    answer=[str(36)]+deepcopy(brewer_something)
+            cmds = ['R,1,1,20','R,1,1,40','R, 2, 2,4:O']
+            cmds_answers=['32','34','9999']
+            for ii in range(len(cmds)):
+                cmd = cmds[ii]
+                cmd_answ=cmds_answers[ii]
+                if cmd in line and not gotkey:
+                    print 'Got keyword: ',cmd
+                    answer=[cmd_answ]+deepcopy(brewer_something)
                     gotkey = True
                     return gotkey, answer
 
@@ -224,7 +226,6 @@ def check_line(line):
                         answer = [str(Dict[ii])] + deepcopy(brewer_something)
                         gotkey = True
                         return gotkey, answer
-
             # HG routine commands, like O:M,10,100&M,9,100:R
             for Dict in [HGdict1]:
                 for ii in Dict.keys():
@@ -233,13 +234,22 @@ def check_line(line):
                         answer = [str(Dict[ii])] + deepcopy(brewer_something)
                         gotkey = True
                         return gotkey, answer
-
             # M,2, 12993:M,1, 208
             if not gotkey:
                 if ('M,2,' in line) and ('M,1,' in line):
                     answer = deepcopy(brewer_none)
                     gotkey = True
                     return gotkey, answer
+            # For UV routine in brewer v3.75: M,10, 634&M,9, 639\r
+            cmds = ['M,10,']
+            for ii in range(len(cmds)):
+                cmd = cmds[ii]
+                if cmd in line and not gotkey:
+                    print 'Got keyword: ', cmd
+                    answer = deepcopy(brewer_none)
+                    gotkey = True
+                    return gotkey, answer
+
 
 
         # 5 comma commands:
@@ -255,10 +265,11 @@ def check_line(line):
 
         # 7 comma commands:
         if line.count(',') == 7 and not gotkey:
-            # UV routine commands, like 'M,10, 7278&M,9, 7235:R, 2, 2,2:O'
+            # For UV routine commands in v4.10, like 'M,10, 7278&M,9, 7235:R, 2, 2,2:O'
             if "M,10" in line:
+                #M means move the filterwheels. R means measure.
                 print 'Got keyword: ', "UV routine M,10,..."
-                answer = [str(randint(0, 80000))] + deepcopy(brewer_something)
+                answer = ['9999'] + deepcopy(brewer_something)
                 gotkey = True
                 return gotkey, answer
 
