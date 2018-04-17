@@ -1,20 +1,20 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="b185_pcbasic_brewer_sdl2_combridge" type="PythonConfigurationType" factoryName="Python">
+  <configuration default="false" name="b185_v410_pcbasic_brewer" type="PythonConfigurationType" factoryName="Python">
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <envs>
       <env name="NOBREW" value="" />
       <env name="PYTHONUNBUFFERED" value="1" />
-      <env name="BREWDIR" value="C:\" />
+      <env name="BREWDIR" value="C:\PCBasic_Brewer_Repo\brw#185\Program410" />
     </envs>
     <option name="SDK_HOME" value="" />
-    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program410" />
     <option name="IS_MODULE_SDK" value="true" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <module name="GWBasic_Interpreter" />
     <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pcbasic_brewer/run.py" />
-    <option name="PARAMETERS" value="&quot;--run=main.asc&quot; &quot;--mount=C:$PROJECT_DIR$/../&quot; &quot;--quit=False&quot; &quot;--interface=sdl2&quot; &quot;-f=10&quot; &quot;--com1=PORT:COM14&quot; &quot;--shell=CMD.EXE&quot; &quot;--debug=True&quot; &quot;--scaling=native&quot; &quot;--logfile=C:\Temp\pcbasic_brewer_log.txt&quot;" />
+    <option name="PARAMETERS" value="&quot;--run=main.asc&quot; &quot;--mount=C:$PROJECT_DIR$/../&quot; &quot;--quit=False&quot; &quot;--interface=sdl2&quot; &quot;-f=10&quot; &quot;--com1=PORT:COM1&quot; &quot;--shell=python C:\PCBasic_Brewer_Repo\pcbasic_brewer\BrwF.py&quot; &quot;--debug=True&quot; &quot;--logfile=C:\Temp\pcbasic_brewer_log.txt&quot;" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />
     <option name="MODULE_MODE" value="false" />

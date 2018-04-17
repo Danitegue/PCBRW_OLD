@@ -1,15 +1,15 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="b185_pcbasic_brewer_sdl2_nobrew" type="PythonConfigurationType" factoryName="Python" show_console_on_std_out="true" show_console_on_std_err="true">
+  <configuration default="false" name="b185_v410_pcbasic_brewer_nobrew" type="PythonConfigurationType" factoryName="Python" show_console_on_std_out="true" show_console_on_std_err="true">
     <log_file path="$PROJECT_DIR$/../Temp/pcbasic_brewer_log.txt" checked="false" skipped="false" show_all="false" alias="pcbasic_brewer_log" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <envs>
       <env name="NOBREW" value="1" />
       <env name="PYTHONUNBUFFERED" value="1" />
-      <env name="BREWDIR" value="C:\" />
+      <env name="BREWDIR" value="C:\PCBasic_Brewer_Repo\brw#185\Program410" />
     </envs>
     <option name="SDK_HOME" value="" />
-    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/brw#185/Program410" />
     <option name="IS_MODULE_SDK" value="true" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
