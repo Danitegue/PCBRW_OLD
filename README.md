@@ -112,7 +112,7 @@ Below this configuration section there is the main launcher line.
 
 ```
 rem * Run the Brewer software with PCBASIC
-%PYTHON_DIR%\python.exe %PCBASIC_PATH%\run.py --interface=sdl2 --mount=C:%MOUNT_C%,D:%MOUNT_D% --com1=%COM_PORT% --run=%PROGRAM% --quit=False -f=10 --shell="python %BRWFUNCT_DIR%\Brw_functions.py" --debug=True --logfile=%LOG_DIR%\pcbasic_brewer_log.txt
+%PYTHON_DIR%\python.exe %PCBASIC_PATH%\run.py --interface=sdl2 --mount=C:%MOUNT_C%,D:%MOUNT_D% --com1=%COM_PORT% --run=%PROGRAM% --quit=False -f=10 --shell="python %BRWFUNCT_DIR%\Brw_functions.py" --logfile=%LOG_DIR%\pcbasic_brewer_log.txt
 ```
 
 * Notice that in the LOG_DIR folder is going to be written the log file of the pcbasic session (pcbasic_brewer_log.txt). So it is needed to create this folder if it does not exist, otherwise the launcher is not going to work.
