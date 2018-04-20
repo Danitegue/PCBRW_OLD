@@ -1,0 +1,193 @@
+10000 REM ***************** ss routine 21/04/98 *********************
+10010 REM         MKII/MKIII/MKIV Extended UV Direct Sun Scan
+10020 REM
+10030 REM             (SCI-TEC Instruments, April 1998)
+10040 REM
+10050 REM  See Also: UV.RTN
+10060 REM ***********************************************************
+10070 REM
+10080 REM  This routine performs a direct-sun UV-B scan, covering a
+10090 REM  specific range based on the Brewer model:
+10092 REM    MKII:         290 to 325 nm
+10094 REM    MKIII:        290 to 363 nm
+10096 REM    MKIV O3/SO2:  290 to 363 nm
+10100 REM
+10110 REM  Slit #1 and Slit #5 are used to complete the full scan.
+10120 REM  FW3 also switches position when needed on the MKIII/IV.
+10130 REM
+10160 REM  Global Variables Referenced:
+10170 REM    DC(5,3) GI GS PC SP TD TIMER T1 VA ZERO
+10180 REM    A1$() CR$ DD$ DQ$ JD$ MC$ M5$ M8$ NO$ O1$ SQ$ TIME$ TR$ YF$
+10190 REM    DN% HF% MX% MZ% TE% UC%
+10200 REM
+10210 REM  Exits: 10520, 10550, 14720, 14930
+10220 REM
+10230 REM  Uses: 2090, 2450, 3100, 4450, 6610, 6630, 6650, 6690,
+10240 REM        7000, 7500, 7750, 9190, 9400, 9450, 9500, 9650,
+10250 REM        9670, 9805
+10260 REM
+10300 REM ************************************************************
+10310 REM  History: dd/mm/yy
+10320 REM  21/04/98 - New electronics support added
+10330 REM  14/07/95 - Updated to handle MKII/MKIII/MKIV operation,
+10340 REM  test added to disable NO2 mode operation.
+10350 REM  28/02/94 - Modified for MKIV, slit and FW#3 switching
+10360 REM  added, micrometer position check added, subroutine 33000
+10370 REM  added, CR$ added to end of PRINT#8
+10380 REM  15/12/93 - Routine was revived during installation of #100
+10390 REM ************************************************************
+10500 DATA sx
+10510 REM
+10520 IF DN%<>8 THEN RETURN         'if no disk recording
+10530 IF MDD$="o3" THEN 10600
+10540   PRINT#4,"SS is not an NO2 routine":PRINT "SS is not an NO2 routine"
+10550   X=2:GOSUB 7220:RETURN
+10600 '
+10601 ' *** Set up ranges ***
+10602 '
+10610 WV=3250:IF TYP$="mkiii" THEN WV=3500:REM *** Note that this is ignored on a MKII
+10620 SQ=1: GOSUB 33000: SWITCH.1TO5 = STEP.NUMBER
+10625 '
+10630 WV=3530:IF TYP$="mkii" OR ZERO=3469 THEN WV=3250
+10640 SQ=1: GOSUB 33000: LIMIT.OF1 = STEP.NUMBER
+10645 '
+10650 WV=3630:IF TYP$="mkii" OR ZERO=3469 THEN WV=3250
+10660 SQ=5: GOSUB 33000: LIMIT.OF5 = STEP.NUMBER
+11700 '
+11701 ' *** Check Initial Micrometer Position ***
+11702 '
+11710 IF Q14%=1 THEN 14000
+11730 Y=0:VA=0: LOCATE 15,10: PRINT "Checking Position of Micrometer #1"
+11731 O1$="R,1,1,1:G,544":GOSUB 9450:GOSUB 9190:IF (VA AND 8)<>8 AND (VA AND 4)<>4 THEN GOTO 14000
+11732 IF (VA AND 4)<>4 THEN GOTO 11738
+11735 O1$="M,10,-500;G,544":Y=Y-500:LOCATE 22,30: PRINT Y,VA:GOSUB 9450:GOSUB 9190
+11736 IF Y<=-3000 THEN PRINT#4, "-3000 steps - QUIT - Micrometer #1 jammed at MIN. end ?":GOTO 11795
+11738 IF (VA AND 4)=4 THEN GOTO 11735
+11740 O1$="M,10,-1:M,10,501:G,544":Y=Y-1+501:LOCATE 22,30: PRINT Y,VA:GOSUB 9450:GOSUB 9190
+11741 IF Y>11000 THEN PRINT#4, "11000 steps - QUIT - reference not found":GOTO 11795
+11742 IF (VA AND 4)=0 THEN GOTO 11740
+11744 O1$="M,10,-500":GOSUB 9450
+11745 Y=Y-500
+11746 O1$="M,10,-1:M,10,51:G,544":Y=Y-1+51:LOCATE 22,30: PRINT Y,VA:GOSUB 9450:GOSUB 9190
+11748 IF (VA AND 4)=0 THEN GOTO 11746
+11750 O1$="M,10,-100":GOSUB 9450
+11752 Y=Y-100
+11759 YY%=0
+11761 YY%=YY%+1
+11762 O1$="M,10,"+STR$(YY%)+":G,544":Y=Y+1:LOCATE 22,30:PRINT Y,VA:GOSUB 9450:GOSUB 9190
+11764 IF (VA AND 4)=0 THEN GOTO 11761
+11768 O1$="M,10,-"+STR$(INT(MZ%-PC*TE%+.5)):GOSUB 9450
+11769 O1$="M,10,"+MC$:GOSUB 9450
+11770 PRINT#4," ":GOTO 14000
+11795 IF (VA AND 8)=8 THEN PRINT#4,"MICROMETER #1 APPEARS TO BE JAMMED AT MAX. END, You must re-position by HAND":HF%=1:RETURN
+14000 '
+14001 ' *** Take UV-B Direct Sun Observation ***
+14002 '
+14010 MN=2900: MX=3630: DD=5: UC%=0: IF TYP$="mkii" THEN MX=3250
+14020 CX$="1": TR$="d"+"s"          'cycle count and track mode
+14030 GOSUB 2450: GOSUB 4450: OPEN DD$+"dum.dta" FOR OUTPUT AS 8
+14040 PRINT #8, "Integration time is 0.2294 seconds per sample"; CR$;
+14050 PRINT #8, "dt "; T1; CR$;
+14060 PRINT #8, "cy "; cx$; CR$;
+14070 PRINT #8, A1$(0);
+14610 GOSUB 6610: GOSUB 6630: M5$ = SQ$: GOSUB 6650
+14620 TD = 1500: GOSUB 7000: GOSUB 7750: GOSUB 6690
+14630 LOCATE , SP: PRINT "4 - Brewer azimuth to sun"
+14640 GOSUB 9650
+14650 REM
+14660 GOSUB 7750: 'GOSUB 7500: REM test intensity
+14670 PRINT #8, CR$; "nd" + M5$; CR$;
+14672 GOSUB 9670: M8$="-"+ MC$: GOSUB 9805: M8$=STR$(-ZERO): GOSUB 9805
+14675 rem stim = VAL(LEFT$(TIME$, 2)) + .5: IF VAL(MID$(TIME$, 4, 2)) > 29 THEN stim = stim + .5
+14676 rem stim = VAL(LEFT$(TIME$, 2)) + .25: IF VAL(MID$(TIME$, 4, 2)) > 14 THEN stim = stim + .5
+14680 rem stim = VAL(LEFT$(TIME$, 2)) + .3333: IF VAL(MID$(TIME$, 4, 2)) > 19 THEN stim = stim + .3333
+14681 rem IF VAL(MID$(TIME$, 4, 2)) > 39 THEN stim = stim + .3333
+14682 PRINT CL$: LOCATE 7, 1: PRINT "SX "; MDD2$; "scan will begin at "; stim; " hours C.U.T. ";
+14683   DRKOK = 0: PRINT #4, " SX "; MDD2$; "scan will begin at "; stim; " hours gmt. filter "M5$;
+14684   GOSUB 50: GOSUB 9891: GOSUB 2090: IF HF% = 1 THEN 14700 :
+14685   IF TA%=1 THEN STOP '34000:stim = TIMER / 3600:GOTO 14694:
+14686   X = VAL(LEFT$(TIME$, 2)) + VAL(MID$(TIME$, 4, 2)) / 60 + VAL(RIGHT$(TIME$, 2)) / 3600: IF X < 1 THEN X = X + 24
+14687   rem IF X < (stim - 1 / 60) THEN 14684' Wait for dark current measurement time
+14688   IF DRKOK = -1 THEN 14690
+14689   GOSUB 34000: DRKOK = -1'dark current 1 min before sx scan
+14690   rem IF X + 5 / 3600 < stim THEN 14684
+14694   PRINT "START": PRINT #4, "SX scan started at "; TIME$:
+14695   tinc = 2: ttim = stim * 3600:W1=MN: W2=MX: DW=DD: SQ=1: GOSUB 31000: IF HF%=1 THEN 14700
+14700   M8$ = STR$(ZERO+1): GOSUB 9805: M8$="-1": GOSUB 9805: M8$=MC$: GOSUB 9805: GOSUB 9500
+14710   PRINT #8, "end": CLOSE 8
+14720   IF HF% = 1 THEN PRINT #4, "SX scan aborted at "; TIME$: RETURN: REM home flag
+14900 '
+14901 ' *** Record data on ss file ***
+14602 '
+14910 IF TYP$="mkiv" AND Q9%=1 THEN O1$="M,6,"+STR$(MX%): GOSUB 9450:REM * reset FW3 to original position
+14920 B$=JD$+YF$+"."+NO$
+14930 PRINT #4, "UV Direct-Sun scan finished at "; TIME$
+14940 SHELL "copy " + DD$ + "SX" + B$ + "+" + DD$ + "dum.dta " + DD$ + "SX" + B$
+14950 PRINT #4, "SS"; B$; " data file extended at "; TIME$: RETURN
+30000 '
+30001 ' *** Switch to Extended Range Operation (Slit #5) ***
+30002 '
+30010 SQ=5: B=DC(SQ,2): C=DC(SQ,3)
+30020 DQ$=STR$(SQ+1)
+30030 IF TYP$="mkiv" AND Q9%=1 THEN O1$="M,6,50": GOSUB 9450
+30040 RETURN
+31000 '
+31001 ' *** Scan w1 to w2 step dw on slit sq ***
+31002 '
+31010 'O1$ = "R,1,1,40;O": GOSUB 9450: GOSUB 9190: DARK = VA/40
+31020 'PRINT #8, "DARK": PRINT #8, DARK: PRINT "dark=", DARK:
+31025 'SN$ = ""
+31030  B=DC(SQ,2): C=DC(SQ,3): DQ$=STR$(SQ+1)
+31040  FOR WV = W1 TO W2 STEP DW
+31050   GOSUB 2090: IF HF% = 0 THEN 31070
+31060   PRINT "aborted": PRINT #8, "aborted"; CR$; : WV=W2: RETURN
+31070   IF TYP$="mkii" THEN 31090: REM *** No switching needed on a MKII Brewer ***
+31080     IF VAL(SN$) > SWITCH.1TO5 THEN GOSUB 30000
+31085     IF VAL(SN$) > LIMIT.OF1 THEN GOSUB 30000
+31090   IF VAL(SN$) > LIMIT.OF5 THEN IF SQ=5 THEN WV=W2: RETURN
+31095   IF VAL(SN$) > LIMIT.OF1 THEN IF TYP$="mkii" THEN WV=W2: RETURN
+31100   IF VAL(SN$) < 0 GOTO 31190
+31105   rem IF tinc=3 AND WV=3005 THEN CX$="5"
+31106   rem IF tinc=2 AND WV=3005 THEN CX$="3"
+31110   IF WV < 3000 THEN CX$="5" ELSE CX$="3"
+31111   'tinc=3 -> IF WV < 3000 THEN CX$="4" ELSE CX$="2"
+31115   IF WV=2900 THEN A = 0: GOSUB 32020'Set filter according to ND%
+31120   SN$ = STR$(INT((-B+SQR(B*B-4*(DC(SQ,1)-WV)*C))/2/C))
+31125   SNN$=STR$(INT(VAL(SN$) * GS + GI)):REM *** Used only for MKIII ***
+31130   IF TYP$="mkiii" THEN O1$="M,10,"+SN$+SE$+"M,"+N9$+","+SNN$+";R,"+DQ$+","+DQ$+","+CX$+";O"
+31135   IF TYP$<>"mkiii" THEN O1$="M,10,"+SN$+";R,"+DQ$+","+DQ$+","+CX$+";O"
+31137   REM IF TIMER< ttim- 1.5 THEN 31137
+31145   TI=TIMER*60: TM=TI: GOSUB 9450: TM=INT((TM+TI)/72)/100
+31150   REM
+31160   VA=INT(VA*100/VAL(CX$))/100     'normalized output
+31170   PRINT#8,TM;CR$;WV;CR$;SN$;CR$;VA;CR$;   'record to file
+31175   IF C$ = "sx" THEN PRINT USING " ####.##"; (stim * 60 + (WV - 2900) / 5 * tinc / 60 - TI / 3600) * 60;  ELSE PRINT TIME$;
+31180   PRINT USING " ####  #######.##  #######.##"; WV; va; va - DARK
+31181   REM 'PRINT TM;WV;SN$;VA;"         ";CHR$(30)
+31183   REM
+31184   IF VA>100000 THEN GOSUB 32000
+31185   IF INT(WV/25)=WV/25 THEN GOSUB 7750: 'GOSUB 7750 ' tracker position
+31186   ttim=ttim +tinc
+31190    NEXT:RETURN
+32000 '*************************Change neutral density filter********************
+32005 '
+32010 ' IF O14%=0 THEN  O1$ = "L,19414,150": IF O14%=0 THEN GOSUB 9450
+32015  A = 64 + VAL(M5$): IF A > 320 THEN A = 320
+32020   A$ = STR$(A): M5$ = RIGHT$(A$, LEN(A$) - 1): GOSUB 9800
+32030   PRINT "Filter " + M5$: PRINT #8, "filter  " + M5$
+32040  IF O14%=0 THEN  O1$ = "L,19414,90": IF O14%=0 THEN GOSUB 9450
+32050 RETURN
+32060 REM
+33000 '
+33001 ' *** Determine The Step Number Given SQ and WV ***
+33002 '
+33010 B=DC(SQ,2): C=DC(SQ,3)
+33020 STEP.NUMBER = INT((-B+SQR(B*B-4*(DC(SQ,1)-WV)*C))/2/C)
+33030 RETURN
+33040 REM
+34000 '********* 'GET DARK COUNT
+34005 '
+34010 O1$ = "R,1,1,40;O": GOSUB 9450: GOSUB 9190: DARK = VA/40
+34020 PRINT #8, "DARK": PRINT #8, DARK: PRINT "darKK=", DARK:SN$="": RETURN
+34040 REM
+65529 REM proper last line

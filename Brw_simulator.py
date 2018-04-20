@@ -15,7 +15,7 @@ from random import randint
 
 
 #Parameters:
-logfile="C:/Temp/BrewerSimulator_Log.txt"
+logfile="C:/Temp/Brw_simulator_log.txt"
 comport='COM15'
 
 

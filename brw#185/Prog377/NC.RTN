@@ -1,0 +1,5 @@
+10000 rem Call NC.exe
+10010 data nc
+20000 shell"n
+30000 return
+65529 rem dummy

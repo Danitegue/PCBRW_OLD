@@ -1,0 +1,22 @@
+10000 REM ************ td.rtn 13/12/2010 09:50:00 ************ 
+55555 REM Please keep line 10000 updated when changes are made. Volodya Savastiouk
+10001 REM           MKII/MKIII/MKIV This Routine
+10002 REM
+10003 REM gets TRUE time from PC clock by going to RIGHT!! dos shell and back
+10004 REM julian groebner 26 11 97 julian
+10004 REM volodya added the date check and the comments into the b-file 05/09/2010
+10004 REM ***************************************************************
+10005 DATA td
+10080 PRINT#4,"Getting dat/time from PC clock..."
+10120 TC$=DA$+"/"+MO$+"/"+YE$
+10150 shell("setdate.exe")
+10290 TC=TIMER
+10300 shell("cmd /C")
+10310 TC=int((TIMER-TC)*10)/10.0
+10320 GOSUB 5300
+10325 IF TC$ <> DA$+"/"+MO$+"/"+YE$ THEN B$="Date changed from "+TC$+" to "+DA$+"/"+MO$+"/"+YE$: GOSUB 3050: PRINT#4, B$:B$="Time correction "+str$(tc)+" seconds": GOSUB 3050: PRINT#4, B$
+10326 GOSUB 6200:IF TC$ <> DA$+"/"+MO$+"/"+YE$ THEN C$="pf":GOSUB 2900: C$="pd":GOSUB 2900
+10330 C$="td": B$="Time correction "+str$(tc)+" seconds": GOSUB 3050: PRINT#4, B$
+10340 IF TC$ <> DA$+"/"+MO$+"/"+YE$ THEN B$="Date changed from "+TC$+" to "+DA$+"/"+MO$+"/"+YE$: GOSUB 3050: PRINT#4, B$
+10350 RETURN
+65529 REM *** proper last line ***

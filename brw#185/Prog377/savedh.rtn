@@ -1,0 +1,5 @@
+10000 rem Save day header and constants to B-File. Volodya Sep/09
+10010 data savedh
+20000 GOSUB 4485
+30000 return
+65529 rem dummy

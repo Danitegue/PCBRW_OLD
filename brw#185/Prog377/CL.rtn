@@ -1,0 +1,87 @@
+10000 REM this routine records a uvb scan  MKIII     *** cl routine 250595 ***
+10001 REM Chaged for new electronics.
+10002 REM IBM    Used to clibrate the DS scans
+10005 DATA CL
+10010 IF Q8% = 0 THEN RETURN: REM if no uvb port
+10020 IF DN% <> 8 THEN RETURN: REM if no disk recording
+10045 ON ERROR GOTO 3100
+10070 S1 = 0: S2 = 0: S3 = 0: S4 = 0: REM zero sums
+10080 GOTO 14600
+10090 :
+14600 REM -14699 take uvb obs
+14603 cx$ = "20": TR$ = "d" + "s": uc% = 0: zl% = 0: REM cycle count and track mode
+14605 GOSUB 2450: GOSUB 4450: OPEN DD$ + "dum.dta" FOR OUTPUT AS 8
+14606 PRINT #8, "Integration time is 0.224 seconds per sample"; CR$;
+14607 PRINT #8, "dt "; T1; CR$;
+14608 PRINT #8, "cy "; cx$; CR$;
+14609 PRINT #8, A1$(0);
+14610 GOSUB 6610: GOSUB 6630: M5$ = SQ$: GOSUB 6650
+14620 td = 1500: GOSUB 7000: GOSUB 7800: GOSUB 6690
+14625 LOCATE , SP: PRINT "4 - Brewer azimuth to sun"
+14630 GOSUB 9650
+14634 GOSUB 7800: O1$ = "": GOSUB 9450: GOSUB 7500: REM test intensity
+14635 PRINT cl$ + "Possition Shading Disk and press ENTER to continue"
+14636 al$ = INKEY$: IF al$ = "" GOTO 14636
+14637 a = 0: GOSUB 32020
+14639 PRINT #8, CR$; "nd" + M5$; CR$; : nd$ = M5$
+14640 m8$ = "-" + MC$: GOSUB 9805: m8$ = STR$(-ZERO): GOSUB 9805
+14645 PRINT #4, "CL.RTN: DS calibration scans start: "; TIME$ + "; "; : PRINT cl$
+14648 w1% = 3000: dw% = 50
+14650 wv% = w1% - dw%: w2% = 3650: SQ% = 1: GOSUB 31000: IF hf% = 1 THEN 14670
+14670 m8$ = STR$(ZERO + 1): GOSUB 9805: m8$ = "-1": GOSUB 9805: m8$ = MC$: GOSUB 9805: GOSUB 9500
+14680 PRINT #8, "end": CLOSE 8
+14690 IF hf% = 1 THEN PRINT #4, "***  ABORTED at "; TIME$ + "***": RETURN: REM home flag
+14698 :
+14699 :
+14700 REM -14799 record data on uv file
+14710 B$ = JD$ + YF$ + "." + NO$: PRINT #4, "end: "; TIME$ + "; ";
+14720 SHELL "copy " + DD$ + "CL" + B$ + "+" + DD$ + "dum.dta " + DD$ + "CL" + B$
+14750 PRINT #4, "--> CL" + B$: RETURN
+14798 :
+14799 :
+31000 REM scan w1% to w2% step dw% on slit sq%
+31005 O1$ = "R,1,1,40;O": GOSUB 9450: GOSUB 9190: DARK = va / 40
+31006 PRINT #8, "DARK": PRINT #8, DARK: PRINT "dark=", DARK: SN$ = ""
+31010 B = DC(SQ%, 2): C = DC(SQ%, 3): DQ$ = STR$(SQ% + 1)
+31012 cx$ = "5": O1$ = ";R," + DQ$ + "," + DQ$ + "," + cx$: GOSUB 9450
+31013 PRINT " Time       WV     Direct Circumsolar   Diffuse     Global      az%"
+31014 wv% = wv% + dw% :'INC
+31015 GOSUB 2090: IF hf% = 0 THEN 31020
+31016 PRINT "Aborted": PRINT #8, "Aborted"; CR$; : wv% = w2%: RETURN
+31020 SN% = (-B + SQR(B * B - 4 * (DC(SQ%, 1) - wv%) * C)) / 2 / C
+31021 SNN% = SN% * GS + GI: SN$ = STR$(SN%): SNN$ = STR$(SNN%)
+31022 IF wv% = 3075 THEN cx$ = "5": O1$ = ";R," + DQ$ + "," + DQ$ + "," + cx$: GOSUB 9450
+31025 IF SN% > 10000 OR SNN% > 10000 THEN IF SQ% = 5 THEN wv% = w2%: RETURN 31028    ELSE SQ% = 5:B = DC(SQ%, 2): C = DC(SQ%, 3): DQ$ = STR$(SQ% + 1): O1$ = ";R," + DQ$ + "," + DQ$ + "," + cx$: GOSUB 9450: GOTO 31020
+31045 IF SNN% < 0 OR SN% < 0 GOTO 31320: 'ORG 31060
+31100 'Direct
+31101 REM PRINT#8,'DIRECT'
+31110 GOSUB 9770: GOSUB 9740: M5$ = nd$: GOSUB 9800: GOSUB 7750: GOSUB 9400
+31111 '31029 O1$ = ";X," + SN$ + "," + SNN$ + ";R;O": GOSUB 9450
+31120 IF Q14%=0 THEN O1$ = ";X," + SN$ + "," + SNN$ + ";R;O":GOSUB 9450
+31125 IF Q14%=1 THEN O1$ = "M,10,"+SN$ + SE$ + "M," + N9$ + "," +SNN$+";R;O":GOSUB 9450
+31130 TM = TIMER / 60: dirsun = va / VAL(cx$): PRINT #8, TM; CR$; wv%; CR$; dirsun; : PRINT USING "####.##   ####   ########   "; TM; wv%; dirsun;
+31200 'Circumsolar
+31210 O1$ = "M,1," + STR$(ZEC% + 15) + ";R;O": ZE% = ZEC%: GOSUB 9450
+31220 PRINT #8, CR$; va / VAL(cx$); : PRINT USING "########   "; va;
+31300 'Diffuse
+31310 GOSUB 9785: GOSUB 9750: M5$ = nd$: GOSUB 9800:
+31311 IF Q14%=0 THEN O1$ = ";M,1," + STR$(ZU%) + ";R;O":
+31312 IF Q14%=1 THEN O1$ ="M,1," + STR$(ZU%):
+31313 GOSUB 9400
+31314 IF Q14%=1 THEN O1$="R,"+DQ$+","+DQ$+","+CX$+";O"
+31315 IF Q14%=1 THEN GOSUB 9450
+31320 PRINT #8, CR$; va / VAL(cx$); : PRINT USING "########   "; va;
+31400 'Global
+31410 IF Q14%=0 THEN O1$ = ";L,19414,120;M,2," + STR$(az% +770) + ";L,19414,255;R;O":
+31411 IF Q14%=1 THEN O1$ = "M,2," + STR$(az% +2500):GOSUB 9450
+31414 IF Q14%=1 THEN O1$="R,"+DQ$+","+DQ$+","+CX$+";O"
+31415 IF Q14%=1 THEN GOSUB 9450
+31420 PRINT #8, CR$; va / VAL(cx$): PRINT USING "########   ########"; va; az%
+31500 IF dirsun > 150000 THEN GOSUB 32000 '31067
+31510 IF wv% = w2% THEN RETURN ELSE GOTO 31014
+32000 a = 64 + VAL(nd$): IF a > 320 THEN a = 320
+32020 a$ = STR$(a): M5$ = RIGHT$(a$, LEN(a$) - 1): GOSUB 9800
+32030 PRINT "Filter " + M5$: nd$ = M5$: RETURN
+32031 REM  PRINT #8, "filter  " + M5$
+65529 REM proper last line
+

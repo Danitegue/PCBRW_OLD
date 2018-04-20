@@ -1,0 +1,117 @@
+10000 REM ******************* ms routine 11/05/99 ********************
+10010 REM               MKII/MKIII/MKIV Sky Mapping
+10020 REM                  Written by: Alkis Bais
+10040 REM
+10050 REM ************************************************************
+10060 REM Uses slits 0 to 6
+10065 REM Polirizer out, iris close, nd to ZS$
+10070 REM flg$ variable: A --> Absolute coordinates
+10080 REM                R --> Coordinates Relative to the sun
+10090 REM                M --> Absolute zenith and Relative azimuth
+10100 REM                L --> Absolute azimuth and Relative zenith
+10110 DATA ms
+10120 GOSUB 2450: GOSUB 4450
+10200 OPEN "a", 8, dd$ + "R" + jd$ + ye$ + "." + no$: PRINT #8, c$; cr$; a1$(0)
+10210 ww$ = "wl": M5R$ = "0": 'ND filter for all measurement types (starts 0)
+10212 GOTO 10270
+10215 GOSUB 2450: PRINT #8, ww$; cr$; te%; cr$: '  Temperature
+10220 'GOSUB 20000: 'Take global
+10230 'GOSUB 20100: 'Take direct
+10240 GOSUB 14000: 'Take Radiance
+10245 IF HF% = 1 GOTO 10280
+10250 'GOSUB 20100: 'Take direct
+10260 'GOSUB 20000: 'Take global
+10270 IF ww$ = "wl" THEN ww$ = "wh": GOSUB 32000: GOTO 10215
+10280 PRINT #8, "end": CLOSE 8
+10300 IF ww$ = "wh" THEN M8$ = MC$: GOSUB 9805: GOSUB 9500
+10305 tr$ = "ds": GOSUB 7800: RETURN
+10310 'Exits to main program
+10320 :
+14000 'Setup amd make radiance measurements
+14010 tr$ = "": O1$ = "M,1," + STR$(er% / 2): GOSUB 9450: 'Point to zenith, protect PMT
+14020 GOSUB 6610: GOSUB 6635         'Filter#1 to 3  (clear)
+14030 M5$ = M5R$: GOSUB 6650         'Filter#2 to M5R$
+14040 GOSUB 6690:                    'Close iris
+14050 wl$ = "3": wu$ = "3": cz$ = "1": GOSUB 9880
+14060 ZS$ = M5$: M5S$ = "192"
+14090 GOSUB 9670
+14100 PRINT cl$: LOCATE 6, 1: PRINT "ID     azm    zen   AZIMUTH ZENITH  COUNTS"
+14110 'Measure
+14120 OPEN "i", 2, pd$ + "ms.dat"
+14125 GOSUB 33000
+14130 PRINT #8, "cy "; cz$; cr$; "M5 "; M5$; cr$; "M4 "; M4$; cr$; "M5SUN "; M5S$; cr$; "M3 "; M3$; cr$; "dark "; cr$; DARK
+14140 WHILE NOT EOF(2): INPUT #2, flg$, azm, zen: GOSUB 7800
+14150   IF flg$ = "R" THEN app = az + azm: zpp = za + zen
+14160   IF flg$ = "A" THEN app = azm: zpp = zen
+14170   IF flg$ = "M" THEN app = az + azm: zpp = zen
+14180   IF flg$ = "L" THEN app = azm: zpp = za + zen
+14190   ze% = er% / 2 - er% * zpp / 360 + .5 + HC%: flgf$ = " "
+14199   'Offset zenith prism by 40 steps (~5 deg) to avoid viewing the Sun
+14200   IF ABS(az - app) < 5 AND ABS(za - zpp) < 5 THEN ze% = ze% + SGN(za - zpp) * (5 - ABS(za - zpp)) * er% / 360: flgf$ = "S"
+14210   IF ze% < er% / 4 - 100 OR ze% > er% / 2 + 100 GOTO 14400
+14220   az% = sr% * app / 360 + .5 + nc%
+14230   IF az% > sr% THEN az% = az% - sr%
+14240   IF az% < 0 THEN az% = az% + sr%
+14250   PRINT USING "\\,  #####.#  ####.#   #####.#  #####.#"; flg$; azm; zen; app; zpp;
+14259   REM Changed for new electronics
+14260   IF Q14%=0 THEN O1$ = "L,19414,120:M,2," + STR$(az%) + "L,19414,200:M,1," + STR$(ze%):
+14261   IF Q14%=1 THEN O1$ ="M,2,"+ STR$(az%)+SE$+"M,1"+ STR$(ze%):
+14262   GOSUB 9450  'Changed for new electronics
+14265   AP% = az%
+14270   WT = (wu - wl + 1) * VAL(cz$) * 18 / 7 * IT: t0 = TIMER / 60 + WT / 120
+14280   O1$ = "R," + wl$ + "," + wu$ + "," + cz$: GOSUB 9400: TI = TIMER * 60: TS = TI / 7200: REM start obs at ts
+14290   TD = 200 + WT * 60: GOSUB 7000: REM set wait time
+14300   GOSUB 9900
+14370   PRINT #8, USING "\\, #####.## \\,  #####.# ####.#  ####.# ####.#"; "r"; t0; flg$ + flgf$; app; zpp; azm; zen;
+14380   FOR k% = wl TO wu: PRINT #8, USING " ######.#"; f(k%) / VAL(cz$); : NEXT: PRINT #8,
+14385   PRINT USING " #######.#"; f(wu) / VAL(cz$)
+14390   GOSUB 2090: IF HF% = 1 THEN PRINT cl$: PRINT "MS measurement terminated": GOTO 14410
+14400 WEND
+14410 IF Q14=0 THEN  O1$ = "L,19414,255": REM New 
+14411 GOSUB 9450
+14420 CLOSE 2: RETURN
+14430 :
+20000 'Setup and make global measurement
+20020 GOSUB 6610: GOSUB 6635         'Filter#1 to 3 (clear)
+20030 M5$ = "0": GOSUB 6650          'Filter#2 to ZS$
+20040 GOSUB 6700:                    'Open iris
+20060 tr$ = "sa": GOSUB 7750: O1$ = "M,1," + STR$(er% * 3 / 4): GOSUB 9450
+20070 wl$ = "0": wu$ = "6": cz$ = "5": GOSUB 9700: GOSUB 9900
+20080 PRINT #8, USING "\\, ####.##"; "g"; t0; : FOR jm = wl TO wu: PRINT #8, USING " ######.#"; f(jm) / VAL(cz$); : NEXT jm: PRINT #8,
+20090 RETURN
+20199 :
+20100 'Setup and make direct measurement
+20120 GOSUB 6610: GOSUB 6630         'Filter#1 to 2 (GQ in)
+20130 M5$ = "64": GOSUB 6650         'Filter#2 to ZS$
+20140 GOSUB 6690:                    'Close iris
+20150 tr$ = "ds": GOSUB 7750
+20160 wl$ = "0": wu$ = "6": cz$ = "5": GOSUB 9700: GOSUB 9900
+20170 PRINT #8, USING "\\, ####.##"; "d"; t0; : FOR jm = wl TO wu: PRINT #8, USING " ######.#"; f(jm) / VAL(cz$); : NEXT jm: PRINT #8,
+20180 RETURN
+20190 :
+32000 'Move range to high wavelengths
+32020 WV = 3400: SQ = 1: GOSUB 8500: IF M1 - ZERO < 0 OR M2 - ZERO < 0 THEN STOP
+32030 IF Q14%=0 THEN O1$ = "L,19414,90:X," + STR$(M1 - ZERO) + "," + STR$(M2 - ZERO) + ":L,19414,255" ELSE O1$ = "M,10," + STR$(M1 - ZERO)
+32025 'IF TYP$ = "mkiii"  THEN O1$ = "L,19414,90:X," + STR$(M1 - ZERO) + "," + STR$(M2 - ZERO) + ":L,19414,255" ELSE O1$ = "M,10," + STR$(M1 - ZERO)
+32029 ' Warning no single brewer support yet
+32030 IF Q14% =0   THEN  O1$ = "L,19414,90:X," + STR$(M1 - ZERO) + "," + STR$(M2 - ZERO) + ":L,19414,255"
+32039 IF Q14% =1   THEN  O1$= "M,10,"+STR$(M1 - ZERO)+SE$+"M,"+N9$+","+ STR$(M2 - ZERO)
+32040 GOSUB 9450
+32050 A = VAL(M5R$) + 64: IF A > 320 THEN A = 320
+32060 M5$ = STR$(INT(A)): M5R$ = RIGHT$(M5$, LEN(M5$) - 1)
+32070 RETURN
+32080 :
+33000 '
+33001 ' *** Get Dark Count ***
+33002 '
+33010 O1$ = "R,1,1,20:O": GOSUB 9450: GOSUB 9190: DARK = VA / 20
+33020 LOCATE 8, 1: PRINT " Dark Count =", DARK
+33030 RETURN
+40000 '
+40001 ' *** Prepare O1$ from M1 and M2 ***
+40002 '
+40010 IF TYP$="mkiii" and Q14%=1 THEN O1$="M,10,"+STR$(M1)+SE$+"M,"+N9$+","+STR$(M2):return
+40030 IF TYP$="mkiii" THEN O1$="X,"+STR$(M1)+","+STR$(M2) ELSE O1$="M,10,"+STR$(M1)
+40050 return
+65529 REM *** dummy line ***
+

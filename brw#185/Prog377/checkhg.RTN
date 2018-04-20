@@ -1,0 +1,30 @@
+10000 REM ******************* checkhg routine 15/01/2010 ************************
+10010 REM           MKII/MKIII/MKIV A routine to print and save the last HG result
+10020 REM
+10030 REM                (IOS Inc, January 2010)
+10040 REM
+10050 REM  See also:
+10060 REM ****************************************************************
+10070 REM
+10080 REM  This routine saves the last HP/HG test's result. Called by dsp after final HG. Requires version 3.77 or newer to work.
+10100 REM
+10110 REM  Side Effects:
+10120 REM
+10130 REM  Global Variables Referenced:
+10140 REM    HG.ADJ  HP.ADJ B$
+10170 REM
+10180 REM  Exits: 30000
+10190 REM
+10200 REM  Uses:  3050
+10230 REM
+10240 REM ****************************************************************
+10250 REM  History: dd/mm/yy
+10260 REM  15/01/2010 - written by Volodya
+10270 REM
+10280 REM ****************************************************************
+10500 DATA checkhg
+11000 IF VAL(VER$) < 3.77 THEN PRINT#4, "Old version of the MAIN.ASC. Please update your software": RETURN
+20000 IF HP.ADJ <> 0 THEN B$="Last HP had to adjust the micrometer by "+STR$(HP.ADJ)+" on the first attempt" ELSE B$="Last HP was OK"
+20000 IF HG.ADJ <> 0 THEN B$="Last HG had to adjust the micrometer by "+STR$(HG.ADJ)+" on the first attempt" ELSE B$="Last HG was OK"
+30000 PRINT #4, B$: GOSUB 3050: RETURN
+65529 rem dummy

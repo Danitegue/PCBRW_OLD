@@ -1,0 +1,5 @@
+10000 rem Save constants to B-File. Volodya Sep/09
+10010 data saveall
+20000 GOSUB 4482
+30000 return
+65529 rem dummy

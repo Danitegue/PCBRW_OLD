@@ -1,0 +1,82 @@
+10000 REM ******************* ze routine 23/03/98 *********************
+10010 REM                MKII/MKIII/MKIV Zero Zenith
+10020 REM
+10030 REM             (Sci-Tec Instruments, March 1998)
+10040 REM
+10050 REM  See Also:  AZ.RTN, RE.RTN
+10060 REM *************************************************************
+10070 REM
+10080 REM  This routine searches for the zeroing sensor on the zenith
+10090 REM  motor, and calculates a discrepancy value which is the
+10100 REM  difference between the zenith actual position and the
+10110 REM  expected position.
+10120 REM
+10200 REM  Side Effects:
+10210 REM
+10220 REM  Global Variables Referenced:
+10230 REM    B6% ER% Q1% TA% ZE% ZO%
+10240 REM    VA  O1$
+10250 REM
+10260 REM  Exits: 16010
+10270 REM
+10280 REM  Uses:  2090, 3220, 9190, 9450
+10290 REM
+10500 REM **************************************************************
+10510 REM  History: dd/mm/yy
+10520 REM  23/03/98 - Supports new Brewer electronics
+10530 REM  05/01/94 - Writes ZE information to B file
+10540 REM  05/12/94 - Created by TM; original algorithm obtained from
+10550 REM  RE.RTN; based on AZ algorithm
+10560 REM **************************************************************
+11000 '
+11001 ' *** Setup ***
+11002 '
+11010 DATA ze
+15000 '
+15001 ' *** Zeroing Zenith Motor ***
+15002 '
+15010 IF Q1%=0 THEN 16000:REM No zenith motor present
+15020 PRINT CL$:LOCATE ,SP:PRINT"Zeroing zenith":MS%=0:A$="101":IF ZE%>ER%*2/3 THEN A$="1"
+15030 IF Q14%=1 THEN FLAG=1:M1$="1":GOSUB 6550:MS%=ZE%-Y:GOTO 15310
+15040 O1$="M,1,-1:M,1,"+A$+":G,800":MS%=MS%-VAL(A$)+1:GOSUB 9450:GOSUB 9190:REM advance motor and test
+15050 GOSUB 2090:IF (VA AND B6%)<>B6% OR TA%=1 THEN 15800
+15060 :
+15070 NLOOP%=0
+15080 NLOOP%=NLOOP%+1:O1$="M,1,-50:G,800":GOSUB 9450:GOSUB 9190:MS%=MS%+50
+15090 GOSUB 2090:IF NLOOP%>44 OR TA%=1 THEN 15800
+15100 IF (VA AND B6%)=B6% THEN 15080
+15110 O1$="M,1,51:M,1,-1":GOSUB 9450:MS%=MS%-50
+15120 :
+15130 NLOOP%=0
+15140 NLOOP%=NLOOP%+1:O1$="M,1,-15:G,800":GOSUB 9450:GOSUB 9190:MS%=MS%+15
+15150 GOSUB 2090:IF NLOOP%>44 OR TA%=1 THEN 15800
+15160 IF (VA AND B6%)=B6% THEN 15140
+15170 O1$="M,1,16:M,1,-1":GOSUB 9450:MS%=MS%-15
+15180 :
+15190 NLOOP%=0
+15200 NLOOP%=NLOOP%+1:O1$="M,1,-4:G,800":GOSUB 9450:GOSUB 9190:MS%=MS%+4
+15210 GOSUB 2090:IF NLOOP%>44 OR TA%=1 THEN 15800
+15220 IF (VA AND B6%)=B6% THEN 15200
+15230 O1$="M,1,5:M,1,-1":GOSUB 9450:MS%=MS%-4
+15240 :
+15250 NLOOP%=0
+15260 NLOOP%=NLOOP%+1:O1$="M,1,-1:G,800":GOSUB 9450:GOSUB 9190:MS%=MS%+1
+15270 GOSUB 2090:IF NLOOP%>44 OR TA%=1 THEN 15800
+15280 IF (VA AND B6%)=B6% THEN 15260
+15290 O1$="M,1,-"+STR$(ZO%):GOSUB 9450:MS%=MS%+ZO%
+15300 :
+15310 PRINT CL$:LOCATE ,SP:B$="Zenith discrepancy = "+STR$(ZE%-MS%)
+15320 PRINT B$:PRINT#4,"Zenith zeroed at ";TIME$;" ";B$
+15330 GOSUB 3050
+15340 TA%=0:ZE%=0:GOTO 16000
+15350 :
+15800 REM *** Zenith zeroing (non-critical) failure
+15810 LOCATE ,SP:ZE%=ZE%-MS%
+15820 IF TA%=0 THEN B$="Zenith ZEROING FAILURE !!":PRINT B$:PRINT#4,B$:GOSUB 3050
+15830 IF TA%=1 THEN TA%=0:PRINT "Aborted":PRINT#4, "Zenith zeroing aborted"
+15840 X=1:GOSUB 7220:GOTO 16000
+16000 '
+16001 ' *** Quit ***
+16002 '
+16010 GOSUB 3220:RETURN
+65529 REM proper last line

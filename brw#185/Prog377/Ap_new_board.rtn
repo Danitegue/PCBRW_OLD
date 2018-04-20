@@ -1,0 +1,186 @@
+10000 REM *************** ap routine 28/06/99 ******************
+10010 REM     MKII/MKIII/MKIV Display the A/D Monitor Values
+10020 REM
+10030 REM           (SCI-TEC Instruments, June 1999)
+10040 REM
+10060 REM ******************************************************
+10070 REM
+10080 REM  This routine displays the A/D values on screen and
+10090 REM  printer.
+10100 REM
+10220 REM  Global Variables Referenced:
+10230 REM    VA
+10240 REM    DB$ DD$ I$ JD$ MDD$ MP$ NO$ O1$ YE$
+10250 REM    FP% HF% Q7% Q10%
+10260 REM
+10270 REM  Exits: 11020, 11050, 17020
+10280 REM
+10290 REM  Uses: 2090, 3100, 9190, 9450, 9820, 9840, 9860, 9890
+10300 REM
+10500 REM *******************************************************
+10510 REM  History: dd/mm/yy
+10514 REM  13/05/11 - Updated to support redesigned new Brewer electronics
+10515 REM  05/07/02 - Constant for standard lamp current changed
+10520 REM  28/06/99 - Full support for new Brewer electronics
+10530 REM  12/01/95 - Now writes to B file
+10540 REM  15/12/94 - Combined AP and AD into one routine
+10550 REM ********************************************************
+11000 '
+11001 ' *** Setup ***
+11002 '
+11010 DATA ap
+11020 IF Q7%=0 THEN RETURN
+11030 IF Q14%=1 THEN 11060
+11040   O1$="L,16811,5,16812,79,16813,3,16814,255:Z":GOSUB 9450:REM condition Brewer
+11050   IF LEN(I$)<=6 THEN Q7%=0:RETURN
+11060 IF FP%=1 THEN PRINT#4,CHR$(12):PRINT CL$:PRINT "Position paper to top of page":GOSUB 9650
+11070 A1$(IO)=LF$+"ap"+CR$+TIME$+CR$:AD(1)=1:ERASE AD:DIM AD(25)
+12000 '
+12001 ' *** Set Up Screen Display ***
+12002 '
+12010 PRINT CL$:LOCATE 4,1:RESTORE:READ PC$
+12020 PRINT "Channel         Name         Value (Lamps off)     Value (Lamps on)"
+12030 FOR I=0 TO 15+2*Q14%
+12040   PRINT USING " ###      ";I;
+12050   READ ANA$,ANX,ANB$,ANX,ANX,ANX,ANC$:IF Q14%=0 THEN PRINT ANA$ ELSE PRINT ANB$
+12060 NEXT
+13000 '
+13001 ' *** Read A/D Values (Lamps Off) ***
+13002 '
+13010 GOSUB 9840:RESTORE:READ PC$
+13020 FOR I=0 TO 15+2*Q14%
+13030   IF HF%=1 THEN 18000
+13040   GOSUB 20000:AD(I)=VA:LOCATE 5+I,34:PRINT USING "####.##";VA:A1$(IO)=A1$(IO)+STR$(INT(VA*100+.5)/100)+CR$
+13050 NEXT:IF Q14%=0 THEN 13100
+13060   FOR I=18 TO 23
+13070     IF HF%=1 THEN 18000
+13080     GOSUB 20000:AD(I)=VA:A1$(IO)=A1$(IO)+STR$(INT(VA*100+.5)/100)+CR$
+13090   NEXT
+13100 IO=IO+1:A1$(IO)="":IF HF%=1 THEN 18000
+14000 '
+14001 ' *** Switch Lamp On ***
+14002 '
+14010 GOSUB 9820
+15000 '
+15001 ' *** Read A/D Values (Lamps On), Print All Values ***
+15002 '
+15010 RESTORE:READ PC$:IF FP%=0 THEN 15100
+15020   PRINT#4,"A/D Values for ";MP$;DB$;YE$;" at ";TIME$;" for instrument number ";NO$
+15030   PRINT#4,
+15040   PRINT#4,"Channel#           Name             Value         Value"
+15050   PRINT#4,"                                 (Lamps off)    (Lamps on)"
+15100 FOR I=0 TO 15
+15110   GOSUB 20000:IF HF%=1 THEN 18000
+15120   IF FP%=0 THEN 15190
+15130     PRINT#4,USING "  ###       ";I;
+15140     IF Q14%=0 THEN PRINT#4,ANA$; ELSE PRINT#4,ANB$;
+15150     IF I=3  THEN VAR1$=STR$(VA)
+15155     IF I=5  THEN VAR2$=STR$(VA)
+15160     IF I=14 THEN VAR3$=STR$(VA)
+15165     IF I=0  THEN VAR4$=STR$(VA)
+15170     IF I=1  THEN VAR5$=STR$(VA)
+15175     IF (I=11 AND Q14%=1) OR (I=2 AND Q14%=0) THEN VAR6$=STR$(VA)
+15180     PRINT#4,USING "####.##       ####.##";AD(I);VA:IF I=15 AND Q14%=0 THEN PRINT#4,
+15190   LOCATE 5+I,50:PRINT USING "####.##";VA:A1$(IO)=A1$(IO)+STR$(INT(VA*100+.5)/100)+CR$
+15320 NEXT:IF Q14%=0 THEN 15400
+15330   GOSUB 9830:X=5:GOSUB 7220:FOR I=16 TO 23
+15340     GOSUB 20000:IF HF%=1 THEN 18000
+15350     IF FP%=0 THEN 15380
+15360       PRINT#4,USING "  ###       ";I;:PRINT#4,ANB$;
+15370       PRINT#4,USING "####.##       ####.##";AD(I);VA:IF I=23 THEN PRINT#4,
+15380     A1$(IO)=A1$(IO)+STR$(INT(VA*100+.5)/100)+CR$:IF I<18 THEN LOCATE 5+I,50:PRINT USING "####.##";VA
+15390   NEXT
+15400 IO=IO+1:GOSUB 3200:IF HF%=1 THEN 18000
+15410 IF FP%<>0 THEN PRINT#4,"______________________________________________________________":PRINT#4,
+15420 GOSUB 9840
+16000 '
+16001 ' *** Append Data into Average File ***
+16002 '
+16010 ON ERROR GOTO 16500
+16020 AVGFILE$="APOAVG":IF MDD$="n2" THEN AVGFILE$="APNAVG"
+16030 CLOSE 6:OPEN DD$+AVGFILE$+"."+NO$ FOR INPUT AS #6
+16040 WHILE NOT EOF(6)
+16050   LINE INPUT#6,ZZ$
+16060   IF LEFT$(ZZ$,5)=JD$+YF$ THEN 16200
+16070 WEND
+16100 CLOSE 6:OPEN DD$+AVGFILE$+"."+NO$ FOR APPEND AS #6
+16110 PRINT#6,JD$+YE$;:PRINT#6,USING " \        \ \        \ \        \";VAR1$;VAR2$;VAR3$
+16200 CLOSE 6:ON ERROR GOTO 3100:GOTO 17000
+16500 '
+16501 ' *** Error Exit for Average File ***
+16502 '
+16510 IF ERR=53 OR ERL=16030 THEN RESUME 16100
+16520 RESUME 16530
+16530 ON ERROR GOTO 3100:GOTO 18000
+17000 '
+17001 ' *** Append Data into Other Average File ***
+17002 '
+17010 ON ERROR GOTO 17500
+17020 AVGFILE$="H2OAVG"
+17030 CLOSE 6:OPEN DD$+AVGFILE$+"."+NO$ FOR INPUT AS #6
+17040 WHILE NOT EOF(6)
+17050   LINE INPUT#6,ZZ$
+17060   IF LEFT$(ZZ$,5)=JD$+YF$ THEN 17200
+17070 WEND
+17100 CLOSE 6:OPEN DD$+AVGFILE$+"."+NO$ FOR APPEND AS #6
+17110 PRINT#6,JD$+YE$;:PRINT#6,USING " \        \ \        \ \        \";VAR4$;VAR5$;VAR6$;
+17120 IF Q14%=1 THEN PRINT#6,USING " ##.## ###.# ##";AH;RH;SH ELSE PRINT#6," -----"
+17200 CLOSE 6:ON ERROR GOTO 3100:GOTO 18000
+17500 '
+17501 ' *** Error Exit for Average File ***
+17502 '
+17510 IF ERR=53 OR ERL=17030 THEN RESUME 17100
+17520 RESUME 17530
+17530 ON ERROR GOTO 3100:GOTO 18000
+18000 '
+18001 ' *** Exit ***
+18002 '
+18010 IF HF%=1 THEN LOCATE 21,SP:PRINT "A/D Aborted":IF FP%<>0 THEN PRINT#4,"A/D Aborted"
+18020 GOSUB 9840:ERASE AD:RETURN
+20000 '
+20001 ' *** Read A/D Values ***
+20002 '
+20010 IF Q14%=1 THEN 20100
+20020   O1$="L,20248,"+STR$(I)+",20249,255;Z":REM set up request command
+20030   GOSUB 9450:GOSUB 9190:REM request and get value for channel I
+20040   GOSUB 2090:GOSUB 9890:READ ANA$,ANC,ANB$,ANX,ANX,ANX,ANC$
+20050   VA=ANC*VA/1000:IF I>2 THEN 20070
+20060     IF Q10%=1 THEN VA=VA*1000-33.27 ELSE VA=VA*0.3125/0.3620*1000-30
+20070   IF I=3 THEN VA=(VA-4.2)*200
+20080   RETURN
+20100 READ ANA$,ANC,ANB$,ANW,ANX,ANY,ANC$
+20105 IF I=20 THEN GOSUB 2440:VA=RH:RETURN
+20110 IF I=21 THEN VA=AH:RETURN
+20120 IF ANW=0 THEN O1$="?ANALOG.NOW["+MID$(STR$(I),2)+"]" ELSE O1$=ANC$
+20130 GOSUB 9450:GOSUB 9190:REM request and get value for channel I
+20140 GOSUB 2090:GOSUB 9890
+20150 IF ANW=0 THEN VA=(VA AND 1023)*5/1024:VA=VA*ANX+ANY
+20160 RETURN
+30000 '
+30001 ' *** Data ***
+30002 '
+30010 DATA "Brewer temp 1 (deg C)  ",0.3620,"PMT temp (deg C)       ",1,0,0,"?TEMP[PMT]"
+30020 DATA "Brewer temp 2 (deg C)  ",0.3620,"Fan temp (deg C)       ",1,0,0,"?TEMP[FAN]"
+30030 DATA "Brewer temp 3 (deg C)  ",0.3620,"Base temp (deg C)      ",1,0,0,"?TEMP[BASE]"
+30040 DATA "H.T. voltage (V)       ",54.7,  "H.T. voltage (V)       ",1,0,0,"?SUPPLY.VALUE[HV]"
+30050 DATA "+15V power supply (V)  ",98.5,  "+12V power supply (V)  ",1,0,0,"?SUPPLY.VALUE[+12V]"
+30060 DATA "+ 5V power supply (V)  ",24.4,  "+ 5V power supply (V)  ",1,0,0,"?SUPPLY.VALUE[+5V]"
+30070 DATA "-15V power supply (V)  ",-97.7, "-12V power supply (V)  ",1,0,0,"?SUPPLY.VALUE[-12V]"
+30080 DATA "+24V power supply (V)  ",117,   "+24V power supply (V)  ",1,0,0,"?SUPPLY.VALUE[+24V]"
+30090 DATA "Rate meter (kc/s)      ",1950,  "Rate meter (V)         ",0,1,0,""
+30100 DATA "Not used (bits)        ",1,     "Below Spectro temp (C) ",1,0,0,"?TEMP[BELOW.SPECTRO]"
+30110 DATA "Not used (bits)        ",1,     "Window area temp (C)   ",1,0,0,"?TEMP[WINDOW.AREA]"
+30120 DATA "Not used (bits)        ",1,     "External temp (deg C)  ",1,0,0,"?TEMP[EXTERNAL]"
+30130 DATA "+ 5V ss (V)            ",24.4,  "+ 5V ss (V)            ",1,0,0,"?SUPPLY.VALUE[+5VSEC]"
+30140 DATA "- 8V ss (V)            ",-38.8, "- 5V ss (V)            ",1,0,0,"?SUPPLY.VALUE[-5VSEC]"
+30150 DATA "Std lmp current (A)    ",10.68, "Std lamp current (A)   ",0,0.43505,0,""
+30160 DATA "Std lmp voltage (V)    ",48.5,  "Std lamp voltage (V)   ",0,3.0,0,""
+30170 DATA "",0,"Mer lamp current (A)   ",0,0.10799,0,""
+30180 DATA "",0,"Mer lamp voltage (V)   ",0,3.0,0,""
+30190 DATA "",0,"External 1 (V)         ",0,1,0,""
+30200 DATA "",0,"External 2 (V)         ",0,1,0,""
+30210 DATA "",0,"Relative humidity (%)  ",0,1,0,""
+30220 DATA "",0,"Moisture (g/m3)        ",0,1,0,""
+30230 DATA "",0,"External 4 (V)         ",0,1,0,""
+30240 DATA "",0,"External 5 (V)         ",0,1,0,""
+65529 REM proper last line

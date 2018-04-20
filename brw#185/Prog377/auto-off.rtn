@@ -1,0 +1,5 @@
+10000 rem Turn OFF the auto FR/HG/HP. Volodya Sep/09
+10010 data auto-off
+20000 AUTOHG=0
+30000 return
+65529 rem dummy

@@ -1,0 +1,8 @@
+10000 REM ************ an.rtn 02/12/2010 09:50:34 ************ 
+55555 REM Please keep line 10000 updated when changes are made. Volodya Savastiouk
+10010 data an
+4700 :
+2902 IF C$="hg" AND TYP$="mkiii" AND HP.NOTDONE=1 AND AUTOHG = 1  AND SK$<>"" THEN JJ=JJ-1:C$="hp":IF JJ<1 THEN JJ=1
+20000 AUTOHG=1
+30000 return
+65529 rem dummy

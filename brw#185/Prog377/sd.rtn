@@ -1,0 +1,11 @@
+10000 REM ********************** sd routine 27/10/02 ********************
+10001 REM           MKII/MKIII/MKIV This Routine 
+10002 REM
+10003 REM sets computer date into op_st.### by running setdate.exe (IOS)
+10004 REM ***************************************************************
+10005 DATA sd
+10080 PRINT#4,"Getting date from computer..."
+10100 shell("setdate")
+10150 run
+65529 REM *** proper last line ***
+   
