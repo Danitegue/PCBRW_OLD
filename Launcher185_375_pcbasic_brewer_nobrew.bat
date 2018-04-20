@@ -18,6 +18,10 @@ set MOUNT_D=
 rem Set the name of the BASIC program to run (For brewer soft, main.asc)
 set PROGRAM=main.asc
 
+rem COM_PORT is the identifier of the port in which the brewer is connected, for example COM_PORT=PORT:COM8 or COM_PORT=stdio: for a dummy port.
+rem brewer v375 needs a dummy port even running in nobrew mode.
+set COM_PORT=stdio:
+
 rem Set the LOG_DIR in order to write the pcbasic session log.
 set LOG_DIR=C:\Temp
 
@@ -27,7 +31,7 @@ set BRWFUNCT_DIR=C:\PCBRW
 rem ---------NEEDED ENVIROMENT VARIABLES FOR BREWER PROGRAM: BREWDIR AND NOBREW:----------
 
 rem Set the BREWDIR enviroment variable: where to find the main.asc respect the pcbasic mounted drives (full path)
-set BREWDIR=C:\PCBasic_Brewer_Repo\brw#185\Prog375
+set BREWDIR=C:\PCBRW\brw#185\Prog375
 
 rem Set the NOBREW enviroment variable: If NOBREW=1 the brewer program will run in offline mode (No COM port communications). Empty = online mode.
 set NOBREW=1
@@ -53,7 +57,7 @@ PROMPT Brewer $P$G
 
 
 rem * Run the Brewer software with PCBASIC
-%PYTHON_DIR%\python.exe %PCBASIC_PATH%\run.py --interface=sld2 --mount=C:%MOUNT_C%,D:%MOUNT_D% --run=%PROGRAM% --quit=False -f=10 --shell=python %BRWFUNCT_DIR%\Brw_functions.py --logfile=%LOG_DIR%\pcbasic_brewer_log.txt
+%PYTHON_DIR%\python.exe %PCBASIC_PATH%\run.py --interface=sld2 --mount=C:%MOUNT_C%,D:%MOUNT_D% --com1=%COM_PORT% --run=%PROGRAM% --quit=False -f=10 --shell="python %BRWFUNCT_DIR%\Brw_functions.py" --logfile=%LOG_DIR%\pcbasic_brewer_log.txt
 
 
 rem * On exit, undo the changes what were done above

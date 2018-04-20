@@ -149,13 +149,13 @@ def shell_append(file1,file2):
     #Append files: 'append file1 file2'
     sys.stdout.write("Brw_functions.py, shell_append, emulating command: " + command+ "\r\n")
     copytemp=os.path.join(os.environ['BREWDIR'],"copy.tmp")
-    tmptmp=os.path.join(os.environ['BREWDIR'],"copy.tmp")
+    tmptmp=os.path.join(os.environ['BREWDIR'],"tmp.tmp")
     if not os.path.isfile(file2):
         shell_copy(file1, file2)
     else:
-        shell_copy(file2+'+'+file1,os.path.join(os.environ['BREWDIR'],"copy.tmp"))
-        shell_noeof(copytemp) # The resultant file will be on tmp.tmp
-        shell_copy(tmptmp, file2)
+        shell_copy(file2+'+'+file1,copytemp)
+        shell_noeof(copytemp) #This will copy copytemp into tmp.tmp but without eof char.
+        shell_copy(tmptmp, file2) # The resultant file will be on file2
         os.remove(copytemp)
         os.remove(tmptmp)
 
@@ -171,7 +171,6 @@ def shell_append(file1,file2):
 #---------------------------------------------
 #Evaluate the contents of the first argument of the SHELL call:
 
-emsg="Brw_functions.py, Ignored unrecognized shell command: "+ command+ ", arguments="+str(arguments)+" \r\n"
 try:
     if "copy" in arguments[0].lower(): #Example 'copy file1+file2 destination' or 'copy file1 destination'
         shell_copy(arguments[1],arguments[2])
@@ -185,9 +184,11 @@ try:
     elif "noeof" in arguments[0].lower(): #Example 'noeof filename'
         shell_noeof(arguments[1])
 
+    elif "append" in arguments[0].lower():  #Example 'append file1 file2'
+        shell_append(arguments[1], arguments[2])
     else:
-        sys.stdout.write(emsg)
+        sys.stdout.write("Brw_functions.py, Ignored unrecognized shell command: "+ command+ ", arguments="+str(arguments)+" \r\n")
 
-except:
-    sys.stdout.write(emsg)
+except Exception as e:
+    sys.stdout.write(str(e))
 
