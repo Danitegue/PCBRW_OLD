@@ -42,7 +42,7 @@ command = str(command.replace('\r', '\\r').replace('\n', '\\n'))
 #--------------Emulating functions-------------
 def shell_copy(orig, dest):
     #Emulate the old win32 behavior of the shell copy function:
-    sys.stdout.write("Brw_functions.py, shell_copy, emulating command: "+command +"\r\n")
+    sys.stdout.write("Brw_functions.py, shell_copy, emulating command: "+command +" \n")
     if "+" in orig:
         # Case: 'copy file1+file2 destination'
         files_to_append = orig.split("+")
@@ -62,7 +62,7 @@ def shell_copy(orig, dest):
             os.remove(dest_temp) #Remove the temporal file.
 
         else:
-            sys.stdout.write("Cannot copy file1 because it doesn't exist."+"\r\n")
+            sys.stdout.write("Cannot copy file1 because it doesn't exist."+" \r\n")
     else:
         # Case: 'copy file1 destination':
         if os.path.exists(orig): #This will raise an error if file1 does not exist.
@@ -77,16 +77,16 @@ def shell_copy(orig, dest):
             fd.close(); ft.close()
             os.remove(dest_temp)  # Remove the temporal file.
         else:
-            sys.stdout.write("Cannot copy file1 because it doesn't exist."+"\r\n")
+            sys.stdout.write("Cannot copy file1 because it doesn't exist."+" \r\n")
 
 def shell_mkdir(dir):
     #Create a directory:
-    sys.stdout.write("Brw_functions.py, shell_mkdir, emulating command: " + command+ "\r\n")
+    sys.stdout.write("Brw_functions.py, shell_mkdir, emulating command: " + command+ " \r\n")
     os.makedirs(dir)
 
 def shell_setdate():
     #This function changes the date in the bdata\###\OP_ST.### file.
-    sys.stdout.write("Brw_functions.py, shell_setdate, emulating command: " + command+ "\r\n")
+    sys.stdout.write("Brw_functions.py, shell_setdate, emulating command: " + command+ " \r\n")
 
     #Read bdata path and instrument info from OP_ST.FIL:
     program_dir = os.environ['BREWDIR']
@@ -126,7 +126,7 @@ def shell_setdate():
 
 
 def shell_noeof(file):
-    sys.stdout.write("Brw_functions.py, shell_noeof, emulating command: " + command+ "\r\n")
+    sys.stdout.write("Brw_functions.py, shell_noeof, emulating command: " + command+ " \r\n")
     #This function create a copy of file without EOF ('0x1a') characters, into tmp.tmp
     #'noeof.exe filename'
     fin_dir=file #Usually a bdata dir.
@@ -147,7 +147,7 @@ def shell_noeof(file):
 
 def shell_append(file1,file2):
     #Append files: 'append file1 file2'
-    sys.stdout.write("Brw_functions.py, shell_append, emulating command: " + command+ "\r\n")
+    sys.stdout.write("Brw_functions.py, shell_append, emulating command: " + command+ " \r\n")
     copytemp=os.path.join(os.environ['BREWDIR'],"copy.tmp")
     tmptmp=os.path.join(os.environ['BREWDIR'],"tmp.tmp")
     if not os.path.isfile(file2):

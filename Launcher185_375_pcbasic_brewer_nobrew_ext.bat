@@ -57,7 +57,7 @@ PROMPT Brewer $P$G
 
 
 rem * Run the Brewer software with PCBASIC
-%PYTHON_DIR%\python.exe %PCBASIC_PATH%\run.py --interface=sld2 --mount=C:%MOUNT_C%,D:%MOUNT_D% --com1=%COM_PORT% --run=%PROGRAM% --quit=False -f=10 --shell="python %BRWFUNCT_DIR%\Brw_functions.py" --extension=Brw_extensions_simple1 --logfile=%LOG_DIR%\pcbasic_brewer_log.txt
+%PYTHON_DIR%\python.exe %PCBASIC_PATH%\run.py --interface=sld2 --mount=C:%MOUNT_C%,D:%MOUNT_D% --com1=%COM_PORT% --run=%PROGRAM% --quit=False -f=10 --shell="python %BRWFUNCT_DIR%\Brw_functions.py" --extension=Brw_extensions_simple1 --debug=False --logfile=%LOG_DIR%\pcbasic_brewer_log.txt
 
 
 rem * On exit, undo the changes what were done above
