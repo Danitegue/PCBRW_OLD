@@ -32,12 +32,12 @@ ini_arguments=sys.argv[1:] #Get the shell call arguments. Example ['/C', 'copy r
 arguments=[]
 if len(ini_arguments)>0:
     for i in ini_arguments:
-        arguments=arguments+i.split(" ") #Example ['copy', 're-sb.rtn', 're.rtn']
+        arguments=arguments+i.split(" ") #Example ['/C','copy', 're-sb.rtn', 're.rtn']
 else:
     arguments=['']
 
 if "/C" in arguments:
-    arguments.remove("/C")
+    arguments.remove("/C") #Example ['copy', 're-sb.rtn', 're.rtn']
 
 command = ' '.join(arguments) #Build a command line string
 command = str(command.replace('\r', '\\r').replace('\n', '\\n'))
@@ -71,8 +71,7 @@ def shell_copy(orig, dest):
 
     #This emulation is not including the EOF chars, since they are not necessary.
 
-
-    sys.stdout.write("Brw_functions.py, shell_copy, emulating command: " + command + "\r\n")
+    sys.stdout.write("Brw_functions.py, shell_copy, emulating command: copy " + str(orig) + " "+ str(dest)+ " \r\n")
     orig = orig.strip()
     dest = dest.strip()
     dest_temp = dest + ".tmp"
@@ -89,7 +88,7 @@ def shell_copy(orig, dest):
                     with open(path_i, "rb") as fi:
                         ft.write(fi.read())
                 else:
-                    sys.stdout.write("Brw_functions, shell_copy (with append), skipping file " + path_i + ", because it doesn't exist." + " \r\n")
+                    sys.stdout.write("Brw_functions.py, shell_copy (with append), skipping file " + path_i + ", because it doesn't exist." + " \r\n")
 
         #The final destination file will be created only if temporal destination file is not empty.
         with open(dest_temp, "rb") as ft:
@@ -97,8 +96,9 @@ def shell_copy(orig, dest):
             if len(contents)>0:
                 with open(dest,"wb") as fd:
                     fd.write(contents)
+                sys.stdout.write("Brw_functions.py, shell_copy (with append), file saved at: " + dest + " \r\n")
             else:
-                sys.stdout.write("Brw_functions, shell_copy (with append), could not generate the destination file because the concatenation gave an empty file." + " \r\n")
+                sys.stdout.write("Brw_functions.py, shell_copy (with append), could not generate the destination file because the concatenation gave an empty file." + " \r\n")
         #Finally, delete the temporal destination file.
         os.remove(dest_temp)
     else:
@@ -114,92 +114,107 @@ def shell_copy(orig, dest):
                 if len(contents) > 0:
                     with open(dest, "wb") as fd:
                         fd.write(contents)
+                    sys.stdout.write("Brw_functions.py, shell_copy, file saved at: " + dest + " \r\n")
                 else:
-                    sys.stdout.write("Brw_functions, shell_copy, could not generate the destination file because the orig file is empty." + " \r\n")
+                    sys.stdout.write("Brw_functions.py, shell_copy, could not generate the destination file because the orig file is empty." + " \r\n")
             # Finally, delete the temporal destination file.
             os.remove(dest_temp)
         else:
-            sys.stdout.write("Brw_functions, shell_copy, cannot copy the orig file because it doesn't exist."+" \r\n")
+            sys.stdout.write("Brw_functions.py, shell_copy, cannot copy the orig file because it doesn't exist."+" \r\n")
 
 def shell_mkdir(dir):
     #Create a directory:
-    sys.stdout.write("Brw_functions.py, shell_mkdir, emulating command: " + command+ " \r\n")
+    sys.stdout.write("Brw_functions.py, shell_mkdir, emulating command: mk " + str(dir) + " \r\n")
     os.makedirs(dir)
 
 def shell_setdate():
     #This function changes the date in the bdata\###\OP_ST.### file.
-    sys.stdout.write("Brw_functions.py, shell_setdate, emulating command: " + command+ " \r\n")
+    #the enviroment variable BREWDIR must exist.
+    sys.stdout.write("Brw_functions.py, shell_setdate, emulating command: setdate"+" \r\n")
 
     #Read bdata path and instrument info from OP_ST.FIL:
-    program_dir = os.environ['BREWDIR']
-    opstfil_dir = os.path.join(os.path.realpath(program_dir), 'OP_ST.FIL')
-    f = open(opstfil_dir, 'r')
-    opstfil_content=f.read()
-    f.close()
-    instr_number = opstfil_content.split()[0]
-    bdata_dir=opstfil_content.split()[1]
+    if 'BREWDIR' in os.environ:
+        program_dir = os.environ['BREWDIR'].strip('\'')
+        opstfil_dir = os.path.join(program_dir, 'OP_ST.FIL')
+        with open(opstfil_dir,'r') as f:
+            opstfil_content=f.read()
+        instr_number = opstfil_content.split()[0]
+        bdata_dir=opstfil_content.split()[1]
 
-    #Build the data/###/OP_ST.### dir
-    opstinstr_dir = os.path.join(os.path.realpath(bdata_dir),str(instr_number),'OP_ST.'+str(instr_number))
-    opstinstr_bak_dir = os.path.join(os.path.realpath(bdata_dir), str(instr_number), 'OP_ST_bak.' + str(instr_number))
+        #Build the data/###/OP_ST.### dir
+        opstinstr_dir = os.path.join(os.path.realpath(bdata_dir),str(instr_number),'OP_ST.'+str(instr_number))
+        opstinstr_bak_dir = os.path.join(os.path.realpath(bdata_dir), str(instr_number), 'OP_ST_bak.' + str(instr_number))
 
-    #Create a backup of the OP_ST.### first. (OP_ST_bak.###)
-    shell_copy(opstinstr_dir,opstinstr_bak_dir)
+        #Create a backup of the OP_ST.### first. (OP_ST_bak.###)
+        shell_copy(opstinstr_dir,opstinstr_bak_dir)
 
-    #Open OP_ST.###
-    f=open(opstinstr_dir,'rb');c0 = f.read();f.close() #read Contents. In binary mode for being able to detect the EOF if exist.
-    #Detect carriage return type
-    if "\r\n" in c0:
-        cr="\r\n"
-    elif "\n" in c0:
-        cr = "\n"
-    elif "\r" in c0:
-        cr = "\r"
-    cs = c0.rsplit(cr)
-    #Modify content: Update the date
-    date=datetime.datetime.now()
-    cs[6]=str(date.day).zfill(2) #Set Day 'DD'
-    cs[7]=str(date.month).zfill(2)#Set Month 'MM'
-    cs[8]=str(date.year)[-2:] #Set Year 'YY'
-    cs[23]='1' #Set A\D Board to '1'.
-    c1=cr.join(cs)
-    f = open(opstinstr_dir,'wb');f.write(c1); f.close() #Re-Build the modified file
+        #Open OP_ST.###
+        with open(opstinstr_dir,'rb') as f:
+            c0 = f.read() #read Contents. In binary mode for being able to detect the EOF if exist.
+        #Detect carriage return type
+        if "\r\n" in c0:
+            cr="\r\n"
+        elif "\n" in c0:
+            cr = "\n"
+        elif "\r" in c0:
+            cr = "\r"
+        cs = c0.rsplit(cr)
+        #Modify content: Update the date
+        date=datetime.datetime.now()
+        cs[6]=str(date.day).zfill(2) #Set Day 'DD'
+        cs[7]=str(date.month).zfill(2)#Set Month 'MM'
+        cs[8]=str(date.year)[-2:] #Set Year 'YY'
+        cs[23]='1' #Set A\D Board to '1'.
+        c1=cr.join(cs)
+        with open(opstinstr_dir, 'wb') as f:
+            f.write(c1) #Re-Build the modified file
+        sys.stdout.write("Brw_functions.py, shell_setdate, date set in file: " +str(opstinstr_dir)+ " \r\n")
+    else:
+        sys.stdout.write("Brw_functions.py, shell_setdate, BREWDIR not found as an enviroment variable."+" \r\n")
 
 
 
 def shell_noeof(file):
-    sys.stdout.write("Brw_functions.py, shell_noeof, emulating command: " + command+ " \r\n")
-    #This function create a copy of file without EOF ('0x1a') characters, into tmp.tmp
-    #'noeof.exe filename'
-    fin_dir=file #Usually a bdata dir.
-    fout_dir=os.path.join(os.environ['BREWDIR'],"tmp.tmp") #Into program dir.
-    if os.path.exists(fin_dir):
-        fi=open(fin_dir,'rb') #Binary open for being able to detect the EOF char
-        fo=open(fout_dir,'wb')
-        while True:
-            char=fi.read(1)
-            if not char: break
-            if char == '\x1a': continue
-            fo.write(char)
-        fi.close()
-        fo.close()
+    # This function create a copy of file without EOF ('0x1a') characters, into tmp.tmp
+    # 'noeof.exe filename'
+    # For being able to emulate this, the enviroment variable BREWDIR must exist.
+    sys.stdout.write("Brw_functions.py, shell_noeof, emulating command: noeof " + str(file)+ " \r\n")
+    fin_dir=file.strip() #Usually a bdata dir.
+    if 'BREWDIR' in os.environ:
+        fout_dir=os.path.join(os.environ['BREWDIR'].strip('\''),"tmp.tmp") #Into program dir.
+        if os.path.exists(fin_dir):
+            with open(fin_dir,'rb') as fi: #Binary open for being able to detect the EOF char
+                with open(fout_dir,'wb') as fo:
+                    while True:
+                        char=fi.read(1)
+                        if not char: break
+                        if char == '\x1a': continue
+                        fo.write(char)
+            sys.stdout.write("Brw_functions.py, shell_noeof, file saved at: " + str(fout_dir) + " \r\n")
+        else:
+            sys.stdout.write("Brw_functions.py, shell_noeof, file not found: "+str(fin_dir)+ "\r\n")
     else:
-        sys.stdout.write("File not found: "+str(fin_dir)+ "\r\n")
+        sys.stdout.write("Brw_functions.py, shell_noeof, BREWDIR not found as an enviroment variable." + " \r\n")
 
 
 def shell_append(file1,file2):
-    #Append files: 'append file1 file2'
-    sys.stdout.write("Brw_functions.py, shell_append, emulating command: " + command+ " \r\n")
-    copytemp=os.path.join(os.environ['BREWDIR'],"copy.tmp")
-    tmptmp=os.path.join(os.environ['BREWDIR'],"tmp.tmp")
-    if not os.path.isfile(file2):
-        shell_copy(file1, file2)
+    #Append files: 'append file1 file2' -> file1 will be appended at the end of the file2.
+    sys.stdout.write("Brw_functions.py, shell_append, emulating command: append "+str(file1)+" "+str(file2)+" \r\n")
+    if 'BREWDIR' in os.environ:
+        copytemp=os.path.join(os.environ['BREWDIR'].strip('\''),"copy.tmp")
+        tmptmp=os.path.join(os.environ['BREWDIR'].strip('\''),"tmp.tmp")
+        if not os.path.isfile(file2):
+            shell_copy(file1, file2)
+        else:
+            shell_copy(file2+'+'+file1,copytemp)
+            shell_noeof(copytemp) #This will copy copytemp into tmp.tmp but without any eof char.
+            shell_copy(tmptmp, file2) # The resultant file will be on file2
+            os.remove(copytemp)
+            os.remove(tmptmp)
+        sys.stdout.write("Brw_functions.py, shell_append, files appended into " +str(file2)+ " \r\n")
+
     else:
-        shell_copy(file2+'+'+file1,copytemp)
-        shell_noeof(copytemp) #This will copy copytemp into tmp.tmp but without eof char.
-        shell_copy(tmptmp, file2) # The resultant file will be on file2
-        os.remove(copytemp)
-        os.remove(tmptmp)
+        sys.stdout.write("Brw_functions.py, shell_append, BREWDIR not found as an enviroment variable." + " \r\n")
 
 
 
@@ -212,7 +227,7 @@ def shell_append(file1,file2):
 
 #---------------------------------------------
 #Evaluate the contents of the first argument of the SHELL call:
-
+sys.stdout.write("Brw_functions.py, received SHELL command: "+ command+ ", arguments="+str(arguments)+" \r\n")
 try:
     if arguments[0].lower()=='copy': #Example 'copy file1+file2 destination' or 'copy file1 destination'
         shell_copy(arguments[1],arguments[2])
