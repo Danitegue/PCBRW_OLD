@@ -3,14 +3,22 @@
 #Daniel Santana, 20180321.
 
 #This script emulates the shell commands actions that the brewer software sends to the operative system.
+#This is necessary because gwbasic uses its own DOS COMMAND.COM shell which is a bit different than the windows CMD.exe shell.
+#one example is the "SHELL copy file1+file2 file3" command behavior, when the file1 does not exist:
+# if it is executed with the gwbasic COMMAND.COM shell,  the file1 will be created.
+# if it is executed with the windows CMD.exe shell, it will give an error because file1 does not exist.
 
-#Example of use in cmd: python Brewerfunctions.py md C:\Temporal\Newfolder
+#Example of use of this script from cmd.exe: python Brw_functions.py md C:\Temporal\Newfolder
 #This will build a new folder but using python code instead of system calls.
 
-#If in the BASIC code there is a line: SHELL "md C:\Temporal\Newfolder"
-#and PCBASIC is executed with the --shell="python C:\...\Brewerfunctions.py" option in the launcher
-#PCBASIC will make the system call: "python Brewerfunctions.py md C:\Temporal\Newfolder"
-#And this script will do the needed actions depending of the arguments contents.
+#If we want to redirect the PCBASIC shell calls with this script we should add to the PCBASIC launcher the
+#option --shell="python C:\...\Brw_functions.py".
+#Example:
+#-If we have a BASIC code like: SHELL "md C:\Temporal\Newfolder"
+#-What PCBASIC will send to the system shell: "python Brw_functions.py md C:\Temporal\Newfolder"
+#-The Brw_fuctions.py will analyze the following arguments ["md","C:\Temporal\Newfolder"] and will use the appropiate
+# function to solve the order.
+
 
 import sys
 import os
@@ -21,15 +29,15 @@ import time
 
 
 ini_arguments=sys.argv[1:] #Get the shell call arguments. Example ['/C', 'copy re-sb.rtn re.rtn']
+arguments=[]
 if len(ini_arguments)>0:
-    if "/C" in ini_arguments[0]:
-        arguments = ini_arguments[1:] #Example ['copy re-sb.rtn re.rtn']
-        arguments = arguments[-1].split(" ")  #Example ['copy', 're-sb.rtn', 're.rtn']
-    else:
-        arguments=ini_arguments[-1].split(" ") #Example ['copy', 're-sb.rtn', 're.rtn']
+    for i in ini_arguments:
+        arguments=arguments+i.split(" ") #Example ['copy', 're-sb.rtn', 're.rtn']
 else:
-    arguments=[]
+    arguments=['']
 
+if "/C" in arguments:
+    arguments.remove("/C")
 
 command = ' '.join(arguments) #Build a command line string
 command = str(command.replace('\r', '\\r').replace('\n', '\\n'))
@@ -41,43 +49,77 @@ command = str(command.replace('\r', '\\r').replace('\n', '\\n'))
 
 #--------------Emulating functions-------------
 def shell_copy(orig, dest):
-    #Emulate the old win32 behavior of the shell copy function:
-    sys.stdout.write("Brw_functions.py, shell_copy, emulating command: "+command +" \n")
-    if "+" in orig:
-        # Case: 'copy file1+file2 destination'
-        files_to_append = orig.split("+")
-        dest_temp=dest+".tmp"
-        if os.path.exists(files_to_append[0]): #This will raise an error if file1 does not exist.
-            ft = open(dest_temp, "wb")  #This will create a new temporal destination file.
-            for path_i in files_to_append:
-                if os.path.exists(path_i): #This will skip file2 if it does not exist without errors, like win32 behavior.
-                    fi = open(path_i, "rb")
-                    ft.write(fi.read())
-                    fi.close()
-            ft.close()
-            ft = open(dest_temp, "rb")
-            fd = open(dest, "wb") #This will remove the old contents of the file, it it exist.
-            fd.write(ft.read())
-            fd.close(); ft.close()
-            os.remove(dest_temp) #Remove the temporal file.
+    #Emulate the custom COMMAND.COM behavior of the gwbasic shell copy function:
 
-        else:
-            sys.stdout.write("Cannot copy file1 because it doesn't exist."+" \r\n")
+    # Case: FILE1 does not exist:
+    # 1) SHELL "COPY FILE1.TXT FILE2.TXT", gives an error, because FILE1 does not exist.
+    # 2) SHELL "COPY FILE1.TXT+FILE2.TXT FILE3.TXT", 2 cases:
+    # 2.1) -if FILE2 is not empty, FILE3 is created with the contents of FILE2 + EOF char [0x1A]. FILE1 is not created.
+    # 2.2) -if FILE2 is empty, neither FILE1 nor FILE3 are created.
+    #
+    # Case: FILE2 does not exist:
+    # 3) SHELL "COPY FILE1.TXT FILE2.TXT", 2 cases:
+    # 3.1)-if FILE1 is not empty, it is copied into FILE2, without adding any extra EOF char.
+    # 3.2)-if FILE1 is empty, it is given the error: "Data not valid", and FILE2 is not created.
+    # 4) SHELL "COPY FILE1.TXT+FILE2.TXT FILE3.TXT", 2 cases:
+    # 4.1)-if FILE1 is not empty, FILE3 is created with the contents of FILE1 + EOF char [0x1A]. FILE2 is not created.
+    # 4.2)-if FILE1 is empty, either FILE2 nor FILE3 are created
+    #
+    # If FILE1 and FILE2 exist:
+    # 5) SHELL "COPY FILE1.TXT FILE2.TXT", copies the contents of FILE1 into FILE2, without adding any extra EOF char.
+    # 6) SHELL "COPY FILE1.TXT+FILE2.TXT FILE3.TXT", copies the contents of FILE1+ contents of FILE2 + EOF char [0x1A]
+
+    #This emulation is not including the EOF chars, since they are not necessary.
+
+
+    sys.stdout.write("Brw_functions.py, shell_copy, emulating command: " + command + "\r\n")
+    orig = orig.strip()
+    dest = dest.strip()
+    dest_temp = dest + ".tmp"
+    if "+" in orig:
+
+        # Example: 'copy file1+file2 destination'
+        files_to_append = orig.split("+")
+        files_to_append = [i.strip() for i in files_to_append] #Remove possible spaces in the filenames
+
+        #Create a temporary destination file where to append everything.
+        with open(dest_temp, "wb") as ft:
+            for path_i in files_to_append:
+                if os.path.exists(path_i): #This will skip not existing files.
+                    with open(path_i, "rb") as fi:
+                        ft.write(fi.read())
+                else:
+                    sys.stdout.write("Brw_functions, shell_copy (with append), skipping file " + path_i + ", because it doesn't exist." + " \r\n")
+
+        #The final destination file will be created only if temporal destination file is not empty.
+        with open(dest_temp, "rb") as ft:
+            contents=ft.read()
+            if len(contents)>0:
+                with open(dest,"wb") as fd:
+                    fd.write(contents)
+            else:
+                sys.stdout.write("Brw_functions, shell_copy (with append), could not generate the destination file because the concatenation gave an empty file." + " \r\n")
+        #Finally, delete the temporal destination file.
+        os.remove(dest_temp)
     else:
         # Case: 'copy file1 destination':
         if os.path.exists(orig): #This will raise an error if file1 does not exist.
-            dest_temp = dest + ".tmp"
-            fs = open(orig, "rb")
-            ft = open(dest_temp, "wb") #This will create the destination file.
-            ft.write(fs.read())
-            fs.close();ft.close()
-            ft = open(dest_temp, "rb")
-            fd = open(dest, "wb")  # This will remove the old contents of the file, if it exist.
-            fd.write(ft.read())
-            fd.close(); ft.close()
-            os.remove(dest_temp)  # Remove the temporal file.
+            with open(dest_temp, "wb") as ft:  # This will create a new temporal destination file.
+                with open(orig, "rb") as fi:
+                    ft.write(fi.read())
+
+            # The final destination file will be created only if temporal destination file is not empty.
+            with open(dest_temp, "rb") as ft:
+                contents = ft.read()
+                if len(contents) > 0:
+                    with open(dest, "wb") as fd:
+                        fd.write(contents)
+                else:
+                    sys.stdout.write("Brw_functions, shell_copy, could not generate the destination file because the orig file is empty." + " \r\n")
+            # Finally, delete the temporal destination file.
+            os.remove(dest_temp)
         else:
-            sys.stdout.write("Cannot copy file1 because it doesn't exist."+" \r\n")
+            sys.stdout.write("Brw_functions, shell_copy, cannot copy the orig file because it doesn't exist."+" \r\n")
 
 def shell_mkdir(dir):
     #Create a directory:
@@ -172,19 +214,19 @@ def shell_append(file1,file2):
 #Evaluate the contents of the first argument of the SHELL call:
 
 try:
-    if "copy" in arguments[0].lower(): #Example 'copy file1+file2 destination' or 'copy file1 destination'
+    if arguments[0].lower()=='copy': #Example 'copy file1+file2 destination' or 'copy file1 destination'
         shell_copy(arguments[1],arguments[2])
 
-    elif "md" in arguments[0].lower(): #Example 'md C:\Temporal\Newfolder'
+    elif arguments[0].lower()=="md": #Example 'md C:\Temporal\Newfolder'
         shell_mkdir(arguments[1])
 
-    elif "setdate" in arguments[0].lower(): #Example 'setdate.exe'
+    elif arguments[0].lower() in ["setdate","setdate.exe"]: #Example 'setdate.exe'
         shell_setdate()
 
-    elif "noeof" in arguments[0].lower(): #Example 'noeof filename'
+    elif arguments[0].lower() in ['noeof','noeof.exe']: #Example 'noeof filename'
         shell_noeof(arguments[1])
 
-    elif "append" in arguments[0].lower():  #Example 'append file1 file2'
+    elif arguments[0].lower()=='append':  #Example 'append file1 file2'
         shell_append(arguments[1], arguments[2])
     else:
         sys.stdout.write("Brw_functions.py, Ignored unrecognized shell command: "+ command+ ", arguments="+str(arguments)+" \r\n")
