@@ -1,11 +1,11 @@
 # PCBRW  (PC BASIC Brewer) repository
 A repository with all the needed things to run and control BREWER instruments software, under a Pyhton enviroment.
 
-Based in the Rob Hagemans PCBasic project: https://github.com/robhagemans/pcbasic/ 
+Based in the Rob Hagemans PCBasic project: https://github.com/robhagemans/pcbasic/ -> Docummentation here: http://robhagemans.github.io/pcbasic/doc/
 
 Main programmer: Daniel Santana Díaz.
 
-Principal collaborators: Alberto Redondas Marrero, Sergio Leon Luis, Virgilio Carreño.
+Principal collaborators: Nestor Morales, Alberto Redondas Marrero, Sergio Leon Luis, Virgilio Carreño, José Manuel Rodríguez Valido
 
 ## Contents
 * **brw#185:** 
@@ -48,20 +48,20 @@ git clone --recursive https://github.com/Danitegue/PCBRW
 ```
 
 
-## Run the PCBASIC interpreter into an ansi console:
-* run the launcher C:\PCBRW\pcbasic_brewer\Launcher_pcbasic.bat, a console window will open showing the pcbasic enviroment:
+## Run the PCBASIC interpreter:
+* run the launcher C:\PCBRW\pcbasic_brewer\pcbasic.bat, a console window will open showing the pcbasic enviroment:
 
 ![pcbasic_test](images/PCBASIC_test_preview.png)
 
 ## Running Brewer's Software: To have into account
-* Old versions of the Brewer software often use external .exe files to perform external tasks (like for example noeof.exe). These .exe files could be compiled for old windows versions (16bits) and therefore they wont work in the newer versions (64 bits).
-To make them work is necessary to have the sourcecode and recompile them accordingly to the OS used. The noeof.exe version included in the brw#185/Program/ of this repo, is already recompiled for 64bits.
+* Old versions of the Brewer software often use external .exe files to perform external tasks (like for example noeof.exe, which removes the end of file character of a file, if it exist). These .exe files could be compiled for old windows versions (16bits) and therefore they wont work in the newer versions (64 bits). For this project, it has been created a python script (Brw_functions.py) that simulates all the common functions of these external files by python code, in order to have an all-in-one multi platform solution, with no system dependent external files. With an extra argument added in the PCBASIC laucher (--shell="python %BRWFUNCT_DIR%\Brw_functions.py"), we can redirect all the BASIC SHELL calls to be executed by this python script. 
 
-* The windows command "shell copy file1+file2 dest" works in a different way in win x64 than in win x86. In x86 the file1 will be created if it does not exist. (An empty file). In x64 the command simply does not work if the file1 does not exist. 
-So in this customized version of PCBASIC (pcbasic_brewer), the SHELL command has been customized to emulate the old behavior, using python commands. (modification in pcbasic_brewer\pcbasic\basic\dos.py, function launch)
+* PCBASIC can run into different graphical consoles. The included launchers are set to run with the sdl2 console (--interface=sdl2), which can cause some incompatibilities with different os's. If it is the case, it would be needed to use the appropiate sdl libraries (here some info about it: https://github.com/robhagemans/pcbasic/blob/master/DEVELOPMENT.md), or use another different interface, for example: --interface=pygame or --interface=ansi
+
+
 
 ## Configurations needed for running the Brewer Software with PCBASIC: 
-* In the provided launchers it is necesary to configure the paths of the brewer software, pcbasic and python.exe, accodingly to the user installation folders. Here also can be defined the COM port to be used for communicating with the instrument, in the online launchers. For example, in the launcher file C:\PCBasic_Brewer_Repo\pcbasic_brewer\Launcher_brewer185.bat:
+* In the provided launchers it is necesary to configure the paths of the brewer software, pcbasic and python.exe, accodingly to the user installation folders. Here also can be defined the COM port to be used for communicating with the instrument, in the online launchers. For example, in the launcher file C:\PCBRW\Launcher185_410_pcbasic_brewer.bat:
 
 ```
 rem ****************************************************************************
@@ -112,7 +112,7 @@ Below this configuration section there is the main launcher line.
 
 ```
 rem * Run the Brewer software with PCBASIC
-%PYTHON_DIR%\python.exe %PCBASIC_PATH%\run.py --interface=sdl2 --mount=C:%MOUNT_C%,D:%MOUNT_D% --com1=%COM_PORT% --run=%PROGRAM% --quit=False -f=10 --shell="python %BRWFUNCT_DIR%\Brw_functions.py" --logfile=%LOG_DIR%\pcbasic_brewer_log.txt
+%PYTHON_DIR%\python.exe %PCBASIC_PATH%\run.py --interface=sdl2 --mount=Z:.,C:%MOUNT_C%,D:%MOUNT_D% --current-device=Z --com1=%COM_PORT% --run=%PROGRAM% --quit=False -f=10 --shell="python %BRWFUNCT_DIR%\Brw_functions.py" --logfile=%LOG_DIR%\pcbasic_brewer_log.txt
 ```
 
 * Notice that in the LOG_DIR folder is going to be written the log file of the pcbasic session (pcbasic_brewer_log.txt). So it is needed to create this folder if it does not exist, otherwise the launcher is not going to work.
@@ -123,7 +123,7 @@ rem * Run the Brewer software with PCBASIC
 ```
 
 
-* Only in the case of needing an extended log file (for COM communications analysis, to see what is really doing the shell commands, or to trace the value of one variable along the program flow) it is needed to add an extra argument in the main launcher line: "--debug=True".
+* Only in the case of needing an extended log file (for COM communications analysis, to see what is really doing the shell commands, or to trace the value of one variable along the program flow) it is needed to enable the debug argument in the main launcher line: "--debug=True".
 
 Having enabled the debug mode, the available options for the extended log are:
   * To enable the COM port communication messages into the log file: In file \pcbasic_brewer\pcbasic\basic\devices\ports.py; set self.log_serial_msg=True. (By default enabled)
@@ -134,8 +134,8 @@ Having enabled the debug mode, the available options for the extended log are:
 
 
 
-## Run the Brewer software, offline mode, into an ansi console:
-* run the launcher C:\PCBRW\pcbasic_brewer\Launcher185_410_pcbasic_brewer_nobrew.bat, 
+## Run the Brewer software, offline mode:
+* run the launcher C:\PCBRW\Launcher185_410_pcbasic_brewer_nobrew.bat, 
 a console window will open showing the main.asc brewer program:
 
 ![Test_mainasc_ansi_nobrew](images/Test_mainasc_ansi_nobrew.PNG)
@@ -147,9 +147,9 @@ Once the brewer program is loaded in offline mode, one can try to run some instr
 ![OfflineTest2](images/OfflineTest2.PNG)
 ![OfflineTest3](images/OfflineTest3.PNG)
 
-## Run the Brewer software, online mode, into an ansi console:
+## Run the Brewer software, online mode:
 This allows to control a real instrument connected to the pc.
-* Configure the COM port number in the launcher C:\PCBRW\pcbasic_brewer\Launcher185_410_pcbasic_brewer.bat,
+* Configure the COM port number in the launcher C:\PCBRW\Launcher185_410_pcbasic_brewer.bat,
 * run the launcher.
 
 a console window will open showing the main.asc brewer program, in the same way of the previous images, but with the com port communications enabled, and being able to control a real instrument through the configured com port. 
@@ -160,11 +160,17 @@ a console window will open showing the main.asc brewer program, in the same way 
 
 -----------------------------------------------------------------------------------------------
 ## Brewer SHELL commands:
-The SHELL calls in the brewer routines have been configured to work in old windows versions (win98). Some of these shell calls are not functional in the newer versions of windows, or they work in a different way. Because of this problem, in this repository it has been prepared a python sript as a shell calls redirector (C:\PCBRW\Brw_functions.py).
+GWBASIC uses its own COMMAND.COM console, which works in a slighty different way than CMD.EXE. PCBASIC uses by default the windows CMD.EXE console. This means that some shell calls have not the same behavior when they are interpretated by GWBASIC, than when they are interpretated by PCBASIC.
+
+One basic example is the behavior of the 'SHELL copy file1+file2 destination'. 
+-When executed from GWBASIC COMMAND.COM: If file 1 does not exist and file2 is not empty, destination file is created with the contents of file2.
+-When executed from CMD.exe: If file1 does not exist it gives an error and the destination file is not created.
+    
+To prevent this change of behavior when using PCBASIC, in this project has been inclueded a python sript that acts as a shell calls redirector (C:\PCBRW\Brw_functions.py), that emulate the behavior of the COMMAND.COM console, for the most common shell calls.
 
 When the Brewer software sends a shell command to the pcbasic interpreter, if the interpreter has been launched with the extra argument  --shell="python %BRWFUNCT_DIR%\Brw_functions.py", pcbasic will redirect the shell call to the Brw_functions.py, instead to send it to the operative system console (cmd.exe). This allow to have an operative system independent solution for the shell calls, without having to modify the brewer routines shell calls.
 
-This python script is prepaired to read the arguments that has been used to call it, and depending of them, it will use one or another function to simulate what and old operative system would do, but using python code instead. It contains a set of functions for the most common used brewer shell calls, like:
+This python script is prepaired to read the arguments that has been used to call it, and depending of them, it will use one or another function to simulate what GWBASIC would do, but using python code instead. It contains a set of functions for the most common used brewer shell calls, like:
 
 * shell copy: Example 'SHELL copy file1+file2 destination' or 'SHELL copy file1 destination'
 * shell append: Example 'SHELL append file1 file2' (append file2 into file1)
