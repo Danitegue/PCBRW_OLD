@@ -1,5 +1,5 @@
 # PCBRW  (PC BASIC Brewer) repository
-A repository with all the needed things to run and control BREWER instruments software, under a Pyhton enviroment.
+A repository with all the needed things to run and control BREWER instruments software, under a Python enviroment.
 
 Based in the Rob Hagemans PCBasic project: https://github.com/robhagemans/pcbasic/ -> Docummentation here: http://robhagemans.github.io/pcbasic/doc/
 
