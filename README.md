@@ -204,10 +204,7 @@ the pcbasic extensions are explained here: https://github.com/robhagemans/pcbasi
 here some examples:
 
 ### Simple Extensions:
-The simple extensions of pcbasic allows to:
-* trigger python procedures from BASIC routines.
-* Call to python functions from BASIC routines, (allowed to return one unique value per function).
-
+The simple extensions of pcbasic allows to call to python functions from BASIC routines, using special BASIC statments.
 
 #### Simple Extension example 1 - Trigger a python function from a "special" BASIC statement (with no args): 
 
@@ -284,7 +281,10 @@ PROGRAM start : JAN 20/18 at 23:44:50
 RESULT OF DUPLICATE(2)= 4
 ```
 
+### Note about the retrocompatiblity when using extensions:
+The use of extensions is useful for research & development of new routines, or experiments. But one problem of the extensions is the loss of retrocompatibility of the BASIC code. Once it is included a special BASIC statment in the BASIC code (like _MKBACKUP), this BASIC code becomes not compatible with GWBASIC, nor DOSBOX. 
 
+A more suitable way to launch python scripts from BASIC code is to use the SHELL statment, like SHELL python pytonscript.py
 
 ----------------------------------------------------------------------------------
 
