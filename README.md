@@ -209,7 +209,7 @@ The simple extensions of pcbasic allows to:
 * Call to python functions from BASIC routines, (allowed to return one unique value per function).
 
 
-#### Simple Extension example 1 - Trigger a python function form a "special" BASIC statement (with no args): 
+#### Simple Extension example 1 - Trigger a python function from a "special" BASIC statement (with no args): 
 
 Having a BASIC routine like this "C:\PCBRW\brw#185\Prog410\pu.rtn":
 
@@ -251,7 +251,7 @@ RESULT OF BACKUP=None
 ```
 
 
-#### Simple Extension example 2 - Trigger a python function form a "special" BASIC statement (with args):
+#### Simple Extension example 2 - Trigger a python function from a "special" BASIC statement (with args):
 
 Having a BASIC routine like this "C:\PCBRW\brw#185\Prog410\py.rtn":
 
