@@ -204,7 +204,7 @@ the pcbasic extensions are explained here: https://github.com/robhagemans/pcbasi
 here some examples:
 
 ### Simple Extensions:
-The simple extensions of pcbasic allows to call to python functions from BASIC routines, using special BASIC statments.
+The simple extensions of pcbasic allows to call python functions from BASIC routines, using special BASIC statments.
 
 #### Simple Extension example 1 - Trigger a python function from a "special" BASIC statement (with no args): 
 
