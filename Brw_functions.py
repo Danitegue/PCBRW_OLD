@@ -24,6 +24,7 @@ import sys
 import os
 import datetime
 import time
+import subprocess
 
 
 
@@ -85,8 +86,12 @@ def shell_copy(orig, dest):
         with open(dest_temp, "wb") as ft:
             for path_i in files_to_append:
                 if os.path.exists(path_i): #This will skip not existing files.
-                    with open(path_i, "rb") as fi:
-                        ft.write(fi.read())
+                    with open(path_i, "rb") as fi: #This will fill the temporary destionation file without EOF chars.
+                        while True:
+                            char = fi.read(1)
+                            if not char: break
+                            if char == '\x1a': continue
+                            ft.write(char)
                 else:
                     sys.stdout.write("Brw_functions.py, shell_copy (with append), skipping file " + path_i + ", because it doesn't exist." + " \r\n")
 
@@ -104,9 +109,13 @@ def shell_copy(orig, dest):
     else:
         # Case: 'copy file1 destination':
         if os.path.exists(orig): #This will raise an error if file1 does not exist.
-            with open(dest_temp, "wb") as ft:  # This will create a new temporal destination file.
+            with open(dest_temp, "wb") as ft: # This will create a new temporal destination file, without eof chars.
                 with open(orig, "rb") as fi:
-                    ft.write(fi.read())
+                    while True:
+                        char=fi.read(1)
+                        if not char: break
+                        if char == '\x1a': continue
+                        ft.write(char)
 
             # The final destination file will be created only if temporal destination file is not empty.
             with open(dest_temp, "rb") as ft:
@@ -217,8 +226,6 @@ def shell_append(file1,file2):
         sys.stdout.write("Brw_functions.py, shell_append, BREWDIR not found as an enviroment variable." + " \r\n")
 
 
-
-
 #Missing functions:
 #ND.rtn -> SHELL 'format a:'
 #NC.rtn -> SHELL"n
@@ -226,12 +233,12 @@ def shell_append(file1,file2):
 
 
 #---------------------------------------------
-#Evaluate the contents of the first argument of the SHELL call:
+#Evaluate the contents of arguments of the SHELL call:
 sys.stdout.write("Brw_functions.py, received SHELL command: "+ command+ ", arguments="+str(arguments)+" \r\n")
 try:
     if arguments[0].lower()=='copy': #Example 'copy file1+file2 destination' or 'copy file1 destination'
         shell_copy(arguments[1],arguments[2])
-
+        
     elif arguments[0].lower()=="md": #Example 'md C:\Temporal\Newfolder'
         shell_mkdir(arguments[1])
 
@@ -243,8 +250,10 @@ try:
 
     elif arguments[0].lower()=='append':  #Example 'append file1 file2'
         shell_append(arguments[1], arguments[2])
+
     else:
         sys.stdout.write("Brw_functions.py, Ignored unrecognized shell command: "+ command+ ", arguments="+str(arguments)+" \r\n")
+
 
 except Exception as e:
     sys.stdout.write(str(e))
