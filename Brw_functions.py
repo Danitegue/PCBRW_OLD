@@ -238,7 +238,7 @@ sys.stdout.write("Brw_functions.py, received SHELL command: "+ command+ ", argum
 try:
     if arguments[0].lower()=='copy': #Example 'copy file1+file2 destination' or 'copy file1 destination'
         shell_copy(arguments[1],arguments[2])
-        
+
     elif arguments[0].lower()=="md": #Example 'md C:\Temporal\Newfolder'
         shell_mkdir(arguments[1])
 
