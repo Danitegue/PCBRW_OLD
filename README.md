@@ -37,7 +37,7 @@ This folder is an already configured pycharm project, with all the launchers nee
 * Install the python needed extra libraries: 
 
 ```
-pip install pypiwin32 pysdl2 numpy pygame pyaudio pyserial
+pip install pysdl2 numpy pygame pyaudio pyserial
 ```
 
 * Install git
@@ -282,9 +282,9 @@ RESULT OF DUPLICATE(2)= 4
 ```
 
 ### Note about the retrocompatiblity when using extensions:
-The use of extensions is useful for research & development of new routines, or experiments. But one problem of the extensions is the loss of retrocompatibility of the BASIC code. Once it is included a special BASIC statment in the BASIC code (like _MKBACKUP), this BASIC code becomes not compatible with GWBASIC, nor DOSBOX. 
+The use of extensions is useful for research & development of new routines, or experiments. But one problem of the extensions is the loss of retrocompatibility of the BASIC code. Once it is included a special BASIC statment in the BASIC code (like _MKBACKUP), this BASIC code becomes not compatible with GWBASIC, nor DOSBOX. One solution for this issue can be to define a system variable like PCBRW=1, and use this variable to conditionate the execution of standard/customized BASIC code lines, where needed. 
 
-A more suitable way to launch python scripts from BASIC code is to use the SHELL statment, like SHELL python pytonscript.py
+Another more suitable way to launch python scripts from BASIC code is to use the SHELL statment, like SHELL python pytonscript.py
 
 ----------------------------------------------------------------------------------
 
