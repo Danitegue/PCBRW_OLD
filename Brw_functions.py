@@ -25,6 +25,7 @@ import os
 import datetime
 import time
 import subprocess
+import glob
 
 
 
@@ -225,6 +226,61 @@ def shell_append(file1,file2):
     else:
         sys.stdout.write("Brw_functions.py, shell_append, BREWDIR not found as an enviroment variable." + " \r\n")
 
+def shell_dir(arguments):
+    if 'BREWDIR' in os.environ:
+        # Example of arguments: ['dir','*.rtn', '/l', '/o:n', '/b', '>dir.tmp']
+        path=os.path.join(os.path.abspath(os.environ['BREWDIR'].strip('\'')),arguments[1])
+        arguments[1]=path
+        sys.stdout.write("Brw_functions.py, shell_dir, emulating " + ' '.join(arguments) + " \r\n")
+        #path = arguments[1]
+        #dir_output=os.listdir(path)
+        dir_output=glob.glob(path)
+
+        if '/l' in [i.lower() for i in arguments]:
+            #Convert output to lowercase
+            dir_output = [i.lower() for i in dir_output]
+
+        if '/o:n' in [i.lower() for i in arguments]:
+            #Sort the output alphabetically
+            dir_output = sorted(dir_output)
+
+        if '/o:-n' in [i.lower() for i in arguments]:
+            #Sort the output alphabetically reversed
+            dir_output = sorted(dir_output, reverse=True)
+
+        if '/o:d' in [i.lower() for i in arguments]:
+            # Sort the output by date (older to newer)
+            dir_output =sorted(dir_output, key=lambda x: os.stat(os.path.join(path, x)).st_mtime)
+
+        if '/o:-d' in [i.lower() for i in arguments]:
+            # Sort the output by date (newer to older)
+            dir_output =sorted(dir_output, key=lambda x: os.stat(os.path.join(path, x)).st_mtime, reverse=True)
+
+        for ix in range(len(arguments)):
+            i=arguments[ix]
+            if '>' in i:
+                dir_understood = True
+                if len(i)>1:
+                    #case [...,">dir.tmp"]
+                    tmpfile = os.path.join(os.environ['BREWDIR'].strip('\''), i[1:])
+                else:
+                    #case [..., ">", "dir.tmp"]
+                    try:
+                        tmpfile = os.path.join(os.environ['BREWDIR'].strip('\''), arguments[ix+1])
+                    except:
+                        dir_understood=False
+
+                if dir_understood:
+                    with open(tmpfile,'w') as fo:
+                        for l in dir_output:
+                            fo.write(l+'\n')
+                    sys.stdout.write("Brw_functions.py, shell_dir, DIR output saved at " + tmpfile + " \r\n")
+                else:
+                    sys.stdout.write("Brw_functions.py, shell_dir, cannot understand the DIR command" + " \r\n")
+    else:
+        sys.stdout.write("Brw_functions.py, shell_dir, cannot emulate DIR since BREWDIR is not found as enviroment variable. " + " \r\n")
+
+
 
 #Missing functions:
 #ND.rtn -> SHELL 'format a:'
@@ -236,7 +292,7 @@ def shell_append(file1,file2):
 #Evaluate the contents of arguments of the SHELL call:
 sys.stdout.write("Brw_functions.py, received SHELL command: "+ command+ ", arguments="+str(arguments)+" \r\n")
 try:
-    if arguments[0].lower()=='copy': #Example 'copy file1+file2 destination' or 'copy file1 destination'
+    if arguments[0].lower()=="copy": #Example 'copy file1+file2 destination' or 'copy file1 destination'
         shell_copy(arguments[1],arguments[2])
 
     elif arguments[0].lower()=="md": #Example 'md C:\Temporal\Newfolder'
@@ -245,12 +301,14 @@ try:
     elif arguments[0].lower() in ["setdate","setdate.exe"]: #Example 'setdate.exe'
         shell_setdate()
 
-    elif arguments[0].lower() in ['noeof','noeof.exe']: #Example 'noeof filename'
+    elif arguments[0].lower() in ["noeof","noeof.exe"]: #Example 'noeof filename'
         shell_noeof(arguments[1])
 
-    elif arguments[0].lower()=='append':  #Example 'append file1 file2'
+    elif arguments[0].lower()=="append":  #Example 'append file1 file2'
         shell_append(arguments[1], arguments[2])
 
+    elif arguments[0].lower()=="dir": #Example 'dir *.rtn /l /o:n /b >dir.tmp'
+        shell_dir(arguments)
     else:
         sys.stdout.write("Brw_functions.py, Ignored unrecognized shell command: "+ command+ ", arguments="+str(arguments)+" \r\n")
 
