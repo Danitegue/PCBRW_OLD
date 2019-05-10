@@ -1,7 +1,7 @@
 # PCBRW  (PC BASIC Brewer) testing repository
 A repository with a fixed version of PCBASIC and the Brewer software, for testing purposes.
 
-Note: This repo is only for personal testing purposes. If you want to control a Brewer in a operational way with PCBASIC, see the instructions to use in this other repo: https://github.com/Danitegue/PCBREWER
+Note: This repo is only for personal testing purposes. If you want to control a Brewer in a operational way with PCBASIC, see the instructions in this other repo: https://github.com/Danitegue/PCBREWER
 
 PCBASIC is an open source GWBASIC emulator written entirely in Python, by Rob Hagemans. More info here: https://github.com/robhagemans/pcbasic/ and here: http://robhagemans.github.io/pcbasic/doc/
 
