@@ -7,7 +7,7 @@ rem PCBASIC_PATH is the path in which the run.py file is located
 set PCBASIC_PATH=C:\PCBRW\pcbasic_brewer
 
 rem PYTHON_DIR is the folder in which the python.exe is located
-set PYTHON_DIR=C:\Users\DS_Pandora\Anaconda2
+set PYTHON_DIR=C:\Python27
 
 rem Folder to mount as unit C: (For Brewer soft, C: must be C: Otherwise SHELL commands won't work.)
 set MOUNT_C=C:\
