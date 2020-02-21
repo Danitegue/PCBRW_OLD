@@ -1,4 +1,5 @@
 # PCBRW  (PC BASIC Brewer) testing repository
+# OLD!!! -> New version here:  https://github.com/Danitegue/PCBREWER
 A repository with a fixed version of PCBASIC and the Brewer software, for testing purposes.
 
 Note: This repo is only for personal testing purposes. If you want to control a Brewer in a operational way with PCBASIC, see the instructions in this other repo: https://github.com/Danitegue/PCBREWER
